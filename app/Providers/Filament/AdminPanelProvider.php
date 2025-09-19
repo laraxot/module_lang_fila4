@@ -4,14 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers\Filament;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Override;
-=======
->>>>>>> 8b0b6ac (.)
-=======
-use Override;
->>>>>>> 1c4a063 (.)
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Filament\Panel;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
@@ -20,22 +13,10 @@ class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Lang';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
     #[Override]
     public function panel(Panel $panel): Panel
     {
         $panel = parent::panel($panel);
-<<<<<<< HEAD
-=======
-    public function panel(Panel $panel): Panel
-    {
-        $panel= parent::panel($panel);
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         // FilamentAsset::register(
         //     [
         //         Css::make('filament-navigation-styles', __DIR__.'/../../resources/dist/plugin.css'),
@@ -44,16 +25,7 @@ class AdminPanelProvider extends XotBasePanelProvider
         //     'filament-navigation'
         // );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
         $spatieLaravelTranslatablePlugin = SpatieTranslatablePlugin::make()->defaultLocales(['en', 'it']);
-=======
-        $spatieLaravelTranslatablePlugin=SpatieTranslatablePlugin::make()
-                ->defaultLocales(['en', 'it']);
->>>>>>> 8b0b6ac (.)
-=======
-        $spatieLaravelTranslatablePlugin = SpatieTranslatablePlugin::make()->defaultLocales(['en', 'it']);
->>>>>>> 1c4a063 (.)
         $panel->plugins([
             $spatieLaravelTranslatablePlugin,
         ]);

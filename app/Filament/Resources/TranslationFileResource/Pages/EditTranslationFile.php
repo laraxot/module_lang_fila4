@@ -1,22 +1,11 @@
 <?php
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
 declare(strict_types=1);
 
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
 use Override;
-<<<<<<< HEAD
-=======
-namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
 use Filament\Schemas\Components\Section;
 use Filament\Actions;
 use Filament\Forms\Components\TextInput;
@@ -24,18 +13,8 @@ use Filament\Notifications\Notification;
 use Filament\Resources\Pages\EditRecord;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
-=======
-use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
-use Modules\Lang\Filament\Resources\TranslationFileResource;
->>>>>>> 8b0b6ac (.)
-=======
-use Modules\Lang\Filament\Resources\TranslationFileResource;
-use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
->>>>>>> 1c4a063 (.)
 
 class EditTranslationFile extends XotBaseEditRecord
 {
@@ -53,10 +32,6 @@ class EditTranslationFile extends XotBaseEditRecord
     /**
      * @return array<string>
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
     public function getTranslatableLocales()
     {
         return ['it', 'en'];
@@ -87,40 +62,6 @@ class EditTranslationFile extends XotBaseEditRecord
          */
         /** @phpstan-ignore argument.type, property.nonObject */
         app(SaveTransAction::class)->execute($this->record->key, $data['content']);
-<<<<<<< HEAD
-=======
-    public function getTranslatableLocales(){
-        return ['it', 'en'];
-    }
-   
-    protected function mutateFormDataBeforeSave(array $data): array
-    {
-        /*
-        // Salva le traduzioni nel file
-        try {
-            $this->record->saveTranslations($data['content']);
-            
-            Notification::make()
-                ->title('Traduzioni salvate con successo')
-                ->success()
-                ->send();
-                
-        } catch (\Exception $e) {
-            Notification::make()
-                ->title('Errore durante il salvataggio')
-                ->body($e->getMessage())
-                ->danger()
-                ->send();
-                
-            // Previeni il salvataggio se c'è un errore
-            $this->halt();
-        }
-        */
-        /** @phpstan-ignore argument.type, property.nonObject */
-        app(SaveTransAction::class)->execute($this->record->key,$data['content']);
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         //dddx(['record'=>$this->record,'data'=>$data]);
         return $data;
     }
@@ -132,26 +73,11 @@ class EditTranslationFile extends XotBaseEditRecord
         $this->record->refresh();
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
     #[Override]
     public function getFormSchema(): array
     {
         return [
             Section::make('content')->schema(fn($record) => $this->makeFromArray($record->content, 'content')),
-<<<<<<< HEAD
-=======
-
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make('content')
-                ->schema(fn($record)=>$this->makeFromArray($record->content,'content'))
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         ];
     }
 
@@ -160,15 +86,7 @@ class EditTranslationFile extends XotBaseEditRecord
         $fields = [];
 
         foreach ($array as $key => $value) {
-<<<<<<< HEAD
-<<<<<<< HEAD
             $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
-=======
-            $fullKey = $prefix === '' ? $key : $prefix . '.' . $key;
->>>>>>> 8b0b6ac (.)
-=======
-            $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
->>>>>>> 1c4a063 (.)
 
             if (is_array($value)) {
                 $fields[] = Section::make($key)
@@ -179,16 +97,7 @@ class EditTranslationFile extends XotBaseEditRecord
                 $fields[] = TextInput::make($fullKey)
                     //->label($fullKey)
                     ->label($key)
-<<<<<<< HEAD
-<<<<<<< HEAD
                     ->default($value);
-=======
-                    ->default($value)
-                    ;
->>>>>>> 8b0b6ac (.)
-=======
-                    ->default($value);
->>>>>>> 1c4a063 (.)
             }
         }
 
