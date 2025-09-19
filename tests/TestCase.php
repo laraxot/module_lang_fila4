@@ -4,8 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Tests;
 
+<<<<<<< HEAD
 use Illuminate\Foundation\Application;
 use Modules\Lang\Providers\LangServiceProvider;
+=======
+use Modules\Lang\Providers\LangServiceProvider;
+use Illuminate\Foundation\Application;
+>>>>>>> 8b0b6ac (.)
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Tests\CreatesApplication;
 
@@ -25,7 +30,11 @@ abstract class TestCase extends BaseTestCase
 
         // Load Lang module specific configurations
         $this->loadLaravelMigrations();
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 8b0b6ac (.)
         // Seed any required data for Lang tests
         $this->artisan('module:seed', ['module' => 'Lang']);
     }

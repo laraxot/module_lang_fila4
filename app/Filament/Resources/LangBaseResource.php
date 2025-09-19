@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources;
+<<<<<<< HEAD
 
 // use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable; // Temporaneamente commentato per compatibilità Filament 4.x
 use Filament\Actions;
@@ -26,4 +27,31 @@ abstract class LangBaseResource extends XotBaseResource
     // {
     //     return ['it', 'en'];
     // }
+=======
+use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
+use Filament\Actions;
+use Illuminate\Support\Facades\Config;
+use Filament\Resources\Pages\EditRecord;
+use Modules\Cms\Filament\Resources\SectionResource;
+use Modules\Xot\Filament\Resources\XotBaseResource;
+use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
+
+abstract class LangBaseResource extends XotBaseResource
+{
+    use Translatable;
+
+
+    public static function getDefaultTranslatableLocale(): string
+    {
+        return Config::string('app.locale', 'it');
+    }
+
+    public static function getTranslatableLocales(): array
+    {
+        return ['it', 'en'];
+    }
+
+
+
+>>>>>>> 8b0b6ac (.)
 }

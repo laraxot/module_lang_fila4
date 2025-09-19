@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Dependencies and packages
 /node_modules/
@@ -27,3 +28,21 @@ docs/phpstan/
 
 # Other
 -e
+=======
+/build_*/
+/node_modules/
+/vendor/
+/source/assets/build/
+.env
+npm-debug.log
+*.cache
+*.phar
+*.lock
+package-lock.json
+
+# Backup files
+*.bak
+-e 
+# PHPStan documentation
+docs/phpstan/
+>>>>>>> 8b0b6ac (.)

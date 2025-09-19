@@ -20,11 +20,16 @@ class SyncTranslationsAction
      * @param string|null $specificModule Modulo specifico (opzionale)
      * @return array<string, mixed> Risultato della sincronizzazione
      */
+<<<<<<< HEAD
     public function execute(
         string $sourceLang = 'it',
         array $targetLangs = ['en', 'de'],
         null|string $specificModule = null,
     ): array {
+=======
+    public function execute(string $sourceLang = 'it', array $targetLangs = ['en', 'de'], ?string $specificModule = null): array
+    {
+>>>>>>> 8b0b6ac (.)
         $modulesPath = base_path('Modules');
         $modules = $specificModule ? [$specificModule] : $this->getModules($modulesPath);
 
@@ -38,12 +43,17 @@ class SyncTranslationsAction
         foreach ($modules as $module) {
             $moduleResults = $this->syncModule($module, $sourceLang, $targetLangs);
             $results['modules'][$module] = $moduleResults;
+<<<<<<< HEAD
             $results['total_files'] += is_numeric($moduleResults['files_processed'] ?? null)
                 ? ((int) $moduleResults['files_processed'])
                 : 0;
             $results['total_translations'] += is_numeric($moduleResults['translations_added'] ?? null)
                 ? ((int) $moduleResults['translations_added'])
                 : 0;
+=======
+            $results['total_files'] += is_numeric($moduleResults['files_processed'] ?? null) ? (int) $moduleResults['files_processed'] : 0;
+            $results['total_translations'] += is_numeric($moduleResults['translations_added'] ?? null) ? (int) $moduleResults['translations_added'] : 0;
+>>>>>>> 8b0b6ac (.)
             $results['total_modules']++;
         }
 
@@ -61,7 +71,11 @@ class SyncTranslationsAction
     private function syncModule(string $module, string $sourceLang, array $targetLangs): array
     {
         $moduleLangPath = base_path("Modules/{$module}/lang");
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 8b0b6ac (.)
         if (!File::exists($moduleLangPath)) {
             return [
                 'status' => 'skipped',
@@ -101,7 +115,11 @@ class SyncTranslationsAction
 
                 // Create target directory if it doesn't exist
                 if (!File::exists($targetPath)) {
+<<<<<<< HEAD
                     File::makeDirectory($targetPath, 0o755, true);
+=======
+                    File::makeDirectory($targetPath, 0755, true);
+>>>>>>> 8b0b6ac (.)
                 }
 
                 // Load existing target translations
@@ -137,7 +155,11 @@ class SyncTranslationsAction
     {
         $modules = [];
         $directories = File::directories($modulesPath);
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 8b0b6ac (.)
         foreach ($directories as $directory) {
             $moduleName = basename($directory);
             if (File::exists("{$directory}/lang")) {
@@ -199,9 +221,13 @@ class SyncTranslationsAction
         foreach ($source as $key => $value) {
             if (is_array($value)) {
                 /** @var array<string, mixed> $subTarget */
+<<<<<<< HEAD
                 $subTarget = isset($target[$key]) && is_array($target[$key])
                     ? $this->filterStringKeyArray($target[$key])
                     : [];
+=======
+                $subTarget = isset($target[$key]) && is_array($target[$key]) ? $this->filterStringKeyArray($target[$key]) : [];
+>>>>>>> 8b0b6ac (.)
                 $merged[$key] = $this->mergeTranslations($this->filterStringKeyArray($value), $subTarget);
             } else {
                 if (!isset($merged[$key])) {
@@ -256,4 +282,8 @@ class SyncTranslationsAction
 
         return $content;
     }
+<<<<<<< HEAD
 }
+=======
+} 
+>>>>>>> 8b0b6ac (.)

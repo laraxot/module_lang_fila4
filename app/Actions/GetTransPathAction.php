@@ -6,9 +6,15 @@ namespace Modules\Lang\Actions;
 
 use Throwable;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+=======
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
+use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
+>>>>>>> 8b0b6ac (.)
 
 class GetTransPathAction
 {
@@ -27,10 +33,18 @@ class GetTransPathAction
             $lang_path = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
             Assert::string($lang_path, 'Il percorso del modulo deve essere una stringa');
         } catch (Throwable $e) {
+<<<<<<< HEAD
             $lang_path = base_path('Modules/' . $ns . '/lang');
         }
         $file_name = $piece[0] ?? '';
         Assert::string($file_name, 'Il nome del file deve essere una stringa');
         return $lang_path . '/' . $lang . '/' . $file_name . '.php';
+=======
+            $lang_path = base_path('Modules/'.$ns.'/lang');
+        }
+        $file_name = $piece[0] ?? '';
+        Assert::string($file_name, 'Il nome del file deve essere una stringa');
+        return $lang_path.'/'.$lang.'/'.$file_name.'.php';
+>>>>>>> 8b0b6ac (.)
     }
 }

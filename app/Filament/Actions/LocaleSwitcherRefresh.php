@@ -1,8 +1,11 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
+=======
+>>>>>>> 8b0b6ac (.)
 namespace Modules\Lang\Filament\Actions;
 
 use Filament\Forms\Components\Select;
@@ -12,6 +15,7 @@ use Illuminate\Support\Facades\App;
 
 class LocaleSwitcherRefresh extends Action
 {
+<<<<<<< HEAD
     public string $full_url = '#';
     public string $lang = '';
 
@@ -30,6 +34,30 @@ class LocaleSwitcherRefresh extends Action
         $this->lang = app()->getLocale();
         $this->full_url = request()->fullUrl();
         $this->label($this->lang)
+=======
+
+    public string $full_url='#';
+    public string $lang='';
+    
+
+    protected function setUp(): void
+    {
+
+        parent::setUp();
+        $lang_options= [
+            'en' => '🇬🇧 English',
+            'it' => '🇮🇹 Italiano',
+        ];
+        $lang=session()->get('locale');
+        if(!is_string($lang)){
+            $lang='it';
+        }
+        app()->setLocale($lang);
+        $this->lang=app()->getLocale();
+        $this->full_url=request()->fullUrl();
+        $this
+            ->label($this->lang)
+>>>>>>> 8b0b6ac (.)
             ->schema([
                 Select::make('locale')
                     ->label('Seleziona lingua')
@@ -44,7 +72,11 @@ class LocaleSwitcherRefresh extends Action
                 session()->put('locale', $locale);
                 App::setLocale($locale);
                 //Filament::setLocale($locale);
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 8b0b6ac (.)
                 return redirect(request()->header('Referer'));
             })
             ->modalHeading('Cambia lingua')
