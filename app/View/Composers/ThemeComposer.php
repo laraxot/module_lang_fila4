@@ -27,6 +27,9 @@ class ThemeComposer
     {
         // ✅ Controllo sicuro della configurazione laravellocalization
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         $langs = config()->has('laravellocalization.supportedLocales')
             ? config('laravellocalization.supportedLocales')
             : [
@@ -40,6 +43,7 @@ class ThemeComposer
                 __LINE__,
                 class_basename($this),
             ));
+<<<<<<< HEAD
 =======
         $langs = config()->has('laravellocalization.supportedLocales') 
             ? config('laravellocalization.supportedLocales') 
@@ -48,11 +52,16 @@ class ThemeComposer
         if (! is_array($langs)) {
             throw new Exception(sprintf('Invalid config for supportedLocales on line %d in %s', __LINE__, class_basename($this)));
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
         }
 
         $languages = collect($langs)->map(function (mixed $item, string $locale): array {
             // Ensure $item is an array
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
             if (!is_array($item)) {
                 throw new InvalidArgumentException(sprintf(
                     'Expected array at locale %s, got %s',
@@ -67,6 +76,7 @@ class ThemeComposer
                     'Expected array with "regional" and "name" keys at locale %s',
                     $locale,
                 ));
+<<<<<<< HEAD
 =======
             if (! is_array($item)) {
                 throw new InvalidArgumentException(sprintf('Expected array at locale %s, got %s', $locale, gettype($item)));
@@ -76,16 +86,22 @@ class ThemeComposer
             if (! isset($item['regional'], $item['name'])) {
                 throw new InvalidArgumentException(sprintf('Expected array with "regional" and "name" keys at locale %s', $locale));
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
             }
 
             // Extract regional code and handle 'en' to 'gb' mapping.
             // Verifichiamo che regional sia una stringa o lo convertiamo in modo sicuro
             $regional = $item['regional'];
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (!is_string($regional)) {
 =======
             if (! is_string($regional)) {
 >>>>>>> 8b0b6ac (.)
+=======
+            if (!is_string($regional)) {
+>>>>>>> 1c4a063 (.)
                 $regional = '';
             }
             $regionalParts = explode('_', $regional);
@@ -103,10 +119,14 @@ class ThemeComposer
             // Verifichiamo che name sia una stringa o lo convertiamo in modo sicuro
             $name = $item['name'];
 <<<<<<< HEAD
+<<<<<<< HEAD
             if (!is_string($name)) {
 =======
             if (! is_string($name)) {
 >>>>>>> 8b0b6ac (.)
+=======
+            if (!is_string($name)) {
+>>>>>>> 1c4a063 (.)
                 $name = $locale; // Fallback al codice locale
             }
 
@@ -134,6 +154,9 @@ class ThemeComposer
         $currentLocale = app()->getLocale();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         return $this->languages()->filter(function (mixed $item) use ($currentLocale): bool {
             // Ensure the item is an instance of LangData
             if (!($item instanceof LangData)) {
@@ -145,6 +168,7 @@ class ThemeComposer
 
             return $item->id !== $currentLocale;
         });
+<<<<<<< HEAD
 =======
         return $this->languages()
             ->filter(function (mixed $item) use ($currentLocale): bool {
@@ -156,6 +180,8 @@ class ThemeComposer
                 return $item->id !== $currentLocale;
             });
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     }
 
     /**
@@ -169,6 +195,9 @@ class ThemeComposer
 
         // Convert DataCollection to a Laravel Collection to use firstWhere()
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         $lang = $this->languages()->toCollection()->firstWhere('id', $currentLocale);
 
         if (!($lang instanceof LangData)) {
@@ -177,6 +206,7 @@ class ThemeComposer
                 __LINE__,
                 class_basename($this),
             ));
+<<<<<<< HEAD
 =======
         $lang = $this->languages()
             ->toCollection()
@@ -185,15 +215,21 @@ class ThemeComposer
         if (! $lang instanceof LangData) {
             throw new Exception(sprintf('Current language not found on line %d in %s', __LINE__, class_basename($this)));
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
         }
 
         // Verifichiamo che il valore del campo sia una stringa o lo convertiamo in modo sicuro
         $value = $lang->{$field};
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!is_string($value)) {
 =======
         if (! is_string($value)) {
 >>>>>>> 8b0b6ac (.)
+=======
+        if (!is_string($value)) {
+>>>>>>> 1c4a063 (.)
             return 'id' === $field ? $currentLocale : '';
         }
 
@@ -211,10 +247,14 @@ class ThemeComposer
     {
         $routeName = Route::currentRouteName();
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (!is_string($routeName)) {
 =======
         if (! is_string($routeName)) {
 >>>>>>> 8b0b6ac (.)
+=======
+        if (!is_string($routeName)) {
+>>>>>>> 1c4a063 (.)
             return '#';
         }
         $routeParameters = array_merge(getRouteParameters(), ['lang' => $locale]);
@@ -235,6 +275,7 @@ class ThemeComposer
     private function buildFlagHtml(string $regionalCode): string
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return sprintf('<div class="iti__flag-box"><div class="iti__flag iti__%s"></div></div>', e($regionalCode));
 =======
         return sprintf(
@@ -242,5 +283,8 @@ class ThemeComposer
             e($regionalCode)
         );
 >>>>>>> 8b0b6ac (.)
+=======
+        return sprintf('<div class="iti__flag-box"><div class="iti__flag iti__%s"></div></div>', e($regionalCode));
+>>>>>>> 1c4a063 (.)
     }
 }

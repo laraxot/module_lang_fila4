@@ -13,11 +13,17 @@ use Modules\Lang\Filament\Widgets\LanguageSwitcherWidget;
  *
  * Wrappa il LanguageSwitcherWidget per l'uso nei temi tramite sintassi Blade.
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
  * @package Modules\Lang\View\Components *
  * Wrappa il LanguageSwitcherWidget per l'uso nei temi tramite sintassi Blade.
 =======
 >>>>>>> 8b0b6ac (.)
+=======
+ *
+ * @package Modules\Lang\View\Components *
+ * Wrappa il LanguageSwitcherWidget per l'uso nei temi tramite sintassi Blade.
+>>>>>>> 1c4a063 (.)
  */
 class LanguageSwitcher extends Component
 {
@@ -32,11 +38,16 @@ class LanguageSwitcher extends Component
     public function __construct()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         $this->widget = new LanguageSwitcherWidget();
         $this->widget = new LanguageSwitcherWidget();
 =======
         $this->widget = new LanguageSwitcherWidget;
 >>>>>>> 8b0b6ac (.)
+=======
+        $this->widget = new LanguageSwitcherWidget();
+        $this->widget = new LanguageSwitcherWidget();
+>>>>>>> 1c4a063 (.)
     }
 
     /**
@@ -45,6 +56,9 @@ class LanguageSwitcher extends Component
     public function render(): View
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         if (!LanguageSwitcherWidget::canView()) {
             /** @var view-string $view */
             $view = 'lang::components.empty';
@@ -59,6 +73,7 @@ class LanguageSwitcher extends Component
         ];
 
         return \view('lang::components.language-switcher', $viewData);
+<<<<<<< HEAD
 =======
         // Verifica se il widget può essere visualizzato
         if (! LanguageSwitcherWidget::canView()) {
@@ -70,5 +85,7 @@ class LanguageSwitcher extends Component
 
         return view('lang::filament.widgets.language-switcher', $viewData);
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     }
 }

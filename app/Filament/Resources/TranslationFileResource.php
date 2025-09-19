@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 declare(strict_types=1);
 
 
@@ -30,6 +33,7 @@ use Modules\Xot\Filament\Resources\XotBaseResource;
 class TranslationFileResource extends XotBaseResource
 {
     protected static null|string $model = TranslationFile::class;
+<<<<<<< HEAD
 =======
 namespace Modules\Lang\Filament\Resources;
 
@@ -57,6 +61,8 @@ class TranslationFileResource extends XotBaseResource
 {
     protected static ?string $model = TranslationFile::class;
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
     public static function getDefaultTranslatableLocale(): string
     {
@@ -69,6 +75,9 @@ class TranslationFileResource extends XotBaseResource
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
     #[Override]
     public static function getFormSchema(): array
     {
@@ -108,6 +117,7 @@ class TranslationFileResource extends XotBaseResource
     }
 
     #[Override]
+<<<<<<< HEAD
 =======
     
 
@@ -150,6 +160,8 @@ class TranslationFileResource extends XotBaseResource
 
    
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     public static function getPages(): array
     {
         return [
@@ -160,9 +172,12 @@ class TranslationFileResource extends XotBaseResource
         ];
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 
    
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 }

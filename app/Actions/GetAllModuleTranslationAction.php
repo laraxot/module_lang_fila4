@@ -6,6 +6,9 @@ namespace Modules\Lang\Actions;
 
 use Illuminate\Support\Arr;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
@@ -14,6 +17,7 @@ use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
 use function Safe\glob;
+<<<<<<< HEAD
 =======
 use Illuminate\Support\Str;
 use Webmozart\Assert\Assert;
@@ -23,6 +27,8 @@ use function Safe\glob;
 use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\App;
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
 class GetAllModuleTranslationAction
 {
@@ -34,6 +40,9 @@ class GetAllModuleTranslationAction
     public function execute(): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         $lang = session()->get('locale');
         if (is_string($lang) && in_array($lang, ['it', 'en'], strict: true)) {
             app()->setLocale($lang);
@@ -50,6 +59,7 @@ class GetAllModuleTranslationAction
             return [
                 'key' => $module_low . '::' . basename($file, '.php'),
                 'path' => $file,
+<<<<<<< HEAD
 =======
        
 
@@ -67,6 +77,8 @@ class GetAllModuleTranslationAction
                 'key'=>$module_low.'::'.basename($file,'.php'),
                 'path'=>$file,
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
             ];
         });
         return $files;

@@ -8,6 +8,9 @@ use Exception;
 use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Components\Section;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Tables\Columns\Column;
@@ -21,6 +24,7 @@ use Modules\Xot\Actions\GetTransKeyAction;
 use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+<<<<<<< HEAD
 =======
 use ReflectionClass;
 use Illuminate\Support\Arr;
@@ -36,6 +40,8 @@ use Spatie\QueueableAction\QueueableAction;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Illuminate\Support\HtmlString;
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
 class AutoLabelAction
 {
@@ -46,6 +52,9 @@ class AutoLabelAction
      * return number of input added.
      *
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
      * @param Field|BaseFilter|Column|Step|Action|Action|Section $component
      *
      * @return Field|BaseFilter|Column|Step|Action|Action|Section
@@ -85,6 +94,7 @@ class AutoLabelAction
                 $object_class = $class['class'];
             }
             if (is_null($object_class)) {
+<<<<<<< HEAD
 =======
      * @param Field|BaseFilter|Column|\Filament\Schemas\Components\Wizard\Step|Action|Action|\Filament\Schemas\Components\Section $component
      *
@@ -123,6 +133,8 @@ class AutoLabelAction
             }
             if(is_null($object_class)){
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
                 throw new Exception('No object class found');
             }
             $trans_key = app(GetTransKeyAction::class)->execute($object_class);
@@ -133,6 +145,9 @@ class AutoLabelAction
         $label_tkey = null;
         $val = 'no-set-val';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 
         if ($component instanceof Step) {
             Assert::string($val = $component->getLabel());
@@ -203,6 +218,7 @@ class AutoLabelAction
                 'component' => $component,
                 'class' => $class,
                 'backtrace' => $backtrace,
+<<<<<<< HEAD
 =======
         
         if ($component instanceof Step) {
@@ -279,11 +295,16 @@ class AutoLabelAction
                 'class'=>$class,
                 'backtrace'=>$backtrace,
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
             ]);
         }
 
         $label = trans($label_key);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         if (is_string($label) && $label_key === $label) { //se non esiste la traduzione, la salvo
             app(SaveTransAction::class)->execute($label_key, $val);
         }
@@ -292,6 +313,7 @@ class AutoLabelAction
                 if (strip_tags($label) !== $label && in_array($type, ['helperText'], strict: true)) {
                     $component->{$type}(new HtmlString($label));
                 } else {
+<<<<<<< HEAD
 =======
         if (is_string($label) && $label_key == $label) { //se non esiste la traduzione, la salvo
             
@@ -303,6 +325,8 @@ class AutoLabelAction
                     $component->{$type}(new HtmlString($label));
                 }else{
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
                     $component->{$type}($label);
                 }
             }
@@ -313,10 +337,14 @@ class AutoLabelAction
         }
         if (!is_string($label)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             $component->label('FIX:' . $label_key);
 =======
             $component->label('FIX:'.$label_key);
 >>>>>>> 8b0b6ac (.)
+=======
+            $component->label('FIX:' . $label_key);
+>>>>>>> 1c4a063 (.)
         }
 
         return $component;

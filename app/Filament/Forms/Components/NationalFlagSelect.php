@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Modules\Lang\Filament\Forms\Components;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 use Filament\Forms\Components\Select;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -14,6 +17,7 @@ use Rinvex\Country\CountryLoader;
 /**
  * National Flag Select Component.
  *
+<<<<<<< HEAD
 =======
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -25,6 +29,8 @@ use Modules\Xot\Actions\File\AssetAction;
  * National Flag Select Component.
  * 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
  * A Filament Select component that displays countries with their flags
  * and supports searching by country name using localized translations.
  */
@@ -40,12 +46,16 @@ class NationalFlagSelect extends Select
         parent::setUp();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         $this->searchable()
             ->allowHtml()
             ->optionsLimit(300)
             ->native(false)
             ->options($this->getCountryOptions(...))
             ->getSearchResultsUsing($this->getFilteredCountryOptions(...));
+<<<<<<< HEAD
 =======
         $this
             ->searchable()
@@ -55,6 +65,8 @@ class NationalFlagSelect extends Select
             ->options(fn () => $this->getCountryOptions())
             ->getSearchResultsUsing(fn (string $search): array => $this->getFilteredCountryOptions($search));
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     }
 
     /**
@@ -64,6 +76,7 @@ class NationalFlagSelect extends Select
      */
     protected function getCountryOptions(): array
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $countries = countries();
         $countries = Arr::sort($countries, fn($c) => $c['name']);
@@ -77,6 +90,10 @@ class NationalFlagSelect extends Select
 
        
 >>>>>>> 8b0b6ac (.)
+=======
+        $countries = countries();
+        $countries = Arr::sort($countries, fn($c) => $c['name']);
+>>>>>>> 1c4a063 (.)
 
         $options = Arr::mapWithKeys($countries, function ($c) {
             $code = $c['iso_3166_1_alpha2'];
@@ -91,10 +108,14 @@ class NationalFlagSelect extends Select
             return [$code => $html];
         });
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         
 >>>>>>> 8b0b6ac (.)
+=======
+
+>>>>>>> 1c4a063 (.)
         return $options;
     }
 
@@ -113,15 +134,22 @@ class NationalFlagSelect extends Select
         $countries = countries();
         $searchLower = strtolower($search);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         
 >>>>>>> 8b0b6ac (.)
+=======
+
+>>>>>>> 1c4a063 (.)
         // Filter countries by search term
         $filteredCountries = array_filter($countries, function ($country) use ($searchLower) {
             $code = $country['iso_3166_1_alpha2'];
             $flag_name = strtolower($code);
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 
             // Get localized country name
             $localizedName = __('lang::countries.' . $flag_name);
@@ -136,6 +164,7 @@ class NationalFlagSelect extends Select
 
         // Sort filtered results by name
         $filteredCountries = Arr::sort($filteredCountries, fn($c) => $c['name']);
+<<<<<<< HEAD
 =======
             
             // Get localized country name
@@ -152,6 +181,8 @@ class NationalFlagSelect extends Select
             return $c['name'];
         });
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
         // Map to options format with flags
         $options = Arr::mapWithKeys($filteredCountries, function ($c) {

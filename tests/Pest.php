@@ -5,6 +5,9 @@ declare(strict_types=1);
 use Modules\Lang\Models\Translation;
 use Modules\Lang\Models\Language;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 use Modules\Lang\Tests\TestCase;
 
 /*
@@ -47,6 +50,7 @@ expect()->extend('toBeLanguage', fn() => $this->toBeInstanceOf(Language::class))
  */
 
 function createTranslation(array $attributes = []): Translation
+<<<<<<< HEAD
 =======
 use Modules\Lang\Models\Post;
 use Modules\Lang\Models\TranslationFile;
@@ -113,24 +117,33 @@ expect()->extend('toHaveTranslationKey', function (string $key) {
 
 function createLangTranslation(array $attributes = []): Translation
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 {
     return Translation::factory()->create($attributes);
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 function makeTranslation(array $attributes = []): Translation
 {
     return Translation::factory()->make($attributes);
 }
 
 function createLanguage(array $attributes = []): Language
+<<<<<<< HEAD
 =======
 function createLangTranslationFile(array $attributes = []): TranslationFile
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 {
     return Language::factory()->create($attributes);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 function makeLanguage(array $attributes = []): Language
 {
@@ -140,4 +153,9 @@ function createLangPost(array $attributes = []): Post
 {
     return Post::factory()->create($attributes);
 >>>>>>> 8b0b6ac (.)
+=======
+function makeLanguage(array $attributes = []): Language
+{
+    return Language::factory()->make($attributes);
+>>>>>>> 1c4a063 (.)
 }
