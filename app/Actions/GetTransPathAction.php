@@ -4,11 +4,38 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
+<<<<<<< HEAD
 use Throwable;
 use Illuminate\Support\Str;
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+=======
+<<<<<<< HEAD
+use Throwable;
+use Illuminate\Support\Str;
+<<<<<<< HEAD
+<<<<<<< HEAD
+use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
+=======
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
+use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
+>>>>>>> a12f125f4a (.)
+=======
+use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
+>>>>>>> b93ef594b4 (.)
+=======
+use Illuminate\Support\Str;
+use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
+use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
 
 class GetTransPathAction
 {
@@ -26,11 +53,41 @@ class GetTransPathAction
         try {
             $lang_path = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
             Assert::string($lang_path, 'Il percorso del modulo deve essere una stringa');
+<<<<<<< HEAD
         } catch (Throwable $e) {
+=======
+<<<<<<< HEAD
+        } catch (Throwable $e) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a7ee0d6 (.)
             $lang_path = base_path('Modules/' . $ns . '/lang');
         }
         $file_name = $piece[0] ?? '';
         Assert::string($file_name, 'Il nome del file deve essere una stringa');
         return $lang_path . '/' . $lang . '/' . $file_name . '.php';
+<<<<<<< HEAD
+=======
+=======
+=======
+        } catch (\Throwable $e) {
+>>>>>>> origin/develop
+            $lang_path = base_path('Modules/'.$ns.'/lang');
+        }
+        $file_name = $piece[0] ?? '';
+        Assert::string($file_name, 'Il nome del file deve essere una stringa');
+        return $lang_path.'/'.$lang.'/'.$file_name.'.php';
+<<<<<<< HEAD
+>>>>>>> a12f125f4a (.)
+=======
+            $lang_path = base_path('Modules/' . $ns . '/lang');
+        }
+        $file_name = $piece[0] ?? '';
+        Assert::string($file_name, 'Il nome del file deve essere una stringa');
+        return $lang_path . '/' . $lang . '/' . $file_name . '.php';
+>>>>>>> b93ef594b4 (.)
+=======
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     }
 }
