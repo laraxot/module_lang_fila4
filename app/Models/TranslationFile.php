@@ -52,7 +52,7 @@ class TranslationFile extends BaseModel
         'content',
     ];
 
-    protected array $schema = [
+    protected array $form = [
         'key' => 'string',
         'path' => 'string',
         'id' => 'string',

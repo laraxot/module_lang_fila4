@@ -11,9 +11,9 @@ use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\CreateTranslat
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslationFile;
 use Filament\Actions;
 use Filament\Forms\Components;
-use Filament\Forms\Components\Section;
+use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TextInput;
-use Filament\Schemas\Schema;
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
