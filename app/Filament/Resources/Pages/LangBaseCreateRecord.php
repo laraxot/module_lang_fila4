@@ -9,9 +9,12 @@ use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Filament\Actions;
 use Filament\Forms\Form;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Filament\Forms\Form;
 =======
 >>>>>>> 412393b (.)
+=======
+>>>>>>> cbfeb6b (.)
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
