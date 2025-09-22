@@ -13,11 +13,8 @@ use Filament\Actions;
 use Filament\Forms\Components;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
-<<<<<<< HEAD
-use Filament\Schemas\Schema;
-=======
 use Filament\Forms\Form;
->>>>>>> 6bf1e98 (.)
+use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
