@@ -9,23 +9,7 @@ use Modules\Lang\Models\Post;
 
 /**
  * Post Factory
-<<<<<<< HEAD
  *
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
- *
-=======
- * 
->>>>>>> a12f125f4a (.)
-=======
- *
->>>>>>> b93ef594b4 (.)
-=======
- * 
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
  * @extends Factory<Post>
  */
 class PostFactory extends Factory
@@ -47,23 +31,7 @@ class PostFactory extends Factory
 
     public function published(): static
     {
-<<<<<<< HEAD
         return $this->state(fn(array $_attributes): array => [
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return $this->state(fn(array $_attributes): array => [
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> a12f125f4a (.)
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> b93ef594b4 (.)
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
             'status' => 'published',
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ]);
@@ -71,23 +39,7 @@ class PostFactory extends Factory
 
     public function draft(): static
     {
-<<<<<<< HEAD
         return $this->state(fn(array $_attributes): array => [
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return $this->state(fn(array $_attributes): array => [
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> a12f125f4a (.)
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> b93ef594b4 (.)
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
             'status' => 'draft',
             'published_at' => null,
         ]);
@@ -95,23 +47,7 @@ class PostFactory extends Factory
 
     public function italian(): static
     {
-<<<<<<< HEAD
         return $this->state(fn(array $_attributes): array => [
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        return $this->state(fn(array $_attributes): array => [
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> a12f125f4a (.)
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> b93ef594b4 (.)
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
             'locale' => 'it',
         ]);
     }

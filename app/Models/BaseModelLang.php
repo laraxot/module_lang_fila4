@@ -63,35 +63,10 @@ abstract class BaseModelLang extends Model
 
     // -----------
     /*
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
      * protected $id;
      * protected $post;
      * protected $lang;
      */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/develop
-    protected $id;
-    protected $post;
-    protected $lang;
-    */
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     /**
      * Create a new factory instance for the model.
      *
@@ -108,30 +83,10 @@ abstract class BaseModelLang extends Model
     {
         return [
             'id' => 'string',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
             'uuid' => 'string',
             'published_at' => 'datetime',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-            'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-            'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     }
 }

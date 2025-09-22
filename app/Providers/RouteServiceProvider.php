@@ -34,56 +34,12 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     /**
      * Bootstrap the module services.
      */
-<<<<<<< HEAD
     
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-=======
->>>>>>> origin/develop
-    public function boot(): void
-    {
-        parent::boot();
-        // $this->registerLang(); // ✅ Temporaneamente disabilitato per debug
-    }
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
-    
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
 
     /**
      * Register the module services.
      */
-<<<<<<< HEAD
     
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-=======
-=======
->>>>>>> origin/develop
-    public function register(): void
-    {
-        parent::register();
-        // $this->registerLang();
-    }
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
-    
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
 
     /**
      * Registra le impostazioni di lingua basate sulla configurazione.
@@ -91,39 +47,11 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     public function registerLang(): void
     {
         /** @var array<string, array<string, string>>|null $locales */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a7ee0d6 (.)
         $locales = config()->has('laravellocalization.supportedLocales')
             ? config('laravellocalization.supportedLocales')
             : null;
 
         if (!\is_array($locales)) {
-<<<<<<< HEAD
-=======
-=======
-=======
->>>>>>> origin/develop
-        $locales = config()->has('laravellocalization.supportedLocales') 
-            ? config('laravellocalization.supportedLocales') 
-            : null;
-
-        if (! \is_array($locales)) {
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
-        $locales = config()->has('laravellocalization.supportedLocales')
-            ? config('laravellocalization.supportedLocales')
-            : null;
-
-        if (!\is_array($locales)) {
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
             $locales = ['it' => ['name' => 'it'], 'en' => ['name' => 'en']];
         }
 
@@ -131,37 +59,11 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         $langs = array_keys($locales);
 
         /*
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
          * if (! \is_array($langs)) {
          * throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
          * }
          * \getRouteParameters();
          */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/develop
-        if (! \is_array($langs)) {
-            throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
-        }
-        \getRouteParameters();
-        */
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
         $n = 1;
         if (inAdmin()) {
             $n = 3;
