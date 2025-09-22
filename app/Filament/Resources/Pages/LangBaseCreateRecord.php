@@ -7,17 +7,7 @@ namespace Modules\Lang\Filament\Resources\Pages;
 use LaraZeus\SpatieTranslatable\Resources\Pages\CreateRecord\Concerns\Translatable;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use Filament\Actions;
-use Filament\Forms\Form;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-use Filament\Forms\Form;
-=======
->>>>>>> 412393b (.)
-=======
->>>>>>> cbfeb6b (.)
-=======
->>>>>>> dddbf9a (.)
+use Filament\Schemas\Schema;
 use Filament\Resources\Pages\CreateRecord;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
