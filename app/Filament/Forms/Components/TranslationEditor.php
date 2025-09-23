@@ -4,11 +4,7 @@ declare(strict_types=1);
 
 
 // app/Filament/Components/TranslationEditor.php
-<<<<<<< HEAD
 namespace Modules\Notify\Filament\Forms\Components;
-=======
-namespace Modules\Lang\Filament\Forms\Components;
->>>>>>> f5327e8 (.)
 
 use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Field;
