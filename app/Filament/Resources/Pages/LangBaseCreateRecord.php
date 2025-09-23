@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\Pages;
 
-use LaraZeus\SpatieTranslatable\Resources\Pages\CreateRecord\Concerns\Translatable;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
+<<<<<<< HEAD
 use Filament\Actions;
 <<<<<<< HEAD
 use Filament\Forms\Form;
@@ -17,6 +17,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Str;
 use Modules\Lang\Models\Translation;
+=======
+use LaraZeus\SpatieTranslatable\Resources\Pages\CreateRecord\Concerns\Translatable;
+>>>>>>> 01d9fd2 (.)
 use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
 
 /**
