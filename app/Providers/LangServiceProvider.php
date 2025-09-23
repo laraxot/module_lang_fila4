@@ -4,10 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
+<<<<<<< HEAD
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Wizard\Step;
 use Override;
 use Closure;
+=======
+use Override;
+use Closure;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Wizard\Step;
+>>>>>>> f5327e8 (.)
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Placeholder;

@@ -4,9 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions\Filament;
 
+<<<<<<< HEAD
 use Filament\Schemas\Components\Wizard\Step;
 use Filament\Schemas\Components\Section;
 use Exception;
+=======
+use Exception;
+use Filament\Schemas\Components\Wizard\Step;
+use Filament\Schemas\Components\Section;
+>>>>>>> f5327e8 (.)
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Tables\Columns\Column;
@@ -104,7 +110,11 @@ class AutoLabelAction
 
         /*
          * $component_parent=get_parent_class($component);
+<<<<<<< HEAD
          * if(in_array($component_parent,['Filament\Schemas\Components\Component'])){
+=======
+         * if(in_array($component_parent,['Filament\Forms\Components\Component'])){
+>>>>>>> f5327e8 (.)
          * $component_key=Str::of(class_basename($component))->plural()->snake()->toString();
          * }else{
          * $component_key=Str::of(class_basename($component_parent))->plural()->snake()->toString();
