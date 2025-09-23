@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-<<<<<<< HEAD
-=======
-use Override;
-use Closure;
->>>>>>> a87590b (.)
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Wizard\Step;
 use Override;
