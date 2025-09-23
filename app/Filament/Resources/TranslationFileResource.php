@@ -7,25 +7,7 @@ namespace Modules\Lang\Filament\Resources;
 use Illuminate\Support\Facades\Config;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\CreateTranslationFile;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslationFile;
-<<<<<<< HEAD
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\ListTranslationFiles;
-=======
-use Filament\Actions;
-use Filament\Forms\Components;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Facades\Config;
-use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
-use Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
-use Modules\Lang\Filament\Resources\TranslationFileResource\RelationManagers;
->>>>>>> f64d66e (.)
 use Modules\Lang\Models\TranslationFile;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 
