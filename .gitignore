@@ -417,8 +417,12 @@ test_translations.sql
 <<<<<<< HEAD
 =======
 
+<<<<<<< HEAD
 
 # 🚫 File specifici del progetto
+=======
+# File specifici del progetto
+>>>>>>> f64d66e (.)
 *.fila2
 laravel
 public_html
