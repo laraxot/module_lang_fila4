@@ -13,7 +13,11 @@ use Filament\Actions;
 use Filament\Forms\Components;
 use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\TextInput;
+<<<<<<< HEAD
 use Filament\Forms\Form;
+=======
+use Filament\Schemas\Schema;
+>>>>>>> 96e5293 (.)
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
