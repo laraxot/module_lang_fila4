@@ -9,28 +9,7 @@ use Illuminate\Support\Facades\Config;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\CreateTranslationFile;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslationFile;
-<<<<<<< HEAD
-use Filament\Actions;
-use Filament\Forms\Components;
-use Filament\Schemas\Components\Section;
-use Filament\Forms\Components\TextInput;
-<<<<<<< HEAD
-use Filament\Forms\Form;
-=======
-use Filament\Schemas\Schema;
->>>>>>> 96e5293 (.)
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Facades\Config;
-use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
-use Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
-use Modules\Lang\Filament\Resources\TranslationFileResource\RelationManagers;
-=======
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\ListTranslationFiles;
->>>>>>> 01d9fd2 (.)
 use Modules\Lang\Models\TranslationFile;
 use Modules\Xot\Filament\Resources\XotBaseResource;
 use Override;
