@@ -45,7 +45,7 @@ class LangServiceProvider extends XotBaseServiceProvider
         // BladeService::registerComponents($this->module_dir.'/../View/Components', 'Modules\\Lang');
         // $this->registerTranslator();
         $this->translatableComponents();
-        //$this->registerFilamentLabel();
+        $this->registerFilamentLabel();
     }
 
     
@@ -121,18 +121,19 @@ class LangServiceProvider extends XotBaseServiceProvider
             $component = app(AutoLabelAction::class)->execute($component);
             // $component->tooltip('preso');
 
-            // $component->iconButton();
+            //$component->iconButton();
             // ->translateLabel()
             return $component;
         });
         Action::configureUsing(function (Action $component) {
             $component = app(AutoLabelAction::class)->execute($component);
             if (method_exists($component, 'iconButton')) {
-                $component->iconButton();
+               $component->iconButton();
             }
-            if (method_exists($component, 'icon')) {
-                $component->icon('heroicon-o-plus');
-            }
+            $component = app(AutoLabelAction::class)->execute($component, 'icon');
+            //if (method_exists($component, 'icon')) {
+                //$component->icon('heroicon-o-plus');
+            //}
 
             // ->translateLabel()
             return $component;
