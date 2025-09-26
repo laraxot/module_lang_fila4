@@ -32,7 +32,7 @@ return [
         'authenticate' => [
             'label' => 'Authentifizieren',
             'tooltip' => 'Im System anmelden',
-            'icon' => 'heroicon-o-login',
+            'icon' => 'ui-login',
             'color' => 'primary',
         ],
         'login' => [

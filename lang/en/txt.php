@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 return [
     'fields' => [
         'email' => [
@@ -45,7 +44,7 @@ return [
         'authenticate' => [
             'label' => 'Authenticate',
             'tooltip' => 'Sign in to the system',
-            'icon' => 'heroicon-o-login',
+            'icon' => 'ui-login',
             'color' => 'primary',
         ],
         'login' => [

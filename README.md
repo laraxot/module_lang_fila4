@@ -509,6 +509,14 @@ Siamo aperti a contribuzioni! 🎉
 - ✅ Aggiorna la documentazione
 - ✅ Verifica PHPStan livello 9+
 
+## 🔄 Changelog
+
+### v1.2.0 - 2025-01-27
+- **🔄 Aggiornamento Icone**: Sostituito `heroicon-o-login` con `ui-login` personalizzata
+- **🎨 Icone Personalizzate**: Aggiunta icona login SVG nel modulo UI
+- **📝 Documentazione**: Aggiornata documentazione per nuove icone
+- **🌍 Multi-lingua**: Aggiornate traduzioni per tutte le lingue supportate
+
 ## 🏆 Riconoscimenti
 
 ### 🏅 **Badge di Qualità**

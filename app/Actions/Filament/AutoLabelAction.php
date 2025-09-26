@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions\Filament;
 
-use Filament\Schemas\Components\Wizard\Step;
-use Filament\Schemas\Components\Section;
 use Exception;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Wizard\Step;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Filters\BaseFilter;
 use Illuminate\Support\Arr;
@@ -16,6 +16,7 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
+use Modules\Xot\Actions\File\SvgExistsAction;
 use Modules\Xot\Actions\GetTransKeyAction;
 use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
@@ -29,8 +30,7 @@ class AutoLabelAction
      * Undocumented function.
      * return number of input added.
      *
-     * @param Field|BaseFilter|Column|Step|Action|Action|Section $component
-     *
+     * @param  Field|BaseFilter|Column|Step|Action|Action|Section  $component
      * @return Field|BaseFilter|Column|Step|Action|Action|Section
      */
     public function execute($component, string $type = 'label')
@@ -52,10 +52,11 @@ class AutoLabelAction
 
             if (isset($item['class']) && Str::startsWith($item['class'], 'Modules\\')) {
                 $reflection_class = new ReflectionClass($item['class']);
-                if (!$reflection_class->isAbstract()) {
+                if (! $reflection_class->isAbstract()) {
                     return true;
                 }
             }
+
             return false;
         });
 
@@ -80,26 +81,26 @@ class AutoLabelAction
 
         if ($component instanceof Step) {
             Assert::string($val = $component->getLabel());
-            $label_tkey = $trans_key . '.steps.' . $val . '';
+            $label_tkey = $trans_key.'.steps.'.$val.'';
         }
         if ($label_tkey === null && $component instanceof Section) {
             $val = $component->getHeading();
             if ($val === null) {
                 $val = 'empty';
             }
-            if (!is_string($val)) {
+            if (! is_string($val)) {
                 $val = app(SafeStringCastAction::class)->execute($val);
             }
-            $label_tkey = $trans_key . '.sections.' . $val . '';
+            $label_tkey = $trans_key.'.sections.'.$val.'';
         }
         if ($label_tkey === null && method_exists($component, 'getName')) {
             Assert::string($val = $component->getName());
-            $label_tkey = $trans_key . '.fields.' . $val . '';
+            $label_tkey = $trans_key.'.fields.'.$val.'';
         }
 
         if ($component instanceof Action) {
             Assert::string($val = $component->getName());
-            $label_tkey = $trans_key . '.actions.' . $val . '';
+            $label_tkey = $trans_key.'.actions.'.$val.'';
         }
 
         /*
@@ -135,14 +136,14 @@ class AutoLabelAction
          *
          */
 
-        $label_key = $label_tkey . '.' . Str::snake($type);
+        $label_key = $label_tkey.'.'.Str::snake($type);
 
         if (Str::startsWith($label_key, 'media::attachments_schema')) {
             dddx([
                 'message' => 'preso',
                 'label_key' => $label_key,
                 'label_tkey' => $label_tkey,
-                //'val'=>$val,
+                // 'val'=>$val,
                 'type' => $type,
                 'component' => $component,
                 'class' => $class,
@@ -151,24 +152,31 @@ class AutoLabelAction
         }
 
         $label = trans($label_key);
-        if (is_string($label) && $label_key === $label) { //se non esiste la traduzione, la salvo
+        if (is_string($label) && $label_key === $label) { // se non esiste la traduzione, la salvo
             app(SaveTransAction::class)->execute($label_key, $val);
         }
-        if (is_string($label) && $label_key !== $label) { //se esiste la traduzione, la aggiorno
-            if (method_exists($component, $type)) {
+        if (is_string($label) && $label_key !== $label && method_exists($component, $type)) {
+            
                 if (strip_tags($label) !== $label && in_array($type, ['helperText'], strict: true)) {
                     $component->{$type}(new HtmlString($label));
                 } else {
                     $component->{$type}($label);
                 }
-            }
+                
 
-            //if (method_exists($component, 'tooltip')) {
+                if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
+                    //$component->{$type}(null);
+                }
+
+                
+            
+
+            // if (method_exists($component, 'tooltip')) {
             //    $component->tooltip($label);
-            //}
+            // }
         }
-        if (!is_string($label)) {
-            $component->label('FIX:' . $label_key);
+        if (! is_string($label)) {
+            $component->label('FIX:'.$label_key);
         }
 
         return $component;

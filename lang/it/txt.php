@@ -1,8 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
-
 return [
     'fields' => [
         'email' => [
@@ -430,7 +427,7 @@ return [
         'authenticate' => [
             'label' => 'Autentica',
             'tooltip' => 'Effettua il login nel sistema',
-            'icon' => 'heroicon-o-login',
+            'icon' => 'ui-login',
             'color' => 'primary',
         ],
         'login' => [
@@ -459,6 +456,14 @@ return [
         ],
         'createAnother' => [
             'label' => 'createAnother',
+        ],
+        'hidePassword' => [
+            'icon' => 'hidePassword',
+            'label' => 'hidePassword',
+        ],
+        'showPassword' => [
+            'icon' => 'ui-showPassword',
+            'label' => 'showPassword',
         ],
     ],
 ];
