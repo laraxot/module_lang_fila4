@@ -155,29 +155,53 @@ class AutoLabelAction
         if (is_string($label) && $label_key === $label) { // se non esiste la traduzione, la salvo
             app(SaveTransAction::class)->execute($label_key, $val);
         }
+        if (! is_string($label)) {
+            $component->label('FIX:'.$label_key);
+            return $component;
+        }
+        if($label_key == $label || !method_exists($component, $type)){
+            return $component;
+        }
+        /*
         if (is_string($label) && $label_key !== $label && method_exists($component, $type)) {
             
+                if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
+                    
+                    $component->{$type}('heroicon-o-question-mark-circle');
+                    return $component;
+                }
                 if (strip_tags($label) !== $label && in_array($type, ['helperText'], strict: true)) {
                     $component->{$type}(new HtmlString($label));
                 } else {
                     $component->{$type}($label);
                 }
-                
-
-                if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
-                    //$component->{$type}(null);
-                }
-
-                
-            
-
-            // if (method_exists($component, 'tooltip')) {
-            //    $component->tooltip($label);
-            // }
+             
         }
-        if (! is_string($label)) {
-            $component->label('FIX:'.$label_key);
+        */
+        if ($type === 'icon' && app(SvgExistsAction::class)->execute($label)) {
+            $component->iconButton();
+            $component->{$type}($label);
+            //$component->label('FIX:'.$label_key);
+            return $component;
         }
+        if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
+            //$component->{$type}($label);
+            $component->iconButton();
+            //$component->label('FIX:'.$label_key);
+            // $component->tooltip('FIX:'.$label_key);
+            $component->{$type}('heroicon-o-question-mark-circle');
+            //$component->{$type}(null);
+            return $component;
+        }
+
+        if (strip_tags($label) !== $label && in_array($type, ['helperText'], strict: true)) {
+            $component->{$type}(new HtmlString($label));
+            return $component;
+        } 
+        
+        $component->{$type}($label);
+        
+        
 
         return $component;
     }

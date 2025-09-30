@@ -118,10 +118,12 @@ class LangServiceProvider extends XotBaseServiceProvider
 
         Action::configureUsing(function (Action $component) {
             $component = app(AutoLabelAction::class)->execute($component);
-            // if (method_exists($component, 'iconButton')) {
-            // $component->iconButton();
-            // }
-            //$component = app(AutoLabelAction::class)->execute($component, 'icon');
+            $component = app(AutoLabelAction::class)->execute($component, 'icon');
+            
+            if (method_exists($component, 'iconButton')) {
+                //$component->iconButton();
+            }
+            
             // if (method_exists($component, 'icon')) {
             // $component->icon('heroicon-o-plus');
             // }
@@ -129,6 +131,7 @@ class LangServiceProvider extends XotBaseServiceProvider
             // ->translateLabel()
             return $component;
         });
+        
 
         // Method Filament\Widgets\StatsOverviewWidget\Stat::configureUsing does not exist.
         /*
