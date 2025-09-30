@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Lang\Filament\Forms\Components;
+namespace Modules\Notify\Filament\Forms\Components;
 
 use Illuminate\Support\Arr;
 use Modules\Xot\Actions\File\AssetAction;
