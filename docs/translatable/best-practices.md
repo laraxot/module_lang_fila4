@@ -182,7 +182,7 @@ use Filament\Forms\Components\Tabs;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 
-public static function form(Form $form): Form
+public static function form(\Filament\Schemas\Schema $form): \Filament\Schemas\Schema
 {
     return $form
         ->schema([
