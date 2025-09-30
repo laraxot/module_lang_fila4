@@ -5,8 +5,13 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
+<<<<<<< HEAD
 use Filament\Schemas\Components\Section;
 use Override;
+=======
+use Override;
+use Filament\Schemas\Components\Section;
+>>>>>>> f5327e8 (.)
 use Filament\Actions;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
