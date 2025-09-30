@@ -119,7 +119,11 @@ return [
 
 ## Documentazione Aggiornata
 
+<<<<<<< HEAD
 - [Chart Module - Translation Syntax Errors](../../laravel/Modules/Chart/project_docs/translation_syntax_errors.md)
+=======
+- [Chart Module - Translation Syntax Errors](../../laravel/Modules/Chart/docs/translation_syntax_errors.md)
+>>>>>>> 6bf1e98 (.)
 - [Translation Best Practices](translation-best-practices.md)
 - [PHPStan Configuration](phpstan-configuration.md)
 
@@ -151,12 +155,21 @@ return [
 
 ## Collegamenti
 
+<<<<<<< HEAD
 - [Chart Module Documentation](../../laravel/Modules/Chart/project_docs/translation_syntax_errors.md)
 - [FormBuilder Module Documentation](../../laravel/Modules/FormBuilder/project_docs/)
 - [Job Module Documentation](../../laravel/Modules/Job/project_docs/)
 - [Lang Module Documentation](../../laravel/Modules/Lang/project_docs/)
 - [Notify Module Documentation](../../laravel/Modules/Notify/project_docs/)
 - [UI Module Documentation](../../laravel/Modules/UI/project_docs/)
+=======
+- [Chart Module Documentation](../../laravel/Modules/Chart/docs/translation_syntax_errors.md)
+- [FormBuilder Module Documentation](../../laravel/Modules/FormBuilder/docs/)
+- [Job Module Documentation](../../laravel/Modules/Job/docs/)
+- [Lang Module Documentation](../../laravel/Modules/Lang/docs/)
+- [Notify Module Documentation](../../laravel/Modules/Notify/docs/)
+- [UI Module Documentation](../../laravel/Modules/UI/docs/)
+>>>>>>> 6bf1e98 (.)
 
 ## Ultimo Aggiornamento
 2025-01-06 - Correzione completa errori sintassi file traduzione ✅ COMPLETATO
