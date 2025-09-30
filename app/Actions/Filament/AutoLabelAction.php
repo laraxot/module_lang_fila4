@@ -100,7 +100,11 @@ class AutoLabelAction
 
         /*
          * $component_parent=get_parent_class($component);
+<<<<<<< HEAD
          * if(in_array($component_parent,['Filament\Forms\Components\Component'])){
+=======
+         * if(in_array($component_parent,['Filament\Schemas\Components\Component'])){
+>>>>>>> efa9ef8 (.)
          * $component_key=Str::of(class_basename($component))->plural()->snake()->toString();
          * }else{
          * $component_key=Str::of(class_basename($component_parent))->plural()->snake()->toString();
