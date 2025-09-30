@@ -2,22 +2,43 @@
 # LARAXOT MODULE LANG - .GITIGNORE
 # ==============================================
 # Modulo Lang Laraxot - Template standardizzato
+<<<<<<< HEAD
 # Ultimo aggiornamento: 2025-01-06
+=======
+# Ultimo aggiornamento: 2025-01-31
+>>>>>>> 6bf1e98 (.)
 # ==============================================
 
 # ==============================================
 # DEPENDENCIES & PACKAGES
 # ==============================================
+<<<<<<< HEAD
 vendor/
 node_modules/
 package-lock.json
 yarn.lock
 composer.lock
+=======
+/vendor/
+/vendor
+/node_modules/
+/node_modules
+/docs/vendor/
+package-lock.json
+yarn.lock
+composer.lock
+yarn-error.log
+npm-debug.log
+>>>>>>> 6bf1e98 (.)
 
 # ==============================================
 # BUILD & COMPILED FILES
 # ==============================================
 /build
+<<<<<<< HEAD
+=======
+/build/
+>>>>>>> 6bf1e98 (.)
 build/
 dist/
 docs/cache/
@@ -115,6 +136,7 @@ docs/phpstan/
 docs/cache/
 
 # ==============================================
+<<<<<<< HEAD
 # OLD DIRECTORIES (LEGACY CLEANUP)
 # ==============================================
 resources/views/Components_old/
@@ -128,6 +150,21 @@ database/Factories_old
 database/Factories_
 database_old/
 database_old
+=======
+# LANGUAGE FILES
+# ==============================================
+lang/lang/
+resources/lang/
+
+# ==============================================
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
+resources/views/Components_old/
+database/Migrations_old/
+database/Seeders_old/
+database/Factories_old/
+database_old/
+>>>>>>> 6bf1e98 (.)
 
 # ==============================================
 # MODULE SPECIFIC - LANG
@@ -153,8 +190,15 @@ test_translations.sql
 # END OF LANG .GITIGNORE
 # ==============================================
 
+<<<<<<< HEAD
 
 # 🚫 File specifici del progetto
 *.fila2
 laravel
 public_html
+=======
+# 🚫 File specifici del progetto
+*.fila2
+laravel
+public_html
+>>>>>>> 6bf1e98 (.)
