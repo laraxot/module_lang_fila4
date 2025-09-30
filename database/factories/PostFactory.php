@@ -9,15 +9,7 @@ use Modules\Lang\Models\Post;
 
 /**
  * Post Factory
-<<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
- * 
->>>>>>> 8b0b6ac (.)
-=======
- *
->>>>>>> 1c4a063 (.)
  * @extends Factory<Post>
  */
 class PostFactory extends Factory
@@ -39,15 +31,7 @@ class PostFactory extends Factory
 
     public function published(): static
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         return $this->state(fn(array $_attributes): array => [
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> 8b0b6ac (.)
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> 1c4a063 (.)
             'status' => 'published',
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ]);
@@ -55,15 +39,7 @@ class PostFactory extends Factory
 
     public function draft(): static
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         return $this->state(fn(array $_attributes): array => [
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> 8b0b6ac (.)
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> 1c4a063 (.)
             'status' => 'draft',
             'published_at' => null,
         ]);
@@ -71,15 +47,7 @@ class PostFactory extends Factory
 
     public function italian(): static
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         return $this->state(fn(array $_attributes): array => [
-=======
-        return $this->state(fn (array $attributes): array => [
->>>>>>> 8b0b6ac (.)
-=======
-        return $this->state(fn(array $_attributes): array => [
->>>>>>> 1c4a063 (.)
             'locale' => 'it',
         ]);
     }

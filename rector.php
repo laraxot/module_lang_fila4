@@ -12,10 +12,6 @@ use RectorLaravel\Set\LaravelSetList;
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
         __DIR__ . '/Modules',
         __DIR__ . '/app',
         __DIR__ . '/bootstrap',
@@ -25,20 +21,6 @@ return static function (RectorConfig $rectorConfig): void {
         __DIR__ . '/resources',
         __DIR__ . '/routes',
         __DIR__ . '/tests',
-<<<<<<< HEAD
-=======
-        __DIR__.'/Modules',
-        __DIR__.'/app',
-        __DIR__.'/bootstrap',
-        __DIR__.'/config',
-        __DIR__.'/lang',
-        __DIR__.'/public',
-        __DIR__.'/resources',
-        __DIR__.'/routes',
-        __DIR__.'/tests',
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     ]);
 
     // register a single rule

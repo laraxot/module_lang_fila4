@@ -103,23 +103,10 @@ class Post extends Model
     use Updater;
 
     /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
      * public function getUrlAttribute($value) {
      *
      * }
      */
-<<<<<<< HEAD
-=======
-    public function getUrlAttribute($value) {
-
-    }
-    */
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
 
     final public const SEARCHABLE_FIELDS = ['title', 'guid', 'txt'];
 
@@ -144,30 +131,16 @@ class Post extends Model
 
     /** @var list<string> */
     protected $fillable = [
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
         'id',
         'user_id',
         'post_id',
         'lang',
         'guid',
-<<<<<<< HEAD
-=======
-        'id', 'user_id', 'post_id', 'lang', 'guid',
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         'title',
         'subtitle',
         'post_type',
         'txt',
         // ------ IMAGE ---------
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
         'image_src',
         'image_alt',
         'image_title',
@@ -178,17 +151,6 @@ class Post extends Model
         // ------ BUFFER ----
         'url',
         'url_lang', // buffer
-<<<<<<< HEAD
-=======
-        'image_src', 'image_alt', 'image_title',
-        // ------ SEO FIELDS -----
-        'meta_description', 'meta_keywords', // seo
-        'author_id',
-        // ------ BUFFER ----
-        'url', 'url_lang', // buffer
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         'image_resize_src', // buffer
     ];
 
@@ -202,40 +164,17 @@ class Post extends Model
     protected $keyType = 'string';
 
     /*
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
      * public function getRouteKeyName() {
      * return inAdmin() ? 'guid' : 'post_id';
      * }
      */
-<<<<<<< HEAD
-=======
-    public function getRouteKeyName() {
-        return inAdmin() ? 'guid' : 'post_id';
-    }
-    */
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
 
     /**
      * Get the options for generating the slug.
      */
     public function getSlugOptions(): SlugOptions
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
         return SlugOptions::create()->generateSlugsFrom('title')->saveSlugsTo('guid');
-=======
-        return SlugOptions::create()
-            ->generateSlugsFrom('title')
-            ->saveSlugsTo('guid');
->>>>>>> 8b0b6ac (.)
-=======
-        return SlugOptions::create()->generateSlugsFrom('title')->saveSlugsTo('guid');
->>>>>>> 1c4a063 (.)
     }
 
     // -------- relationship ------
@@ -248,10 +187,6 @@ class Post extends Model
     }
 
     /* deprecated
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
      * public function archive() {
      * $lang = $this->lang;
      * $post_type = $this->post_type;
@@ -269,28 +204,6 @@ class Post extends Model
      * return $rows;
      * }
      */
-<<<<<<< HEAD
-=======
-    public function archive() {
-        $lang = $this->lang;
-        $post_type = $this->post_type;
-        $obj = $this->getLinkedModel();
-        $table = $obj->getTable();
-        $post_table = with(new Post())->getTable();
-        $rows = $obj->join($post_table, $post_table.'.post_id', $table.'.post_id')
-                    ->where('lang', $lang)
-                    ->where($post_table.'.post_type', $post_type)
-                    ->where($post_table.'.guid', '!=', $post_type)
-                    ->orderBy($table.'.updated_at', 'desc')
-                    ->with('post')
-                    ;
-
-        return $rows;
-    }
-    */
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
 
     // end function
     // -------------- MUTATORS ------------------
@@ -304,24 +217,12 @@ class Post extends Model
     /**
      * Undocumented function.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function getTitleAttribute(null|string $value): null|string
-=======
-    public function getTitleAttribute(?string $value): ?string
->>>>>>> 8b0b6ac (.)
-=======
-    public function getTitleAttribute(null|string $value): null|string
->>>>>>> 1c4a063 (.)
     {
         if (null !== $value) {
             return $value;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
         if (!empty($this->attributes['post_type'])) {
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
@@ -336,23 +237,6 @@ class Post extends Model
             $postType = is_string($this->post_type) ? $this->post_type : '';
             $postId = is_scalar($this->post_id) ? ((string) $this->post_id) : '';
             $value = $postType . ' ' . $postId;
-<<<<<<< HEAD
-=======
-        if (! empty($this->attributes['post_type'])) {
-            // Assicuriamoci che i valori siano stringhe prima della concatenazione
-            $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
-                ? $this->attributes['post_type'] : '';
-            $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
-                ? (string) $this->attributes['post_id'] : '';
-            $value = $postType.' '.$postId;
-        } else {
-            // Assicuriamoci che post_type e post_id siano stringhe
-            $postType = is_string($this->post_type) ? $this->post_type : '';
-            $postId = is_scalar($this->post_id) ? (string) $this->post_id : '';
-            $value = $postType.' '.$postId;
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         }
 
         $this->title = $value;
@@ -365,31 +249,15 @@ class Post extends Model
     /**
      * ---.
      */
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function getGuidAttribute(null|string $value): null|string
     {
         if (\is_string($value) && '' !== $value && !str_contains($value, ' ')) {
-=======
-    public function getGuidAttribute(?string $value): ?string
-    {
-        if (\is_string($value) && '' !== $value && ! str_contains($value, ' ')) {
->>>>>>> 8b0b6ac (.)
-=======
-    public function getGuidAttribute(null|string $value): null|string
-    {
-        if (\is_string($value) && '' !== $value && !str_contains($value, ' ')) {
->>>>>>> 1c4a063 (.)
             return $value;
         }
         $value = $this->title;
         if ('' === $value) {
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
                 ? $this->attributes['post_type']
                 : '';
             $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
@@ -399,18 +267,6 @@ class Post extends Model
         }
         if (null === $value) {
             $value = 'u-' . random_int(1, 1000);
-<<<<<<< HEAD
-=======
-                ? $this->attributes['post_type'] : '';
-            $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
-                ? (string) $this->attributes['post_id'] : '';
-            $value = $postType.' '.$postId;
-        }
-        if (null === $value) {
-            $value = 'u-'.random_int(1, 1000);
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
         }
         $value = Str::slug($value);
         $this->guid = $value;
@@ -419,15 +275,7 @@ class Post extends Model
         return $value;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function getTxtAttribute(null|string $value): null|string
-=======
-    public function getTxtAttribute(?string $value): ?string
->>>>>>> 8b0b6ac (.)
-=======
-    public function getTxtAttribute(null|string $value): null|string
->>>>>>> 1c4a063 (.)
     {
         return $value ?? '';
     }
@@ -455,16 +303,6 @@ class Post extends Model
             'published_at' => 'datetime',
         ];
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 // end class
-=======
-}// end class
->>>>>>> 8b0b6ac (.)
-=======
-}
-
-// end class
->>>>>>> 1c4a063 (.)
