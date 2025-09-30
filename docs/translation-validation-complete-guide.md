@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 # Guida Completa alla Validazione delle Traduzioni - SaluteOra
 
 ## Panoramica
 
 Questa guida documenta il processo completo di validazione delle traduzioni nel progetto SaluteOra, seguendo i principi DRY (Don't Repeat Yourself) e KISS (Keep It Simple, Stupid).
-=======
-# Guida Completa alla Validazione delle Traduzioni - 
-
-## Panoramica
-
-Questa guida documenta il processo completo di validazione delle traduzioni nel progetto , seguendo i principi DRY (Don't Repeat Yourself) e KISS (Keep It Simple, Stupid).
->>>>>>> cbfeb6b (.)
 
 ## Regole Fondamentali
 
@@ -137,11 +129,7 @@ Ogni campo di traduzione DEVE includere:
 
 ### 1. Helper Text Audit
 ```bash
-<<<<<<< HEAD
 cd /var/www/html/_bases/base_saluteora/laravel
-=======
-cd /var/www/html/_bases/base_techplanner_fila3_mono/laravel
->>>>>>> cbfeb6b (.)
 php docs/helper-text-audit-script.php
 ```
 
@@ -195,11 +183,7 @@ php docs/obbligatorio-audit-script.php
 3. Verificare conformità agli standard
 4. Documentare il completamento
 
-<<<<<<< HEAD
 ## Status Progetto SaluteOra
-=======
-## Status Progetto 
->>>>>>> cbfeb6b (.)
 
 ### ✅ Validazioni Completate (2025-08-08)
 
@@ -249,11 +233,7 @@ php docs/obbligatorio-audit-script.php
 
 ### Documentazione Moduli
 - [User Module - City Field Refactor](../Modules/User/docs/translation-city-field-refactor-2025-08-08.md)
-<<<<<<< HEAD
 - [SaluteOra Module - Refactor Summary](../Modules/SaluteOra/docs/translation-refactor-summary-2025-08-08.md)
-=======
-- [ Module - Refactor Summary](../Modules/<nome modulo>/docs/translation-refactor-summary-2025-08-08.md)
->>>>>>> cbfeb6b (.)
 - [Geo Module - Helper Text Fix](../Modules/Geo/docs/helper-text-normalization-fix.md)
 
 ### Script e Tool
