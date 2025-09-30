@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Lang\Filament\Forms\Components;
+namespace Modules\Notify\Filament\Forms\Components;
 
 use Filament\Forms\Components\Select;
 use Illuminate\Support\Arr;
