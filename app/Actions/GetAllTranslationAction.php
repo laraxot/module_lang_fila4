@@ -7,15 +7,21 @@ namespace Modules\Lang\Actions;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
+<<<<<<< HEAD
 =======
 use Webmozart\Assert\Assert;
 use Spatie\QueueableAction\QueueableAction;
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 use function Safe\glob;
 
 class GetAllTranslationAction
@@ -28,6 +34,9 @@ class GetAllTranslationAction
     public function execute(): array
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         $lang = session()->get('locale');
         if (is_string($lang) && in_array($lang, ['it', 'en'], strict: true)) {
             app()->setLocale($lang);
@@ -44,6 +53,7 @@ class GetAllTranslationAction
             return [
                 'key' => $module_low . '::' . basename($file, '.php'),
                 'path' => $file,
+<<<<<<< HEAD
 =======
         $lang=session()->get('locale');
         if(is_string($lang) && in_array($lang,['it','en'])){
@@ -59,6 +69,8 @@ class GetAllTranslationAction
                 'key'=>$module_low.'::'.basename($file,'.php'),
                 'path'=>$file,
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
             ];
         });
         return $files;

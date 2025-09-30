@@ -1,11 +1,17 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
 =======
 >>>>>>> 8b0b6ac (.)
+=======
+declare(strict_types=1);
+
+
+>>>>>>> 1c4a063 (.)
 namespace Modules\Lang\Database\Factories;
 
 use Modules\Lang\Models\TranslationFile;
@@ -27,6 +33,9 @@ class TranslationFileFactory extends Factory
     }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)

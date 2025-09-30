@@ -8,15 +8,21 @@ use Exception;
 use Illuminate\Support\Facades\File;
 use Spatie\QueueableAction\QueueableAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 
 use function Safe\exec;
 use function Safe\file_put_contents;
 use function Safe\tempnam;
+<<<<<<< HEAD
 =======
 use function Safe\tempnam;
 use function Safe\file_put_contents;
 use function Safe\exec;
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 use function Safe\unlink;
 
 class WriteTranslationFileAction
@@ -74,10 +80,14 @@ class WriteTranslationFileAction
         // Crea la directory di backup se non esiste
         if (!File::exists($backupDir)) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             File::makeDirectory($backupDir, 0o755, true);
 =======
             File::makeDirectory($backupDir, 0755, true);
 >>>>>>> 8b0b6ac (.)
+=======
+            File::makeDirectory($backupDir, 0o755, true);
+>>>>>>> 1c4a063 (.)
         }
 
         // Copia il file
@@ -107,10 +117,14 @@ class WriteTranslationFileAction
 
         if ($returnCode !== 0) {
 <<<<<<< HEAD
+<<<<<<< HEAD
             $error = implode("\n", $output ?? []);
 =======
             $error = implode("\n", $output);
 >>>>>>> 8b0b6ac (.)
+=======
+            $error = implode("\n", $output ?? []);
+>>>>>>> 1c4a063 (.)
             throw new Exception("Sintassi PHP non valida: {$error}");
         }
     }
@@ -134,7 +148,11 @@ class WriteTranslationFileAction
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 } 
 >>>>>>> 8b0b6ac (.)
+=======
+}
+>>>>>>> 1c4a063 (.)

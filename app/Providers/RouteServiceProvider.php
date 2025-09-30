@@ -35,6 +35,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
      * Bootstrap the module services.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
     public function boot(): void
@@ -43,10 +44,14 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         // $this->registerLang(); // ✅ Temporaneamente disabilitato per debug
     }
 >>>>>>> 8b0b6ac (.)
+=======
+    
+>>>>>>> 1c4a063 (.)
 
     /**
      * Register the module services.
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
     
 =======
@@ -56,6 +61,9 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         // $this->registerLang();
     }
 >>>>>>> 8b0b6ac (.)
+=======
+    
+>>>>>>> 1c4a063 (.)
 
     /**
      * Registra le impostazioni di lingua basate sulla configurazione.
@@ -64,11 +72,15 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     {
         /** @var array<string, array<string, string>>|null $locales */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
         $locales = config()->has('laravellocalization.supportedLocales')
             ? config('laravellocalization.supportedLocales')
             : null;
 
         if (!\is_array($locales)) {
+<<<<<<< HEAD
 =======
         $locales = config()->has('laravellocalization.supportedLocales') 
             ? config('laravellocalization.supportedLocales') 
@@ -76,6 +88,8 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
         if (! \is_array($locales)) {
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
             $locales = ['it' => ['name' => 'it'], 'en' => ['name' => 'en']];
         }
 
@@ -84,11 +98,15 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
         /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
          * if (! \is_array($langs)) {
          * throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
          * }
          * \getRouteParameters();
          */
+<<<<<<< HEAD
 =======
         if (! \is_array($langs)) {
             throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
@@ -96,6 +114,8 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         \getRouteParameters();
         */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
         $n = 1;
         if (inAdmin()) {
             $n = 3;

@@ -1,6 +1,9 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 declare(strict_types=1);
 
 
@@ -15,6 +18,7 @@ return [
      * | these language lines according to your application's requirements.
      * |
      */
+<<<<<<< HEAD
 =======
 return [
     /*
@@ -28,14 +32,19 @@ return [
     |
     */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
     'failed' => 'Credenziali non valide.',
     'password' => 'La password fornita non è corretta.',
     'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'login' => [
         'title' => 'Accedi',
         'email' => 'Email',
@@ -48,9 +57,12 @@ return [
         'link' => 'Accedi',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'register' => [
         'title' => 'Registati',
         'name' => 'Nome',
@@ -62,9 +74,12 @@ return [
         'link' => 'Registrati',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'verify' => [
         'title' => 'Verifica il tuo indirizzo email',
         'success' => 'Un nuovo link di verifica è stato inviato al tuo indirizzo email.',
@@ -72,18 +87,24 @@ return [
         'another_request' => 'clicca qui per richiederne un\'altra',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'forgot_password' => [
         'title' => 'Password dimenticata',
         'email' => 'Email',
         'submit' => 'Invia link di reset',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'reset_password' => [
         'title' => 'Reimposta la password',
         'email' => 'Email',
@@ -92,18 +113,24 @@ return [
         'submit' => 'Reimposta Password',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'confirm_password' => [
         'title' => 'Conferma la password',
         'password' => 'Password',
         'submit' => 'Conferma',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'logout' => [
         'submit' => 'Logout',
         'title' => 'Logout',
@@ -119,9 +146,12 @@ return [
         'processing' => 'Disconnessione in corso...',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'user_dropdown' => [
         'manage_account' => 'Gestisci Account',
         'profile' => 'Profilo',
