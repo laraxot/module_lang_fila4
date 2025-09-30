@@ -5,10 +5,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-<<<<<<< HEAD
-=======
-use Override;
->>>>>>> a87590b (.)
 use Filament\Schemas\Components\Section;
 use Override;
 use Filament\Actions;
