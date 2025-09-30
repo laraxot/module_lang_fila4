@@ -4,21 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Widgets;
 
-use Filament\Schemas\Components\Component;
-use Override;
 use Exception;
-use Log;
+use Filament\Schemas\Components\Component;
 use Illuminate\Support\Collection;
+use Log;
 use Modules\Lang\Models\Language;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
+use Override;
 
 /**
  * Widget per il cambio di lingua.
  *
- * Fornisce un selettore dropdown per cambiare la lingua dell'interfaccia.
- * Utilizza il sistema di localizzazione di Laravel per gestire le traduzioni.
- *
- * @package Modules\Lang\Filament\Widgets *
  * Fornisce un selettore dropdown per cambiare la lingua dell'interfaccia.
  * Utilizza il sistema di localizzazione di Laravel per gestire le traduzioni.
  */
@@ -58,7 +54,7 @@ class LanguageSwitcherWidget extends XotBaseWidget
         return [
             'current_locale' => app()->getLocale(),
             'available_locales' => $this->getAvailableLocales(),
-            'widget_id' => 'language-switcher-' . uniqid(),
+            'widget_id' => 'language-switcher-'.uniqid(),
         ];
     }
 
@@ -87,7 +83,7 @@ class LanguageSwitcherWidget extends XotBaseWidget
                     ->get(['code', 'name', 'native_name', 'flag']);
 
                 if ($languages->isNotEmpty()) {
-                    return $languages->map(fn($language) => [
+                    return $languages->map(fn ($language) => [
                         'code' => $language->code,
                         'name' => $language->name,
                         'native_name' => $language->native_name ?? $language->name,
@@ -136,9 +132,9 @@ class LanguageSwitcherWidget extends XotBaseWidget
     /**
      * Cambia la lingua corrente.
      *
-     * @param string $locale Codice della lingua
-     * @return void     *
      * @param  string  $locale  Codice della lingua
+     * @param  string  $locale  Codice della lingua
+     * @return void *
      */
     public function changeLanguage(string $locale): void
     {
@@ -153,19 +149,18 @@ class LanguageSwitcherWidget extends XotBaseWidget
 
     /**
      * Verifica se il locale è valido.
-     *
-     * @param string $locale
-     * @return bool     */
+     */
     protected function isValidLocale(string $locale): bool
     {
         $availableLocales = $this->getAvailableLocales();
+
         return $availableLocales->contains('code', $locale);
     }
 
     /**
      * Genera l'URL per una specifica lingua.
      *
-     * @param string $locale Codice della lingua     *
+     * @param  string  $locale  Codice della lingua     *
      * @param  string  $locale  Codice della lingua
      * @return string URL con la lingua specificata
      */
@@ -175,15 +170,15 @@ class LanguageSwitcherWidget extends XotBaseWidget
         $currentLocale = app()->getLocale();
 
         // Se l'URL contiene già la lingua corrente, sostituiscila
-        if (str_contains($currentUrl, '/' . $currentLocale . '/')) {
-            return str_replace('/' . $currentLocale . '/', '/' . $locale . '/', $currentUrl);
-        } elseif (str_ends_with($currentUrl, '/' . $currentLocale)) {
-            return str_replace('/' . $currentLocale, '/' . $locale, $currentUrl);
+        if (str_contains($currentUrl, '/'.$currentLocale.'/')) {
+            return str_replace('/'.$currentLocale.'/', '/'.$locale.'/', $currentUrl);
+        } elseif (str_ends_with($currentUrl, '/'.$currentLocale)) {
+            return str_replace('/'.$currentLocale, '/'.$locale, $currentUrl);
         } else {
             // Aggiunge la lingua all'URL
             $path = request()->getPathInfo();
 
-            return url($locale . ($path === '/' ? '' : $path));
+            return url($locale.($path === '/' ? '' : $path));
         }
     }
 }

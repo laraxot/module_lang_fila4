@@ -15,16 +15,16 @@ class TransArrayAction
 {
     use QueueableAction;
 
-    public null|string $transKey;
+    public ?string $transKey;
 
     /**
      * Esegue la traduzione di una collezione.
      *
      * @return array<int|string, string>
      */
-    public function execute(array $array, null|string $transKey): array
+    public function execute(array $array, ?string $transKey): array
     {
-        if (null === $transKey) {
+        if ($transKey === null) {
             return Arr::map($array, SafeStringCastAction::cast(...));
         }
 
@@ -36,23 +36,22 @@ class TransArrayAction
     /**
      * Traduce un singolo elemento.
      *
-     * @param mixed $item L'elemento da tradurre
-     *
+     * @param  mixed  $item  L'elemento da tradurre
      * @return string L'elemento tradotto o l'elemento originale se la traduzione non esiste
      */
     public function trans(mixed $item): string
     {
         // Converte l'item in stringa se non lo è già
-        if (!\is_string($item)) {
+        if (! \is_string($item)) {
             $item = SafeStringCastAction::cast($item);
         }
 
-        if (empty($item) || null === $this->transKey) {
+        if (empty($item) || $this->transKey === null) {
             return $item;
         }
 
         // Prima prova la traduzione diretta
-        $key = $this->transKey . '.' . $item . '.label';
+        $key = $this->transKey.'.'.$item.'.label';
 
         $trans = trans($key);
 
@@ -63,7 +62,7 @@ class TransArrayAction
 
         // Seconda prova: sostituisce i punti con underscore
         $itemWithUnderscore = str_replace('.', '_', $item);
-        $keyWithUnderscore = $this->transKey . '.' . $itemWithUnderscore;
+        $keyWithUnderscore = $this->transKey.'.'.$itemWithUnderscore;
         $transWithUnderscore = trans($keyWithUnderscore);
 
         // Se la traduzione con underscore esiste ed è una stringa, la restituisce

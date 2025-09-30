@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Modules\Lang\Datas;
 
 use Exception;
-use Modules\Xot\Actions\File\FixPathAction;
 use Illuminate\Support\Facades\File;
+use Modules\Xot\Actions\File\FixPathAction;
 use Spatie\LaravelData\Data;
 use Webmozart\Assert\Assert;
 
@@ -21,7 +21,7 @@ class TranslationData extends Data
 
     public string $item;
 
-    public null|string $filename = null;
+    public ?string $filename = null;
 
     // public string $key;
     public int|string|null $value = null;
@@ -33,15 +33,16 @@ class TranslationData extends Data
         }
         $hints = app('translator')->getLoader()->namespaces();
         $path = collect($hints)->get($this->namespace);
-        if (null === $path) {
-            throw new Exception('[' . __LINE__ . '][' . class_basename($this) . ']');
+        if ($path === null) {
+            throw new Exception('['.__LINE__.']['.class_basename($this).']');
         }
 
         // Verifichiamo che $path sia una stringa
         Assert::string($path, 'Il percorso del namespace deve essere una stringa');
 
         $this->filename = app(FixPathAction::class)
-            ->execute($path . '/' . $this->lang . '/' . $this->group . '.php');
+            ->execute($path.'/'.$this->lang.'/'.$this->group.'.php');
+
         return $this->filename;
     }
 
@@ -52,8 +53,8 @@ class TranslationData extends Data
         if (File::exists($filename)) {
             $data = File::getRequire($filename);
         }
-        if (!is_array($data)) {
-            throw new Exception('[' . __LINE__ . '][' . class_basename($this) . ']');
+        if (! is_array($data)) {
+            throw new Exception('['.__LINE__.']['.class_basename($this).']');
         }
 
         return $data;

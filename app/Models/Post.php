@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-use Illuminate\Database\Eloquent\Builder;
-use Modules\Xot\Contracts\ProfileContract;
 use Eloquent;
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// --- traits ---
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-// use Laravel\Scout\Searchable;
+// --- traits ---
 use Illuminate\Support\Carbon;
+// use Laravel\Scout\Searchable;
 use Illuminate\Support\Str;
+use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Traits\Updater;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -22,38 +22,39 @@ use Spatie\Sluggable\SlugOptions;
 /**
  * Modules\Lang\Models\Post.
  *
- * @property int             $id
- * @property int|null        $user_id
- * @property string|null     $post_type
- * @property int|null        $post_id
- * @property string|null     $lang
- * @property string|null     $title
- * @property string|null     $subtitle
- * @property string|null     $guid
- * @property string|null     $txt
- * @property string|null     $image_src
- * @property string|null     $image_alt
- * @property string|null     $image_title
- * @property string|null     $meta_description
- * @property string|null     $meta_keywords
- * @property int|null        $author_id
- * @property Carbon|null     $created_at
- * @property Carbon|null     $updated_at
- * @property int|null        $category_id
- * @property string|null     $image
- * @property string|null     $content
- * @property int|null        $published
- * @property string|null     $created_by
- * @property string|null     $updated_by
- * @property string|null     $url
- * @property array|null      $url_lang
- * @property array|null      $image_resize_src
- * @property string|null     $linked_count
- * @property string|null     $related_count
- * @property string|null     $relatedrev_count
- * @property string|null     $linkable_type
- * @property int|null        $views_count
+ * @property int $id
+ * @property int|null $user_id
+ * @property string|null $post_type
+ * @property int|null $post_id
+ * @property string|null $lang
+ * @property string|null $title
+ * @property string|null $subtitle
+ * @property string|null $guid
+ * @property string|null $txt
+ * @property string|null $image_src
+ * @property string|null $image_alt
+ * @property string|null $image_title
+ * @property string|null $meta_description
+ * @property string|null $meta_keywords
+ * @property int|null $author_id
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property int|null $category_id
+ * @property string|null $image
+ * @property string|null $content
+ * @property int|null $published
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property string|null $url
+ * @property array|null $url_lang
+ * @property array|null $image_resize_src
+ * @property string|null $linked_count
+ * @property string|null $related_count
+ * @property string|null $relatedrev_count
+ * @property string|null $linkable_type
+ * @property int|null $views_count
  * @property Model|Eloquent $linkable
+ *
  * @method static Builder|Post newModelQuery()
  * @method static Builder|Post newQuery()
  * @method static Builder|Post query()
@@ -88,8 +89,10 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder|Post whereUrlLang($value)
  * @method static Builder|Post whereUserId($value)
  * @method static Builder|Post whereViewsCount($value)
+ *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+ *
  * @mixin Eloquent
  * @mixin IdeHelperPost
  * @mixin Eloquent
@@ -217,13 +220,13 @@ class Post extends Model
     /**
      * Undocumented function.
      */
-    public function getTitleAttribute(null|string $value): null|string
+    public function getTitleAttribute(?string $value): ?string
     {
-        if (null !== $value) {
+        if ($value !== null) {
             return $value;
         }
 
-        if (!empty($this->attributes['post_type'])) {
+        if (! empty($this->attributes['post_type'])) {
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
                 ? $this->attributes['post_type']
@@ -231,12 +234,12 @@ class Post extends Model
             $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
                 ? ((string) $this->attributes['post_id'])
                 : '';
-            $value = $postType . ' ' . $postId;
+            $value = $postType.' '.$postId;
         } else {
             // Assicuriamoci che post_type e post_id siano stringhe
             $postType = is_string($this->post_type) ? $this->post_type : '';
             $postId = is_scalar($this->post_id) ? ((string) $this->post_id) : '';
-            $value = $postType . ' ' . $postId;
+            $value = $postType.' '.$postId;
         }
 
         $this->title = $value;
@@ -249,13 +252,13 @@ class Post extends Model
     /**
      * ---.
      */
-    public function getGuidAttribute(null|string $value): null|string
+    public function getGuidAttribute(?string $value): ?string
     {
-        if (\is_string($value) && '' !== $value && !str_contains($value, ' ')) {
+        if (\is_string($value) && $value !== '' && ! str_contains($value, ' ')) {
             return $value;
         }
         $value = $this->title;
-        if ('' === $value) {
+        if ($value === '') {
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
                 ? $this->attributes['post_type']
@@ -263,10 +266,10 @@ class Post extends Model
             $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
                 ? ((string) $this->attributes['post_id'])
                 : '';
-            $value = $postType . ' ' . $postId;
+            $value = $postType.' '.$postId;
         }
-        if (null === $value) {
-            $value = 'u-' . random_int(1, 1000);
+        if ($value === null) {
+            $value = 'u-'.random_int(1, 1000);
         }
         $value = Str::slug($value);
         $this->guid = $value;
@@ -275,7 +278,7 @@ class Post extends Model
         return $value;
     }
 
-    public function getTxtAttribute(null|string $value): null|string
+    public function getTxtAttribute(?string $value): ?string
     {
         return $value ?? '';
     }

@@ -34,12 +34,10 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     /**
      * Bootstrap the module services.
      */
-    
 
     /**
      * Register the module services.
      */
-    
 
     /**
      * Registra le impostazioni di lingua basate sulla configurazione.
@@ -51,7 +49,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
             ? config('laravellocalization.supportedLocales')
             : null;
 
-        if (!\is_array($locales)) {
+        if (! \is_array($locales)) {
             $locales = ['it' => ['name' => 'it'], 'en' => ['name' => 'en']];
         }
 
@@ -72,7 +70,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         if (\in_array(request()->segment($n), $langs, false)) {
             /** @var string|null $lang */
             $lang = request()->segment($n);
-            if (null !== $lang) {
+            if ($lang !== null) {
                 app()->setLocale($lang);
             }
         }

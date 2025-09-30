@@ -20,9 +20,10 @@ class WriteTranslationFileAction
     /**
      * Scrive il contenuto in un file di traduzione con backup automatico.
      *
-     * @param string $filePath Percorso del file di traduzione
-     * @param array<string, mixed> $translations Traduzioni da scrivere
+     * @param  string  $filePath  Percorso del file di traduzione
+     * @param  array<string, mixed>  $translations  Traduzioni da scrivere
      * @return bool True se il file è stato scritto con successo
+     *
      * @throws Exception Se il file non può essere scritto
      */
     public function execute(string $filePath, array $translations): bool
@@ -53,20 +54,19 @@ class WriteTranslationFileAction
     /**
      * Crea un backup del file di traduzione.
      *
-     * @param string $filePath Percorso del file
-     * @return void
+     * @param  string  $filePath  Percorso del file
      */
     private function createBackup(string $filePath): void
     {
-        if (!file_exists($filePath)) {
+        if (! file_exists($filePath)) {
             return;
         }
 
         $backupDir = storage_path('app/backups/translations');
-        $backupPath = $backupDir . '/' . date('Y-m-d_H-i-s') . '_' . basename($filePath);
+        $backupPath = $backupDir.'/'.date('Y-m-d_H-i-s').'_'.basename($filePath);
 
         // Crea la directory di backup se non esiste
-        if (!File::exists($backupDir)) {
+        if (! File::exists($backupDir)) {
             File::makeDirectory($backupDir, 0o755, true);
         }
 
@@ -77,8 +77,8 @@ class WriteTranslationFileAction
     /**
      * Valida la sintassi PHP del contenuto.
      *
-     * @param string $phpContent Contenuto PHP da validare
-     * @return void
+     * @param  string  $phpContent  Contenuto PHP da validare
+     *
      * @throws Exception Se la sintassi PHP non è valida
      */
     private function validatePhpSyntax(string $phpContent): void
@@ -103,8 +103,6 @@ class WriteTranslationFileAction
 
     /**
      * Pulisce la cache delle traduzioni.
-     *
-     * @return void
      */
     private function clearTranslationCache(): void
     {

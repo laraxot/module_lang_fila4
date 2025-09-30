@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use Modules\Lang\Models\Translation;
 use Modules\Lang\Models\Language;
+use Modules\Lang\Models\Translation;
 use Modules\Lang\Tests\TestCase;
 
 /*
@@ -30,9 +30,9 @@ pest()->extend(TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
-expect()->extend('toBeTranslation', fn() => $this->toBeInstanceOf(Translation::class));
+expect()->extend('toBeTranslation', fn () => $this->toBeInstanceOf(Translation::class));
 
-expect()->extend('toBeLanguage', fn() => $this->toBeInstanceOf(Language::class));
+expect()->extend('toBeLanguage', fn () => $this->toBeInstanceOf(Language::class));
 
 /*
  * |--------------------------------------------------------------------------
