@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'fields' => [
         'email' => [
@@ -460,10 +462,12 @@ return [
         'hidePassword' => [
             'icon' => 'hidePassword',
             'label' => 'hidePassword',
+            'tooltip' => 'hidePassword',
         ],
         'showPassword' => [
             'icon' => 'ui-showPassword',
             'label' => 'showPassword',
+            'tooltip' => 'showPassword',
         ],
     ],
 ];

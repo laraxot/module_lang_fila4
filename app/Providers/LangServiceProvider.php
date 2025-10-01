@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-use Closure;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Placeholder;
@@ -23,7 +22,6 @@ use Modules\Lang\Actions\Filament\AutoLabelAction;
 use Modules\Lang\Services\TranslatorService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
 use Modules\Xot\Services\BladeService;
-use Override;
 use Webmozart\Assert\Assert;
 
 /**
@@ -37,7 +35,7 @@ class LangServiceProvider extends XotBaseServiceProvider
 
     protected string $module_ns = __NAMESPACE__;
 
-    #[Override]
+    #[\Override]
     public function boot(): void
     {
         parent::boot();
@@ -74,7 +72,7 @@ class LangServiceProvider extends XotBaseServiceProvider
                 // Convertiamo l'array generico in un array<string, string> per soddisfare il tipo richiesto
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-                    if (is_string($key) && (is_string($value) || $value instanceof Closure)) {
+                    if (is_string($key) && (is_string($value) || $value instanceof \Closure)) {
                         $typedMessages[$key] = $value;
                     }
                 }
@@ -119,11 +117,21 @@ class LangServiceProvider extends XotBaseServiceProvider
         Action::configureUsing(function (Action $component) {
             $component = app(AutoLabelAction::class)->execute($component);
             $component = app(AutoLabelAction::class)->execute($component, 'icon');
-            
-            if (method_exists($component, 'iconButton')) {
-                //$component->iconButton();
+            $component = app(AutoLabelAction::class)->execute($component, 'tooltip');
+
+            //if (method_exists($component, 'iconButton')) {
+            //    // $component->iconButton();
+            //}
+                /*
+            dddx([
+            'methods' => get_class_methods($component),
+            'getRecord' => $component->getRecord(),
+            ]);
+            */
+            if($component->getRecord()==null){
+                $component->button();
             }
-            
+
             // if (method_exists($component, 'icon')) {
             // $component->icon('heroicon-o-plus');
             // }
@@ -131,7 +139,6 @@ class LangServiceProvider extends XotBaseServiceProvider
             // ->translateLabel()
             return $component;
         });
-        
 
         // Method Filament\Widgets\StatsOverviewWidget\Stat::configureUsing does not exist.
         /*
