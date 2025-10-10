@@ -13,7 +13,11 @@ function auditHelperTextFiles(string $basePath): array
     $langFiles = glob($basePath . '/*/lang/*/*.php');
     
     foreach ($langFiles as $file) {
+<<<<<<< HEAD
         if (str_contains($file, '/it/') ) {
+=======
+        if (strpos($file, '/it/') !== false) {
+>>>>>>> cbfeb6b (.)
             continue; // Skip Italian files
         }
         
@@ -99,7 +103,11 @@ function generateReport(array $issues): string
 }
 
 // Esegui audit
+<<<<<<< HEAD
 $basePath = '/var/www/html/_bases/base_saluteora/laravel';
+=======
+$basePath = '/var/www/html/_bases/base_TechPlanner/laravel';
+>>>>>>> cbfeb6b (.)
 $issues = auditHelperTextFiles($basePath);
 $report = generateReport($issues);
 
