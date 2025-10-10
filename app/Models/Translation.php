@@ -8,8 +8,16 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+<<<<<<< HEAD
 use Modules\Lang\Database\Factories\TranslationFactory;
 use Modules\Xot\Contracts\ProfileContract;
+=======
+<<<<<<< HEAD
+use Modules\Lang\Database\Factories\TranslationFactory;
+use Modules\Xot\Contracts\ProfileContract;
+=======
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
 use DB;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Model;
@@ -47,9 +55,21 @@ use Illuminate\Support\Carbon;
  * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereValue($value)
+<<<<<<< HEAD
  * @method static TranslationFactory factory($count = null, $state = [])
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+=======
+<<<<<<< HEAD
+ * @method static TranslationFactory factory($count = null, $state = [])
+ * @property ProfileContract|null $creator
+ * @property ProfileContract|null $updater
+=======
+ * @method static \Modules\Lang\Database\Factories\TranslationFactory factory($count = null, $state = [])
+ * @property \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property \Modules\Xot\Contracts\ProfileContract|null $updater
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
  * @mixin IdeHelperTranslation
  * @mixin \Eloquent
  */
@@ -90,18 +110,42 @@ class Translation extends BaseModel
 
     public function scopeSelectDistinctGroup(EloquentBuilder $query): EloquentBuilder|QueryBuilder
     {
+<<<<<<< HEAD
         $select = match (DB::getDriverName()) {
+=======
+<<<<<<< HEAD
+        $select = match (DB::getDriverName()) {
+=======
+        $select = match (\DB::getDriverName()) {
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
             'mysql' => 'DISTINCT `group`',
             default => 'DISTINCT "group"',
         };
 
+<<<<<<< HEAD
         return $query->select(DB::raw($select));
+=======
+<<<<<<< HEAD
+        return $query->select(DB::raw($select));
+=======
+        return $query->select(\DB::raw($select));
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     }
 
     /*
      * Get the current connection name for the model.
      *
      * @return string|null
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b93ef594b4 (.)
+>>>>>>> a7ee0d6 (.)
      *
      * public function getConnectionName()
      * {
@@ -112,4 +156,27 @@ class Translation extends BaseModel
      * return parent::getConnectionName();
      * }
      */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/develop
+
+    public function getConnectionName()
+    {
+        if ($connection = config('translation-manager.db_connection')) {
+            return $connection;
+        }
+
+        return parent::getConnectionName();
+    }
+    */
+<<<<<<< HEAD
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
 }
