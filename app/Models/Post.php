@@ -94,12 +94,12 @@ use Spatie\Sluggable\SlugOptions;
  * @property ProfileContract|null $updater
  *
  * @mixin Eloquent
- * @mixin IdeHelperPost
  * @mixin Eloquent
  */
 class Post extends Model
 {
-    use HasFactory;
+    /** @use HasFactory<Modulesangdatabasefactoriespostfactory> */
+    use \Modules\Xot\Models\Traits\HasXotFactory;
     use HasSlug;
 
     // use Cachable;

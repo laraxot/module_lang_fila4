@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
+use Modules\Xot\Actions\Cast\SafeArrayCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Lang\Actions\ReadTranslationFileAction;
 use Modules\Lang\Database\Factories\TranslationFileFactory;
 use Modules\Xot\Contracts\ProfileContract;
@@ -39,9 +41,9 @@ use function Safe\json_encode;
  * @method static Builder<static>|TranslationFile whereName($value)
  * @method static Builder<static>|TranslationFile wherePath($value)
  *
- * @mixin IdeHelperTranslationFile
  * @mixin \Eloquent
  */
+/** */
 class TranslationFile extends BaseModel
 {
     use Sushi;
@@ -74,14 +76,24 @@ class TranslationFile extends BaseModel
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
         $rows = Arr::map($files, function ($item) {
-            $item['id'] = $item['key'];
-            $item['name'] = basename($item['path'], '.php');
+            $item = SafeArrayCastAction::cast($item);
+            $item['id'] = $item['key'] ?? '';
+            $path = SafeStringCastAction::cast($item['path'] ?? '');
+            $item['name'] = $path ? basename($path, '.php') : '';
 
-            $item['content'] = json_encode(File::getRequire($item['path']));
+            if ($path && File::exists($path)) {
+                $content = File::getRequire($path);
+                $item['content'] = json_encode($content);
+            } else {
+                $item['content'] = '{}';
+            }
 
             /*
              * // Carica il contenuto del file

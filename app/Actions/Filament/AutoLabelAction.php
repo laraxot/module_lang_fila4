@@ -179,14 +179,18 @@ class AutoLabelAction
         }
         */
         if ($type === 'icon' && app(SvgExistsAction::class)->execute($label)) {
-            $component->iconButton();
+            if (method_exists($component, 'iconButton')) {
+                $component->iconButton();
+            }
             $component->{$type}($label);
             //$component->label('FIX:'.$label_key);
             return $component;
         }
         if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
             //$component->{$type}($label);
-            $component->iconButton();
+            if (method_exists($component, 'iconButton')) {
+                $component->iconButton();
+            }
             //$component->label('FIX:'.$label_key);
             // $component->tooltip('FIX:'.$label_key);
             $component->{$type}('heroicon-o-question-mark-circle');

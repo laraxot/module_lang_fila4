@@ -60,8 +60,16 @@ class EditTranslationFile extends XotBaseEditRecord
          * $this->halt();
          * }
          */
-        /** @phpstan-ignore argument.type, property.nonObject */
-        app(SaveTransAction::class)->execute($this->record->key, $data['content']);
+        $record = $this->record;
+        $key = '';
+        if (is_object($record) && property_exists($record, 'key')) {
+            $key = is_string($record->key) ? $record->key : '';
+        }
+        
+        $content = $data['content'] ?? null;
+        $contentValue = is_string($content) || is_array($content) ? $content : '';
+        
+        app(SaveTransAction::class)->execute($key, $contentValue);
         //dddx(['record'=>$this->record,'data'=>$data]);
         return $data;
     }
@@ -69,18 +77,31 @@ class EditTranslationFile extends XotBaseEditRecord
     protected function afterSave(): void
     {
         // Ricarica il record per aggiornare i dati
-        /** @phpstan-ignore method.nonObject */
-        $this->record->refresh();
+        if (is_object($this->record)) {
+            $this->record->refresh();
+        }
     }
 
     #[Override]
+    /**
+     * @return array<string, mixed>
+     */
     public function getFormSchema(): array
     {
         return [
-            Section::make('content')->schema(fn($record) => $this->makeFromArray($record->content, 'content')),
+            Section::make('content')->schema(function($record): array {
+                $content = [];
+                if (is_object($record) && property_exists($record, 'content')) {
+                    $content = is_array($record->content) ? $record->content : [];
+                }
+                return $this->makeFromArray($content, 'content');
+            }),
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function makeFromArray(array $array, string $prefix = ''): array
     {
         $fields = [];
@@ -89,9 +110,11 @@ class EditTranslationFile extends XotBaseEditRecord
             $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
 
             if (is_array($value)) {
+                $subFields = $this->makeFromArray($value, $fullKey);
+                /** @var array<\Illuminate\Contracts\Support\Htmlable|string> $subFields */
                 $fields[] = Section::make($key)
                     ->label($fullKey)
-                    ->schema(self::makeFromArray($value, $fullKey))
+                    ->schema($subFields)
                     ->columns(2);
             } else {
                 $fields[] = TextInput::make($fullKey)

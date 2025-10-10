@@ -53,9 +53,9 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @mixin IdeHelperTranslation
  * @mixin \Eloquent
  */
+/** */
 class Translation extends BaseModel
 {
     final public const STATUS_SAVED = 0;

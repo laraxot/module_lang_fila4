@@ -18,11 +18,14 @@ class TranslationEditor extends Field
     {
         parent::setUp();
 
-        $this->afterStateHydrated(function (TranslationEditor $component, $state) {
+        $this->afterStateHydrated(function (TranslationEditor $component, $state): void {
             $component->state($state ?? []);
         });
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getDefaultChildComponents(?string $key = null): array
     {
         $components = [];
@@ -32,12 +35,15 @@ class TranslationEditor extends Field
         }
 
         foreach ($state as $key => $value) {
+            $keyStr = is_string($key) ? $key : (string) $key;
+            
             if (is_array($value)) {
-                $components[] = Section::make($key)->schema([
-                    TranslationEditor::make($key)->label('')->state($value),
+                $components[] = Section::make($keyStr)->schema([
+                    TranslationEditor::make($keyStr)->label('')->state($value),
                 ]);
             } else {
-                $components[] = TextInput::make($key)->label(str_replace('_', ' ', $key))->default($value);
+                $valueStr = is_string($value) ? $value : (string) $value;
+                $components[] = TextInput::make($keyStr)->label(str_replace('_', ' ', $keyStr))->default($valueStr);
             }
         }
 
