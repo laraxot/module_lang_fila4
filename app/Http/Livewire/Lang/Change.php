@@ -40,9 +40,15 @@ class Change extends Component
             $url = LaravelLocalization::getLocalizedURL($key, $this->url, [], true);
             if (false !== $url) {
                 // Verifichiamo che $url sia una stringa o lo convertiamo in modo sicuro
+<<<<<<< HEAD
                 if (!is_string($url)) {
                     // Se non è una stringa, utilizziamo una URL di fallback
                     $url = '/' . $key;
+=======
+                if (! is_string($url)) {
+                    // Se non è una stringa, utilizziamo una URL di fallback
+                    $url = '/'.$key;
+>>>>>>> 8b0b6ac (.)
                 } else {
                     $url = Str::of($url)->replace(url(''), '')->toString();
                 }

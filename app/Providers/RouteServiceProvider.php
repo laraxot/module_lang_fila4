@@ -34,12 +34,28 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     /**
      * Bootstrap the module services.
      */
+<<<<<<< HEAD
     
+=======
+    public function boot(): void
+    {
+        parent::boot();
+        // $this->registerLang(); // ✅ Temporaneamente disabilitato per debug
+    }
+>>>>>>> 8b0b6ac (.)
 
     /**
      * Register the module services.
      */
+<<<<<<< HEAD
     
+=======
+    public function register(): void
+    {
+        parent::register();
+        // $this->registerLang();
+    }
+>>>>>>> 8b0b6ac (.)
 
     /**
      * Registra le impostazioni di lingua basate sulla configurazione.
@@ -47,11 +63,19 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     public function registerLang(): void
     {
         /** @var array<string, array<string, string>>|null $locales */
+<<<<<<< HEAD
         $locales = config()->has('laravellocalization.supportedLocales')
             ? config('laravellocalization.supportedLocales')
             : null;
 
         if (!\is_array($locales)) {
+=======
+        $locales = config()->has('laravellocalization.supportedLocales') 
+            ? config('laravellocalization.supportedLocales') 
+            : null;
+
+        if (! \is_array($locales)) {
+>>>>>>> 8b0b6ac (.)
             $locales = ['it' => ['name' => 'it'], 'en' => ['name' => 'en']];
         }
 
@@ -59,11 +83,19 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
         $langs = array_keys($locales);
 
         /*
+<<<<<<< HEAD
          * if (! \is_array($langs)) {
          * throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
          * }
          * \getRouteParameters();
          */
+=======
+        if (! \is_array($langs)) {
+            throw new \Exception('[.__LINE__.]['.class_basename(self::class).']');
+        }
+        \getRouteParameters();
+        */
+>>>>>>> 8b0b6ac (.)
         $n = 1;
         if (inAdmin()) {
             $n = 3;

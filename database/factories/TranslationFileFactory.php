@@ -1,8 +1,11 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 
+=======
+>>>>>>> 8b0b6ac (.)
 namespace Modules\Lang\Database\Factories;
 
 use Modules\Lang\Models\TranslationFile;
@@ -23,3 +26,7 @@ class TranslationFileFactory extends Factory
         return [];
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8b0b6ac (.)
