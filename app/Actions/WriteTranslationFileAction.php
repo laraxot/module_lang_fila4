@@ -4,43 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-<<<<<<< HEAD
 use Exception;
 use Illuminate\Support\Facades\File;
 use Spatie\QueueableAction\QueueableAction;
-=======
-<<<<<<< HEAD
-use Exception;
-use Illuminate\Support\Facades\File;
-use Spatie\QueueableAction\QueueableAction;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a7ee0d6 (.)
 
 use function Safe\exec;
 use function Safe\file_put_contents;
 use function Safe\tempnam;
-<<<<<<< HEAD
-=======
-=======
-use function Safe\tempnam;
-use function Safe\file_put_contents;
-use function Safe\exec;
->>>>>>> a12f125f4a (.)
-=======
-
-use function Safe\exec;
-use function Safe\file_put_contents;
-use function Safe\tempnam;
->>>>>>> b93ef594b4 (.)
-=======
-use Illuminate\Support\Facades\File;
-use Spatie\QueueableAction\QueueableAction;
-use function Safe\tempnam;
-use function Safe\file_put_contents;
-use function Safe\exec;
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
 use function Safe\unlink;
 
 class WriteTranslationFileAction
@@ -53,15 +23,7 @@ class WriteTranslationFileAction
      * @param string $filePath Percorso del file di traduzione
      * @param array<string, mixed> $translations Traduzioni da scrivere
      * @return bool True se il file è stato scritto con successo
-<<<<<<< HEAD
      * @throws Exception Se il file non può essere scritto
-=======
-<<<<<<< HEAD
-     * @throws Exception Se il file non può essere scritto
-=======
-     * @throws \Exception Se il file non può essere scritto
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
      */
     public function execute(string $filePath, array $translations): bool
     {
@@ -79,15 +41,7 @@ class WriteTranslationFileAction
         $result = File::put($filePath, $phpContent);
 
         if ($result === false) {
-<<<<<<< HEAD
             throw new Exception("Impossibile scrivere il file: {$filePath}");
-=======
-<<<<<<< HEAD
-            throw new Exception("Impossibile scrivere il file: {$filePath}");
-=======
-            throw new \Exception("Impossibile scrivere il file: {$filePath}");
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
         }
 
         // Pulisci la cache delle traduzioni
@@ -113,23 +67,7 @@ class WriteTranslationFileAction
 
         // Crea la directory di backup se non esiste
         if (!File::exists($backupDir)) {
-<<<<<<< HEAD
             File::makeDirectory($backupDir, 0o755, true);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            File::makeDirectory($backupDir, 0o755, true);
-=======
-            File::makeDirectory($backupDir, 0755, true);
->>>>>>> a12f125f4a (.)
-=======
-            File::makeDirectory($backupDir, 0o755, true);
->>>>>>> b93ef594b4 (.)
-=======
-            File::makeDirectory($backupDir, 0755, true);
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
         }
 
         // Copia il file
@@ -141,15 +79,7 @@ class WriteTranslationFileAction
      *
      * @param string $phpContent Contenuto PHP da validare
      * @return void
-<<<<<<< HEAD
      * @throws Exception Se la sintassi PHP non è valida
-=======
-<<<<<<< HEAD
-     * @throws Exception Se la sintassi PHP non è valida
-=======
-     * @throws \Exception Se la sintassi PHP non è valida
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
      */
     private function validatePhpSyntax(string $phpContent): void
     {
@@ -166,26 +96,8 @@ class WriteTranslationFileAction
         unlink($tempFile);
 
         if ($returnCode !== 0) {
-<<<<<<< HEAD
             $error = implode("\n", $output ?? []);
             throw new Exception("Sintassi PHP non valida: {$error}");
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $error = implode("\n", $output ?? []);
-=======
-            $error = implode("\n", $output);
->>>>>>> a12f125f4a (.)
-=======
-            $error = implode("\n", $output ?? []);
->>>>>>> b93ef594b4 (.)
-            throw new Exception("Sintassi PHP non valida: {$error}");
-=======
-            $error = implode("\n", $output);
-            throw new \Exception("Sintassi PHP non valida: {$error}");
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
         }
     }
 
@@ -207,20 +119,4 @@ class WriteTranslationFileAction
             app('translation.loader')->flush();
         }
     }
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-} 
->>>>>>> a12f125f4a (.)
-=======
-}
->>>>>>> b93ef594b4 (.)
-=======
-} 
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)

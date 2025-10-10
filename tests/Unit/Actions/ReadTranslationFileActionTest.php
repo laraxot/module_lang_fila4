@@ -5,19 +5,7 @@ declare(strict_types=1);
 use Modules\Lang\Actions\ReadTranslationFileAction;
 
 beforeEach(function () {
-<<<<<<< HEAD
     $this->action = new ReadTranslationFileAction();
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-    $this->action = new ReadTranslationFileAction();
-=======
-    $this->action = new ReadTranslationFileAction;
->>>>>>> a12f125f4a (.)
-=======
-    $this->action = new ReadTranslationFileAction();
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
     $this->testFilePath = storage_path('test_translations.php');
     $this->testTranslations = [
         'auth' => [
@@ -36,16 +24,6 @@ afterEach(function () {
 });
 
 describe('ReadTranslationFileAction Business Logic', function () {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
     test('can read valid translation file', function () {
         createTranslationFile($this->testFilePath, $this->testTranslations);
 
@@ -65,19 +43,7 @@ describe('ReadTranslationFileAction Business Logic', function () {
 
     test('throws exception for unreadable file', function () {
         createTranslationFile($this->testFilePath, $this->testTranslations);
-<<<<<<< HEAD
         chmod($this->testFilePath, 0o000);
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        chmod($this->testFilePath, 0o000);
-=======
-        chmod($this->testFilePath, 0000);
->>>>>>> a12f125f4a (.)
-=======
-        chmod($this->testFilePath, 0o000);
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
 
         $this->action->execute($this->testFilePath);
     })->throws(Exception::class, 'File di traduzione non leggibile:');
@@ -150,23 +116,8 @@ describe('ReadTranslationFileAction Business Logic', function () {
         $lines = explode("\n", $phpContent);
 
         // Find the parent line and check indentation
-<<<<<<< HEAD
         $parentLine = array_filter($lines, fn($line) => str_contains($line, "'parent'"));
         $childLine = array_filter($lines, fn($line) => str_contains($line, "'child'"));
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-        $parentLine = array_filter($lines, fn($line) => str_contains($line, "'parent'"));
-        $childLine = array_filter($lines, fn($line) => str_contains($line, "'child'"));
-=======
-        $parentLine = array_filter($lines, fn ($line) => str_contains($line, "'parent'"));
-        $childLine = array_filter($lines, fn ($line) => str_contains($line, "'child'"));
->>>>>>> a12f125f4a (.)
-=======
-        $parentLine = array_filter($lines, fn($line) => str_contains($line, "'parent'"));
-        $childLine = array_filter($lines, fn($line) => str_contains($line, "'child'"));
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
 
         expect(current($parentLine))->toStartWith('    ');
         expect(current($childLine))->toStartWith('        ');
