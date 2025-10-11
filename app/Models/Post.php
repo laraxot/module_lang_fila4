@@ -98,7 +98,6 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Post extends Model
 {
-    /** @use HasFactory<Modulesangdatabasefactoriespostfactory> */
     use \Modules\Xot\Models\Traits\HasXotFactory;
     use HasSlug;
 

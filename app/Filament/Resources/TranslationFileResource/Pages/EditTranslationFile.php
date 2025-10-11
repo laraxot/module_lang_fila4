@@ -124,6 +124,7 @@ class EditTranslationFile extends XotBaseEditRecord
             }
         }
 
-        return $fields;
+        /** @var array<int, \Filament\Forms\Components\TextInput|\Filament\Schemas\Components\Section> */
+        return array_values($fields);
     }
 }

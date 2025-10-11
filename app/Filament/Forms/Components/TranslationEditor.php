@@ -26,7 +26,7 @@ class TranslationEditor extends Field
     /**
      * @return array<string, mixed>
      */
-    public function getDefaultChildComponents(?string $key = null): array
+    public function getDefaultChildComponents(): array
     {
         $components = [];
         $state = $this->getState() ?? [];
@@ -38,12 +38,12 @@ class TranslationEditor extends Field
             $keyStr = is_string($key) ? $key : (string) $key;
             
             if (is_array($value)) {
-                $components[] = Section::make($keyStr)->schema([
+                $components[$keyStr] = Section::make($keyStr)->schema([
                     TranslationEditor::make($keyStr)->label('')->state($value),
                 ]);
             } else {
                 $valueStr = is_string($value) ? $value : (string) $value;
-                $components[] = TextInput::make($keyStr)->label(str_replace('_', ' ', $keyStr))->default($valueStr);
+                $components[$keyStr] = TextInput::make($keyStr)->label(str_replace('_', ' ', $keyStr))->default($valueStr);
             }
         }
 
