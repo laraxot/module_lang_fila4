@@ -100,13 +100,13 @@ class EditTranslationFile extends XotBaseEditRecord
     }
 
     /**
-     * @return array<string, mixed>
+     * @return list<\Filament\Forms\Components\TextInput|\Filament\Schemas\Components\Section>
      */
-    public function makeFromArray(array $array, string $prefix = ''): array
+    public function makeFromArray(array $data, string $prefix = ''): array
     {
         $fields = [];
 
-        foreach ($array as $key => $value) {
+        foreach ($data as $key => $value) {
             $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
 
             if (is_array($value)) {
@@ -124,7 +124,6 @@ class EditTranslationFile extends XotBaseEditRecord
             }
         }
 
-        /** @var array<int, \Filament\Forms\Components\TextInput|\Filament\Schemas\Components\Section> */
-        return array_values($fields);
+        return $fields;
     }
 }
