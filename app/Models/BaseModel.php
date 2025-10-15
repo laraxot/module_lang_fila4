@@ -4,70 +4,21 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-// use GeneaLabs\LaravelModelCaching\Traits\Cachable;
-// use Laravel\Scout\Searchable;
-// ---------- traits
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Modules\Xot\Traits\Updater;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
- * Class BaseModel.
+ * Base Model for Lang module.
  *
+ * Extends XotBaseModel which provides all standard properties and methods.
+ *
+ * @see \Modules\Xot\Models\XotBaseModel
  */
-abstract class BaseModel extends Model
+abstract class BaseModel extends XotBaseModel
 {
-    use \Modules\Xot\Models\Traits\HasXotFactory;
-
-    // use Searchable;
-    // use Cachable;
-    use Updater;
-
     /**
-     * Indicates whether attributes are snake cased on arrays.
+     * The connection name for the model.
      *
-     * @see  https://laravel-news.com/6-eloquent-secrets
-     *
-     * @var bool
+     * @var string
      */
-    public static $snakeAttributes = true;
-
-    /** @var bool */
-    public $incrementing = true;
-
-    /** @var bool */
-    public $timestamps = true;
-
-    /** @var int */
-    protected $perPage = 30;
-
-    /** @var string */
     protected $connection = 'lang';
-
-    /** @var list<string> */
-    protected $fillable = ['id'];
-
-    /** @var string */
-    protected $primaryKey = 'id';
-
-    /** @var string */
-    protected $keyType = 'string';
-
-    /** @var list<string> */
-    protected $hidden = [
-        // 'password'
-    ];
-
-    /**
-     * @return array<string, string> */
-    protected function casts(): array
-    {
-        return [
-            'id' => 'string',
-            'uuid' => 'string',
-            'published_at' => 'datetime',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-        ];
-    }
 }

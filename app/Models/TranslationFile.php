@@ -43,7 +43,25 @@ use function Safe\json_encode;
  *
  * @mixin \Eloquent
  */
-/** */
+/**
+ * @property string|null $key
+ * @property string|null $path
+ * @property string|null $id
+ * @property string|null $name
+ * @property array<array-key, mixed>|null $content
+ * @property-read \Modules\Fixcity\Models\Profile|null $creator
+ * @property-read \Modules\Fixcity\Models\Profile|null $updater
+ * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
+ * @method static Builder<static>|TranslationFile newModelQuery()
+ * @method static Builder<static>|TranslationFile newQuery()
+ * @method static Builder<static>|TranslationFile query()
+ * @method static Builder<static>|TranslationFile whereContent($value)
+ * @method static Builder<static>|TranslationFile whereId($value)
+ * @method static Builder<static>|TranslationFile whereKey($value)
+ * @method static Builder<static>|TranslationFile whereName($value)
+ * @method static Builder<static>|TranslationFile wherePath($value)
+ * @mixin \Eloquent
+ */
 class TranslationFile extends BaseModel
 {
     use Sushi;
@@ -77,10 +95,7 @@ class TranslationFile extends BaseModel
     }
 
     /**
-     * @return array<string, mixed>
-     */
-    /**
-     * @return array<int, array<string, mixed>>
+     * @return list<array<string, mixed>>
      */
     public function getRows(): array
     {
@@ -111,7 +126,7 @@ class TranslationFile extends BaseModel
             return $item;
         });
 
-        /** @var array<int, array<string, mixed>> */
+        /* @phpstan-ignore-next-line return.type */
         return $rows;
     }
 }

@@ -55,7 +55,18 @@ use Modules\Xot\Contracts\ProfileContract;
  *
  * @mixin \Eloquent
  */
-/** */
+/**
+ * @property-read \Modules\Fixcity\Models\Profile|null $creator
+ * @property-read \Modules\Fixcity\Models\Profile|null $updater
+ * @method static \Modules\Lang\Database\Factories\TranslationFactory factory($count = null, $state = [])
+ * @method static EloquentBuilder<static>|Translation newModelQuery()
+ * @method static EloquentBuilder<static>|Translation newQuery()
+ * @method static EloquentBuilder<static>|Translation ofTranslatedGroup(string $group)
+ * @method static EloquentBuilder<static>|Translation orderByGroupKeys(bool $ordered)
+ * @method static EloquentBuilder<static>|Translation query()
+ * @method static EloquentBuilder<static>|Translation selectDistinctGroup()
+ * @mixin \Eloquent
+ */
 class Translation extends BaseModel
 {
     final public const STATUS_SAVED = 0;
