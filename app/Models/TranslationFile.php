@@ -49,8 +49,8 @@ use function Safe\json_encode;
  * @property string|null $id
  * @property string|null $name
  * @property array<array-key, mixed>|null $content
- * @property-read \Modules\Fixcity\Models\Profile|null $creator
- * @property-read \Modules\Fixcity\Models\Profile|null $updater
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()

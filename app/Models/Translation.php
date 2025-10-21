@@ -56,8 +56,8 @@ use Modules\Xot\Contracts\ProfileContract;
  * @mixin \Eloquent
  */
 /**
- * @property-read \Modules\Fixcity\Models\Profile|null $creator
- * @property-read \Modules\Fixcity\Models\Profile|null $updater
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  * @method static \Modules\Lang\Database\Factories\TranslationFactory factory($count = null, $state = [])
  * @method static EloquentBuilder<static>|Translation newModelQuery()
  * @method static EloquentBuilder<static>|Translation newQuery()
