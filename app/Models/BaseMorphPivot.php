@@ -4,63 +4,19 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-use Illuminate\Database\Eloquent\Relations\MorphPivot;
-use Modules\Xot\Traits\Updater;
-
 /**
- * Class BaseMorphPivot.
+ * Base MorphPivot for Lang module.
+ *
+ * Extends XotBaseMorphPivot which provides all standard properties and casts.
+ *
+ * @see \Modules\Xot\Models\XotBaseMorphPivot
  */
 abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
 {
-    use Updater;
-
     /**
-     * Indicates whether attributes are snake cased on arrays.
+     * The connection name for the model.
      *
-     * @see  https://laravel-news.com/6-eloquent-secrets
-     *
-     * @var bool
+     * @var string
      */
-    public static $snakeAttributes = true;
-
-    /** @var bool */
-    public $incrementing = true;
-
-    /** @var bool */
-    public $timestamps = true;
-
-    /** @var int */
-    protected $perPage = 30;
-
     protected $connection = 'lang';
-
-    /** @var list<string> */
-    protected $appends = [];
-
-    /** @var string */
-    protected $primaryKey = 'id';
-
-    /** @var string */
-    protected $keyType = 'string';
-
-    /** @var list<string> */
-    protected $fillable = [
-        'id',
-        'post_id',
-        'post_type',
-        'related_type',
-        'user_id',
-        'note',
-    ];
-
-    protected function casts(): array
-    {
-        return [
-            'id' => 'string',
-            'uuid' => 'string',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-            'deleted_at' => 'datetime',
-        ];
-    }
 }
