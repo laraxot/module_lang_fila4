@@ -16,11 +16,7 @@ In Laravel puoi salvare le traduzioni in file PHP strutturati o in file JSON fla
 | **Consistenza**       | Più facile con chiavi            | Rischio duplicati/frasi simili  |
 | **Uso consigliato**   | UI, errori, messaggi brevi       | Frasi lunghe, onboarding, email |
 
-<<<<<<< HEAD
 ## Best Practice per SaluteOra
-=======
-## Best Practice per <nome progetto>
->>>>>>> cbfeb6b (.)
 - **Usa file PHP** per UI, errori, messaggi brevi, validazione, notifiche.
 - **Usa JSON** solo per frasi lunghe o onboarding, se serve collaborazione con traduttori non-dev.
 - **Non mischiare** chiavi tra PHP e JSON con lo stesso nome.
@@ -62,32 +58,20 @@ Uso:
 ```
 
 ## Raccomandazioni
-<<<<<<< HEAD
 - Per SaluteOra, **PHP è la scelta principale**. JSON solo per casi particolari.
-=======
-- Per <nome progetto>, **PHP è la scelta principale**. JSON solo per casi particolari.
->>>>>>> cbfeb6b (.)
 - Documenta sempre la scelta e spiega ai traduttori/dev come aggiungere nuove stringhe.
 - Per fallback, imposta sempre `fallback_locale` in `config/app.php`.
 - Per traduzioni lunghe, valuta se usare chiavi dedicate in PHP o, solo se necessario, JSON.
 
 ## Fonti
 - [Laravel Daily: Store in PHP or JSON?](https://laraveldaily.com/lesson/multi-language-laravel/mcamara-laravel-localization)
-<<<<<<< HEAD
 - [Laravel Docs](https://laravel.com/docs/11.x/localization)
-=======
-- [Laravel Docs](https://laravel.com/project_docs/11.x/localization)
->>>>>>> cbfeb6b (.)
 - [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization)
 
 ## Processo Dev → Traduttore: Checklist e Istruzioni
 
 1. **Preparazione**
-<<<<<<< HEAD
    - Esporta i file PHP/JSON di riferimento da `/var/www/html/saluteora/laravel/lang/en/` o `/lang/en.json`.
-=======
-   - Esporta i file PHP/JSON di riferimento da `/var/www/html/<nome progetto>/laravel/lang/en/` o `/lang/en.json`.
->>>>>>> cbfeb6b (.)
    - Elimina tutte le stringhe non usate prima di inviare ai traduttori.
 2. **Istruzioni per i Traduttori**
    - Nei file PHP: traduci solo il testo a destra di `=>`, non cambiare chiavi o struttura.
