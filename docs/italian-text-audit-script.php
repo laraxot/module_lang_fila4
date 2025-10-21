@@ -150,10 +150,17 @@ function auditItalianTextInNonItalianFiles(string $basePath): array
 
 function getLanguageFromPath(string $file): string
 {
+<<<<<<< HEAD
     if (str_contains($file, '/lang/en/') ) return 'English';
     if (str_contains($file, '/lang/de/') ) return 'German';
     if (str_contains($file, '/lang/es/') ) return 'Spanish';
     if (str_contains($file, '/lang/fr/') ) return 'French';
+=======
+    if (strpos($file, '/lang/en/') !== false) return 'English';
+    if (strpos($file, '/lang/de/') !== false) return 'German';
+    if (strpos($file, '/lang/es/') !== false) return 'Spanish';
+    if (strpos($file, '/lang/fr/') !== false) return 'French';
+>>>>>>> cbfeb6b (.)
     return 'Unknown';
 }
 
@@ -194,7 +201,11 @@ function generateItalianTextReport(array $issues): string
 }
 
 // Esegui audit
+<<<<<<< HEAD
 $basePath = '/var/www/html/_bases/base_saluteora/laravel';
+=======
+$basePath = '/var/www/html/_bases/base_TechPlanner/laravel';
+>>>>>>> cbfeb6b (.)
 echo "Inizio audit per testi italiani in file non italiani...\n";
 
 $issues = auditItalianTextInNonItalianFiles($basePath);
