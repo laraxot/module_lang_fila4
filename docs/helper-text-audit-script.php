@@ -13,7 +13,7 @@ function auditHelperTextFiles(string $basePath): array
     $langFiles = glob($basePath . '/*/lang/*/*.php');
     
     foreach ($langFiles as $file) {
-        if (strpos($file, '/it/') !== false) {
+        if (str_contains($file, '/it/') ) {
             continue; // Skip Italian files
         }
         
