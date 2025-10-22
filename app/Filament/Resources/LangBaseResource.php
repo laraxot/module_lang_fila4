@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 
 // use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable; // Temporaneamente commentato per compatibilità Filament 4.x
 use Illuminate\Support\Facades\Config;
@@ -23,6 +26,7 @@ abstract class LangBaseResource extends XotBaseResource
     // {
     //     return ['it', 'en'];
     // }
+<<<<<<< HEAD
 =======
 use LaraZeus\SpatieTranslatable\Resources\Concerns\Translatable;
 use Filament\Actions;
@@ -50,4 +54,6 @@ abstract class LangBaseResource extends XotBaseResource
 
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 }
