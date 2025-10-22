@@ -69,15 +69,7 @@ if (is_array($value)) {
 
 - [Console Commands](./console-commands.md)
 - [Translation System](./translation-system.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [FormBuilder Module PHPStan Corrections](../FormBuilder/docs/phpstan-corrections.md)
-=======
-- [FormBuilder Module PHPStan Corrections](../FormBuilder/project_docs/phpstan-corrections.md)
->>>>>>> 8b0b6ac (.)
-=======
-- [FormBuilder Module PHPStan Corrections](../FormBuilder/docs/phpstan-corrections.md)
->>>>>>> 1c4a063 (.)
 
 ## Note per Sviluppo Futuro
 
