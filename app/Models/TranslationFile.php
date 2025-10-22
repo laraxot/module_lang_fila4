@@ -12,26 +12,26 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Lang\Actions\ReadTranslationFileAction;
 use Modules\Lang\Database\Factories\TranslationFileFactory;
+use Modules\Xot\Actions\Cast\SafeArrayCastAction;
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
-use Override;
-use Sushi\Sushi;
 
 use function Safe\json_encode;
 
+use Sushi\Sushi;
+
 /**
- * @property string|null $key
- * @property string|null $path
- * @property string|null $id
- * @property string|null $name
+ * @property string|null                  $key
+ * @property string|null                  $path
+ * @property string|null                  $id
+ * @property string|null                  $name
  * @property array<array-key, mixed>|null $content
- * @property-read ProfileContract|null $creator
- * @property-read ProfileContract|null $updater
+ * @property ProfileContract|null         $creator
+ * @property ProfileContract|null         $updater
  *
- * @method static TranslationFileFactory factory($count = null, $state = [])
+ * @method static TranslationFileFactory          factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -44,22 +44,24 @@ use function Safe\json_encode;
  * @mixin \Eloquent
  */
 /**
- * @property string|null $key
- * @property string|null $path
- * @property string|null $id
- * @property string|null $name
+ * @property string|null                  $key
+ * @property string|null                  $path
+ * @property string|null                  $id
+ * @property string|null                  $name
  * @property array<array-key, mixed>|null $content
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property ProfileContract|null         $creator
+ * @property ProfileContract|null         $updater
+ *
  * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
- * @method static Builder<static>|TranslationFile newModelQuery()
- * @method static Builder<static>|TranslationFile newQuery()
- * @method static Builder<static>|TranslationFile query()
- * @method static Builder<static>|TranslationFile whereContent($value)
- * @method static Builder<static>|TranslationFile whereId($value)
- * @method static Builder<static>|TranslationFile whereKey($value)
- * @method static Builder<static>|TranslationFile whereName($value)
- * @method static Builder<static>|TranslationFile wherePath($value)
+ * @method static Builder<static>|TranslationFile                         newModelQuery()
+ * @method static Builder<static>|TranslationFile                         newQuery()
+ * @method static Builder<static>|TranslationFile                         query()
+ * @method static Builder<static>|TranslationFile                         whereContent($value)
+ * @method static Builder<static>|TranslationFile                         whereId($value)
+ * @method static Builder<static>|TranslationFile                         whereKey($value)
+ * @method static Builder<static>|TranslationFile                         whereName($value)
+ * @method static Builder<static>|TranslationFile                         wherePath($value)
+ *
  * @mixin \Eloquent
  */
 class TranslationFile extends BaseModel
@@ -86,7 +88,7 @@ class TranslationFile extends BaseModel
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -100,7 +102,7 @@ class TranslationFile extends BaseModel
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
-        $rows = Arr::map($files, function ($item) {
+        $rows = Arr::map($files, static function ($item) {
             $item = SafeArrayCastAction::cast($item);
             $item['id'] = $item['key'] ?? '';
             $path = SafeStringCastAction::cast($item['path'] ?? '');
