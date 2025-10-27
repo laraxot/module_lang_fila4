@@ -157,16 +157,17 @@ class AutoLabelAction
         }
         if (! is_string($label)) {
             $component->label('FIX:'.$label_key);
+
             return $component;
         }
-        if($label_key == $label || !method_exists($component, $type)){
+        if ($label_key == $label || ! method_exists($component, $type)) {
             return $component;
         }
         /*
         if (is_string($label) && $label_key !== $label && method_exists($component, $type)) {
-            
+
                 if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
-                    
+
                     $component->{$type}('heroicon-o-question-mark-circle');
                     return $component;
                 }
@@ -175,7 +176,7 @@ class AutoLabelAction
                 } else {
                     $component->{$type}($label);
                 }
-             
+
         }
         */
         if ($type === 'icon' && app(SvgExistsAction::class)->execute($label)) {
@@ -183,29 +184,30 @@ class AutoLabelAction
                 $component->iconButton();
             }
             $component->{$type}($label);
-            //$component->label('FIX:'.$label_key);
+
+            // $component->label('FIX:'.$label_key);
             return $component;
         }
-        if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
-            //$component->{$type}($label);
+        if ($type === 'icon' && ! app(SvgExistsAction::class)->execute($label)) {
+            // $component->{$type}($label);
             if (method_exists($component, 'iconButton')) {
                 $component->iconButton();
             }
-            //$component->label('FIX:'.$label_key);
+            // $component->label('FIX:'.$label_key);
             // $component->tooltip('FIX:'.$label_key);
             $component->{$type}('heroicon-o-question-mark-circle');
-            //$component->{$type}(null);
+
+            // $component->{$type}(null);
             return $component;
         }
 
         if (strip_tags($label) !== $label && in_array($type, ['helperText'], strict: true)) {
             $component->{$type}(new HtmlString($label));
+
             return $component;
-        } 
-        
+        }
+
         $component->{$type}($label);
-        
-        
 
         return $component;
     }

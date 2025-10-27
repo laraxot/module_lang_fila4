@@ -119,17 +119,17 @@ class LangServiceProvider extends XotBaseServiceProvider
             $component = app(AutoLabelAction::class)->execute($component, 'icon');
             $component = app(AutoLabelAction::class)->execute($component, 'tooltip');
 
-            //if (method_exists($component, 'iconButton')) {
+            // if (method_exists($component, 'iconButton')) {
             //    // $component->iconButton();
-            //}
-                /*
+            // }
+            /*
             dddx([
             'methods' => get_class_methods($component),
             'getRecord' => $component->getRecord(),
             ]);
             */
-            if(method_exists($component, 'getRecord') && $component->getRecord()==null){
-                if(method_exists($component, 'button')){
+            if (method_exists($component, 'getRecord') && $component->getRecord() == null) {
+                if (method_exists($component, 'button')) {
                     $component->button();
                 }
             }

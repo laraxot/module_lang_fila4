@@ -48,7 +48,7 @@ class NationalFlagSelect extends Select
             if (! is_array($c) || ! isset($c['iso_3166_1_alpha2']) || ! isset($c['name'])) {
                 return [];
             }
-            
+
             $code = is_string($c['iso_3166_1_alpha2']) ? $c['iso_3166_1_alpha2'] : '';
             $name = is_string($c['name']) ? $c['name'] : '';
             $flag_name = strtolower($code);
@@ -93,7 +93,7 @@ class NationalFlagSelect extends Select
             if (! is_array($country) || ! isset($country['iso_3166_1_alpha2']) || ! isset($country['name'])) {
                 return false;
             }
-            
+
             $code = is_string($country['iso_3166_1_alpha2']) ? $country['iso_3166_1_alpha2'] : '';
             $flag_name = strtolower($code);
 
@@ -102,6 +102,7 @@ class NationalFlagSelect extends Select
 
             // Search in both English name and localized name
             $name = is_string($country['name']) ? strtolower($country['name']) : '';
+
             return
                 str_contains($name, $searchLower) ||
                 str_contains(strtolower($localizedName), $searchLower) ||
@@ -116,7 +117,7 @@ class NationalFlagSelect extends Select
             if (! is_array($c) || ! isset($c['iso_3166_1_alpha2']) || ! isset($c['name'])) {
                 return [];
             }
-            
+
             $code = is_string($c['iso_3166_1_alpha2']) ? $c['iso_3166_1_alpha2'] : '';
             $flag_name = strtolower($code);
             $localizedLabel = __('lang::countries.'.$flag_name);

@@ -26,13 +26,15 @@ class TransArrayAction
     {
         if ($transKey === null) {
             $result = Arr::map($array, SafeStringCastAction::cast(...));
-            return is_array($result) ? array_map(fn($value) => (string) $value, $result) : [];
+
+            return is_array($result) ? array_map(fn ($value) => (string) $value, $result) : [];
         }
 
         $this->transKey = $transKey;
 
         $result = Arr::map($array, $this->trans(...));
-        return is_array($result) ? array_map(fn($value) => (string) $value, $result) : [];
+
+        return is_array($result) ? array_map(fn ($value) => (string) $value, $result) : [];
     }
 
     /**

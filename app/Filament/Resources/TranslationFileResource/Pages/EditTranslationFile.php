@@ -2,19 +2,16 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-use Filament\Schemas\Components\Section;
-use Override;
-use Filament\Actions;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Schemas\Components\Section;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
+use Override;
 
 class EditTranslationFile extends XotBaseEditRecord
 {
@@ -65,12 +62,13 @@ class EditTranslationFile extends XotBaseEditRecord
         if (is_object($record) && property_exists($record, 'key')) {
             $key = is_string($record->key) ? $record->key : '';
         }
-        
+
         $content = $data['content'] ?? null;
         $contentValue = is_string($content) || is_array($content) ? $content : '';
-        
+
         app(SaveTransAction::class)->execute($key, $contentValue);
-        //dddx(['record'=>$this->record,'data'=>$data]);
+
+        // dddx(['record'=>$this->record,'data'=>$data]);
         return $data;
     }
 
@@ -89,11 +87,12 @@ class EditTranslationFile extends XotBaseEditRecord
     public function getFormSchema(): array
     {
         return [
-            Section::make('content')->schema(function($record): array {
+            Section::make('content')->schema(function ($record): array {
                 $content = [];
                 if (is_object($record) && property_exists($record, 'content')) {
                     $content = is_array($record->content) ? $record->content : [];
                 }
+
                 return $this->makeFromArray($content, 'content');
             }),
         ];
@@ -107,7 +106,7 @@ class EditTranslationFile extends XotBaseEditRecord
         $fields = [];
 
         foreach ($array as $key => $value) {
-            $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
+            $fullKey = $prefix === '' ? $key : ($prefix.'.'.$key);
 
             if (is_array($value)) {
                 $subFields = $this->makeFromArray($value, $fullKey);
@@ -118,7 +117,7 @@ class EditTranslationFile extends XotBaseEditRecord
                     ->columns(2);
             } else {
                 $fields[] = TextInput::make($fullKey)
-                    //->label($fullKey)
+                    // ->label($fullKey)
                     ->label($key)
                     ->default($value);
             }

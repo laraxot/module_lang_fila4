@@ -36,7 +36,7 @@ class TranslationEditor extends Field
 
         foreach ($state as $key => $value) {
             $keyStr = is_string($key) ? $key : (string) $key;
-            
+
             if (is_array($value)) {
                 $components[$keyStr] = Section::make($keyStr)->schema([
                     TranslationEditor::make($keyStr)->label('')->state($value),

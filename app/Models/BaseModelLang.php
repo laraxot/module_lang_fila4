@@ -6,7 +6,6 @@ namespace Modules\Lang\Models;
 
 // //use Laravel\Scout\Searchable;
 // ---------- traits
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\Traits\LinkedTrait;
 use Modules\Xot\Traits\Updater;
@@ -18,10 +17,10 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModelLang extends Model
 {
-    use \Modules\Xot\Models\Traits\HasXotFactory;
-
     // use Searchable;
     use LinkedTrait;
+
+    use \Modules\Xot\Models\Traits\HasXotFactory;
     use Updater;
 
     /**
