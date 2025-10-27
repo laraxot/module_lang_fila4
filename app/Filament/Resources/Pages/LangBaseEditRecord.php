@@ -13,7 +13,7 @@ abstract class LangBaseEditRecord extends XotBaseEditRecord
 {
     protected static string $resource; // = SectionResource::class;
 
-    // use Translatable; // Temporaneamente commentato per compatibilità Filament 4.x
+    use Translatable; 
 
     protected function getHeaderActions(): array
     {
