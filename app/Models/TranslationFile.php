@@ -14,24 +14,22 @@ use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
 use Modules\Lang\Actions\ReadTranslationFileAction;
 use Modules\Lang\Database\Factories\TranslationFileFactory;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
+use Override;
+use Sushi\Sushi;
 
 use function Safe\json_encode;
 
-use Sushi\Sushi;
-
 /**
- * @property string|null                  $key
- * @property string|null                  $path
- * @property string|null                  $id
- * @property string|null                  $name
+ * @property string|null $key
+ * @property string|null $path
+ * @property string|null $id
+ * @property string|null $name
  * @property array<array-key, mixed>|null $content
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
  *
- * @method static TranslationFileFactory          factory($count = null, $state = [])
+ * @method static TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -41,27 +39,7 @@ use Sushi\Sushi;
  * @method static Builder<static>|TranslationFile whereName($value)
  * @method static Builder<static>|TranslationFile wherePath($value)
  *
- * @mixin \Eloquent
- */
-/**
- * @property string|null                  $key
- * @property string|null                  $path
- * @property string|null                  $id
- * @property string|null                  $name
- * @property array<array-key, mixed>|null $content
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
- *
- * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
- * @method static Builder<static>|TranslationFile                         newModelQuery()
- * @method static Builder<static>|TranslationFile                         newQuery()
- * @method static Builder<static>|TranslationFile                         query()
- * @method static Builder<static>|TranslationFile                         whereContent($value)
- * @method static Builder<static>|TranslationFile                         whereId($value)
- * @method static Builder<static>|TranslationFile                         whereKey($value)
- * @method static Builder<static>|TranslationFile                         whereName($value)
- * @method static Builder<static>|TranslationFile                         wherePath($value)
- *
+ * @mixin IdeHelperTranslationFile
  * @mixin \Eloquent
  */
 class TranslationFile extends BaseModel
@@ -88,7 +66,7 @@ class TranslationFile extends BaseModel
      *
      * @return array<string, string>
      */
-    #[\Override]
+    #[Override]
     protected function casts(): array
     {
         return [
@@ -96,24 +74,14 @@ class TranslationFile extends BaseModel
         ];
     }
 
-    /**
-     * @return list<array<string, mixed>>
-     */
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
-        $rows = Arr::map($files, static function ($item) {
-            $item = SafeArrayCastAction::cast($item);
-            $item['id'] = $item['key'] ?? '';
-            $path = SafeStringCastAction::cast($item['path'] ?? '');
-            $item['name'] = $path ? basename($path, '.php') : '';
+        $rows = Arr::map($files, function ($item) {
+            $item['id'] = $item['key'];
+            $item['name'] = basename($item['path'], '.php');
 
-            if ($path && File::exists($path)) {
-                $content = File::getRequire($path);
-                $item['content'] = json_encode($content);
-            } else {
-                $item['content'] = '{}';
-            }
+            $item['content'] = json_encode(File::getRequire($item['path']));
 
             /*
              * // Carica il contenuto del file
@@ -128,7 +96,6 @@ class TranslationFile extends BaseModel
             return $item;
         });
 
-        /* @phpstan-ignore-next-line return.type */
         return $rows;
     }
 }

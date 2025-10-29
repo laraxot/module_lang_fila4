@@ -25,16 +25,12 @@ class TransArrayAction
     public function execute(array $array, ?string $transKey): array
     {
         if ($transKey === null) {
-            $result = Arr::map($array, SafeStringCastAction::cast(...));
-
-            return is_array($result) ? array_map(fn ($value) => (string) $value, $result) : [];
+            return Arr::map($array, SafeStringCastAction::cast(...));
         }
 
         $this->transKey = $transKey;
 
-        $result = Arr::map($array, $this->trans(...));
-
-        return is_array($result) ? array_map(fn ($value) => (string) $value, $result) : [];
+        return Arr::map($array, $this->trans(...));
     }
 
     /**

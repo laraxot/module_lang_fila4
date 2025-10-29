@@ -6,8 +6,11 @@ namespace Modules\Lang\Models;
 
 // //use Laravel\Scout\Searchable;
 // ---------- traits
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\Traits\LinkedTrait;
+use Modules\Xot\Actions\Factory\GetFactoryAction;
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -17,10 +20,10 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModelLang extends Model
 {
+    use HasFactory;
+
     // use Searchable;
     use LinkedTrait;
-
-    use \Modules\Xot\Models\Traits\HasXotFactory;
     use Updater;
 
     /**
@@ -64,6 +67,15 @@ abstract class BaseModelLang extends Model
      * protected $post;
      * protected $lang;
      */
+    /**
+     * Create a new factory instance for the model.
+     *
+     * @return Factory
+     */
+    protected static function newFactory()
+    {
+        return app(GetFactoryAction::class)->execute(static::class);
+    }
 
     /**
      * @return array<string, string> */

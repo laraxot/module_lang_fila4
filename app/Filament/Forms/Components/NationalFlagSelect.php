@@ -36,21 +36,14 @@ class NationalFlagSelect extends Select
      *
      * @return array<string, string>
      */
-    /**
-     * @return array<string, string>
-     */
     protected function getCountryOptions(): array
     {
         $countries = countries();
-        $countries = Arr::sort($countries, fn ($c) => is_array($c) && isset($c['name']) ? $c['name'] : '');
+        $countries = Arr::sort($countries, fn ($c) => $c['name']);
 
         $options = Arr::mapWithKeys($countries, function ($c) {
-            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2']) || ! isset($c['name'])) {
-                return [];
-            }
-
-            $code = is_string($c['iso_3166_1_alpha2']) ? $c['iso_3166_1_alpha2'] : '';
-            $name = is_string($c['name']) ? $c['name'] : '';
+            $code = $c['iso_3166_1_alpha2'];
+            // $label = $c['name'];
             $flag_name = strtolower($code);
             $localizedLabel = __('lang::countries.'.$flag_name);
 
@@ -62,15 +55,7 @@ class NationalFlagSelect extends Select
             return [$code => $html];
         });
 
-        // Assicura che sia array<string, string>
-        $result = [];
-        foreach ($options as $key => $value) {
-            if (is_string($key) && is_string($value)) {
-                $result[$key] = $value;
-            }
-        }
-
-        return $result;
+        return $options;
     }
 
     /**
@@ -90,35 +75,25 @@ class NationalFlagSelect extends Select
 
         // Filter countries by search term
         $filteredCountries = array_filter($countries, function ($country) use ($searchLower) {
-            if (! is_array($country) || ! isset($country['iso_3166_1_alpha2']) || ! isset($country['name'])) {
-                return false;
-            }
-
-            $code = is_string($country['iso_3166_1_alpha2']) ? $country['iso_3166_1_alpha2'] : '';
+            $code = $country['iso_3166_1_alpha2'];
             $flag_name = strtolower($code);
 
             // Get localized country name
             $localizedName = __('lang::countries.'.$flag_name);
 
             // Search in both English name and localized name
-            $name = is_string($country['name']) ? strtolower($country['name']) : '';
-
             return
-                str_contains($name, $searchLower) ||
+                str_contains(strtolower($country['name']), $searchLower) ||
                 str_contains(strtolower($localizedName), $searchLower) ||
                 str_contains(strtolower($code), $searchLower);
         });
 
         // Sort filtered results by name
-        $filteredCountries = Arr::sort($filteredCountries, fn ($c) => is_array($c) && isset($c['name']) ? $c['name'] : '');
+        $filteredCountries = Arr::sort($filteredCountries, fn ($c) => $c['name']);
 
         // Map to options format with flags
         $options = Arr::mapWithKeys($filteredCountries, function ($c) {
-            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2']) || ! isset($c['name'])) {
-                return [];
-            }
-
-            $code = is_string($c['iso_3166_1_alpha2']) ? $c['iso_3166_1_alpha2'] : '';
+            $code = $c['iso_3166_1_alpha2'];
             $flag_name = strtolower($code);
             $localizedLabel = __('lang::countries.'.$flag_name);
 
@@ -130,14 +105,6 @@ class NationalFlagSelect extends Select
             return [$code => $html];
         });
 
-        // Assicura che sia array<string, string>
-        $result = [];
-        foreach ($options as $key => $value) {
-            if (is_string($key) && is_string($value)) {
-                $result[$key] = $value;
-            }
-        }
-
-        return $result;
+        return $options;
     }
 }

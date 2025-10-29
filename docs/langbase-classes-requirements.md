@@ -329,3 +329,4 @@ $value = $model->field;  // Ritorna traduzione 'en' se esiste, altrimenti fallba
 **Versione Plugin**: lara-zeus/spatie-translatable 1.0.4  
 **Compatibilità**: Filament 4.x, Laravel 12.x
 
+
