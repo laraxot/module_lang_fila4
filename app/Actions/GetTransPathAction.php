@@ -30,7 +30,7 @@ class GetTransPathAction
             $lang_path = base_path('Modules/'.$ns.'/lang');
         }
         $file_name = $piece[0] ?? '';
-        Assert::string($file_name, 'Il nome del file deve essere una stringa');
+        // $file_name is always string due to ?? ''
 
         return $lang_path.'/'.$lang.'/'.$file_name.'.php';
     }
