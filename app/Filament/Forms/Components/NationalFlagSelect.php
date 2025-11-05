@@ -39,11 +39,25 @@ class NationalFlagSelect extends Select
     protected function getCountryOptions(): array
     {
         $countries = countries();
-        $countries = Arr::sort($countries, fn ($c) => $c['name']);
+        // PHPStan L10: Type narrowing for array offset access
+        $countries = Arr::sort($countries, function ($c) {
+            return is_array($c) && isset($c['name']) ? $c['name'] : '';
+        });
 
-        $options = Arr::mapWithKeys($countries, function ($c) {
+        /** @var array<string, string> $options */
+        $options = [];
+
+        foreach ($countries as $c) {
+            // PHPStan L10: Type narrowing for country array
+            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2'])) {
+                continue;
+            }
+
             $code = $c['iso_3166_1_alpha2'];
-            // $label = $c['name'];
+            if (! is_string($code)) {
+                continue;
+            }
+
             $flag_name = strtolower($code);
             $localizedLabel = __('lang::countries.'.$flag_name);
 
@@ -52,8 +66,8 @@ class NationalFlagSelect extends Select
 
             $html = '<span class="flex items-center gap-2">'.$flag.$localizedLabel.'</span>';
 
-            return [$code => $html];
-        });
+            $options[$code] = $html;
+        }
 
         return $options;
     }
@@ -75,25 +89,57 @@ class NationalFlagSelect extends Select
 
         // Filter countries by search term
         $filteredCountries = array_filter($countries, function ($country) use ($searchLower) {
+            // PHPStan L10: Type narrowing for country array
+            if (! is_array($country) || ! isset($country['iso_3166_1_alpha2'], $country['name'])) {
+                return false;
+            }
+
             $code = $country['iso_3166_1_alpha2'];
+            $name = $country['name'];
+
+            if (! is_string($code) || ! is_string($name)) {
+                return false;
+            }
+
             $flag_name = strtolower($code);
 
             // Get localized country name
             $localizedName = __('lang::countries.'.$flag_name);
+            // PHPStan L10: __() can return string|array, handle both
+            if (is_array($localizedName)) {
+                return str_contains(strtolower($name), $searchLower) ||
+                    str_contains(strtolower($code), $searchLower);
+            }
+
+            $localizedNameStr = is_string($localizedName) ? $localizedName : '';
 
             // Search in both English name and localized name
             return
-                str_contains(strtolower($country['name']), $searchLower) ||
-                str_contains(strtolower($localizedName), $searchLower) ||
+                str_contains(strtolower($name), $searchLower) ||
+                str_contains(strtolower($localizedNameStr), $searchLower) ||
                 str_contains(strtolower($code), $searchLower);
         });
 
         // Sort filtered results by name
-        $filteredCountries = Arr::sort($filteredCountries, fn ($c) => $c['name']);
+        $filteredCountries = Arr::sort($filteredCountries, function ($c) {
+            return is_array($c) && isset($c['name']) ? $c['name'] : '';
+        });
 
         // Map to options format with flags
-        $options = Arr::mapWithKeys($filteredCountries, function ($c) {
+        /** @var array<string, string> $options */
+        $options = [];
+
+        foreach ($filteredCountries as $c) {
+            // PHPStan L10: Type narrowing for country array
+            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2'])) {
+                continue;
+            }
+
             $code = $c['iso_3166_1_alpha2'];
+            if (! is_string($code)) {
+                continue;
+            }
+
             $flag_name = strtolower($code);
             $localizedLabel = __('lang::countries.'.$flag_name);
 
@@ -102,8 +148,8 @@ class NationalFlagSelect extends Select
 
             $html = '<span class="flex items-center gap-2">'.$flag.$localizedLabel.'</span>';
 
-            return [$code => $html];
-        });
+            $options[$code] = $html;
+        }
 
         return $options;
     }

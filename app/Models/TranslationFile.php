@@ -13,8 +13,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
 use Modules\Lang\Actions\ReadTranslationFileAction;
-use Modules\Lang\Database\Factories\TranslationFileFactory;
-use Modules\Xot\Contracts\ProfileContract;
 use Override;
 use Sushi\Sushi;
 
@@ -26,10 +24,9 @@ use function Safe\json_encode;
  * @property string|null $id
  * @property string|null $name
  * @property array<array-key, mixed>|null $content
- * @property-read ProfileContract|null $creator
- * @property-read ProfileContract|null $updater
- *
- * @method static TranslationFileFactory factory($count = null, $state = [])
+ * @property-read \Modules\Quaeris\Models\Profile|null $creator
+ * @property-read \Modules\Quaeris\Models\Profile|null $updater
+ * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -38,8 +35,6 @@ use function Safe\json_encode;
  * @method static Builder<static>|TranslationFile whereKey($value)
  * @method static Builder<static>|TranslationFile whereName($value)
  * @method static Builder<static>|TranslationFile wherePath($value)
- *
- * @mixin IdeHelperTranslationFile
  * @mixin \Eloquent
  */
 class TranslationFile extends BaseModel
