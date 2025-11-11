@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Standard per helper_text nelle Traduzioni SaluteOra
-=======
-# Standard per helper_text nelle Traduzioni 
->>>>>>> cbfeb6b (.)
 
 ## Regola Critica: Gestione helper_text
 
@@ -146,21 +142,12 @@ Prima di considerare completo un file di traduzione:
 Questa regola si applica a:
 - `Modules/*/lang/*/` - Tutti i moduli
 - `Themes/*/lang/*/` - Tutti i temi
-<<<<<<< HEAD
 - Qualsiasi file di traduzione del progetto SaluteOra
 
 ## Caso Studio: SaluteOra profile_widget.php
 
 ### Problema Identificato (Gennaio 2025)
 Il file `Modules/SaluteOra/lang/it/profile_widget.php` conteneva:
-=======
-- Qualsiasi file di traduzione del progetto 
-
-## Caso Studio:  profile_widget.php
-
-### Problema Identificato (Gennaio 2025)
-Il file `Modules//lang/it/profile_widget.php` conteneva:
->>>>>>> cbfeb6b (.)
 - Sintassi `array()` invece di `[]`
 - Mancanza di `declare(strict_types=1)`
 - Campi `first_name` e `last_name` con valori non tradotti
@@ -184,10 +171,6 @@ Il file `Modules//lang/it/profile_widget.php` conteneva:
 - [Regole Generali Traduzioni](translation_standards_links.md)
 - [Documentazione Modulo Lang](../../laravel/Modules/Lang/docs/)
 - [Best Practices Filament](../../laravel/Modules/Xot/docs/filament/)
-<<<<<<< HEAD
 - [Standard di Qualità SaluteOra](../../laravel/Modules/SaluteOra/docs/translation_quality_standards.md)
-=======
-- [Standard di Qualità ](../../laravel/Modules/<nome modulo>/docs/translation_quality_standards.md)
->>>>>>> cbfeb6b (.)
 
 *Ultimo aggiornamento: Gennaio 2025* 
