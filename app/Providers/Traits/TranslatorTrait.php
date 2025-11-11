@@ -13,29 +13,11 @@ trait TranslatorTrait
     public function registerTranslator(): void
     {
         // Override the JSON Translator
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
         $this->app->extend('translator', static function (Translator $translator): TranslatorService {
             $translatorService = new TranslatorService($translator->getLoader(), $translator->getLocale());
             $translatorService->setFallback($translator->getFallback());
 
             return $translatorService;
         });
-<<<<<<< HEAD
-=======
-        $this->app->extend(
-            'translator',
-            static function (Translator $translator): TranslatorService {
-                $translatorService = new TranslatorService($translator->getLoader(), $translator->getLocale());
-                $translatorService->setFallback($translator->getFallback());
-
-                return $translatorService;
-            }
-        );
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     }
 }
