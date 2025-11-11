@@ -356,7 +356,7 @@ describe('Lang Business Logic', function (): void {
 
         foreach ($validLocales as $locale) {
             /** @var \Illuminate\Database\Eloquent\Collection */
-        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
+            $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
                 'user_id' => $user->id,
                 'key' => "test.{$locale}",
                 'value' => "Test in {$locale}",
