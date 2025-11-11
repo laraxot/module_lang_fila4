@@ -9,7 +9,7 @@ use Modules\User\Models\User;
 
 describe('Lang Business Logic', function (): void {
     it('can create and manage posts', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -39,7 +39,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can publish posts', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
         /** @var \Illuminate\Database\Eloquent\Collection */
         $post = Post/** @phpstan-ignore-line */ ::factory()->create([
@@ -60,7 +60,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage post categories', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -93,7 +93,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can create and manage translations', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -126,7 +126,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage multilingual content', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -180,7 +180,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage translation files', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -210,7 +210,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can validate translation keys', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -235,7 +235,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage post workflow', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
         /** @var \Illuminate\Database\Eloquent\Collection */
         $post = Post/** @phpstan-ignore-line */ ::factory()->create([
@@ -260,7 +260,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can track translation changes', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
         /** @var \Illuminate\Database\Eloquent\Collection */
         $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
@@ -283,7 +283,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage post metadata', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -312,7 +312,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage translation namespaces', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
@@ -349,7 +349,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can validate locale formats', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         $validLocales = ['en', 'it', 'de', 'fr', 'es'];
@@ -374,7 +374,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can manage post scheduling', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
         $futureDate = now()->addDays(7);
 
@@ -397,7 +397,7 @@ describe('Lang Business Logic', function (): void {
     });
 
     it('can track translation statistics', function (): void {
-        /** @var \Illuminate\Database\Eloquent\Collection */
+        /** @var User */
         $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         Translation::factory()
