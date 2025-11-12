@@ -21,7 +21,11 @@
 - Consulta anche:
   - [translation_keys_best_practices.md](../translation_keys_best_practices.md)
   - [translation_keys_rules.md](../translation_keys_rules.md)
+<<<<<<< HEAD
   - [docs SaluteOra](../../SaluteOra/docs/translations.md)
+=======
+  - [docs <nome progetto>](../../<nome progetto>/project_docs/translations.md)
+>>>>>>> cbfeb6b (.)
 
 ## Struttura Corretta per le Traduzioni
 
@@ -89,8 +93,13 @@ TextInput::make('title')
 
 ## Collegamenti Bidirezionali
 
+<<<<<<< HEAD
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
 - [Regole Generali](../../Xot/docs/README.md) - Best practice e linee guida generali
+=======
+- [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
+- [Regole Generali](../../Xot/project_docs/README.md) - Best practice e linee guida generali
+>>>>>>> cbfeb6b (.)
 
 ---
 
@@ -101,8 +110,13 @@ Questo documento è linkato anche dalla documentazione del modulo Cms per garant
 
 - Tutte le label sono gestite tramite i file di traduzione del modulo.
 - Consulta anche:
+<<<<<<< HEAD
   - [docs SaluteOra](../../SaluteOra/docs/README.md)
   - [docs Xot](../../Xot/docs/README.md)
+=======
+  - [docs <nome progetto>](../../<nome progetto>/project_docs/README.md)
+  - [docs Xot](../../Xot/project_docs/README.md)
+>>>>>>> cbfeb6b (.)
 
 ## Policy DRY sulle Traduzioni di Disponibilità/Appuntamenti
 
