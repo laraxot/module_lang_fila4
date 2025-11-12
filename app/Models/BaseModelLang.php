@@ -64,16 +64,22 @@ abstract class BaseModelLang extends Model
     // -----------
     /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
      * protected $id;
      * protected $post;
      * protected $lang;
      */
+<<<<<<< HEAD
 =======
     protected $id;
     protected $post;
     protected $lang;
     */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     /**
      * Create a new factory instance for the model.
      *
@@ -91,13 +97,19 @@ abstract class BaseModelLang extends Model
         return [
             'id' => 'string',
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
             'uuid' => 'string',
             'published_at' => 'datetime',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
+<<<<<<< HEAD
 =======
             'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     }
 }
