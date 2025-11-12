@@ -66,10 +66,30 @@ abstract class BaseModel extends Model
     {
         return [
             'id' => 'string',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b93ef594b4 (.)
+>>>>>>> a7ee0d6 (.)
             'uuid' => 'string',
             'published_at' => 'datetime',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+            'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+            'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     }
 }
