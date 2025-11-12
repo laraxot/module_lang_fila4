@@ -22,6 +22,9 @@ class PublishTranslationAction
     {
         /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
          * $hints=app('translator')->getLoader()->namespaces();
          * $path=collect($hints)->get($row->namespace);
          * if($path==null){
@@ -36,6 +39,7 @@ class PublishTranslationAction
          * $data=File::getRequire($filename);
          * }
          */
+<<<<<<< HEAD
 =======
         $hints=app('translator')->getLoader()->namespaces();
         $path=collect($hints)->get($row->namespace);
@@ -52,18 +56,26 @@ class PublishTranslationAction
         }
         */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
         $data = $translationData->getData();
         $data_up = $data;
         Arr::set($data_up, $translationData->item, $translationData->value);
         if ($data !== $data_up) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
             app(SaveArrayAction::class)->execute(
                 data: $data_up,
                 filename: $filename,
             );
+<<<<<<< HEAD
 =======
             app(SaveArrayAction::class)->execute(data: $data_up, filename: $filename);
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
         }
     }
 }
