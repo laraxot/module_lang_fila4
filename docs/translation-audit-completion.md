@@ -3,7 +3,11 @@
 ## Riepilogo Lavoro Effettuato
 
 ### Problema Identificato
+<<<<<<< HEAD
 Durante l'audit delle traduzioni del progetto SaluteOra, sono state identificate numerose traduzioni italiane presenti in file di lingua tedesca e inglese, causando incoerenza nell'interfaccia utente.
+=======
+Durante l'audit delle traduzioni del progetto , sono state identificate numerose traduzioni italiane presenti in file di lingua tedesca e inglese, causando incoerenza nell'interfaccia utente.
+>>>>>>> cbfeb6b (.)
 
 ### Pattern di Errore
 - **Errore**: `'required' => 'Campo obbligatorio'` in file `lang/de/` e `lang/en/`
@@ -23,7 +27,11 @@ Durante l'audit delle traduzioni del progetto SaluteOra, sono state identificate
 - **File inglesi**: 5 file corretti
 - **Pattern**: `'required' => 'Pflichtfeld'` (DE) / `'required' => 'Required field'` (EN)
 
+<<<<<<< HEAD
 #### ✅ Modulo SaluteOra
+=======
+#### ✅ Modulo 
+>>>>>>> cbfeb6b (.)
 - **File tedeschi**: 4 file corretti
 - **File inglesi**: 4 file corretti
 - **Pattern**: `'required' => 'Dieses Feld ist erforderlich'` (DE) / `'required' => 'This field is required'` (EN)
@@ -130,12 +138,20 @@ Durante l'audit delle traduzioni del progetto SaluteOra, sono state identificate
 
 ### Moduli con Documentazione Aggiornata
 1. **Lang Module**: `laravel/Modules/Lang/docs/translation_errors_correction_2025.md`
+<<<<<<< HEAD
 2. **SaluteOra Module**: `laravel/Modules/SaluteOra/docs/translation_refactor_summary_2025.md`
+=======
+2. ** Module**: `laravel/Modules/<nome modulo>/docs/translation_refactor_summary_2025.md`
+>>>>>>> cbfeb6b (.)
 
 ### Collegamenti Bidirezionali Creati
 - [Root Docs: Translation Standards](translation_standards.md)
 - [Lang Module: Translation Best Practices](../laravel/Modules/Lang/docs/translation_best_practices.md)
+<<<<<<< HEAD
 - [SaluteOra Module: Translation Guidelines](../laravel/Modules/SaluteOra/docs/translation_guidelines.md)
+=======
+- [ Module: Translation Guidelines](../laravel/Modules/<nome modulo>/docs/translation_guidelines.md)
+>>>>>>> cbfeb6b (.)
 
 ## Prevenzione Errori Futuri
 
