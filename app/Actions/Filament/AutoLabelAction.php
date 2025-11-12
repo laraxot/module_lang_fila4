@@ -105,7 +105,7 @@ class AutoLabelAction
 
         /*
          * $component_parent=get_parent_class($component);
-         * if(in_array($component_parent,['Filament\Forms\Components\Component'])){
+         * if(in_array($component_parent,['Filament\Schemas\Components\Component'])){
          * $component_key=Str::of(class_basename($component))->plural()->snake()->toString();
          * }else{
          * $component_key=Str::of(class_basename($component_parent))->plural()->snake()->toString();
@@ -180,9 +180,7 @@ class AutoLabelAction
         }
         */
         if ($type === 'icon' && app(SvgExistsAction::class)->execute($label)) {
-            if (method_exists($component, 'iconButton')) {
-                $component->iconButton();
-            }
+            $component->iconButton();
             $component->{$type}($label);
 
             // $component->label('FIX:'.$label_key);
@@ -190,9 +188,7 @@ class AutoLabelAction
         }
         if ($type === 'icon' && ! app(SvgExistsAction::class)->execute($label)) {
             // $component->{$type}($label);
-            if (method_exists($component, 'iconButton')) {
-                $component->iconButton();
-            }
+            $component->iconButton();
             // $component->label('FIX:'.$label_key);
             // $component->tooltip('FIX:'.$label_key);
             $component->{$type}('heroicon-o-question-mark-circle');

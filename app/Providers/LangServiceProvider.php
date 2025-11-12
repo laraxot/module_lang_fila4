@@ -128,10 +128,8 @@ class LangServiceProvider extends XotBaseServiceProvider
             'getRecord' => $component->getRecord(),
             ]);
             */
-            if (method_exists($component, 'getRecord') && $component->getRecord() == null) {
-                if (method_exists($component, 'button')) {
-                    $component->button();
-                }
+            if ($component->getRecord() == null) {
+                $component->button();
             }
 
             // if (method_exists($component, 'icon')) {
