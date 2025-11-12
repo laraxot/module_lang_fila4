@@ -90,9 +90,15 @@ Il posto migliore per questo codice è un middleware, che verrà trattato in det
 
 Considerando le regole di localizzazione del progetto `saluteora`, che richiedono il prefisso della lingua negli URL (`/{locale}/{sezione}/{risorsa}`), è essenziale configurare correttamente la lingua predefinita e di fallback. Propongo di impostare 'it' (italiano) come lingua predefinita, poiché è probabile che sia la lingua principale per gli utenti target. La lingua di fallback sarà 'en' (inglese) per garantire che ci sia sempre una traduzione disponibile, anche se non perfetta.
 
+<<<<<<< HEAD
 Inoltre, data la limitazione del fallback con i file JSON, raccomando di continuare a utilizzare principalmente file PHP per le traduzioni strutturate, come discusso nella documentazione precedente (`/var/www/html/saluteora/laravel/Modules/Lang/docs/static-text-translation.md`). I file JSON possono essere utilizzati per testi più lunghi, ma con la consapevolezza che il fallback non funzionerà come previsto.
 
 Per l'impostazione dinamica della lingua, suggerisco di integrare questa logica con il pacchetto `mcamara/laravel-localization`, che è già documentato in `/var/www/html/saluteora/laravel/Modules/Lang/docs/laravel-localization-complete.md`. Questo pacchetto gestisce il cambio di lingua tramite middleware, il che si allinea con le migliori pratiche.
+=======
+Inoltre, data la limitazione del fallback con i file JSON, raccomando di continuare a utilizzare principalmente file PHP per le traduzioni strutturate, come discusso nella documentazione precedente (`/var/www/html/saluteora/laravel/Modules/Lang/project_docs/static-text-translation.md`). I file JSON possono essere utilizzati per testi più lunghi, ma con la consapevolezza che il fallback non funzionerà come previsto.
+
+Per l'impostazione dinamica della lingua, suggerisco di integrare questa logica con il pacchetto `mcamara/laravel-localization`, che è già documentato in `/var/www/html/saluteora/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`. Questo pacchetto gestisce il cambio di lingua tramite middleware, il che si allinea con le migliori pratiche.
+>>>>>>> a7ee0d6 (.)
 
 ## Modifiche Proposte
 
@@ -122,7 +128,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - **Ragionamento**: Impostare 'it' come lingua predefinita riflette il pubblico principale del progetto `saluteora`. 'en' come fallback garantisce che ci sia una traduzione di riserva, migliorando l'esperienza utente rispetto alla visualizzazione di chiavi non tradotte.
 
 2. **Integrazione con `mcamara/laravel-localization` per l'Impostazione Dinamica della Lingua**:
+<<<<<<< HEAD
    - Assicurarsi che il pacchetto sia installato come descritto in `/var/www/html/saluteora/laravel/Modules/Lang/docs/laravel-localization-complete.md`.
+=======
+   - Assicurarsi che il pacchetto sia installato come descritto in `/var/www/html/saluteora/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`.
+>>>>>>> a7ee0d6 (.)
    - Verificare che i middleware siano registrati in `/var/www/html/saluteora/laravel/app/Http/Kernel.php`:
      ```php
      protected $routeMiddleware = [
@@ -166,7 +176,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - **Ragionamento**: Definire chiaramente le lingue supportate garantisce che il pacchetto `mcamara/laravel-localization` possa gestire correttamente i cambi di lingua. Mantenere `hideDefaultLocaleInURL` su `false` è coerente con la regola del progetto di includere sempre il prefisso della lingua negli URL.
 
 4. **Uso di File PHP per Traduzioni Strutturate**:
+<<<<<<< HEAD
    - Continuare a utilizzare file PHP per traduzioni strutturate, come raccomandato in `/var/www/html/saluteora/laravel/Modules/Lang/docs/static-text-translation.md`.
+=======
+   - Continuare a utilizzare file PHP per traduzioni strutturate, come raccomandato in `/var/www/html/saluteora/laravel/Modules/Lang/project_docs/static-text-translation.md`.
+>>>>>>> a7ee0d6 (.)
    - Esempio di file in `/var/www/html/saluteora/laravel/lang/it/auth.php`:
      ```php
      return [
