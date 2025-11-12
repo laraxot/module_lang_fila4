@@ -310,8 +310,13 @@ return [
 
 ## Collegamenti Bidirezionali
 
+<<<<<<< HEAD
 - [SaluteOra Translation Audit](../Modules/SaluteOra/docs/translation_audit_city_fields.md)
 - [User Module Translation Rules](../Modules/User/docs/widget-translation-rules.md)
+=======
+- [SaluteOra Translation Audit](../Modules/SaluteOra/project_docs/translation_audit_city_fields.md)
+- [User Module Translation Rules](../Modules/User/project_docs/widget-translation-rules.md)
+>>>>>>> a7ee0d6 (.)
 - [Translation Syntax Fixes](translation_syntax_fixes.md)
 - [Windsurf Translation Rules](../.windsurf/rules/translation-complete-structure.mdc)
 
