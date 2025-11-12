@@ -48,11 +48,7 @@ class TranslationFile extends BaseModel
         'content',
     ];
 
-<<<<<<< HEAD
     protected array $form = [
-=======
-    protected array $schema = [
->>>>>>> f5327e8 (.)
         'key' => 'string',
         'path' => 'string',
         'id' => 'string',
@@ -77,10 +73,28 @@ class TranslationFile extends BaseModel
     {
         $files = app(GetAllTranslationAction::class)->execute();
         $rows = Arr::map($files, function ($item) {
-            $item['id'] = $item['key'];
-            $item['name'] = basename($item['path'], '.php');
-
-            $item['content'] = json_encode(File::getRequire($item['path']));
+            if (!is_array($item)) {
+                return [];
+            }
+            
+            $item['id'] = isset($item['key']) ? (string) $item['key'] : '';
+            $item['name'] = isset($item['path']) ? basename((string) $item['path'], '.php') : '';
+            
+            if (isset($item['path'])) {
+                $path = (string) $item['path'];
+                if (File::exists($path)) {
+                    try {
+                        $content = File::getRequire($path);
+                        $item['content'] = json_encode($content);
+                    } catch (\Exception $e) {
+                        $item['content'] = '';
+                    }
+                } else {
+                    $item['content'] = '';
+                }
+            } else {
+                $item['content'] = '';
+            }
 
             /*
              * // Carica il contenuto del file
@@ -95,7 +109,6 @@ class TranslationFile extends BaseModel
             return $item;
         });
 
-        /** @var array<int, array<string, mixed>> */
         return $rows;
     }
 }

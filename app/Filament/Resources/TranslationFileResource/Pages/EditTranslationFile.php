@@ -57,8 +57,13 @@ class EditTranslationFile extends XotBaseEditRecord
          * $this->halt();
          * }
          */
-        /** @phpstan-ignore argument.type, property.nonObject */
-        app(SaveTransAction::class)->execute($this->record->key, $data['content']);
+        $record = $this->record;
+        if (is_object($record) && isset($record->key)) {
+            $key = is_string($record->key) ? $record->key : (string) $record->key;
+            /** @var array<string, mixed>|\Illuminate\Contracts\Support\Htmlable|int|string|null $content */
+            $content = $data['content'] ?? null;
+            app(SaveTransAction::class)->execute($key, $content);
+        }
 
         // dddx(['record'=>$this->record,'data'=>$data]);
         return $data;
@@ -67,15 +72,24 @@ class EditTranslationFile extends XotBaseEditRecord
     protected function afterSave(): void
     {
         // Ricarica il record per aggiornare i dati
-        /** @phpstan-ignore method.nonObject */
-        $this->record->refresh();
+        if (is_object($this->record)) {
+            $this->record->refresh();
+        }
     }
 
     #[Override]
     public function getFormSchema(): array
     {
         return [
-            Section::make('content')->schema(fn ($record) => $this->makeFromArray($record->content, 'content')),
+            Section::make('content')->schema(function ($record): array {
+                if (is_object($record) && property_exists($record, 'content')) {
+                    $content = is_array($record->content) ? $record->content : [];
+                } else {
+                    $content = [];
+                }
+
+                return $this->makeFromArray($content, 'content');
+            }),
         ];
     }
 
@@ -87,9 +101,13 @@ class EditTranslationFile extends XotBaseEditRecord
             $fullKey = $prefix === '' ? $key : ($prefix.'.'.$key);
 
             if (is_array($value)) {
+                /** @var array<string, mixed> $childArray */
+                $childArray = $value;
+                /** @var array<\Illuminate\Contracts\Support\Htmlable|string> $childSchema */
+                $childSchema = self::makeFromArray($childArray, $fullKey);
                 $fields[] = Section::make($key)
                     ->label($fullKey)
-                    ->schema(self::makeFromArray($value, $fullKey))
+                    ->schema($childSchema)
                     ->columns(2);
             } else {
                 $fields[] = TextInput::make($fullKey)
@@ -99,7 +117,6 @@ class EditTranslationFile extends XotBaseEditRecord
             }
         }
 
-        /** @var array<int, \Filament\Forms\Components\TextInput|\Filament\Schemas\Components\Section> */
-        return array_values($fields);
+        return $fields;
     }
 }

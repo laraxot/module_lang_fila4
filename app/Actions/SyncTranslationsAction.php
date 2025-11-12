@@ -86,9 +86,8 @@ class SyncTranslationsAction
         $translationsAdded = 0;
 
         foreach ($sourceFiles as $sourceFile) {
-            $sourceFileStr = is_string($sourceFile) ? $sourceFile : '';
-            $fileName = basename($sourceFileStr);
-            $sourceTranslations = $this->loadTranslations($sourceFileStr);
+            $fileName = basename((string) $sourceFile);
+            $sourceTranslations = $this->loadTranslations((string) $sourceFile);
 
             if (empty($sourceTranslations)) {
                 continue;
@@ -140,7 +139,7 @@ class SyncTranslationsAction
         $directories = File::directories($modulesPath);
 
         foreach ($directories as $directory) {
-            $directoryStr = is_string($directory) ? $directory : '';
+            $directoryStr = (string) $directory;
             $moduleName = basename($directoryStr);
             if (File::exists("{$directoryStr}/lang")) {
                 $modules[] = $moduleName;
@@ -156,9 +155,6 @@ class SyncTranslationsAction
      * @param  string  $filePath  Percorso del file
      * @return array<string, mixed> Traduzioni caricate
      */
-    /**
-     * @return array<string, mixed>
-     */
     private function loadTranslations(string $filePath): array
     {
         if (! File::exists($filePath)) {
@@ -168,19 +164,17 @@ class SyncTranslationsAction
         try {
             $translations = require $filePath;
 
-            if (! is_array($translations)) {
-                return [];
-            }
-
-            // Assicura che sia array<string, mixed>
-            $result = [];
-            foreach ($translations as $key => $value) {
-                if (is_string($key)) {
-                    $result[$key] = $value;
+            // Ensure we return an array with string keys
+            if (is_array($translations)) {
+                $result = [];
+                foreach ($translations as $key => $value) {
+                    if (is_string($key)) {
+                        $result[$key] = $value;
+                    }
                 }
+                return $result;
             }
-
-            return $result;
+            return [];
         } catch (Exception $e) {
             return [];
         }

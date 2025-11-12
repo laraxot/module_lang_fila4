@@ -40,11 +40,11 @@ class LocaleSwitcherRefresh extends Action
             ])
             ->action(function (array $data) {
                 $locale = $data['locale'] ?? 'en';
-                $localeStr = is_string($locale) ? $locale : 'en';
+                $locale = is_string($locale) ? $locale : 'en';
 
-                session()->put('locale', $localeStr);
-                App::setLocale($localeStr);
-                // Filament::setLocale($localeStr);
+                session()->put('locale', $locale);
+                App::setLocale($locale);
+                // Filament::setLocale($locale);
 
                 return redirect(request()->header('Referer'));
             })

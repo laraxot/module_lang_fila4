@@ -26,13 +26,27 @@ class TransArrayAction
     {
         if ($transKey === null) {
             $result = Arr::map($array, SafeStringCastAction::cast(...));
-            return is_array($result) ? array_map(fn($value) => (string) $value, $result) : [];
+            if (is_array($result)) {
+                $stringResult = [];
+                foreach ($result as $key => $value) {
+                    $stringResult[$key] = (string) $value;
+                }
+                return $stringResult;
+            }
+            return [];
         }
 
         $this->transKey = $transKey;
 
         $result = Arr::map($array, $this->trans(...));
-        return is_array($result) ? array_map(fn($value) => (string) $value, $result) : [];
+        if (is_array($result)) {
+            $stringResult = [];
+            foreach ($result as $key => $value) {
+                $stringResult[$key] = (string) $value;
+            }
+            return $stringResult;
+        }
+        return [];
     }
 
     /**
