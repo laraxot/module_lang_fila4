@@ -109,6 +109,7 @@ class TranslationFile extends BaseModel
             return $item;
         });
 
+        /** @var array<int, array<string, mixed>> */
         return $rows;
     }
 }
