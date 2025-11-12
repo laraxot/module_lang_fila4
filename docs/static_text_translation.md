@@ -192,7 +192,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Applicare modifiche simili a tutti i file Blade rilevanti nel progetto.
 
 5. **Integrazione con `mcamara/laravel-localization`**:
+<<<<<<< HEAD
    - Assicurarsi che il pacchetto `mcamara/laravel-localization` sia installato e configurato come descritto nella documentazione `/var/www/html/saluteora/laravel/Modules/Lang/docs/laravel-localization-complete.md`.
+=======
+   - Assicurarsi che il pacchetto `mcamara/laravel-localization` sia installato e configurato come descritto nella documentazione `/var/www/html/saluteora/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`.
+>>>>>>> a7ee0d6 (.)
    - Modificare il file `/var/www/html/saluteora/laravel/routes/web.php` per aggiungere il prefisso della lingua:
      ```php
      Route::group([
