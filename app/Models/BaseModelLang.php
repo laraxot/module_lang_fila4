@@ -18,7 +18,6 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModelLang extends Model
 {
-    /** @use HasFactory<Modulesangdatabasefactoriesbasemodellangfactory> */
     use \Modules\Xot\Models\Traits\HasXotFactory;
 
     // use Searchable;
