@@ -52,9 +52,9 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null $relatedrev_count
  * @property string|null $linkable_type
  * @property int|null $views_count
- * @property-read \Modules\Quaeris\Models\Profile|null $creator
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read Model|\Eloquent|null $linkable
- * @property-read \Modules\Quaeris\Models\Profile|null $updater
+ * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  * @method static Builder<static>|Post newModelQuery()
  * @method static Builder<static>|Post newQuery()
  * @method static Builder<static>|Post query()
