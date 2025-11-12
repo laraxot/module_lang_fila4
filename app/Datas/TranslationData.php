@@ -60,6 +60,7 @@ class TranslationData extends Data
             throw new Exception('['.__LINE__.']['.class_basename($this).']');
         }
 
+        /** @var array<string, mixed> */
         return $data;
     }
 }
