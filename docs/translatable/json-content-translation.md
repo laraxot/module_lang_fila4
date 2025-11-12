@@ -1,14 +1,6 @@
 # Gestione Traduzioni Contenuti JSON
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Questo documento descrive come gestire le traduzioni per i contenuti JSON nel progetto , con particolare attenzione ai file di contenuto delle pagine.
-=======
-Questo documento descrive come gestire le traduzioni per i contenuti JSON nel progetto SaluteOra, con particolare attenzione ai file di contenuto delle pagine.
->>>>>>> 8b0b6ac (.)
-=======
-Questo documento descrive come gestire le traduzioni per i contenuti JSON nel progetto , con particolare attenzione ai file di contenuto delle pagine.
->>>>>>> 1c4a063 (.)
 
 ## Struttura dei Contenuti Traducibili
 
@@ -16,15 +8,7 @@ Questo documento descrive come gestire le traduzioni per i contenuti JSON nel pr
 
 I contenuti delle pagine sono memorizzati in file JSON nella directory:
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
 config/local/<nome progetto>/database/content/pages/
-=======
-config/local/saluteora/database/content/pages/
->>>>>>> 8b0b6ac (.)
-=======
-config/local/<nome progetto>/database/content/pages/
->>>>>>> 1c4a063 (.)
 ```
 
 ### Struttura Standard
@@ -93,18 +77,8 @@ Ogni file JSON può contenere sezioni traducibili seguendo questo pattern:
 ```json
 {
     "title": {
-<<<<<<< HEAD
-<<<<<<< HEAD
         "it": "Area Dottore - ",
         "en": "Doctor Area - "
-=======
-        "it": "Area Dottore - SaluteOra",
-        "en": "Doctor Area - SaluteOra"
->>>>>>> 8b0b6ac (.)
-=======
-        "it": "Area Dottore - ",
-        "en": "Doctor Area - "
->>>>>>> 1c4a063 (.)
     },
     "content_blocks": {
         "it": [
@@ -118,15 +92,7 @@ Ogni file JSON può contenere sezioni traducibili seguendo questo pattern:
                     "cta-buttons": [],
                     "cta_text": "Continua la registrazione",
                     "cta_link": "/doctor/patients",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "widget": "Modules\\<nome modulo>\\Filament\\Widgets\\DoctorCalendarWidget"
-=======
-                    "widget": "Modules\\SaluteOra\\Filament\\Widgets\\DoctorCalendarWidget"
->>>>>>> 8b0b6ac (.)
-=======
-                    "widget": "Modules\\<nome modulo>\\Filament\\Widgets\\DoctorCalendarWidget"
->>>>>>> 1c4a063 (.)
                 }
             }
         ],
@@ -141,15 +107,7 @@ Ogni file JSON può contenere sezioni traducibili seguendo questo pattern:
                     "cta-buttons": [],
                     "cta_text": "Continue registration",
                     "cta_link": "/doctor/patients",
-<<<<<<< HEAD
-<<<<<<< HEAD
                     "widget": "Modules\\<nome modulo>\\Filament\\Widgets\\DoctorCalendarWidget"
-=======
-                    "widget": "Modules\\SaluteOra\\Filament\\Widgets\\DoctorCalendarWidget"
->>>>>>> 8b0b6ac (.)
-=======
-                    "widget": "Modules\\<nome modulo>\\Filament\\Widgets\\DoctorCalendarWidget"
->>>>>>> 1c4a063 (.)
                 }
             }
         ]
@@ -189,15 +147,7 @@ Ogni file JSON può contenere sezioni traducibili seguendo questo pattern:
 
 Identificare i file JSON che necessitano di traduzione:
 ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
 find config/local/<nome progetto>/database/content/pages/ -name "*.json"
-=======
-find config/local/saluteora/database/content/pages/ -name "*.json"
->>>>>>> 8b0b6ac (.)
-=======
-find config/local/<nome progetto>/database/content/pages/ -name "*.json"
->>>>>>> 1c4a063 (.)
 ```
 
 ### 2. Analisi
@@ -242,15 +192,7 @@ jq '.title | keys' file.json
 
 # Controlla che tutti i file JSON abbiano le traduzioni complete
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 for file in config/local/<nome progetto>/database/content/pages/*.json; do
-=======
-for file in config/local/saluteora/database/content/pages/*.json; do
->>>>>>> 8b0b6ac (.)
-=======
-for file in config/local/<nome progetto>/database/content/pages/*.json; do
->>>>>>> 1c4a063 (.)
     echo "Checking $file..."
     
     # Verifica presenza sezioni it e en
