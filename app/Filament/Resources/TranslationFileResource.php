@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Lang\Filament\Resources;
 
 use Filament\Forms\Components;
@@ -17,6 +18,35 @@ use Override;
 class TranslationFileResource extends XotBaseResource
 {
     protected static ?string $model = TranslationFile::class;
+=======
+
+namespace Modules\Lang\Filament\Resources;
+
+use Override;
+use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\ListTranslationFiles;
+use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\CreateTranslationFile;
+use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslationFile;
+use Filament\Actions;
+use Filament\Forms\Components;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Schema;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Config;
+use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
+use Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
+use Modules\Lang\Filament\Resources\TranslationFileResource\RelationManagers;
+use Modules\Lang\Models\TranslationFile;
+use Modules\Xot\Filament\Resources\XotBaseResource;
+
+class TranslationFileResource extends XotBaseResource
+{
+    protected static null|string $model = TranslationFile::class;
+>>>>>>> f5327e8 (.)
 
     public static function getDefaultTranslatableLocale(): string
     {
@@ -72,7 +102,11 @@ class TranslationFileResource extends XotBaseResource
         return [
             'index' => ListTranslationFiles::route('/'),
             'create' => CreateTranslationFile::route('/create'),
+<<<<<<< HEAD
             // 'view' => Pages\ViewTranslationFile::route('/{record}'),
+=======
+            //'view' => Pages\ViewTranslationFile::route('/{record}'),
+>>>>>>> f5327e8 (.)
             'edit' => EditTranslationFile::route('/{record}/edit'),
         ];
     }
