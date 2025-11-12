@@ -1,21 +1,13 @@
 # Translation Completeness Audit
 
 ## Overview
-<<<<<<< HEAD
 This document tracks the completeness and quality of translation files across the SaluteOra system, ensuring all user-facing text is properly localized in Italian, English, and German.
-=======
-This document tracks the completeness and quality of translation files across the  system, ensuring all user-facing text is properly localized in Italian, English, and German.
->>>>>>> cbfeb6b (.)
 
 ## Recent Updates
 
 ### 2025-01-06: Complete PDF Template Internationalization
 
-<<<<<<< HEAD
 **Issue**: PDF template `/var/www/html/_bases/base_saluteora/laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
-=======
-**Issue**: PDF template `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
->>>>>>> cbfeb6b (.)
 
 **Files Updated**:
 - `laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` (completely internationalized)
@@ -225,11 +217,7 @@ This document tracks the completeness and quality of translation files across th
 **Files Updated**:
 - `laravel/Modules/Notify/lang/en/opening_hours.php`
 - `laravel/Modules/Notify/lang/en/send_email.php` 
-<<<<<<< HEAD
 - `laravel/Modules/SaluteOra/lang/en/find_doctor_widget.php`
-=======
-- `laravel/Modules//lang/en/find_doctor_widget.php`
->>>>>>> cbfeb6b (.)
 
 **Process**:
 - Translated all Italian content to proper English
@@ -261,11 +249,7 @@ This document tracks the completeness and quality of translation files across th
 ### Completed ✅
 - ✅ Notify module Italian translations (modernized and expanded)
 - ✅ Notify module English translations (completed)
-<<<<<<< HEAD
 - ✅ SaluteOra module English translations (completed)
-=======
-- ✅  module English translations (completed)
->>>>>>> cbfeb6b (.)
 - ✅ Theme opening hours translations (improved across all languages)
 - ✅ Theme doctor translations (fixed English and German)
 - ✅ Theme appointment translations (enhanced with complete fields)
@@ -300,11 +284,7 @@ This document tracks the completeness and quality of translation files across th
 
 - [Theme Translation Files](../laravel/Themes/One/lang/)
 - [Notify Module Translations](../laravel/Modules/Notify/lang/)
-<<<<<<< HEAD
 - [SaluteOra Module Translations](../laravel/Modules/SaluteOra/lang/)
-=======
-- [ Module Translations](../laravel/Modules//lang/)
->>>>>>> cbfeb6b (.)
 - [PDF Template](../laravel/Themes/One/resources/views/appointment/report_pdf.blade.php)
 
 ---
