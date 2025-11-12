@@ -7,8 +7,7 @@ namespace Modules\Lang\Filament\Widgets;
 use Exception;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Collection;
-use Log;
-use Modules\Lang\Models\Language;
+use Illuminate\Support\Facades\Log;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 use Override;
 
@@ -39,6 +38,9 @@ class LanguageSwitcherWidget extends XotBaseWidget
      * @return array<int, Component>
      */
     #[Override]
+    /**
+     * @return array<string, mixed>
+     */
     public function getFormSchema(): array
     {
         return [];
@@ -76,19 +78,53 @@ class LanguageSwitcherWidget extends XotBaseWidget
     public function getAvailableLocales(): Collection
     {
         // Verifica se il modello Language esiste e ha dati
-        if (class_exists(Language::class)) {
+        if (class_exists('Modules\\Lang\\Models\\Language')) {
             try {
-                $languages = Language::where('active', true)
-                    ->orderBy('order')
-                    ->get(['code', 'name', 'native_name', 'flag']);
+                $query = \Modules\Lang\Models\Language::query();
+                if (is_object($query) && method_exists($query, 'where')) {
+                    $query = $query->where('active', true);
+                }
+                if (is_object($query) && method_exists($query, 'orderBy')) {
+                    $query = $query->orderBy('order');
+                }
+                if (is_object($query) && method_exists($query, 'get')) {
+                    /** @var \Illuminate\Database\Eloquent\Collection $languages */
+                    $languages = $query->get(['code', 'name', 'native_name', 'flag']);
+                } else {
+                    $languages = collect();
+                }
 
                 if ($languages->isNotEmpty()) {
-                    return $languages->map(fn ($language) => [
-                        'code' => $language->code,
-                        'name' => $language->name,
-                        'native_name' => $language->native_name ?? $language->name,
-                        'flag' => (string) ($language->flag ?? ''),
-                    ]);
+                    /** @var Collection<int, array{code: string, name: string, native_name: string, flag: string|null}> $out */
+                    $out = $languages->map(function ($language): array {
+                        // Estrazione sicura degli attributi senza accesso diretto a proprietà dinamiche
+                        if (is_object($language) && method_exists($language, 'only')) {
+                            /** @var array{code:mixed,name:mixed,native_name:mixed,flag:mixed} $attr */
+                            $attr = $language->only(['code', 'name', 'native_name', 'flag']);
+                        } else {
+                            /** @var array{code:mixed,name:mixed,native_name:mixed,flag:mixed} $attr */
+                            $attr = [
+                                'code' => null,
+                                'name' => null,
+                                'native_name' => null,
+                                'flag' => null,
+                            ];
+                        }
+
+                        $code = is_string($attr['code']) ? $attr['code'] : '';
+                        $name = is_string($attr['name']) ? $attr['name'] : '';
+                        $nativeName = is_string($attr['native_name']) ? $attr['native_name'] : $name;
+                        $flag = is_string($attr['flag']) ? $attr['flag'] : null;
+
+                        return [
+                            'code' => $code,
+                            'name' => $name,
+                            'native_name' => $nativeName,
+                            'flag' => $flag,
+                        ];
+                    })->values();
+
+                    return $out;
                 }
             } catch (Exception $e) {
                 // Log dell'errore ma continua con il fallback
@@ -97,7 +133,10 @@ class LanguageSwitcherWidget extends XotBaseWidget
         }
 
         // Fallback alle lingue configurate staticamente
-        return collect($this->getDefaultLanguages());
+        /** @var Collection<int, array{code: string, name: string, native_name: string, flag: string|null}> */
+        $fallback = collect($this->getDefaultLanguages());
+
+        return $fallback;
     }
 
     /**
@@ -131,10 +170,6 @@ class LanguageSwitcherWidget extends XotBaseWidget
 
     /**
      * Cambia la lingua corrente.
-     *
-     * @param  string  $locale  Codice della lingua
-     * @param  string  $locale  Codice della lingua
-     * @return void *
      */
     public function changeLanguage(string $locale): void
     {
@@ -159,10 +194,6 @@ class LanguageSwitcherWidget extends XotBaseWidget
 
     /**
      * Genera l'URL per una specifica lingua.
-     *
-     * @param  string  $locale  Codice della lingua     *
-     * @param  string  $locale  Codice della lingua
-     * @return string URL con la lingua specificata
      */
     public function getLanguageUrl(string $locale): string
     {
