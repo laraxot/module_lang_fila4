@@ -15,16 +15,15 @@ class Flag extends Component
 {
     public function __construct(
         public string $name,
-    ) {
-    }
+    ) {}
 
     public function render(): Renderable
     {
         $view = app(GetViewAction::class)->execute();
-        $view_params = [
+        $viewParams = [
             'view' => $view,
         ];
 
-        return view($view, $view_params);
+        return view($view, $viewParams);
     }
 }

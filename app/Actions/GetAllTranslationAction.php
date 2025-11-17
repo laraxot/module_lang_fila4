@@ -6,8 +6,9 @@ namespace Modules\Lang\Actions;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use function Safe\glob;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\glob;
 
 class GetAllTranslationAction
 {
@@ -26,15 +27,16 @@ class GetAllTranslationAction
         $lang = app()->getLocale();
         $path = base_path('Modules/*/lang/'.$lang.'/*.php');
         $files = glob($path);
+
         return Arr::map($files, function ($file) {
             $fileStr = is_string($file) ? $file : (string) $file;
-            $module_low = Str::of($fileStr)
+            $moduleLower = Str::of($fileStr)
                 ->between('Modules/', '/lang/')
                 ->lower()
                 ->toString();
 
             return [
-                'key' => $module_low.'::'.basename($fileStr, '.php'),
+                'key' => $moduleLower.'::'.basename($fileStr, '.php'),
                 'path' => $fileStr,
             ];
         });

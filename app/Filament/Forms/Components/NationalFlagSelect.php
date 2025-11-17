@@ -58,11 +58,11 @@ class NationalFlagSelect extends Select
                 continue;
             }
 
-            $flag_name = strtolower($code);
-            $localizedLabel = __('lang::countries.'.$flag_name);
+            $flagName = strtolower($code);
+            $localizedLabel = __('lang::countries.'.$flagName);
 
-            $flag_src = app(AssetAction::class)->execute('lang::svg/flag/'.$flag_name.'.svg');
-            $flag = '<img src="'.$flag_src.'" class="h-4 w-6 mr-2" inline-block />';
+            $flagSrc = app(AssetAction::class)->execute('lang::svg/flag/'.$flagName.'.svg');
+            $flag = '<img src="'.$flagSrc.'" class="h-4 w-6 mr-2" inline-block />';
 
             $html = '<span class="flex items-center gap-2">'.$flag.$localizedLabel.'</span>';
 
@@ -76,7 +76,6 @@ class NationalFlagSelect extends Select
      * Get filtered country options based on search query.
      *
      * @param  string  $search  The search query
-     *
      * @return array<string, string>
      */
     protected function getFilteredCountryOptions(string $search): array
@@ -102,10 +101,10 @@ class NationalFlagSelect extends Select
                 return false;
             }
 
-            $flag_name = strtolower($code);
+            $flagName = strtolower($code);
 
             // Get localized country name
-            $localizedName = __('lang::countries.'.$flag_name);
+            $localizedName = __('lang::countries.'.$flagName);
             // PHPStan L10: __() can return string|array, handle both
             if (is_array($localizedName)) {
                 return str_contains(strtolower($name), $searchLower) ||
@@ -140,11 +139,11 @@ class NationalFlagSelect extends Select
                 continue;
             }
 
-            $flag_name = strtolower($code);
-            $localizedLabel = __('lang::countries.'.$flag_name);
+            $flagName = strtolower($code);
+            $localizedLabel = __('lang::countries.'.$flagName);
 
-            $flag_src = app(AssetAction::class)->execute('lang::svg/flag/'.$flag_name.'.svg');
-            $flag = '<img src="'.$flag_src.'" class="h-4 w-6 mr-2" inline-block />';
+            $flagSrc = app(AssetAction::class)->execute('lang::svg/flag/'.$flagName.'.svg');
+            $flag = '<img src="'.$flagSrc.'" class="h-4 w-6 mr-2" inline-block />';
 
             $html = '<span class="flex items-center gap-2">'.$flag.$localizedLabel.'</span>';
 

@@ -20,8 +20,10 @@ class PostPolicy extends LangBasePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(UserContract $user, Post $_post): bool
+    public function view(UserContract $user, Post $post): bool
     {
+        unset($post);
+
         return $user->hasPermissionTo('post.view');
     }
 
@@ -36,24 +38,30 @@ class PostPolicy extends LangBasePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(UserContract $user, Post $_post): bool
+    public function update(UserContract $user, Post $post): bool
     {
+        unset($post);
+
         return $user->hasPermissionTo('post.update');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(UserContract $user, Post $_post): bool
+    public function delete(UserContract $user, Post $post): bool
     {
+        unset($post);
+
         return $user->hasPermissionTo('post.delete');
     }
 
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(UserContract $user, Post $_post): bool
+    public function restore(UserContract $user, Post $post): bool
     {
+        unset($post);
+
         return $user->hasPermissionTo('post.restore');
     }
 
@@ -62,6 +70,8 @@ class PostPolicy extends LangBasePolicy
      */
     public function forceDelete(UserContract $user, Post $post): bool
     {
+        unset($post);
+
         return $user->hasPermissionTo('post.forceDelete');
     }
 }

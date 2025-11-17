@@ -27,7 +27,6 @@ use Illuminate\Support\Carbon;
  * @property string $namespace
  * @property string $group
  * @property string|null $item
- *
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  *

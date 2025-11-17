@@ -152,7 +152,6 @@ class ThemeComposer
      * Build the URL for the admin panel based on the current route and parameters.
      *
      * @param  string  $locale  The locale code to build URL for
-     *
      * @return string The generated URL
      */
     private function buildAdminLanguageUrl(string $locale): string
@@ -173,7 +172,6 @@ class ThemeComposer
      * Build the HTML for the language flag.
      *
      * @param  string  $regionalCode  The regional code for the flag
-     *
      * @return string The HTML for the flag
      */
     private function buildFlagHtml(string $regionalCode): string

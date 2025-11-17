@@ -20,10 +20,10 @@ class TranslatorService extends LaravelTranslator
     /**
      * Get the translation for the given key.
      */
-    public function get(string $key, array $replace = [], ?string $locale = null, bool $fallback = true): string|array
+    public function get(mixed $key, array $replace = [], mixed $locale = null, mixed $fallback = true): string|array
     {
         // Get without fallback
-        $result = parent::get($key, $replace, $locale, false);
+        $result = parent::get($key, $replace, $locale, $fallback);
         if ($result === $key) {
             $this->notifyMissingKey($key);
 

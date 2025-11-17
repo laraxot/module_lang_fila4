@@ -23,12 +23,12 @@ class GetTransPathAction
         $piece = explode('.', $item);
         $lang = app()->getLocale();
         try {
-            $lang_path = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
+            $langPath = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
         } catch (Throwable $e) {
-            $lang_path = base_path('Modules/'.$ns.'/lang');
+            $langPath = base_path('Modules/'.$ns.'/lang');
         }
-        $file_name = $piece[0] ?? '';
+        $fileName = $piece[0] ?? '';
 
-        return $lang_path.'/'.$lang.'/'.$file_name.'.php';
+        return $langPath.'/'.$lang.'/'.$fileName.'.php';
     }
 }

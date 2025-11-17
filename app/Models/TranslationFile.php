@@ -13,8 +13,9 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
 use Override;
-use function Safe\json_encode;
 use Sushi\Sushi;
+
+use function Safe\json_encode;
 
 /**
  * @property string|null $key
@@ -22,7 +23,6 @@ use Sushi\Sushi;
  * @property string|null $id
  * @property string|null $name
  * @property array<array-key, mixed>|null $content
- *
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  *
@@ -60,6 +60,7 @@ class TranslationFile extends BaseModel
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
+
         return Arr::map($files, function ($item) {
             if (! is_array($item)) {
                 return [];

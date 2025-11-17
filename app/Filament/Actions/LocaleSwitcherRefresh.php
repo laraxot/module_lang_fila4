@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\App;
 
 class LocaleSwitcherRefresh extends Action
 {
-    public string $full_url = '#';
+    public string $fullUrl = '#';
 
     public string $lang = '';
 
     protected function setUp(): void
     {
         parent::setUp();
-        $lang_options = [
+        $languageOptions = [
             'en' => '🇬🇧 English',
             'it' => '🇮🇹 Italiano',
         ];
@@ -27,12 +27,12 @@ class LocaleSwitcherRefresh extends Action
         }
         app()->setLocale($lang);
         $this->lang = app()->getLocale();
-        $this->full_url = request()->fullUrl();
+        $this->fullUrl = request()->fullUrl();
         $this->label($this->lang)
             ->schema([
                 Select::make('locale')
                     ->label('Seleziona lingua')
-                    ->options($lang_options)
+                    ->options($languageOptions)
                     ->default($this->lang)
                     ->reactive()
                     ->required(),

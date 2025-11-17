@@ -7,15 +7,17 @@ namespace Modules\Lang\Models;
 // use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 // use Laravel\Scout\Searchable;
 // ---------- traits
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Modules\Xot\Models\XotBaseModel;
 use Modules\Xot\Traits\Updater;
 
 /**
  * Class BaseModel.
  */
-abstract class BaseModel extends Model
+abstract class BaseModel extends XotBaseModel
 {
     use \Modules\Xot\Models\Traits\HasXotFactory;
+    use SoftDeletes;
 
     // use Searchable;
     // use Cachable;

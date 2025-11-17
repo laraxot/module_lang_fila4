@@ -27,8 +27,14 @@ class LangServiceProvider extends XotBaseServiceProvider
 {
     public string $name = 'Lang';
 
+    /**
+     * @SuppressWarnings("CamelCasePropertyName")
+     */
     protected string $module_dir = __DIR__;
 
+    /**
+     * @SuppressWarnings("CamelCasePropertyName")
+     */
     protected string $module_ns = __NAMESPACE__;
 
     #[\Override]
@@ -64,11 +70,13 @@ class LangServiceProvider extends XotBaseServiceProvider
             }
             $component = app(AutoLabelAction::class)->execute($component, 'placeholder');
             $component = app(AutoLabelAction::class)->execute($component, 'helperText');
+
             return app(AutoLabelAction::class)->execute($component, 'description');
         });
 
         Section::configureUsing(function (Section $component) {
             $component = app(AutoLabelAction::class)->execute($component);
+
             return app(AutoLabelAction::class)->execute($component, 'heading');
         });
 
@@ -79,6 +87,7 @@ class LangServiceProvider extends XotBaseServiceProvider
         Column::configureUsing(function (Column $component) {
             $component = app(AutoLabelAction::class)->execute($component);
             Assert::isInstanceOf($component, Column::class);
+
             return $component->wrapHeader()->verticallyAlignStart()->grow();
             // ->wrap()
         });
@@ -156,7 +165,6 @@ class LangServiceProvider extends XotBaseServiceProvider
     {
         $components = [Field::class, BaseFilter::class, Placeholder::class, Column::class, Entry::class];
         foreach ($components as $component) {
-            /** @var Configurable $component */
             $component::configureUsing(function (Component $translatable): void {
                 /* @phpstan-ignore method.notFound */
                 $translatable->translateLabel();

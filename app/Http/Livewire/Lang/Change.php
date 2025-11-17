@@ -61,13 +61,13 @@ class Change extends Component
     public function render(): View
     {
         $view = 'lang::livewire.lang.change';
-        $view_params = [
+        $viewParams = [
             'view' => $view,
         ];
         // if ([] === $this->teams) {
         //    $view = 'ui::livewire.empty';
         // }
 
-        return view($view, $view_params);
+        return view($view, $viewParams);
     }
 }

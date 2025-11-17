@@ -26,6 +26,16 @@ Il modulo Lang è il **guardiano delle lingue**, colui che permette alla conosce
 
 ## 📊 PROGRESSO DELLA PURIFICAZIONE
 
+### Aggiornamento 2025-11-17 – ciclo PHPStan lvl 10, PHPMD, PHPInsights
+
+- ✅ **LangField** ora usa type-hint `Model` + `Assert::isInstanceOf` per accedere a `post` in sicurezza. Eliminati gli ultimi 2 errori PHPStan sul cast e sul `@property` di `Post`.
+- ✅ Esecuzione `./vendor/bin/phpstan analyse Modules/Lang --memory-limit=-1` → **0 errori**.
+- ✅ `./vendor/bin/phpinsights analyse Modules/Lang --no-interaction --config-path=phpinsights.php --min-* 0 --composer=./composer.lock` → qualità 91.3%, complessità 90.9%, architettura 70.6%, stile 95.2% (vedi sezione TODO per item aperti).
+- ⚠️ `./vendor/bin/phpmd Modules/Lang text phpmd.xml` evidenzia debiti storici (AutoLabelAction complesso, naming snake_case, parametri inutilizzati, parsing error su `PublishTranslationAction` / `SaveTransAction`). Ho registrato l’elenco completo nel log del comando: serve refactor dedicato.
+- 📚 Documentazione aggiornata (questo file) per tracciare l’avanzamento e fissare i prossimi micro-step (riduzione complessità AutoLabelAction + cleanup PHPMD naming).
+
+👉 **Next**: rifattorizzare `AutoLabelAction::execute()` (ridurre CC/NPath), normalizzare snake_case legacy e risolvere i parse error di PHPMD nelle azioni `PublishTranslationAction` e `SaveTransAction`.
+
 ### Statistiche
 ```
 Errori iniziali:    58
