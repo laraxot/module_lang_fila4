@@ -31,8 +31,10 @@ class TransArrayAction
                 foreach ($result as $key => $value) {
                     $stringResult[$key] = (string) $value;
                 }
+
                 return $stringResult;
             }
+
             return [];
         }
 
@@ -44,8 +46,10 @@ class TransArrayAction
             foreach ($result as $key => $value) {
                 $stringResult[$key] = (string) $value;
             }
+
             return $stringResult;
         }
+
         return [];
     }
 

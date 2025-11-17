@@ -15,11 +15,11 @@ abstract class LangBaseResource extends XotBaseResource
     // Temporaneamente commentato per compatibilità Filament 4.x
     public static function getDefaultTranslatableLocale(): string
     {
-         return Config::string('app.locale', 'it');
+        return Config::string('app.locale', 'it');
     }
 
     public static function getTranslatableLocales(): array
     {
-         return ['it', 'en'];
+        return ['it', 'en'];
     }
 }

@@ -7,10 +7,7 @@ namespace Modules\Lang\Models;
 // use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 // use Laravel\Scout\Searchable;
 // ---------- traits
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Xot\Actions\Factory\GetFactoryAction;
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -59,7 +56,6 @@ abstract class BaseModel extends Model
         // 'password'
     ];
 
-   
     /**
      * @return array<string, string> */
     protected function casts(): array

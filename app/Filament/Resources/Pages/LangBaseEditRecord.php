@@ -13,7 +13,7 @@ abstract class LangBaseEditRecord extends XotBaseEditRecord
 {
     protected static string $resource; // = SectionResource::class;
 
-    use Translatable; 
+    use Translatable;
 
     protected function getHeaderActions(): array
     {

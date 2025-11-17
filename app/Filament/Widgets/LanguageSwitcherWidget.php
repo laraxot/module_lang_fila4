@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Widgets;
 
-use Exception;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Collection;
-use Log;
 use Modules\Lang\Models\Language;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 use Override;

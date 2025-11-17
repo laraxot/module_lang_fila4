@@ -82,7 +82,7 @@ class EditTranslationFile extends XotBaseEditRecord
     {
         return [
             Section::make('content')->schema(function ($record): array {
-                if (is_object($record) && property_exists($record, 'content')) {
+                if (is_object($record) && isset($record->content)) {
                     $content = is_array($record->content) ? $record->content : [];
                 } else {
                     $content = [];

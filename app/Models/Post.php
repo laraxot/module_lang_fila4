@@ -55,6 +55,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read Model|\Eloquent|null $linkable
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ *
  * @method static Builder<static>|Post newModelQuery()
  * @method static Builder<static>|Post newQuery()
  * @method static Builder<static>|Post query()
@@ -89,6 +90,7 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder<static>|Post whereUrlLang($value)
  * @method static Builder<static>|Post whereUserId($value)
  * @method static Builder<static>|Post whereViewsCount($value)
+ *
  * @mixin Eloquent
  */
 class Post extends Model

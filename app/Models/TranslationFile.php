@@ -26,6 +26,7 @@ use function Safe\json_encode;
  * @property array<array-key, mixed>|null $content
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ *
  * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
@@ -35,6 +36,7 @@ use function Safe\json_encode;
  * @method static Builder<static>|TranslationFile whereKey($value)
  * @method static Builder<static>|TranslationFile whereName($value)
  * @method static Builder<static>|TranslationFile wherePath($value)
+ *
  * @mixin \Eloquent
  */
 class TranslationFile extends BaseModel
@@ -73,13 +75,13 @@ class TranslationFile extends BaseModel
     {
         $files = app(GetAllTranslationAction::class)->execute();
         $rows = Arr::map($files, function ($item) {
-            if (!is_array($item)) {
+            if (! is_array($item)) {
                 return [];
             }
-            
+
             $item['id'] = isset($item['key']) ? (string) $item['key'] : '';
             $item['name'] = isset($item['path']) ? basename((string) $item['path'], '.php') : '';
-            
+
             if (isset($item['path'])) {
                 $path = (string) $item['path'];
                 if (File::exists($path)) {

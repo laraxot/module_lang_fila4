@@ -13,7 +13,7 @@ abstract class LangBaseViewRecord extends XotBaseViewRecord
 {
     protected static string $resource; // = SectionResource::class;
 
-    use Translatable; 
+    use Translatable;
 
     protected function getHeaderActions(): array
     {

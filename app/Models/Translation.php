@@ -30,6 +30,7 @@ use Illuminate\Support\Carbon;
  * @property string|null $item
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ *
  * @method static \Modules\Lang\Database\Factories\TranslationFactory factory($count = null, $state = [])
  * @method static EloquentBuilder<static>|Translation newModelQuery()
  * @method static EloquentBuilder<static>|Translation newQuery()
@@ -48,6 +49,7 @@ use Illuminate\Support\Carbon;
  * @method static EloquentBuilder<static>|Translation whereUpdatedAt($value)
  * @method static EloquentBuilder<static>|Translation whereUpdatedBy($value)
  * @method static EloquentBuilder<static>|Translation whereValue($value)
+ *
  * @mixin \Eloquent
  */
 class Translation extends BaseModel

@@ -172,8 +172,10 @@ class SyncTranslationsAction
                         $result[$key] = $value;
                     }
                 }
+
                 return $result;
             }
+
             return [];
         } catch (Exception $e) {
             return [];
