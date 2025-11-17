@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\File;
 use Modules\Lang\Datas\TranslationData;
 use Modules\Xot\Actions\Array\SaveArrayAction;
 use Spatie\QueueableAction\QueueableAction;

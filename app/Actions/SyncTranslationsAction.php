@@ -18,6 +18,7 @@ class SyncTranslationsAction
      * @param  string  $sourceLang  Lingua sorgente (default: 'it')
      * @param  array<string>  $targetLangs  Lingue target (default: ['en', 'de'])
      * @param  string|null  $specificModule  Modulo specifico (opzionale)
+     *
      * @return array<string, mixed> Risultato della sincronizzazione
      */
     public function execute(
@@ -56,6 +57,7 @@ class SyncTranslationsAction
      * @param  string  $module  Nome del modulo
      * @param  string  $sourceLang  Lingua sorgente
      * @param  array<string>  $targetLangs  Lingue target
+     *
      * @return array<string, mixed> Risultato per il modulo
      */
     private function syncModule(string $module, string $sourceLang, array $targetLangs): array
@@ -131,6 +133,7 @@ class SyncTranslationsAction
      * Ottiene la lista dei moduli con cartella lang.
      *
      * @param  string  $modulesPath  Percorso dei moduli
+     *
      * @return array<string> Lista dei moduli
      */
     private function getModules(string $modulesPath): array
@@ -153,6 +156,7 @@ class SyncTranslationsAction
      * Carica le traduzioni da un file.
      *
      * @param  string  $filePath  Percorso del file
+     *
      * @return array<string, mixed> Traduzioni caricate
      */
     private function loadTranslations(string $filePath): array
@@ -186,6 +190,7 @@ class SyncTranslationsAction
      * Filtra un array per avere solo chiavi stringa (aiuta PHPStan).
      *
      * @param  array<mixed, mixed>  $arr
+     *
      * @return array<string, mixed>
      */
     private function filterStringKeyArray(array $arr): array
@@ -205,6 +210,7 @@ class SyncTranslationsAction
      *
      * @param  array<string, mixed>  $source  Traduzioni sorgente
      * @param  array<string, mixed>  $target  Traduzioni target
+     *
      * @return array<string, mixed> Traduzioni unite
      */
     private function mergeTranslations(array $source, array $target): array
@@ -248,6 +254,7 @@ class SyncTranslationsAction
      *
      * @param  array<string, mixed>  $array  Array da convertire
      * @param  int  $indent  Livello di indentazione
+     *
      * @return string Codice PHP
      */
     private function arrayToPhp(array $array, int $indent = 0): string

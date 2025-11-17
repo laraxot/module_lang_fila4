@@ -10,7 +10,6 @@ namespace Modules\Lang\Models;
 
 use DB;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Carbon;
 
@@ -28,6 +27,7 @@ use Illuminate\Support\Carbon;
  * @property string $namespace
  * @property string $group
  * @property string|null $item
+ *
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  *

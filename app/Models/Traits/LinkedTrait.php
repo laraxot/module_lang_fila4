@@ -21,4 +21,6 @@ use Modules\Xot\Contracts\UserContract;
  * @property UserContract|null $user
  * @property Post $post
  */
-trait LinkedTrait {}
+trait LinkedTrait
+{
+}

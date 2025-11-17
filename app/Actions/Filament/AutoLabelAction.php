@@ -29,11 +29,8 @@ class AutoLabelAction
     /**
      * Undocumented function.
      * return number of input added.
-     *
-     * @param  Field|BaseFilter|Column|Step|Action|Action|Section  $component
-     * @return Field|BaseFilter|Column|Step|Action|Action|Section
      */
-    public function execute($component, string $type = 'label')
+    public function execute(Field|BaseFilter|Column|Step|Action|Section $component, string $type = 'label'): Field|BaseFilter|Column|Step|Action|Section
     {
         $backtrace = debug_backtrace();
         $backtrace_slice = array_slice($backtrace, 2);
@@ -160,7 +157,7 @@ class AutoLabelAction
 
             return $component;
         }
-        if ($label_key == $label || ! method_exists($component, $type)) {
+        if ($label_key === $label || ! method_exists($component, $type)) {
             return $component;
         }
         /*

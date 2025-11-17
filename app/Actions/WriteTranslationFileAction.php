@@ -6,12 +6,11 @@ namespace Modules\Lang\Actions;
 
 use Exception;
 use Illuminate\Support\Facades\File;
-use Spatie\QueueableAction\QueueableAction;
-
 use function Safe\exec;
 use function Safe\file_put_contents;
 use function Safe\tempnam;
 use function Safe\unlink;
+use Spatie\QueueableAction\QueueableAction;
 
 class WriteTranslationFileAction
 {
@@ -22,6 +21,7 @@ class WriteTranslationFileAction
      *
      * @param  string  $filePath  Percorso del file di traduzione
      * @param  array<string, mixed>  $translations  Traduzioni da scrivere
+     *
      * @return bool True se il file è stato scritto con successo
      *
      * @throws Exception Se il file non può essere scritto

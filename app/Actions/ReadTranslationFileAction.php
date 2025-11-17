@@ -15,6 +15,7 @@ class ReadTranslationFileAction
      * Legge il contenuto di un file di traduzione.
      *
      * @param  string  $filePath  Percorso del file di traduzione
+     *
      * @return array<string, mixed> Contenuto del file di traduzione
      *
      * @throws Exception Se il file non esiste o non è leggibile
@@ -44,6 +45,7 @@ class ReadTranslationFileAction
      * Converte un array di traduzioni in formato PHP.
      *
      * @param  array<string, mixed>  $translations  Traduzioni da convertire
+     *
      * @return string Codice PHP del file di traduzione
      */
     public function toPhp(array $translations): string
@@ -60,6 +62,7 @@ class ReadTranslationFileAction
      *
      * @param  array<string, mixed>  $array  Array da convertire
      * @param  int  $indent  Livello di indentazione
+     *
      * @return string Codice PHP dell'array
      */
     private function arrayToPhp(array $array, int $indent = 0): string

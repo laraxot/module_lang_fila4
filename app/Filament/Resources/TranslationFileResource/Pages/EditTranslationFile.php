@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Notifications\Notification;
 use Filament\Schemas\Components\Section;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
@@ -17,64 +16,12 @@ class EditTranslationFile extends XotBaseEditRecord
 {
     protected static string $resource = TranslationFileResource::class;
 
-    protected function getHeaderActions(): array
-    {
-        return [
-            LocaleSwitcherRefresh::make('lang'),
-            ...parent::getHeaderActions(),
-            // ...
-        ];
-    }
-
     /**
      * @return array<string>
      */
-    public function getTranslatableLocales()
+    public function getTranslatableLocales(): array
     {
         return ['it', 'en'];
-    }
-
-    protected function mutateFormDataBeforeSave(array $data): array
-    {
-        /*
-         * // Salva le traduzioni nel file
-         * try {
-         * $this->record->saveTranslations($data['content']);
-         *
-         * Notification::make()
-         * ->title('Traduzioni salvate con successo')
-         * ->success()
-         * ->send();
-         *
-         * } catch (\Exception $e) {
-         * Notification::make()
-         * ->title('Errore durante il salvataggio')
-         * ->body($e->getMessage())
-         * ->danger()
-         * ->send();
-         *
-         * // Previeni il salvataggio se c'è un errore
-         * $this->halt();
-         * }
-         */
-        $record = $this->record;
-        if (is_object($record) && isset($record->key)) {
-            $key = is_string($record->key) ? $record->key : (string) $record->key;
-            /** @var array<string, mixed>|\Illuminate\Contracts\Support\Htmlable|int|string|null $content */
-            $content = $data['content'] ?? null;
-            app(SaveTransAction::class)->execute($key, $content);
-        }
-
-        // dddx(['record'=>$this->record,'data'=>$data]);
-        return $data;
-    }
-
-    protected function afterSave(): void
-    {
-        // Ricarica il record per aggiornare i dati
-        if (is_object($this->record)) {
-            $this->record->refresh();
-        }
     }
 
     #[Override]
@@ -118,5 +65,57 @@ class EditTranslationFile extends XotBaseEditRecord
         }
 
         return $fields;
+    }
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            LocaleSwitcherRefresh::make('lang'),
+            ...parent::getHeaderActions(),
+            // ...
+        ];
+    }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        /*
+         * // Salva le traduzioni nel file
+         * try {
+         * $this->record->saveTranslations($data['content']);
+         *
+         * Notification::make()
+         * ->title('Traduzioni salvate con successo')
+         * ->success()
+         * ->send();
+         *
+         * } catch (\Exception $e) {
+         * Notification::make()
+         * ->title('Errore durante il salvataggio')
+         * ->body($e->getMessage())
+         * ->danger()
+         * ->send();
+         *
+         * // Previeni il salvataggio se c'è un errore
+         * $this->halt();
+         * }
+         */
+        $record = $this->record;
+        if (is_object($record) && isset($record->key)) {
+            $key = is_string($record->key) ? $record->key : (string) $record->key;
+            /** @var array<string, mixed>|\Illuminate\Contracts\Support\Htmlable|int|string|null $content */
+            $content = $data['content'] ?? null;
+            app(SaveTransAction::class)->execute($key, $content);
+        }
+
+        // dddx(['record'=>$this->record,'data'=>$data]);
+        return $data;
+    }
+
+    protected function afterSave(): void
+    {
+        // Ricarica il record per aggiornare i dati
+        if (is_object($this->record)) {
+            $this->record->refresh();
+        }
     }
 }

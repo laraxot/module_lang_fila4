@@ -12,11 +12,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
-use Modules\Lang\Actions\ReadTranslationFileAction;
 use Override;
-use Sushi\Sushi;
-
 use function Safe\json_encode;
+use Sushi\Sushi;
 
 /**
  * @property string|null $key
@@ -24,6 +22,7 @@ use function Safe\json_encode;
  * @property string|null $id
  * @property string|null $name
  * @property array<array-key, mixed>|null $content
+ *
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
  *
@@ -58,23 +57,10 @@ class TranslationFile extends BaseModel
         'content' => 'json',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    #[Override]
-    protected function casts(): array
-    {
-        return [
-            'content' => 'array',
-        ];
-    }
-
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
-        $rows = Arr::map($files, function ($item) {
+        return Arr::map($files, function ($item) {
             if (! is_array($item)) {
                 return [];
             }
@@ -110,8 +96,18 @@ class TranslationFile extends BaseModel
             // dddx($item);
             return $item;
         });
+    }
 
-        /** @var array<int, array<string, mixed>> */
-        return $rows;
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    #[Override]
+    protected function casts(): array
+    {
+        return [
+            'content' => 'array',
+        ];
     }
 }

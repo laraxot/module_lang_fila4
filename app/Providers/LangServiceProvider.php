@@ -12,16 +12,12 @@ use Filament\Infolists\Components\Entry;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Wizard\Step;
 use Filament\Support\Components\Component;
-use Filament\Support\Concerns\Configurable;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Filters\BaseFilter;
-use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Container\Container;
-use Illuminate\Support\Facades\View;
 use Modules\Lang\Actions\Filament\AutoLabelAction;
 use Modules\Lang\Services\TranslatorService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
-use Modules\Xot\Services\BladeService;
 use Webmozart\Assert\Assert;
 
 /**
@@ -43,18 +39,6 @@ class LangServiceProvider extends XotBaseServiceProvider
         // $this->registerTranslator();
         $this->translatableComponents();
         $this->registerFilamentLabel();
-    }
-
-    protected function translatableComponents(): void
-    {
-        $components = [Field::class, BaseFilter::class, Placeholder::class, Column::class, Entry::class];
-        foreach ($components as $component) {
-            /* @var Configurable $component */
-            $component::configureUsing(function (Component $translatable): void {
-                /* @phpstan-ignore method.notFound */
-                $translatable->translateLabel();
-            });
-        }
     }
 
     public function registerFilamentLabel(): void
@@ -80,38 +64,29 @@ class LangServiceProvider extends XotBaseServiceProvider
             }
             $component = app(AutoLabelAction::class)->execute($component, 'placeholder');
             $component = app(AutoLabelAction::class)->execute($component, 'helperText');
-            $component = app(AutoLabelAction::class)->execute($component, 'description');
-
-            return $component;
+            return app(AutoLabelAction::class)->execute($component, 'description');
         });
 
         Section::configureUsing(function (Section $component) {
             $component = app(AutoLabelAction::class)->execute($component);
-            $component = app(AutoLabelAction::class)->execute($component, 'heading');
-
-            return $component;
+            return app(AutoLabelAction::class)->execute($component, 'heading');
         });
 
         BaseFilter::configureUsing(function (BaseFilter $component) {
-            $component = app(AutoLabelAction::class)->execute($component);
-
-            return $component;
+            return app(AutoLabelAction::class)->execute($component);
         });
 
         Column::configureUsing(function (Column $component) {
             $component = app(AutoLabelAction::class)->execute($component);
             Assert::isInstanceOf($component, Column::class);
-            $component = $component->wrapHeader()->verticallyAlignStart()->grow();
+            return $component->wrapHeader()->verticallyAlignStart()->grow();
             // ->wrap()
-
-            return $component;
         });
 
         Step::configureUsing(function (Step $component) {
-            $component = app(AutoLabelAction::class)->execute($component);
+            return app(AutoLabelAction::class)->execute($component);
 
             // ->translateLabel()
-            return $component;
         });
 
         Action::configureUsing(function (Action $component) {
@@ -128,7 +103,7 @@ class LangServiceProvider extends XotBaseServiceProvider
             'getRecord' => $component->getRecord(),
             ]);
             */
-            if (method_exists($component, 'getRecord') && $component->getRecord() == null) {
+            if (method_exists($component, 'getRecord') && $component->getRecord() === null) {
                 if (method_exists($component, 'button')) {
                     $component->button();
                 }
@@ -161,8 +136,8 @@ class LangServiceProvider extends XotBaseServiceProvider
             // When registering the translator component, we'll need to set the default
             // locale as well as the fallback locale. So, we'll grab the application
             // configuration so we can easily get both of these values from there.
-            Assert::string($locale = $app['config']['app.locale'], __FILE__.':'.__LINE__.' - '.class_basename(__CLASS__));
-            Assert::string($fallback_locale = $app['config']['app.fallback_locale'], __FILE__.':'.__LINE__.' - '.class_basename(__CLASS__));
+            Assert::string($locale = $app['config']['app.locale'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
+            Assert::string($fallback_locale = $app['config']['app.fallback_locale'], __FILE__.':'.__LINE__.' - '.class_basename(self::class));
 
             $translatorService = new TranslatorService($loader, $locale);
 
@@ -175,5 +150,17 @@ class LangServiceProvider extends XotBaseServiceProvider
              */
             return $translatorService;
         });
+    }
+
+    protected function translatableComponents(): void
+    {
+        $components = [Field::class, BaseFilter::class, Placeholder::class, Column::class, Entry::class];
+        foreach ($components as $component) {
+            /** @var Configurable $component */
+            $component::configureUsing(function (Component $translatable): void {
+                /* @phpstan-ignore method.notFound */
+                $translatable->translateLabel();
+            });
+        }
     }
 }

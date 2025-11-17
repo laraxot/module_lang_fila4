@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Lang\Models;
 
 use Eloquent;
-use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -52,6 +51,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null $relatedrev_count
  * @property string|null $linkable_type
  * @property int|null $views_count
+ *
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
  * @property-read Model|\Eloquent|null $linkable
  * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
@@ -177,10 +177,7 @@ class Post extends Model
     }
 
     // -------- relationship ------
-    /**
-     * @return MorphTo
-     */
-    public function linkable()
+    public function linkable(): MorphTo
     {
         return $this->morphTo('post');
     }
@@ -279,10 +276,7 @@ class Post extends Model
         return $value ?? '';
     }
 
-    /**
-     * @return array
-     */
-    public function toSearchableArray()
+    public function toSearchableArray(): array
     {
         return $this->only(self::SEARCHABLE_FIELDS);
     }

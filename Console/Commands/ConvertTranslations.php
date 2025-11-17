@@ -6,10 +6,9 @@ namespace Modules\Lang\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Webmozart\Assert\Assert;
-
 use function Safe\json_decode;
 use function Safe\json_encode;
+use Webmozart\Assert\Assert;
 
 class ConvertTranslations extends Command
 {
@@ -35,7 +34,7 @@ class ConvertTranslations extends Command
         $from = strtolower($fromArg);
         $to = strtolower($toArg);
         $locale = $localeArg;
-        $path = $pathOption ?: lang_path($locale);
+        $path = $pathOption ? $pathOption : lang_path($locale);
         Assert::string($path, 'Il percorso deve essere una stringa');
 
         if (! in_array($from, ['php', 'json']) || ! in_array($to, ['php', 'json'])) {
@@ -145,6 +144,7 @@ class ConvertTranslations extends Command
 
     /**
      * @param  array<string, mixed>  $array
+     *
      * @return array<string, string>
      */
     protected function flattenArray(array $array, string $prefix = ''): array
@@ -200,14 +200,11 @@ class ConvertTranslations extends Command
                 $toImplode[] = $key.$this->varExport($value, true);
             }
 
-            $code = '['.implode(', ', $toImplode)."\n]";
-
-            return $code;
-        } else {
-            $export = var_export($var, true);
-            Assert::string($export, 'var_export deve restituire una stringa');
-
-            return $export;
+            return '['.implode(', ', $toImplode)."\n]";
         }
+        $export = var_export($var, true);
+        Assert::string($export, 'var_export deve restituire una stringa');
+
+        return $export;
     }
 }

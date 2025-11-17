@@ -7,10 +7,9 @@ namespace Modules\Lang\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
-use Webmozart\Assert\Assert;
-
 use function Safe\json_encode;
 use function Safe\shell_exec;
+use Webmozart\Assert\Assert;
 
 class FindMissingTranslations extends Command
 {
@@ -87,6 +86,7 @@ class FindMissingTranslations extends Command
 
     /**
      * @param  array<string, mixed>  $array
+     *
      * @return array<int, array<string, string|int>>
      */
     protected function checkArrayForMissing(array $array, string $namespace, string $file, string $parentKey = ''): array

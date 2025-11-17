@@ -6,7 +6,6 @@ namespace Modules\Lang\Filament\Widgets;
 
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Collection;
-use Modules\Lang\Models\Language;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
 use Override;
 
@@ -34,26 +33,13 @@ class LanguageSwitcherWidget extends XotBaseWidget
     /**
      * Schema del form per la configurazione del widget.
      *      *
+     *
      * @return array<int, Component>
      */
     #[Override]
     public function getFormSchema(): array
     {
         return [];
-    }
-
-    /**
-     * Dati da passare alla vista.
-     *      *
-     * @return array<string, mixed>
-     */
-    protected function getViewData(): array
-    {
-        return [
-            'current_locale' => app()->getLocale(),
-            'available_locales' => $this->getAvailableLocales(),
-            'widget_id' => 'language-switcher-'.uniqid(),
-        ];
     }
 
     /**
@@ -78,6 +64,66 @@ class LanguageSwitcherWidget extends XotBaseWidget
 
         // Fallback alle lingue configurate staticamente
         return collect($this->getDefaultLanguages());
+    }
+
+    /**
+     * Cambia la lingua corrente.
+     *
+     * @param  string  $locale  Codice della lingua
+     * @param  string  $locale  Codice della lingua
+     *
+     * @return void *
+     */
+    public function changeLanguage(string $locale): void
+    {
+        if ($this->isValidLocale($locale)) {
+            session(['locale' => $locale]);
+            app()->setLocale($locale);
+
+            // Redirect per applicare la nuova lingua
+            $this->redirect(request()->url());
+        }
+    }
+
+    /**
+     * Genera l'URL per una specifica lingua.
+     *
+     * @param  string  $locale  Codice della lingua     *
+     * @param  string  $locale  Codice della lingua
+     *
+     * @return string URL con la lingua specificata
+     */
+    public function getLanguageUrl(string $locale): string
+    {
+        $currentUrl = request()->url();
+        $currentLocale = app()->getLocale();
+
+        // Se l'URL contiene già la lingua corrente, sostituiscila
+        if (str_contains($currentUrl, '/'.$currentLocale.'/')) {
+            return str_replace('/'.$currentLocale.'/', '/'.$locale.'/', $currentUrl);
+        }
+        if (str_ends_with($currentUrl, '/'.$currentLocale)) {
+            return str_replace('/'.$currentLocale, '/'.$locale, $currentUrl);
+        }
+        // Aggiunge la lingua all'URL
+        $path = request()->getPathInfo();
+
+        return url($locale.($path === '/' ? '' : $path));
+    }
+
+    /**
+     * Dati da passare alla vista.
+     *      *
+     *
+     * @return array<string, mixed>
+     */
+    protected function getViewData(): array
+    {
+        return [
+            'current_locale' => app()->getLocale(),
+            'available_locales' => $this->getAvailableLocales(),
+            'widget_id' => 'language-switcher-'.uniqid(),
+        ];
     }
 
     /**
@@ -110,24 +156,6 @@ class LanguageSwitcherWidget extends XotBaseWidget
     }
 
     /**
-     * Cambia la lingua corrente.
-     *
-     * @param  string  $locale  Codice della lingua
-     * @param  string  $locale  Codice della lingua
-     * @return void *
-     */
-    public function changeLanguage(string $locale): void
-    {
-        if ($this->isValidLocale($locale)) {
-            session(['locale' => $locale]);
-            app()->setLocale($locale);
-
-            // Redirect per applicare la nuova lingua
-            $this->redirect(request()->url());
-        }
-    }
-
-    /**
      * Verifica se il locale è valido.
      */
     protected function isValidLocale(string $locale): bool
@@ -135,30 +163,5 @@ class LanguageSwitcherWidget extends XotBaseWidget
         $availableLocales = $this->getAvailableLocales();
 
         return $availableLocales->contains('code', $locale);
-    }
-
-    /**
-     * Genera l'URL per una specifica lingua.
-     *
-     * @param  string  $locale  Codice della lingua     *
-     * @param  string  $locale  Codice della lingua
-     * @return string URL con la lingua specificata
-     */
-    public function getLanguageUrl(string $locale): string
-    {
-        $currentUrl = request()->url();
-        $currentLocale = app()->getLocale();
-
-        // Se l'URL contiene già la lingua corrente, sostituiscila
-        if (str_contains($currentUrl, '/'.$currentLocale.'/')) {
-            return str_replace('/'.$currentLocale.'/', '/'.$locale.'/', $currentUrl);
-        } elseif (str_ends_with($currentUrl, '/'.$currentLocale)) {
-            return str_replace('/'.$currentLocale, '/'.$locale, $currentUrl);
-        } else {
-            // Aggiunge la lingua all'URL
-            $path = request()->getPathInfo();
-
-            return url($locale.($path === '/' ? '' : $path));
-        }
     }
 }
