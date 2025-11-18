@@ -93,7 +93,7 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Post extends BaseModel
 {
-    use HasFactory;
+    use \Modules\Xot\Models\Traits\HasXotFactory;
     use HasSlug;
 
     // use Cachable;
