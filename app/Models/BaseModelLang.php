@@ -6,10 +6,8 @@ namespace Modules\Lang\Models;
 
 // //use Laravel\Scout\Searchable;
 // ---------- traits
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Modules\Lang\Models\Traits\LinkedTrait;
 use Modules\Xot\Models\XotBaseModel;
-use Modules\Xot\Traits\Updater;
 
 /**
  * Class BaseModelLang.
@@ -19,10 +17,6 @@ use Modules\Xot\Traits\Updater;
 abstract class BaseModelLang extends XotBaseModel
 {
     use LinkedTrait;
-    use \Modules\Xot\Models\Traits\HasXotFactory;
-    // use Searchable;
-    use SoftDeletes;
-    use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.
