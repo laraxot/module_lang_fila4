@@ -226,7 +226,11 @@ function auditRealItalianText(string $basePath): array
                     foreach ($excludePatterns as $exclude) {
                         if (stripos($line, $exclude) !== false && stripos($line, $pattern) !== false) {
                             // Controlla se il pattern è parte del termine escluso
+<<<<<<< HEAD
                             if (str_contains(strtolower($exclude), strtolower(trim($pattern))) ) {
+=======
+                            if (strpos(strtolower($exclude), strtolower(trim($pattern))) !== false) {
+>>>>>>> cbfeb6b (.)
                                 $isExcluded = true;
                                 break;
                             }
@@ -255,10 +259,17 @@ function auditRealItalianText(string $basePath): array
 
 function getLanguageFromPath(string $file): string
 {
+<<<<<<< HEAD
     if (str_contains($file, '/lang/en/') ) return 'English';
     if (str_contains($file, '/lang/de/') ) return 'German';
     if (str_contains($file, '/lang/es/') ) return 'Spanish';
     if (str_contains($file, '/lang/fr/') ) return 'French';
+=======
+    if (strpos($file, '/lang/en/') !== false) return 'English';
+    if (strpos($file, '/lang/de/') !== false) return 'German';
+    if (strpos($file, '/lang/es/') !== false) return 'Spanish';
+    if (strpos($file, '/lang/fr/') !== false) return 'French';
+>>>>>>> cbfeb6b (.)
     return 'Unknown';
 }
 
@@ -317,7 +328,11 @@ function generateRefinedReport(array $issues): string
 }
 
 // Esegui audit raffinato
+<<<<<<< HEAD
 $basePath = '/var/www/html/_bases/base_saluteora/laravel';
+=======
+$basePath = '/var/www/html/_bases/base_TechPlanner/laravel';
+>>>>>>> cbfeb6b (.)
 echo "Inizio audit raffinato per testi italiani REALI in file non italiani...\n";
 
 $issues = auditRealItalianText($basePath);
