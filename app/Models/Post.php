@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+use Modules\Xot\Models\Traits\HasXotFactory;
+use Modules\Xot\Contracts\ProfileContract;
+use Illuminate\Database\Eloquent\Model;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -50,9 +53,9 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null $relatedrev_count
  * @property string|null $linkable_type
  * @property int|null $views_count
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent|null $linkable
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read Model|Eloquent|null $linkable
+ * @property-read ProfileContract|null $updater
  *
  * @method static Builder<static>|Post newModelQuery()
  * @method static Builder<static>|Post newQuery()
@@ -93,7 +96,7 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Post extends BaseModel
 {
-    use \Modules\Xot\Models\Traits\HasXotFactory;
+    use HasXotFactory;
     use HasSlug;
 
     // use Cachable;
@@ -235,7 +238,11 @@ class Post extends BaseModel
 
         $this->title = $value;
 
-        $this->save();
+        if ($this->getKey() !== null) {
+            $this->update([
+                'title' => $value,
+            ]);
+        }
 
         return $value;
     }
@@ -264,7 +271,12 @@ class Post extends BaseModel
         }
         $value = Str::slug($value);
         $this->guid = $value;
-        $this->save();
+
+        if ($this->getKey() !== null) {
+            $this->update([
+                'guid' => $value,
+            ]);
+        }
 
         return $value;
     }

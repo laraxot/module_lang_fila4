@@ -8,6 +8,9 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+use Exception;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Lang\Database\Factories\TranslationFileFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
@@ -23,10 +26,10 @@ use function Safe\json_encode;
  * @property string|null $id
  * @property string|null $name
  * @property array<array-key, mixed>|null $content
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $creator
- * @property-read \Modules\Xot\Contracts\ProfileContract|null $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
  *
- * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
+ * @method static TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -75,7 +78,7 @@ class TranslationFile extends BaseModel
                     try {
                         $content = File::getRequire($path);
                         $item['content'] = json_encode($content);
-                    } catch (\Exception $e) {
+                    } catch (Exception $e) {
                         $item['content'] = '';
                     }
                 } else {
