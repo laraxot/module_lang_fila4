@@ -100,7 +100,7 @@ class FindMissingTranslations extends Command
             $currentKey = $parentKey ? "{$parentKey}.{$key}" : $key;
             
             if (is_array($value)) {
-                Assert::isArray($value, 'I valori annidati devono essere array');
+                // $value è già array perché verificato con is_array()
                 /** @var array<string, mixed> $value */
                 $missing = array_merge(
                     $missing,
@@ -132,7 +132,7 @@ class FindMissingTranslations extends Command
             if ($result === null) {
                 return 0;
             }
-            Assert::string($result, 'shell_exec deve restituire una stringa o null');
+            // shell_exec restituisce string|null, dopo il controllo null è sempre string
             return count(explode("\n", trim($result)));
         } catch (Exception $e) {
             return 0;

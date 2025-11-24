@@ -91,8 +91,8 @@ class ConvertTranslations extends Command
         
         // Save to JSON
         $jsonPath = lang_path("{$locale}.json");
-        $jsonContent = json_encode($flattened, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-        Assert::string($jsonContent, 'json_encode deve restituire una stringa');
+        // json_encode con JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE restituisce sempre string
+        $jsonContent = json_encode($flattened, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR);
         File::put($jsonPath, $jsonContent);
         
         $this->info("Converted PHP files to {$jsonPath}");
@@ -125,7 +125,7 @@ class ConvertTranslations extends Command
 
         // Save PHP files
         foreach ($nested as $file => $content) {
-            Assert::string($file, 'Il nome del file deve essere una stringa');
+            // $file è già string perché $nested è array<string, mixed>
             $filePath = lang_path("{$locale}/{$file}.php");
             
             $content = "<?php\n\nreturn " . $this->varExport($content, true) . ";\n";
@@ -150,7 +150,7 @@ class ConvertTranslations extends Command
             $newKey = $prefix ? "{$prefix}.{$key}" : $key;
             
             if (is_array($value)) {
-                Assert::isArray($value, 'I valori annidati devono essere array');
+                // $value è già array perché verificato con is_array()
                 /** @var array<string, mixed> $value */
                 $result = array_merge($result, $this->flattenArray($value, $newKey));
             } else {
@@ -173,7 +173,7 @@ class ConvertTranslations extends Command
         $current = &$array;
         
         foreach ($keys as $k) {
-            Assert::string($k, 'Le chiavi annidate devono essere stringhe');
+            // $k è già string perché explode() restituisce array<int, string>
             if (!isset($current[$k]) || !is_array($current[$k])) {
                 $current[$k] = [];
             }
