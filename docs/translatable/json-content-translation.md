@@ -87,7 +87,7 @@ Ogni file JSON può contenere sezioni traducibili seguendo questo pattern:
                 "data": {
                     "view": "pub_theme::components.blocks.hero.dettaglio-dottore",
                     "title": "Benvenuto nella tua Area Dottore",
-                    "subtitle": "Gestisci le tue pazienti e monitora i loro percorsi di salute orale",
+                    "subtitle": "Gestisci le tue pazienti e monitora i loro percorsi di <slogan>",
                     "image": "/img/odontoiatra.jpg",
                     "cta-buttons": [],
                     "cta_text": "Continua la registrazione",

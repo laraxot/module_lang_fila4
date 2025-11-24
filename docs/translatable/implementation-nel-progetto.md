@@ -240,7 +240,7 @@ I contenuti JSON come quelli in `config/local/<nome progetto>/database/content/p
                 "type": "hero",
                 "data": {
                     "title": "Benvenuto nella tua Area Dottore",
-                    "subtitle": "Gestisci le tue pazienti e monitora i loro percorsi di salute orale",
+                    "subtitle": "Gestisci le tue pazienti e monitora i loro percorsi di <slogan>",
                     "cta_text": "Continua la registrazione"
                 }
             }

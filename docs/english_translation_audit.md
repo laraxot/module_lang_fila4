@@ -146,8 +146,8 @@ I seguenti file sono stati identificati come contenenti testo in italiano e nece
 - `Modules/Geo/lang/en/setting.php`
 - `Modules/Cms/lang/en/calendar.php`
 - `Modules/Cms/lang/en/txt.php`
-- `Modules/SaluteMo/lang/en/patient.php`
-- `Modules/SaluteMo/lang/en/doctor.php`
+- `Modules/<nome modulo>/lang/en/patient.php`
+- `Modules/<nome modulo>/lang/en/doctor.php`
 - `Modules/Xot/lang/en/panel.php`
 - `Modules/Xot/lang/en/artisan-commands-manager.php`
 - `Modules/Xot/lang/en/extra.php`

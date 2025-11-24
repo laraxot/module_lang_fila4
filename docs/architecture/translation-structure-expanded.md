@@ -155,7 +155,7 @@ Ogni campo deve avere la seguente struttura completa:
 - [ ] <nome progetto> (patient, doctor, studio)
 
 ### Fase 2: Moduli Secondari
-- [ ] SaluteMo
+- [ ] <nome modulo>
 - [ ] Job
 - [ ] Notify
 
