@@ -273,7 +273,7 @@ Mai usare `@phpstan-ignore` - risolvere sempre il problema reale.
 
 ## Conclusione
 
-Il modulo Lang è ora completamente type-safe a PHPStan Level 9.
+Il modulo Lang è ora completamente type-safe a PHPStan level 10.
 Tutti i 58 errori sono stati corretti senza compromessi.
 
 **Filosofia applicata**: "Type safety non è optional, è foundational."
