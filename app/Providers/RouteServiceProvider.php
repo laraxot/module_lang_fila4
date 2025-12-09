@@ -11,6 +11,11 @@ use Modules\Xot\Providers\XotBaseRouteServiceProvider;
  */
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
+
+    /**
+     * The name of the module.
+     */
+    public string $name = 'Lang';
     /**
      * The name of the module.
      */

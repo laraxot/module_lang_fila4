@@ -18,7 +18,7 @@ class TranslationEditor extends Field
     {
         parent::setUp();
 
-        $this->afterStateHydrated(function (TranslationEditor $component, $state) {
+        $this->afterStateHydrated(function (TranslationEditor $component, $state): void {
             $component->state($state ?? []);
         });
     }
