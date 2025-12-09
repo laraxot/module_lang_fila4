@@ -49,9 +49,12 @@ return [
     'am' => 'Armenian',
     'az' => 'Azerbaijani',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Americas
     'us' => 'American',
     'ca' => 'Canadian',
@@ -96,9 +99,12 @@ return [
     'dm' => 'Dominican',
     'bs' => 'Bahamian',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Asia
     'cn' => 'Chinese',
     'jp' => 'Japanese',
@@ -145,9 +151,12 @@ return [
     'tj' => 'Tajik',
     'tm' => 'Turkmen',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Africa
     'eg' => 'Egyptian',
     'ly' => 'Libyan',
@@ -204,9 +213,12 @@ return [
     'aq' => 'Antarctic',
     'zr' => 'Zairian',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Oceania
     'au' => 'Australian',
     'ax' => 'Alandish',
@@ -226,9 +238,12 @@ return [
     'fm' => 'Micronesian',
     'mh' => 'Marshallese',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Others
     'xk' => 'Kosovar',
     'va' => 'Vatican',
@@ -283,7 +298,11 @@ return [
     'um' => 'U.S. Minor Outlying Islands',
     'eh' => 'Western Sahara',
 <<<<<<< HEAD
+<<<<<<< HEAD
 ];
 =======
 ];
 >>>>>>> 8b0b6ac (.)
+=======
+];
+>>>>>>> 1c4a063 (.)
