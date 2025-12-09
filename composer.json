@@ -12,9 +12,13 @@
     "require": {
         "mcamara/laravel-localization": "*",
 <<<<<<< HEAD
+<<<<<<< HEAD
         "lara-zeus/spatie-translatable": "*",
 =======
 >>>>>>> 8b0b6ac (.)
+=======
+        "lara-zeus/spatie-translatable": "*",
+>>>>>>> 1c4a063 (.)
         "rinvex/countries": "^9.1",
         "spatie/laravel-sluggable": "*"
     },
