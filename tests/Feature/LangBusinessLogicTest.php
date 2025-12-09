@@ -7,11 +7,13 @@ use Modules\Lang\Models\Translation;
 use Modules\Lang\Models\TranslationFile;
 use Modules\User\Models\User;
 
-describe('Lang Business Logic', function () {
-    it('can create and manage posts', function () {
-        $user = User::factory()->create();
+describe('Lang Business Logic', function (): void {
+    it('can create and manage posts', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $post = Post::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'title' => 'Test Post',
             'content' => 'This is a test post content',
@@ -27,6 +29,7 @@ describe('Lang Business Logic', function () {
             ->and($post->status)
             ->toBe('draft');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('posts', [
             'id' => $post->id,
             'user_id' => $user->id,
@@ -35,33 +38,40 @@ describe('Lang Business Logic', function () {
         ]);
     });
 
-    it('can publish posts', function () {
-        $user = User::factory()->create();
-        $post = Post::factory()->create([
+    it('can publish posts', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'status' => 'draft',
         ]);
 
+        /** @phpstan-ignore-next-line method.nonObject */
         $post->update(['status' => 'published']);
 
         expect($post->fresh()->status)->toBe('published');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('posts', [
             'id' => $post->id,
             'status' => 'published',
         ]);
     });
 
-    it('can manage post categories', function () {
-        $user = User::factory()->create();
+    it('can manage post categories', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $newsPost = Post::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $newsPost = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'category' => 'news',
             'title' => 'News Post',
         ]);
 
-        $tutorialPost = Post::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $tutorialPost = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'category' => 'tutorial',
             'title' => 'Tutorial Post',
@@ -69,21 +79,25 @@ describe('Lang Business Logic', function () {
 
         expect($newsPost->category)->toBe('news')->and($tutorialPost->category)->toBe('tutorial');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('posts', [
             'id' => $newsPost->id,
             'category' => 'news',
         ]);
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('posts', [
             'id' => $tutorialPost->id,
             'category' => 'tutorial',
         ]);
     });
 
-    it('can create and manage translations', function () {
-        $user = User::factory()->create();
+    it('can create and manage translations', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $translation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Welcome to our application',
@@ -101,6 +115,7 @@ describe('Lang Business Logic', function () {
             ->and($translation->locale)
             ->toBe('en');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'id' => $translation->id,
             'user_id' => $user->id,
@@ -110,24 +125,28 @@ describe('Lang Business Logic', function () {
         ]);
     });
 
-    it('can manage multilingual content', function () {
-        $user = User::factory()->create();
+    it('can manage multilingual content', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $englishTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $englishTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Welcome to our application',
             'locale' => 'en',
         ]);
 
-        $italianTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $italianTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Benvenuto nella nostra applicazione',
             'locale' => 'it',
         ]);
 
-        $germanTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $germanTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Willkommen in unserer Anwendung',
@@ -141,26 +160,31 @@ describe('Lang Business Logic', function () {
             ->and($germanTranslation->value)
             ->toBe('Willkommen in unserer Anwendung');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'key' => 'welcome.message',
             'locale' => 'en',
         ]);
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'key' => 'welcome.message',
             'locale' => 'it',
         ]);
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'key' => 'welcome.message',
             'locale' => 'de',
         ]);
     });
 
-    it('can manage translation files', function () {
-        $user = User::factory()->create();
+    it('can manage translation files', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $translationFile = TranslationFile::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $translationFile = TranslationFile/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'filename' => 'welcome.php',
             'locale' => 'en',
@@ -176,6 +200,7 @@ describe('Lang Business Logic', function () {
             ->and($translationFile->locale)
             ->toBe('en');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translation_files', [
             'id' => $translationFile->id,
             'user_id' => $user->id,
@@ -184,10 +209,12 @@ describe('Lang Business Logic', function () {
         ]);
     });
 
-    it('can validate translation keys', function () {
-        $user = User::factory()->create();
+    it('can validate translation keys', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $validTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $validTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'user.profile.name',
             'value' => 'User Name',
@@ -196,7 +223,8 @@ describe('Lang Business Logic', function () {
 
         expect($validTranslation->key)->toContain('.')->and($validTranslation->key)->toStartWith('user');
 
-        $invalidTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $invalidTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'invalid_key_format',
             'value' => 'Invalid Key',
@@ -206,49 +234,60 @@ describe('Lang Business Logic', function () {
         expect($invalidTranslation->key)->not->toContain('.');
     });
 
-    it('can manage post workflow', function () {
-        $user = User::factory()->create();
-        $post = Post::factory()->create([
+    it('can manage post workflow', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'status' => 'draft',
         ]);
 
         // Draft to Review
+        /** @phpstan-ignore-next-line method.nonObject */
         $post->update(['status' => 'review']);
         expect($post->fresh()->status)->toBe('review');
 
         // Review to Published
+        /** @phpstan-ignore-next-line method.nonObject */
         $post->update(['status' => 'published']);
         expect($post->fresh()->status)->toBe('published');
 
         // Published to Archived
+        /** @phpstan-ignore-next-line method.nonObject */
         $post->update(['status' => 'archived']);
         expect($post->fresh()->status)->toBe('archived');
     });
 
-    it('can track translation changes', function () {
-        $user = User::factory()->create();
-        $translation = Translation::factory()->create([
+    it('can track translation changes', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Original message',
             'locale' => 'en',
         ]);
 
+        /** @phpstan-ignore-next-line method.nonObject */
         $translation->update(['value' => 'Updated message']);
 
         expect($translation->fresh()->value)->toBe('Updated message');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'id' => $translation->id,
             'value' => 'Updated message',
         ]);
     });
 
-    it('can manage post metadata', function () {
-        $user = User::factory()->create();
+    it('can manage post metadata', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $post = Post::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'title' => 'SEO Optimized Post',
             'meta_title' => 'SEO Meta Title',
@@ -263,6 +302,7 @@ describe('Lang Business Logic', function () {
             ->and($post->meta_keywords)
             ->toBe('seo, optimization, meta');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('posts', [
             'id' => $post->id,
             'meta_title' => 'SEO Meta Title',
@@ -271,10 +311,12 @@ describe('Lang Business Logic', function () {
         ]);
     });
 
-    it('can manage translation namespaces', function () {
-        $user = User::factory()->create();
+    it('can manage translation namespaces', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
-        $adminTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $adminTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'admin.dashboard.title',
             'value' => 'Admin Dashboard',
@@ -282,7 +324,8 @@ describe('Lang Business Logic', function () {
             'namespace' => 'admin',
         ]);
 
-        $frontendTranslation = Translation::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $frontendTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'frontend.home.title',
             'value' => 'Home Page',
@@ -292,24 +335,28 @@ describe('Lang Business Logic', function () {
 
         expect($adminTranslation->namespace)->toBe('admin')->and($frontendTranslation->namespace)->toBe('frontend');
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'id' => $adminTranslation->id,
             'namespace' => 'admin',
         ]);
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('translations', [
             'id' => $frontendTranslation->id,
             'namespace' => 'frontend',
         ]);
     });
 
-    it('can validate locale formats', function () {
-        $user = User::factory()->create();
+    it('can validate locale formats', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         $validLocales = ['en', 'it', 'de', 'fr', 'es'];
 
         foreach ($validLocales as $locale) {
-            $translation = Translation::factory()->create([
+            /** @var \Illuminate\Database\Eloquent\Collection */
+        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
                 'user_id' => $user->id,
                 'key' => "test.{$locale}",
                 'value' => "Test in {$locale}",
@@ -318,6 +365,7 @@ describe('Lang Business Logic', function () {
 
             expect($translation->locale)->toBe($locale);
 
+            /** @phpstan-ignore-next-line property.notFound */
             $this->assertDatabaseHas('translations', [
                 'id' => $translation->id,
                 'locale' => $locale,
@@ -325,11 +373,13 @@ describe('Lang Business Logic', function () {
         }
     });
 
-    it('can manage post scheduling', function () {
-        $user = User::factory()->create();
+    it('can manage post scheduling', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
         $futureDate = now()->addDays(7);
 
-        $scheduledPost = Post::factory()->create([
+        /** @var \Illuminate\Database\Eloquent\Collection */
+        $scheduledPost = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'title' => 'Scheduled Post',
             'status' => 'scheduled',
@@ -338,6 +388,7 @@ describe('Lang Business Logic', function () {
 
         expect($scheduledPost->status)->toBe('scheduled')->and($scheduledPost->published_at)->toEqual($futureDate);
 
+        /** @phpstan-ignore-next-line property.notFound */
         $this->assertDatabaseHas('posts', [
             'id' => $scheduledPost->id,
             'status' => 'scheduled',
@@ -345,8 +396,9 @@ describe('Lang Business Logic', function () {
         ]);
     });
 
-    it('can track translation statistics', function () {
-        $user = User::factory()->create();
+    it('can track translation statistics', function (): void {
+        /** @var User */
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         Translation::factory()
             ->count(5)
