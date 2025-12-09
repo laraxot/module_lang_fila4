@@ -2,11 +2,20 @@
 
 ## Context
 
+<<<<<<< HEAD
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `fixcity` project.
+=======
+This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `saluteora` project.
+# Laravel Localization Metadata for Cursor
+
+## Context
+This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `prediction market platform` project.
+>>>>>>> a1de4f9 (.)
 
 ## Key Points
 
 - **Package**: `mcamara/laravel-localization`
+<<<<<<< HEAD
 - **Purpose**: Enhance localization capabilities in Laravel applications for city management platforms.
 - **Suggested Actions**:
   - Add package to `composer.json`.
@@ -14,14 +23,29 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
   - Register middleware for language redirects.
   - Implement language selector UI component for city administrators.
 - **Benefits**: Improved user experience with localized URLs and translated routes for global city management.
+=======
+- **Purpose**: Enhance localization capabilities in Laravel applications for prediction market platforms.
+- **Suggested Actions**:
+  - Add package to `composer.json`.
+  - Configure supported languages for international trading.
+  - Register middleware for language redirects.
+  - Implement language selector UI component for traders.
+- **Benefits**: Improved user experience with localized URLs and translated routes for global prediction markets.
+>>>>>>> a1de4f9 (.)
 
 ## Implementation Notes
 
 - Configure routes for multiple languages
 - Set up middleware for automatic language detection
+<<<<<<< HEAD
 - Create language switcher component for city management interface
 - Ensure city data translations are accurate
 - Test localization with different city management scenarios
+=======
+- Create language switcher component for trading interface
+- Ensure market data translations are accurate
+- Test localization with different market scenarios
+>>>>>>> a1de4f9 (.)
 
 ## Related Documentation
 
