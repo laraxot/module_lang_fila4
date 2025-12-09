@@ -2,7 +2,11 @@
 
 ## Problemi Identificati e Correzioni in Corso
 
+<<<<<<< HEAD
 Stiamo standardizzando i file di traduzione nel modulo Notify che presentano problemi di conformità con le convenzioni di <nome progetto>. Questo documento fornisce collegamenti rapidi a tutta la documentazione pertinente.
+=======
+Stiamo standardizzando i file di traduzione nel modulo Notify che presentano problemi di conformità con le convenzioni di SaluteOra. Questo documento fornisce collegamenti rapidi a tutta la documentazione pertinente.
+>>>>>>> a7ee0d6 (.)
 
 ## Documentazione nel Modulo Notify
 
@@ -42,4 +46,8 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 2. Verificare la coerenza tra le versioni in italiano e inglese
 3. Testare tutte le funzionalità che utilizzano questi file di traduzione
 
+<<<<<<< HEAD
 **Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di <nome progetto>. 
+=======
+**Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di SaluteOra. 
+>>>>>>> a7ee0d6 (.)
