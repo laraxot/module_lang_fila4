@@ -1,410 +1,198 @@
-# 🌐 **Lang Module** - Sistema Avanzato di Localizzazione
+# Modulo Lang - Documentazione
 
-[![Laravel 12.x](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com/)
-[![Filament 3.x](https://img.shields.io/badge/Filament-3.x-blue.svg)](https://filamentphp.com/)
-[![PHPStan Level 9](https://img.shields.io/badge/PHPStan-Level%209-brightgreen.svg)](https://phpstan.org/)
-[![Translation Ready](https://img.shields.io/badge/Translation-IT%20%7C%20EN%20%7C%20DE-green.svg)](https://laravel.com/docs/localization)
-[![Multi-Language](https://img.shields.io/badge/Multi-Language%20Ready-orange.svg)](https://laravel.com/docs/localization)
-[![Auto Translation](https://img.shields.io/badge/Auto-Translation%20Ready-yellow.svg)](https://cloud.google.com/translate)
-[![Quality Score](https://img.shields.io/badge/Quality%20Score-99%25-brightgreen.svg)](https://github.com/laraxot/lang-module)
+## Panoramica
+Il modulo Lang gestisce automaticamente le traduzioni per tutti i componenti Filament dell'applicazione Laraxot/PTVX tramite:
+1. **LangServiceProvider**: Traduzione automatica componenti (elimina necessità di `->label()`, `->placeholder()`, `->helperText()`)
+2. **Spatie Translatable Plugin**: Supporto contenuti multilingua nei modelli (integrazione Lara Zeus)
 
-> **🚀 Modulo Lang**: Sistema completo per localizzazione, traduzioni automatiche e gestione multilingua con supporto avanzato per Filament e componenti UI.
+## Componenti Principali
 
-## 📋 **Panoramica**
+### LangServiceProvider
+Service Provider che estende `XotBaseServiceProvider` e configura automaticamente tutti i componenti Filament per utilizzare le traduzioni.
 
-Il modulo **Lang** è il motore di localizzazione dell'applicazione, fornendo:
+**Caratteristiche:**
+- Registrazione automatica delle traduzioni per tutti i componenti Filament
+- Supporto per Field, Column, Entry, BaseFilter, Action, Section, Step
+- Integrazione con AutoLabelAction per traduzione automatica
+- Gestione dei messaggi di validazione
 
-- 🌐 **Multi-Language Support** - Supporto completo per IT, EN, DE e altre lingue
-- 🤖 **Auto Translation** - Traduzioni automatiche con Google Translate
-- 📝 **Translation Management** - Gestione avanzata delle traduzioni
-- 🎨 **Filament Integration** - Integrazione completa con Filament
-- 🔧 **Translation Standards** - Standard di traduzione uniformi
-- ⚡ **Performance Optimization** - Ottimizzazioni per traduzioni veloci
-
-## ⚡ **Funzionalità Core**
-
-### 🌐 **Multi-Language Support**
+**Pattern utilizzato:**
 ```php
-// Configurazione lingue supportate
-return [
-    'available_locales' => [
-        'it' => 'Italiano',
-        'en' => 'English',
-        'de' => 'Deutsch',
-    ],
-    
-    'fallback_locale' => 'it',
-    'detect_from_browser' => true,
-];
-
-// Cambio lingua dinamico
-Lang::setLocale('en');
-echo __('welcome.message'); // "Welcome to our application"
-
-Lang::setLocale('de');
-echo __('welcome.message'); // "Willkommen in unserer Anwendung"
+Field::configureUsing(function (Field $component) {
+    $component = app(AutoLabelAction::class)->execute($component);
+    // Auto-traduzione di label, placeholder, helperText, description
+    return $component;
+});
 ```
 
-### 🤖 **Auto Translation System**
+## Struttura Traduzioni
+
+### File di Traduzione
+Le traduzioni sono organizzate in `Modules/Lang/lang/{locale}/`:
+
+- `txt.php` - Traduzioni generiche
+- Altri file specifici per contesto
+
+### Struttura Espansa
+Tutti i file di traduzione seguono la struttura espansa:
+
 ```php
-// Traduzione automatica con Google Translate
-use Modules\Lang\Services\AutoTranslationService;
-
-class TranslationService
-{
-    public function __construct(
-        private AutoTranslationService $autoTranslator
-    ) {}
-    
-    public function translateToAllLanguages(string $text): array
-    {
-        return [
-            'it' => $text, // Originale
-            'en' => $this->autoTranslator->translate($text, 'it', 'en'),
-            'de' => $this->autoTranslator->translate($text, 'it', 'de'),
-        ];
-    }
-}
-```
-
-### 📝 **Translation Management**
-```php
-// Gestione traduzioni con struttura espansa
-return [
-    'fields' => [
-        'name' => [
-            'label' => 'Nome',
-            'placeholder' => 'Inserisci il nome',
-            'help' => 'Il nome completo dell\'utente',
-            'description' => 'Nome e cognome dell\'utente',
-            'tooltip' => 'Inserisci il nome completo',
-            'helper_text' => '',
-        ],
-        'email' => [
-            'label' => 'Email',
-            'placeholder' => 'Inserisci l\'email',
-            'help' => 'Indirizzo email valido',
-            'description' => 'Indirizzo email per le comunicazioni',
-            'tooltip' => 'Formato: nome@dominio.com',
-            'helper_text' => '',
-        ],
-    ],
-];
-```
-
-## 🎯 **Stato Qualità - Gennaio 2025**
-
-### ✅ **PHPStan Level 9 Compliance**
-- **File Core Certificati**: 15/15 file core raggiungono Level 9
-- **Type Safety**: 100% sui servizi principali
-- **Runtime Safety**: 100% con error handling robusto
-- **Template Types**: Risolti tutti i problemi Collection generics
-
-### ✅ **Translation Standards Compliance**
-- **Helper Text**: 100% corretti (vuoti quando uguali alla chiave)
-- **Localizzazione**: 100% valori tradotti appropriatamente
-- **Sintassi**: 100% sintassi moderna `[]` e `declare(strict_types=1)`
-- **Struttura**: 100% struttura espansa completa
-
-### 📊 **Metriche Performance**
-- **Translation Loading**: < 10ms per file traduzione
-- **Auto Translation**: < 2s per frase
-- **Cache Hit Rate**: 98% per traduzioni frequenti
-- **Memory Usage**: < 20MB per tutte le traduzioni
-
-## 🚀 **Quick Start**
-
-### 📦 **Installazione**
-```bash
-# Abilitare il modulo
-php artisan module:enable Lang
-
-# Pubblicare le configurazioni
-php artisan vendor:publish --tag=lang-config
-
-# Configurare Google Translate (opzionale)
-php artisan lang:setup-google-translate
-```
-
-### ⚙️ **Configurazione**
-```php
-// config/lang.php
-return [
-    'available_locales' => [
-        'it' => 'Italiano',
-        'en' => 'English',
-        'de' => 'Deutsch',
-    ],
-    
-    'fallback_locale' => 'it',
-    'detect_from_browser' => true,
-    
-    'auto_translation' => [
-        'enabled' => env('AUTO_TRANSLATION_ENABLED', false),
-        'provider' => 'google', // google, deepl, azure
-        'api_key' => env('GOOGLE_TRANSLATE_API_KEY'),
-    ],
-    
-    'translation_standards' => [
-        'expanded_structure' => true,
-        'helper_text_rule' => true,
-        'tooltip_required' => true,
-    ],
-];
-```
-
-### 🧪 **Testing**
-```bash
-# Test del modulo
-php artisan test --testsuite=Lang
-
-# Test PHPStan compliance
-./vendor/bin/phpstan analyze Modules/Lang --level=9
-
-# Test traduzioni
-php artisan lang:test-translations
-```
-
-## 📚 **Documentazione Completa**
-
-### 🏗️ **Architettura**
-- [Translation System](translation-system.md) - Sistema traduzioni completo
-- [Lang Service Provider](lang-service-provider.md) - Service provider traduzioni
-- [Auto Translation](automatic-translations.md) - Traduzioni automatiche
-- [Translation Standards](translation-standards_links.md) - Standard traduzioni
-
-### 🌐 **Localization**
-- [Locale Management](locale_management.md) - Gestione locale
-- [Translation Process](translation_process.md) - Processo traduzioni
-- [Translation Strategies](translation_strategies.md) - Strategie traduzioni
-- [MC Laravel Localization](integration_mc_laravel_localization.md) - Integrazione MC
-
-### 🎨 **Filament Integration**
-- [Filament Translations](filament-translations.md) - Traduzioni Filament
-- [Enum Translation Pattern](enum-translation-pattern.md) - Pattern traduzioni enum
-- [Translation File Editor](translation-file-editor.md) - Editor file traduzioni
-- [Translation Management](translation-management.md) - Gestione traduzioni
-
-### 🔧 **Development**
-- [PHPStan Fixes](phpstan-corrections.md) - Log completo correzioni PHPStan
-- [Translation Helper Text](translation-helper-text-standards.md) - Standard helper text
-- [Translation Preservation](translation-preservation-rules.md) - Regole preservazione
-
-## 🎨 **Componenti Filament**
-
-### 🌐 **Language Switcher**
-```php
-// Componente switch lingua
-class LanguageSwitcher extends Component
-{
-    public function render(): View
-    {
-        return view('lang::components.language-switcher', [
-            'currentLocale' => app()->getLocale(),
-            'availableLocales' => config('lang.available_locales'),
-        ]);
-    }
-    
-    public function switchLanguage(string $locale): void
-    {
-        if (in_array($locale, array_keys(config('lang.available_locales')))) {
-            session(['locale' => $locale]);
-            app()->setLocale($locale);
-        }
-    }
-}
-```
-
-### 📝 **Translation Editor**
-```php
-// Editor traduzioni Filament
-class TranslationEditor extends Component
-{
-    public function render(): View
-    {
-        return view('lang::filament.components.translation-editor', [
-            'translations' => $this->getTranslations(),
-            'locales' => config('lang.available_locales'),
-        ]);
-    }
-    
-    public function saveTranslations(array $translations): void
-    {
-        foreach ($translations as $key => $values) {
-            foreach ($values as $locale => $value) {
-                Lang::set($key, $value, $locale);
-            }
-        }
-    }
-}
-```
-
-## 🔧 **Best Practices**
-
-### 1️⃣ **Translation Structure**
-```php
-// ✅ CORRETTO - Struttura espansa completa
-return [
-    'fields' => [
-        'name' => [
-            'label' => 'Nome',
-            'placeholder' => 'Inserisci il nome',
-            'help' => 'Il nome completo dell\'utente',
-            'description' => 'Nome e cognome dell\'utente',
-            'tooltip' => 'Inserisci il nome completo',
-            'helper_text' => '', // Vuoto se diverso da placeholder
-        ],
-    ],
-];
-
-// ❌ ERRATO - Struttura semplificata
-return [
-    'name' => 'Nome',
-    'email' => 'Email',
-];
-```
-
-### 2️⃣ **Enum Translation Pattern**
-```php
-// ✅ CORRETTO - Enum con traduzioni automatiche
-enum UserStatus: string implements HasColor, HasIcon, HasLabel
-{
-    use TransTrait;
-    
-    case ACTIVE = 'active';
-    case INACTIVE = 'inactive';
-    case SUSPENDED = 'suspended';
-    
-    public function getLabel(): string
-    {
-        return $this->transClass(self::class, $this->value . '.label');
-    }
-    
-    public function getColor(): string
-    {
-        return $this->transClass(self::class, $this->value . '.color');
-    }
-}
-```
-
-### 3️⃣ **Auto Translation Integration**
-```php
-// ✅ CORRETTO - Traduzione automatica intelligente
-class SmartTranslationService
-{
-    public function translateMissingKeys(string $locale): void
-    {
-        $fallbackLocale = config('lang.fallback_locale');
-        $missingKeys = $this->findMissingKeys($locale, $fallbackLocale);
-        
-        foreach ($missingKeys as $key) {
-            $fallbackText = __($key, [], $fallbackLocale);
-            $translatedText = $this->autoTranslator->translate($fallbackText, $fallbackLocale, $locale);
-            
-            Lang::set($key, $translatedText, $locale);
-        }
-    }
-}
-```
-
-## 🐛 **Troubleshooting**
-
-### **Problemi Comuni**
-
-#### 🌐 **Missing Translations**
-```bash
-# Verificare traduzioni mancanti
-php artisan lang:check-missing
-
-# Generare traduzioni automatiche
-php artisan lang:auto-translate
-```
-**Soluzione**: Consulta [Translation Process](translation_process.md)
-
-#### 🎨 **Filament Translation Issues**
-```php
-// Verificare configurazione Filament
-'filament' => [
-    'translations' => [
-        'enabled' => true,
-        'fallback' => 'it',
-    ],
+'field_name' => [
+    'label' => 'Etichetta',
+    'placeholder' => 'Placeholder',
+    'helper_text' => 'Testo di aiuto',
+    'description' => 'Descrizione',
 ],
 ```
-**Soluzione**: Consulta [Filament Translations](filament-translations.md)
 
-#### 🔧 **Helper Text Issues**
+## AutoLabelAction
+
+### Funzionamento
+L'action `AutoLabelAction` è il cuore del sistema di traduzione automatica:
+
+1. Riceve un componente Filament
+2. Determina il nome del campo/componente
+3. Cerca la traduzione appropriata nei file di traduzione
+4. Applica la traduzione al componente
+5. Restituisce il componente tradotto
+
+### Metodi Supportati
+- `label` - Etichetta principale
+- `placeholder` - Testo segnaposto
+- `helperText` - Testo di aiuto
+- `description` - Descrizione
+- `heading` - Intestazione (per Section)
+- `icon` - Icona (per Action)
+
+## Best Practices
+
+### ✅ Pattern Corretto
 ```php
-// Verificare regola helper_text
-'helper_text' => '', // Deve essere vuoto se uguale alla chiave
+// Nel Resource o nella Page
+TextInput::make('email')
+    ->required()
+    ->email();
+
+// La traduzione viene applicata automaticamente dal LangServiceProvider
 ```
-**Soluzione**: Consulta [Translation Helper Text](translation-helper-text-standards.md)
 
-## 🤝 **Contributing**
+### ❌ Anti-Pattern (da evitare)
+```php
+// MAI fare questo
+TextInput::make('email')
+    ->label('Email')  // ❌ VIETATO
+    ->placeholder('Inserisci email')  // ❌ VIETATO
+    ->helperText('Email valida')  // ❌ VIETATO
+    ->required();
+```
 
-### 📋 **Checklist Contribuzione**
-- [ ] Codice passa PHPStan Level 9
-- [ ] Test unitari aggiunti
-- [ ] Documentazione aggiornata
-- [ ] Traduzioni complete (IT/EN/DE)
-- [ ] Struttura espansa verificata
-- [ ] Performance verificata
+## TranslatorService
 
-### 🎯 **Convenzioni**
-- **Translation Keys**: Sempre in minuscolo con trattini
-- **Expanded Structure**: Sempre usare struttura espansa
-- **Helper Text Rule**: Vuoto se uguale alla chiave
-- **Auto Translation**: Testare sempre traduzioni automatiche
+### Descrizione
+Estensione del translator Laravel standard con funzionalità aggiuntive per l'integrazione con il sistema di gestione traduzioni.
 
-## 📊 **Roadmap**
+**Nota:** Attualmente non registrato di default (metodo `registerTranslator()` commentato nel ServiceProvider).
 
-### 🎯 **Q1 2025**
-- [ ] **Advanced Auto Translation** - Traduzioni automatiche avanzate
-- [ ] **Translation Memory** - Memoria traduzioni per coerenza
-- [ ] **Real-time Translation** - Traduzioni in tempo reale
+## Componenti Configurati Automaticamente
 
-### 🎯 **Q2 2025**
-- [ ] **Translation Analytics** - Analytics per utilizzo traduzioni
-- [ ] **Smart Suggestions** - Suggerimenti intelligenti traduzioni
-- [ ] **Batch Translation** - Traduzione massiva file
+Il LangServiceProvider configura automaticamente:
 
-### 🎯 **Q3 2025**
-- [ ] **AI Translation** - Traduzioni con AI avanzata
-- [ ] **Context Awareness** - Traduzioni con consapevolezza contesto
-- [ ] **Voice Translation** - Traduzioni vocali
+1. **Field** - Tutti i campi form
+2. **Select** - Campo select con placeholder default
+3. **Column** - Colonne tabelle con wrapping e allineamento
+4. **Entry** - Entry di Infolist
+5. **BaseFilter** - Filtri tabelle
+6. **Action** - Tutte le azioni
+7. **Section** - Sezioni con heading
+8. **Step** - Step di wizard
 
-## 📞 **Support & Maintainers**
+## Integrazione con Altri Moduli
 
-- **🏢 Team**: Laraxot Development Team
-- **📧 Email**: lang@laraxot.com
-- **🐛 Issues**: [GitHub Issues](https://github.com/laraxot/lang-module/issues)
-- **📚 Docs**: [Documentazione Completa](https://docs.laraxot.com/lang)
-- **💬 Discord**: [Laraxot Community](https://discord.gg/laraxot)
+### Modulo Xot
+Il modulo Lang dipende dal modulo Xot per:
+- `XotBaseServiceProvider` - Classe base per ServiceProvider
+- `BladeService` - Registrazione componenti Blade (commentato)
 
----
+### Modulo User
+- Utilizza le traduzioni di validazione da `user::validation`
 
-### 🏆 **Achievements**
+## Troubleshooting
 
-- **🏅 PHPStan Level 9**: File core certificati ✅
-- **🏅 Translation Standards**: File traduzione certificati ✅
-- **🏅 Multi-Language**: Supporto IT/EN/DE completo ✅
-- **🏅 Auto Translation**: Traduzioni automatiche Google ✅
-- **🏅 Filament Integration**: Integrazione Filament completa ✅
-- **🏅 Translation Memory**: Memoria traduzioni per coerenza ✅
+### Le traduzioni non vengono applicate
+1. Verificare che il LangServiceProvider sia registrato in `config/app.php`
+2. Pulire le cache: `php artisan cache:clear && php artisan config:clear`
+3. Verificare la struttura del file di traduzione (deve essere espansa)
 
-### 📈 **Statistics**
+### Conflitti con traduzioni esistenti
+Se un componente ha già una label impostata manualmente, rimuoverla e affidarsi al sistema automatico.
 
-- **🌐 Languages Supported**: 3 (IT, EN, DE) + estensibile
-- **📝 Translation Keys**: 50,000+ chiavi tradotte
-- **🤖 Auto Translation**: 95% accuratezza Google Translate
-- **🎨 Filament Components**: 25+ componenti tradotti
-- **🧪 Test Coverage**: 99%
-- **⚡ Performance Score**: 99/100
+## Sviluppi Futuri
 
----
+### Funzionalità Pianificate
+- Registrazione componenti Blade custom
+- Attivazione TranslatorService personalizzato
+- Supporto per ulteriori componenti Filament
 
-**🔄 Ultimo aggiornamento**: 27 Gennaio 2025  
-**📦 Versione**: 4.0.0  
-**🐛 PHPStan Level 9**: File core certificati ✅  
-**🌐 Translation Standards**: File traduzione certificati ✅  
-**🚀 Performance**: 99/100 score 
+## Spatie Translatable Plugin
+
+### Overview
+
+Il modulo Lang fornisce integrazione con **Lara Zeus Spatie Translatable** per supportare contenuti multilingua.
+
+### Panel Registration
+
+Il plugin è registrato in `AdminPanelProvider`:
+
+```php
+use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
+
+$panel->plugins([
+    SpatieTranslatablePlugin::make()
+        ->defaultLocales(['it', 'en']),
+]);
+```
+
+### LangBase Classes
+
+Classi base che forniscono funzionalità multilingua:
+
+- `LangBaseResource` - Resource con trait Translatable
+- `LangBaseListRecords` - ListRecords con LocaleSwitcher
+- `LangBaseCreateRecord` - CreateRecord con supporto lingue  
+- `LangBaseEditRecord` - EditRecord con supporto lingue
+
+### Requisiti per Usare LangBase
+
+Per estendere le classi `LangBase*`:
+
+1. ✅ Il **panel** deve avere il plugin registrato
+2. ✅ Il **modello** deve avere trait `HasTranslations`
+3. ✅ I **campi traducibili** devono essere JSON nel database
+
+### Moduli che Richiedono il Plugin
+
+Tutti i moduli le cui risorse estendono `LangBase*` devono registrare il plugin nel proprio `AdminPanelProvider`:
+
+- ✅ `Lang` - ha plugin registrato
+- ✅ `Notify` - **FIX APPLICATO** (plugin registrato)
+- ⚠️  Altri moduli - verificare se usano LangBase
+
+### Documentazione
+
+Consultare [Notify Spatie Translatable Integration](../../Notify/docs/spatie-translatable-integration.md) per esempio completo.
+
+## Collegamenti
+
+- [Modulo Xot](../../Xot/docs/readme.md)
+- [Best Practices Filament](../../Xot/docs/filament-best-practices.md)
+- [Regole Traduzioni Laraxot](./../../../docs/laraxot-conventions.md)
+- [Notify Spatie Translatable](../../Notify/docs/spatie-translatable-integration.md)
+- [Lara Zeus Spatie Translatable Docs](https://filamentphp.com/plugins/lara-zeus-spatie-translatable)
+
+## Regole Fondamentali
+
+> **MAI usare ->label(), ->placeholder(), ->helperText() nei componenti Filament**
+> 
+> Tutte le traduzioni DEVONO essere gestite automaticamente tramite il LangServiceProvider e i file di traduzione con struttura espansa.
+
+*Ultimo aggiornamento: gennaio 2025*
