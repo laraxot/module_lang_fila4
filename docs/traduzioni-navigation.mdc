@@ -7,9 +7,6 @@
 - Aggiornare sempre la documentazione di progetto quando si introduce una nuova regola di traduzione.
 - Questa regola si applica a tutti i moduli, ma va documentata qui in Lang/docs e referenziata negli altri moduli coinvolti.
 
-<<<<<<< HEAD
-=======
 ## Collegamenti
-- [docs di SaluteOra](../../SaluteOra/docs/traduzioni-navigation.mdc)
+- [docs di FixCity](../../FixCity/docs/traduzioni-navigation.mdc)
 - [docs di Xot](../../Xot/docs/traduzioni-navigation.mdc)
->>>>>>> 8b0b6ac (.)
