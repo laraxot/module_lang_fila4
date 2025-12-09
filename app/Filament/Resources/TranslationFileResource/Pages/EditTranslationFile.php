@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-use Illuminate\Contracts\Support\Htmlable;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
+use Illuminate\Contracts\Support\Htmlable;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
-use Override;
 
 class EditTranslationFile extends XotBaseEditRecord
 {
@@ -25,7 +24,7 @@ class EditTranslationFile extends XotBaseEditRecord
         return ['it', 'en'];
     }
 
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return [
@@ -46,7 +45,7 @@ class EditTranslationFile extends XotBaseEditRecord
         $fields = [];
 
         foreach ($array as $key => $value) {
-            $fullKey = $prefix === '' ? $key : ($prefix.'.'.$key);
+            $fullKey = '' === $prefix ? $key : ($prefix.'.'.$key);
 
             if (is_array($value)) {
                 /** @var array<string, mixed> $childArray */
