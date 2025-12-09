@@ -48,13 +48,6 @@ return [
     'ge' => 'Georgier',
     'am' => 'Armenier',
     'az' => 'Aserbaidschaner',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Amerika
     'us' => 'Amerikaner',
     'ca' => 'Kanadier',
@@ -98,13 +91,6 @@ return [
     'kn' => 'Kittitianer',
     'dm' => 'Dominikaner',
     'bs' => 'Bahamaer',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Asien
     'cn' => 'Chinese',
     'jp' => 'Japaner',
@@ -150,13 +136,6 @@ return [
     'kg' => 'Kirgise',
     'tj' => 'Tadschike',
     'tm' => 'Turkmen',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Afrika
     'eg' => 'Ägypter',
     'ly' => 'Libyer',
@@ -212,13 +191,6 @@ return [
     'ao' => 'Angolaner',
     'aq' => 'Antarktiker',
     'zr' => 'Zairer',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Ozeanien
     'au' => 'Australier',
     'ax' => 'Åländer',
@@ -237,13 +209,6 @@ return [
     'pw' => 'Palauer',
     'fm' => 'Mikronesier',
     'mh' => 'Marshaller',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Andere
     'xk' => 'Kosovare',
     'va' => 'Vatikaner',
@@ -297,12 +262,4 @@ return [
     'mp' => 'Nördliche Marianer',
     'um' => 'US-Außengebiete',
     'eh' => 'Westsahara',
-<<<<<<< HEAD
-<<<<<<< HEAD
 ];
-=======
-]; 
->>>>>>> 8b0b6ac (.)
-=======
-];
->>>>>>> 1c4a063 (.)
