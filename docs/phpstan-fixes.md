@@ -86,34 +86,7 @@ private function castWithAction(mixed $value): string
 - **Array Compatibility**: Corretti tutti i formati array per Filament
 - **Generic Types**: Aggiornati PHPDoc per generic types corretti
 - **Method Signatures**: Allineate tutte le signature con le classi base
-<<<<<<< HEAD
 
 ---
 *Ultimo aggiornamento: Gennaio 2025*
-=======
-- **Syntax Error**: Corretto errore di sintassi in `TransArrayAction.php` - rimosso generics dalla dichiarazione parametri
-
-### Fix TransArrayAction.php (Settembre 2025)
-```php
-// PRIMA (ERRATO - sintassi non valida)
-public function execute(
-    array<string, mixed> $array,  // ❌ Generics non validi in PHP
-    ?string $transKey,
-): array {
-
-// DOPO (CORRETTO)
-/**
- * @param array<string, mixed> $array L'array da tradurre
- * @param string|null $transKey La chiave di traduzione
- * @return array<string, string>
- */
-public function execute(
-    array $array,  // ✅ Sintassi PHP corretta
-    ?string $transKey,
-): array<string, string> {
-```
-
----
-*Ultimo aggiornamento: Settembre 2025*
->>>>>>> cbfeb6b (.)
 *Stato: ✅ Completato - 0 errori PHPStan*
