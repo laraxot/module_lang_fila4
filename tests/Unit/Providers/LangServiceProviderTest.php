@@ -8,65 +8,53 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\ServiceProvider;
 use Modules\Lang\Providers\LangServiceProvider;
 
-beforeEach(function (): void {
+beforeEach(function () {
     $this->provider = new LangServiceProvider(app());
 });
 
-describe('LangServiceProvider Basic Functionality', function (): void {
-    it('extends ServiceProvider', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Basic Functionality', function () {
+    it('extends ServiceProvider', function () {
         expect($this->provider)->toBeInstanceOf(ServiceProvider::class);
     });
 
-    it('can be instantiated', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('can be instantiated', function () {
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 
-    it('has correct module name', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('has correct module name', function () {
         $reflection = new ReflectionClass($this->provider);
-        /** @phpstan-ignore-next-line method.nonObject */
         $property = $reflection->getProperty('module_name');
-        /** @phpstan-ignore-next-line method.nonObject */
         $property->setAccessible(true);
 
-        /** @phpstan-ignore-next-line property.notFound */
         expect($property->getValue($this->provider))->toBe('Lang');
     });
 });
 
-describe('LangServiceProvider Registration', function (): void {
-    it('can register services', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Registration', function () {
+    it('can register services', function () {
         $this->provider->register();
 
         // Verifica che il provider sia registrato
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 
-    it('can boot services', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('can boot services', function () {
         $this->provider->boot();
 
         // Verifica che il provider sia avviato
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 });
 
-describe('LangServiceProvider Translation Loading', function (): void {
-    it('loads translations from correct path', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Translation Loading', function () {
+    it('loads translations from correct path', function () {
         $this->provider->boot();
 
         // Verifica che le traduzioni siano caricate
         expect(Lang::has('lang::common.welcome'))->toBeTrue();
     });
 
-    it('loads translations with correct namespace', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('loads translations with correct namespace', function () {
         $this->provider->boot();
 
         // Verifica il namespace delle traduzioni
@@ -75,8 +63,7 @@ describe('LangServiceProvider Translation Loading', function (): void {
         expect($translation)->not->toBe('lang::common.welcome'); // Non dovrebbe essere la chiave
     });
 
-    it('handles missing translation keys gracefully', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('handles missing translation keys gracefully', function () {
         $this->provider->boot();
 
         // Verifica gestione chiavi mancanti
@@ -85,9 +72,8 @@ describe('LangServiceProvider Translation Loading', function (): void {
     });
 });
 
-describe('LangServiceProvider Translation Structure', function (): void {
-    it('provides common translations', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Translation Structure', function () {
+    it('provides common translations', function () {
         $this->provider->boot();
 
         $commonKeys = [
@@ -109,8 +95,7 @@ describe('LangServiceProvider Translation Structure', function (): void {
         }
     });
 
-    it('provides validation translations', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('provides validation translations', function () {
         $this->provider->boot();
 
         $validationKeys = [
@@ -129,8 +114,7 @@ describe('LangServiceProvider Translation Structure', function (): void {
         }
     });
 
-    it('provides error translations', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('provides error translations', function () {
         $this->provider->boot();
 
         $errorKeys = [
@@ -149,9 +133,8 @@ describe('LangServiceProvider Translation Structure', function (): void {
     });
 });
 
-describe('LangServiceProvider Language Support', function (): void {
-    it('supports Italian language', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Language Support', function () {
+    it('supports Italian language', function () {
         $this->provider->boot();
 
         // Cambia lingua a italiano
@@ -162,8 +145,7 @@ describe('LangServiceProvider Language Support', function (): void {
         expect($translation)->not->toBe('lang::common.welcome');
     });
 
-    it('supports English language', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('supports English language', function () {
         $this->provider->boot();
 
         // Cambia lingua a inglese
@@ -174,8 +156,7 @@ describe('LangServiceProvider Language Support', function (): void {
         expect($translation)->not->toBe('lang::common.welcome');
     });
 
-    it('supports German language', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('supports German language', function () {
         $this->provider->boot();
 
         // Cambia lingua a tedesco
@@ -186,8 +167,7 @@ describe('LangServiceProvider Language Support', function (): void {
         expect($translation)->not->toBe('lang::common.welcome');
     });
 
-    it('falls back to default language when translation missing', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('falls back to default language when translation missing', function () {
         $this->provider->boot();
 
         // Cambia lingua a una non supportata
@@ -199,9 +179,8 @@ describe('LangServiceProvider Language Support', function (): void {
     });
 });
 
-describe('LangServiceProvider Translation Files', function (): void {
-    it('loads common translation file', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Translation Files', function () {
+    it('loads common translation file', function () {
         $this->provider->boot();
 
         $commonPath = module_path('Lang', 'lang/it/common.php');
@@ -212,8 +191,7 @@ describe('LangServiceProvider Translation Files', function (): void {
         expect($translations)->toHaveKey('welcome');
     });
 
-    it('loads validation translation file', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('loads validation translation file', function () {
         $this->provider->boot();
 
         $validationPath = module_path('Lang', 'lang/it/validation.php');
@@ -224,8 +202,7 @@ describe('LangServiceProvider Translation Files', function (): void {
         expect($translations)->toHaveKey('required');
     });
 
-    it('loads error translation file', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('loads error translation file', function () {
         $this->provider->boot();
 
         $errorPath = module_path('Lang', 'lang/it/errors.php');
@@ -236,8 +213,7 @@ describe('LangServiceProvider Translation Files', function (): void {
         expect($translations)->toHaveKey('general');
     });
 
-    it('loads all required translation files', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('loads all required translation files', function () {
         $this->provider->boot();
 
         $requiredFiles = ['common', 'validation', 'errors'];
@@ -254,9 +230,8 @@ describe('LangServiceProvider Translation Files', function (): void {
     });
 });
 
-describe('LangServiceProvider Translation Quality', function (): void {
-    it('provides complete translation coverage', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Translation Quality', function () {
+    it('provides complete translation coverage', function () {
         $this->provider->boot();
 
         $commonKeys = [
@@ -289,8 +264,7 @@ describe('LangServiceProvider Translation Quality', function (): void {
         }
     });
 
-    it('provides consistent translation style', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('provides consistent translation style', function () {
         $this->provider->boot();
 
         $translations = [
@@ -307,8 +281,7 @@ describe('LangServiceProvider Translation Quality', function (): void {
         }
     });
 
-    it('provides contextually appropriate translations', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('provides contextually appropriate translations', function () {
         $this->provider->boot();
 
         $contextualPairs = [
@@ -325,11 +298,10 @@ describe('LangServiceProvider Translation Quality', function (): void {
     });
 });
 
-describe('LangServiceProvider Performance', function (): void {
-    it('loads translations efficiently', function (): void {
+describe('LangServiceProvider Performance', function () {
+    it('loads translations efficiently', function () {
         $startTime = microtime(true);
 
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->boot();
 
         $endTime = microtime(true);
@@ -338,8 +310,7 @@ describe('LangServiceProvider Performance', function (): void {
         expect($executionTime)->toBeLessThan(1.0); // Dovrebbe essere veloce
     });
 
-    it('caches translations for performance', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('caches translations for performance', function () {
         $this->provider->boot();
 
         // Prima chiamata
@@ -358,8 +329,7 @@ describe('LangServiceProvider Performance', function (): void {
         expect($secondCallTime)->toBeLessThanOrEqual($firstCallTime);
     });
 
-    it('handles multiple language switches efficiently', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('handles multiple language switches efficiently', function () {
         $this->provider->boot();
 
         $languages = ['it', 'en', 'de', 'it']; // Torna a italiano
@@ -379,39 +349,32 @@ describe('LangServiceProvider Performance', function (): void {
     });
 });
 
-describe('LangServiceProvider Error Handling', function (): void {
-    it('handles missing translation files gracefully', function (): void {
+describe('LangServiceProvider Error Handling', function () {
+    it('handles missing translation files gracefully', function () {
         // Simula file di traduzione mancanti
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->boot();
 
         // Dovrebbe gestire graziosamente i file mancanti
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 
-    it('handles malformed translation files gracefully', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('handles malformed translation files gracefully', function () {
         $this->provider->boot();
 
         // Dovrebbe gestire graziosamente i file malformati
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 
-    it('handles empty translation files gracefully', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('handles empty translation files gracefully', function () {
         $this->provider->boot();
 
         // Dovrebbe gestire graziosamente i file vuoti
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 });
 
-describe('LangServiceProvider Integration', function (): void {
-    it('works with Laravel translation system', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Integration', function () {
+    it('works with Laravel translation system', function () {
         $this->provider->boot();
 
         // Verifica integrazione con il sistema di traduzione di Laravel
@@ -419,8 +382,7 @@ describe('LangServiceProvider Integration', function (): void {
         expect(__('lang::common.welcome'))->toBeString();
     });
 
-    it('works with Filament components', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('works with Filament components', function () {
         $this->provider->boot();
 
         // Verifica che le traduzioni siano disponibili per i componenti Filament
@@ -429,8 +391,7 @@ describe('LangServiceProvider Integration', function (): void {
         expect($translation)->not->toBe('lang::common.save');
     });
 
-    it('works with Blade templates', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('works with Blade templates', function () {
         $this->provider->boot();
 
         // Verifica che le traduzioni siano disponibili nei template Blade
@@ -440,9 +401,8 @@ describe('LangServiceProvider Integration', function (): void {
     });
 });
 
-describe('LangServiceProvider Configuration', function (): void {
-    it('respects Laravel configuration', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Configuration', function () {
+    it('respects Laravel configuration', function () {
         $this->provider->boot();
 
         // Verifica che rispetti la configurazione di Laravel
@@ -451,16 +411,14 @@ describe('LangServiceProvider Configuration', function (): void {
         expect(strlen($defaultLocale))->toBeGreaterThan(0);
     });
 
-    it('can be configured via config files', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('can be configured via config files', function () {
         $this->provider->boot();
 
         // Verifica che possa essere configurato tramite file di configurazione
         expect(config('app.fallback_locale'))->toBeString();
     });
 
-    it('integrates with other service providers', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('integrates with other service providers', function () {
         $this->provider->boot();
 
         // Verifica integrazione con altri service provider
@@ -468,26 +426,21 @@ describe('LangServiceProvider Configuration', function (): void {
     });
 });
 
-describe('LangServiceProvider Maintenance', function (): void {
-    it('can be refreshed without errors', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('LangServiceProvider Maintenance', function () {
+    it('can be refreshed without errors', function () {
         $this->provider->boot();
 
         // Verifica che possa essere riavviato senza errori
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->boot();
 
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 
-    it('maintains state consistency', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('maintains state consistency', function () {
         $this->provider->boot();
 
         $translation1 = __('lang::common.welcome');
 
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->boot();
 
         $translation2 = __('lang::common.welcome');
@@ -495,21 +448,16 @@ describe('LangServiceProvider Maintenance', function (): void {
         expect($translation1)->toBe($translation2);
     });
 
-    it('can be unregistered and re-registered', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    it('can be unregistered and re-registered', function () {
         $this->provider->register();
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->boot();
 
         // Simula unregister
         $this->provider = new LangServiceProvider(app());
 
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->register();
-        /** @phpstan-ignore-next-line property.notFound */
         $this->provider->boot();
 
-        /** @phpstan-ignore-next-line property.notFound */
         expect($this->provider)->toBeInstanceOf(LangServiceProvider::class);
     });
 });
