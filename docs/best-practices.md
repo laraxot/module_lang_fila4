@@ -419,7 +419,11 @@ return [
 - [README.md](README.md) - Documentazione principale modulo
 - [config/lang.php](../config/lang.php) - Configurazione centralizzata
 - [Laraxot Framework](https://github.com/laraxot/laraxot) - Framework principale
+<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/project_docs/localization) - Documentazione ufficiale
+=======
+- [Laravel Localization](https://laravel.com/docs/localization) - Documentazione ufficiale
+>>>>>>> cbfeb6b (.)
 
 ---
 
