@@ -95,8 +95,8 @@ use Spatie\Sluggable\SlugOptions;
  */
 class Post extends BaseModel
 {
-    use HasXotFactory;
     use HasSlug;
+    use HasXotFactory;
 
     // use Cachable;
     use Updater;
