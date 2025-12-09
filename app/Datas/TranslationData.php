@@ -45,6 +45,9 @@ class TranslationData extends Data
         return $this->filename;
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     public function getData(): array
     {
         $filename = $this->getFilename();
@@ -56,6 +59,7 @@ class TranslationData extends Data
             throw new \Exception('['.__LINE__.']['.class_basename($this).']');
         }
 
+        /** @var array<string, mixed> */
         return $data;
     }
 }
