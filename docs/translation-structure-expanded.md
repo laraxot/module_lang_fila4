@@ -184,17 +184,10 @@ Ogni campo deve avere la seguente struttura completa:
 ## Collegamenti Bidirezionali
 
 ### Documentazione Correlata
-<<<<<<< HEAD
 - **Modulo Geo**: `/Modules/Geo/docs/translation-structure.md`
 - **Modulo User**: `/Modules/User/docs/translation-guidelines.md`
 - **Modulo <nome progetto>**: `/Modules/<nome progetto>/docs/multilingual-support.md`
 - **Tema One**: `/Themes/One/docs/translations.md`
-=======
-- **Modulo Geo**: `/Modules/Geo/project_docs/translation-structure.md`
-- **Modulo User**: `/Modules/User/project_docs/translation-guidelines.md`
-- **Modulo SaluteOra**: `/Modules/SaluteOra/project_docs/multilingual-support.md`
-- **Tema One**: `/Themes/One/project_docs/translations.md`
->>>>>>> a7ee0d6 (.)
 
 ### File di Implementazione
 - Template base: `/resources/lang-templates/`

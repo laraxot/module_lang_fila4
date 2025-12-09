@@ -160,15 +160,9 @@
 ---
 
 ## Riferimenti
-<<<<<<< HEAD
 - [Carbon Docs](https://carbon.nesbot.com/docs/)
 - [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
 - [Laravel Localization](https://laravel.com/docs/12.x/localization)
-=======
-- [Carbon Docs](https://carbon.nesbot.com/project_docs/)
-- [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
-- [Laravel Localization](https://laravel.com/project_docs/12.x/localization)
->>>>>>> a7ee0d6 (.)
 - [Corso Laravel Daily](https://laraveldaily.com/course/multi-language-laravel)
 
 ---
