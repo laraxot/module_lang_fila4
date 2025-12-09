@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-use Override;
-use Closure;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Placeholder;
@@ -39,7 +37,7 @@ class LangServiceProvider extends XotBaseServiceProvider
      */
     protected string $module_ns = __NAMESPACE__;
 
-    #[Override]
+    #[\Override]
     public function boot(): void
     {
         parent::boot();
@@ -64,7 +62,7 @@ class LangServiceProvider extends XotBaseServiceProvider
                 // Convertiamo l'array generico in un array<string, string> per soddisfare il tipo richiesto
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-                    if (is_string($key) && (is_string($value) || $value instanceof Closure)) {
+                    if (is_string($key) && (is_string($value) || $value instanceof \Closure)) {
                         $typedMessages[$key] = $value;
                     }
                 }
