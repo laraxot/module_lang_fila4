@@ -13,9 +13,33 @@ use Modules\Xot\Actions\GetViewAction;
  */
 class Flag extends Component
 {
+<<<<<<< HEAD
     public function __construct(
         public string $name,
     ) {}
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    public function __construct(
+        public string $name,
+    ) {}
+=======
+    public function __construct(public string $name)
+    {
+    }
+>>>>>>> a12f125f4a (.)
+=======
+    public function __construct(
+        public string $name,
+    ) {}
+>>>>>>> b93ef594b4 (.)
+=======
+    public function __construct(public string $name)
+    {
+    }
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
 
     public function render(): Renderable
     {
