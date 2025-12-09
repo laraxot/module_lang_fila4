@@ -23,10 +23,14 @@ abstract class BaseModel extends XotBaseModel
     {
         return [
             'id' => 'string',
+<<<<<<< HEAD
             'uuid' => 'string',
             'published_at' => 'datetime',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
         ];
+=======
+            'uuid' => 'string', 'published_at' => 'datetime', 'created_at' => 'datetime', 'updated_at' => 'datetime'];
+>>>>>>> 8b0b6ac (.)
     }
 }
