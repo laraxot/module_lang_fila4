@@ -4,14 +4,6 @@ declare(strict_types=1);
 
 return [
     /*
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b93ef594b4 (.)
->>>>>>> a7ee0d6 (.)
      * |--------------------------------------------------------------------------
      * | Authentication Language Lines
      * |--------------------------------------------------------------------------
@@ -21,46 +13,10 @@ return [
      * | these language lines according to your application's requirements.
      * |
      */
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/develop
-    |--------------------------------------------------------------------------
-    | Authentication Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-<<<<<<< HEAD
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
 
     'failed' => 'Diese Anmeldedaten stimmen nicht mit unseren Aufzeichnungen überein.',
     'password' => 'Das angegebene Passwort ist falsch.',
     'throttle' => 'Zu viele Anmeldeversuche. Bitte versuchen Sie es in :seconds Sekunden erneut.',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'login' => [
         'title' => 'Melden Sie sich in Ihrem Konto an',
         'email' => 'E-Mail',
@@ -72,20 +28,6 @@ return [
         'create_account' => 'ein neues Konto erstellen',
         'link' => 'Anmelden',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'register' => [
         'title' => 'Ein neues Konto erstellen',
         'name' => 'Name',
@@ -96,59 +38,17 @@ return [
         'already_registered' => 'Haben Sie bereits ein Konto?',
         'link' => 'Registrieren',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'verify' => [
         'title' => 'Bestätigen Sie Ihre E-Mail-Adresse',
         'success' => 'Ein neuer Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet.',
         'notice' => 'Bitte überprüfen Sie vor dem Fortfahren Ihre E-Mail auf einen Bestätigungslink. Wenn Sie die E-Mail nicht erhalten haben,',
         'another_request' => 'klicken Sie hier, um eine andere anzufordern',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'forgot_password' => [
         'title' => 'Passwort vergessen',
         'email' => 'E-Mail',
         'submit' => 'Reset-Link senden',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'reset_password' => [
         'title' => 'Passwort zurücksetzen',
         'email' => 'E-Mail',
@@ -156,39 +56,11 @@ return [
         'password_confirmation' => 'Passwort bestätigen',
         'submit' => 'Passwort zurücksetzen',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'confirm_password' => [
         'title' => 'Passwort bestätigen',
         'password' => 'Passwort',
         'submit' => 'Bestätigen',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'logout' => [
         'submit' => 'Abmelden',
         'title' => 'Abmelden',
@@ -203,20 +75,6 @@ return [
         'try_again' => 'Erneut versuchen',
         'processing' => 'Abmeldung läuft...',
     ],
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-    
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     'user_dropdown' => [
         'manage_account' => 'Konto verwalten',
         'profile' => 'Profil',
