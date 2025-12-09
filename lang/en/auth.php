@@ -5,6 +5,9 @@ declare(strict_types=1);
 return [
     /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
      * |--------------------------------------------------------------------------
      * | Authentication Language Lines
      * |--------------------------------------------------------------------------
@@ -14,6 +17,7 @@ return [
      * | these language lines according to your application's requirements.
      * |
      */
+<<<<<<< HEAD
 =======
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -25,14 +29,19 @@ return [
     |
     */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'login' => [
         'title' => 'Sign in to your account',
         'email' => 'Email',
@@ -45,9 +54,12 @@ return [
         'link' => 'Sign in',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'register' => [
         'title' => 'Create a new account',
         'name' => 'Name',
@@ -59,9 +71,12 @@ return [
         'link' => 'Register',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'verify' => [
         'title' => 'Verify your email address',
         'success' => 'A new verification link has been sent to your email address.',
@@ -69,18 +84,24 @@ return [
         'another_request' => 'click here to request another',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'forgot_password' => [
         'title' => 'Forgot password',
         'email' => 'Email',
         'submit' => 'Send reset link',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'reset_password' => [
         'title' => 'Reset password',
         'email' => 'Email',
@@ -89,18 +110,24 @@ return [
         'submit' => 'Reset Password',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'confirm_password' => [
         'title' => 'Confirm password',
         'password' => 'Password',
         'submit' => 'Confirm',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'logout' => [
         'submit' => 'Logout',
         'title' => 'Logout',
@@ -116,9 +143,12 @@ return [
         'processing' => 'Logging out...',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'user_dropdown' => [
         'manage_account' => 'Manage Account',
         'profile' => 'Profile',
