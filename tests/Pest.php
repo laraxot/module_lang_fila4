@@ -30,9 +30,15 @@ pest()->extend(TestCase::class)->in('Feature', 'Unit');
  * |
  */
 
-expect()->extend('toBeTranslation', fn () => $this->toBeInstanceOf(Translation::class));
+expect()->extend('toBe' + 'Lang' + '', function () {
+    /** @var \Pest\Expectation<mixed> $this */
+    return $this->toBeInstanceOf(...);
+});
 
-expect()->extend('toBeLanguage', fn () => $this->toBeInstanceOf(Language::class));
+expect()->extend('toBe' + 'Lang' + '', function () {
+    /** @var \Pest\Expectation<mixed> $this */
+    return $this->toBeInstanceOf(...);
+});
 
 /*
  * |--------------------------------------------------------------------------
