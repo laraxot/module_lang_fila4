@@ -120,7 +120,10 @@ return [
 ## Documentazione Aggiornata
 
 - [Chart Module - Translation Syntax Errors](../../laravel/Modules/Chart/docs/translation_syntax_errors.md)
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbfeb6b (.)
 - [Translation Best Practices](translation-best-practices.md)
 - [PHPStan Configuration](phpstan-configuration.md)
 
@@ -159,6 +162,9 @@ return [
 - [Notify Module Documentation](../../laravel/Modules/Notify/docs/)
 - [UI Module Documentation](../../laravel/Modules/UI/docs/)
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> cbfeb6b (.)
 ## Ultimo Aggiornamento
 2025-01-06 - Correzione completa errori sintassi file traduzione ✅ COMPLETATO
