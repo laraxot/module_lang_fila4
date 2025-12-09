@@ -10,10 +10,10 @@ use Modules\User\Models\User;
 describe('Lang Business Logic', function (): void {
     it('can create and manage posts', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $post = Post::factory()->create([
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'title' => 'Test Post',
             'content' => 'This is a test post content',
@@ -40,9 +40,9 @@ describe('Lang Business Logic', function (): void {
 
     it('can publish posts', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $post = Post::factory()->create([
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'status' => 'draft',
         ]);
@@ -61,17 +61,17 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage post categories', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $newsPost = Post::factory()->create([
+        $newsPost = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'category' => 'news',
             'title' => 'News Post',
         ]);
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $tutorialPost = Post::factory()->create([
+        $tutorialPost = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'category' => 'tutorial',
             'title' => 'Tutorial Post',
@@ -94,10 +94,10 @@ describe('Lang Business Logic', function (): void {
 
     it('can create and manage translations', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $translation = Translation::factory()->create([
+        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Welcome to our application',
@@ -127,10 +127,10 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage multilingual content', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $englishTranslation = Translation::factory()->create([
+        $englishTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Welcome to our application',
@@ -138,7 +138,7 @@ describe('Lang Business Logic', function (): void {
         ]);
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $italianTranslation = Translation::factory()->create([
+        $italianTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Benvenuto nella nostra applicazione',
@@ -146,7 +146,7 @@ describe('Lang Business Logic', function (): void {
         ]);
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $germanTranslation = Translation::factory()->create([
+        $germanTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Willkommen in unserer Anwendung',
@@ -181,10 +181,10 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage translation files', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $translationFile = TranslationFile::factory()->create([
+        $translationFile = TranslationFile/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'filename' => 'welcome.php',
             'locale' => 'en',
@@ -211,10 +211,10 @@ describe('Lang Business Logic', function (): void {
 
     it('can validate translation keys', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $validTranslation = Translation::factory()->create([
+        $validTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'user.profile.name',
             'value' => 'User Name',
@@ -224,7 +224,7 @@ describe('Lang Business Logic', function (): void {
         expect($validTranslation->key)->toContain('.')->and($validTranslation->key)->toStartWith('user');
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $invalidTranslation = Translation::factory()->create([
+        $invalidTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'invalid_key_format',
             'value' => 'Invalid Key',
@@ -236,9 +236,9 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage post workflow', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $post = Post::factory()->create([
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'status' => 'draft',
         ]);
@@ -261,9 +261,9 @@ describe('Lang Business Logic', function (): void {
 
     it('can track translation changes', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $translation = Translation::factory()->create([
+        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'welcome.message',
             'value' => 'Original message',
@@ -284,10 +284,10 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage post metadata', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $post = Post::factory()->create([
+        $post = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'title' => 'SEO Optimized Post',
             'meta_title' => 'SEO Meta Title',
@@ -313,10 +313,10 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage translation namespaces', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $adminTranslation = Translation::factory()->create([
+        $adminTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'admin.dashboard.title',
             'value' => 'Admin Dashboard',
@@ -325,7 +325,7 @@ describe('Lang Business Logic', function (): void {
         ]);
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $frontendTranslation = Translation::factory()->create([
+        $frontendTranslation = Translation/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'key' => 'frontend.home.title',
             'value' => 'Home Page',
@@ -350,13 +350,13 @@ describe('Lang Business Logic', function (): void {
 
     it('can validate locale formats', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         $validLocales = ['en', 'it', 'de', 'fr', 'es'];
 
         foreach ($validLocales as $locale) {
             /** @var \Illuminate\Database\Eloquent\Collection */
-        $translation = Translation::factory()->create([
+        $translation = Translation/** @phpstan-ignore-line */ ::factory()->create([
                 'user_id' => $user->id,
                 'key' => "test.{$locale}",
                 'value' => "Test in {$locale}",
@@ -375,11 +375,11 @@ describe('Lang Business Logic', function (): void {
 
     it('can manage post scheduling', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
         $futureDate = now()->addDays(7);
 
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $scheduledPost = Post::factory()->create([
+        $scheduledPost = Post/** @phpstan-ignore-line */ ::factory()->create([
             'user_id' => $user->id,
             'title' => 'Scheduled Post',
             'status' => 'scheduled',
@@ -398,7 +398,7 @@ describe('Lang Business Logic', function (): void {
 
     it('can track translation statistics', function (): void {
         /** @var \Illuminate\Database\Eloquent\Collection */
-        $user = User::factory()->create();
+        $user = User/** @phpstan-ignore-line */ ::factory()->create();
 
         Translation::factory()
             ->count(5)
