@@ -48,20 +48,6 @@ return [
     'ge' => 'Georgia',
     'am' => 'Armenia',
     'az' => 'Azerbaigian',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     // Americhe
     'us' => 'Stati Uniti d\'America',
     'ca' => 'Canada',
@@ -105,20 +91,6 @@ return [
     'kn' => 'Saint Kitts e Nevis',
     'dm' => 'Dominica',
     'bs' => 'Bahamas',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     // Asia
     'cn' => 'Cina',
     'jp' => 'Giappone',
@@ -164,20 +136,6 @@ return [
     'kg' => 'Kirghizistan',
     'tj' => 'Tagikistan',
     'tm' => 'Turkmenistan',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     // Africa
     'eg' => 'Egitto',
     'ly' => 'Libia',
@@ -233,20 +191,6 @@ return [
     'ao' => 'Angola',
     'aq' => 'Antartide',
     'zr' => 'Zaire',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     // Oceania
     'au' => 'Australia',
     'ax' => 'Isole Aland',
@@ -265,20 +209,6 @@ return [
     'pw' => 'Palau',
     'fm' => 'Micronesia',
     'mh' => 'Isole Marshall',
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> a12f125f4a (.)
-=======
->>>>>>> b93ef594b4 (.)
-=======
-
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
     // Altri
     'xk' => 'Kosovo',
     'va' => 'Città del Vaticano',
