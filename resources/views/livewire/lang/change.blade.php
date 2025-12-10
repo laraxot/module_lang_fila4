@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
 
 ?>
+=======
+>>>>>>> 8b0b6ac (.)
 <div x-data="{ open: false }">
     <button
         @click="open = !open"
