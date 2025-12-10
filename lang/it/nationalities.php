@@ -48,6 +48,20 @@ return [
     'ge' => 'Georgiana',
     'am' => 'Armena',
     'az' => 'Azerbaigiana',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     // Americhe
     'us' => 'Statunitense',
     'ca' => 'Canadese',
@@ -91,6 +105,20 @@ return [
     'kn' => 'Kittitiana',
     'dm' => 'Dominicana',
     'bs' => 'Bahamense',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     // Asia
     'cn' => 'Cinese',
     'jp' => 'Giapponese',
@@ -136,6 +164,20 @@ return [
     'kg' => 'Kirghisa',
     'tj' => 'Tagika',
     'tm' => 'Turkmena',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     // Africa
     'eg' => 'Egiziana',
     'ly' => 'Libica',
@@ -191,6 +233,20 @@ return [
     'ao' => 'Angolana',
     'aq' => 'Antartica',
     'zr' => 'Zairese',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     // Oceania
     'au' => 'Australiana',
     'ax' => 'Alandese',
@@ -209,6 +265,20 @@ return [
     'pw' => 'Palau',
     'fm' => 'Micronesiana',
     'mh' => 'Marshallese',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     // Altri
     'xk' => 'Kosovara',
     'va' => 'Vaticana',
@@ -262,4 +332,20 @@ return [
     'mp' => 'Isolano delle Marianne Settentrionali',
     'um' => 'Isole Minori degli Stati Uniti',
     'eh' => 'Saharawi',
+<<<<<<< HEAD
 ];
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+];
+=======
+];
+>>>>>>> a12f125f4a (.)
+=======
+];
+>>>>>>> b93ef594b4 (.)
+=======
+];
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
