@@ -32,13 +32,21 @@
 - **File JSON**: Evitare l'uso per le stringhe plurali, salvo casi di necessità per traduttori non-dev.
 
 ### 1.5 Esempio Completo
+<<<<<<< HEAD
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
+=======
+- `/var/www/html/saluteora/laravel/lang/en/messages.php`:
+>>>>>>> 8b0b6ac (.)
   ```php
   return [
       'newMessageIndicator' => '{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages',
   ];
   ```
+<<<<<<< HEAD
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`:
+=======
+- `/var/www/html/saluteora/laravel/lang/it/messages.php`:
+>>>>>>> 8b0b6ac (.)
   ```php
   return [
       'newMessageIndicator' => '{0} Non hai nuovi messaggi|{1} Hai 1 nuovo messaggio|[2,*] Hai :count nuovi messaggi',
@@ -160,9 +168,15 @@
 ---
 
 ## Riferimenti
+<<<<<<< HEAD
 - [Carbon Docs](https://carbon.nesbot.com/project_docs/)
 - [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
 - [Laravel Localization](https://laravel.com/project_docs/12.x/localization)
+=======
+- [Carbon Docs](https://carbon.nesbot.com/docs/)
+- [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
+- [Laravel Localization](https://laravel.com/docs/12.x/localization)
+>>>>>>> 8b0b6ac (.)
 - [Corso Laravel Daily](https://laraveldaily.com/course/multi-language-laravel)
 
 ---
