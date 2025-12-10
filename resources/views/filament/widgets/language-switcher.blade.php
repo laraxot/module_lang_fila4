@@ -1,17 +1,8 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
 <?php
 
 declare(strict_types=1);
 
 ?>
-<<<<<<< HEAD
-=======
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
 {{--
 /**
  * Language Switcher Widget
@@ -229,12 +220,4 @@ if (!function_exists('getLanguageUrl')) {
     }
 }
 @endphp
-<<<<<<< HEAD
-<<<<<<< HEAD
 </div>
-=======
-</div>
->>>>>>> 8b0b6ac (.)
-=======
-</div>
->>>>>>> 1c4a063 (.)
