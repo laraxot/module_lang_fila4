@@ -48,13 +48,6 @@ return [
     'ge' => 'Georgia',
     'am' => 'Armenia',
     'az' => 'Azerbaijan',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Americas
     'us' => 'United States of America',
     'ca' => 'Canada',
@@ -98,13 +91,6 @@ return [
     'kn' => 'Saint Kitts and Nevis',
     'dm' => 'Dominica',
     'bs' => 'Bahamas',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Asia
     'cn' => 'China',
     'jp' => 'Japan',
@@ -150,13 +136,6 @@ return [
     'kg' => 'Kyrgyzstan',
     'tj' => 'Tajikistan',
     'tm' => 'Turkmenistan',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Africa
     'eg' => 'Egypt',
     'ly' => 'Libya',
@@ -212,13 +191,6 @@ return [
     'ao' => 'Angola',
     'aq' => 'Antarctica',
     'zr' => 'Zaire',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Oceania
     'au' => 'Australia',
     'ax' => 'Aland Islands',
@@ -237,13 +209,6 @@ return [
     'pw' => 'Palau',
     'fm' => 'Micronesia',
     'mh' => 'Marshall Islands',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     // Others
     'xk' => 'Kosovo',
     'va' => 'Vatican City',
@@ -297,12 +262,4 @@ return [
     'mp' => 'Northern Mariana Islands',
     'um' => 'U.S. Minor Outlying Islands',
     'eh' => 'Western Sahara',
-<<<<<<< HEAD
-<<<<<<< HEAD
 ];
-=======
-]; 
->>>>>>> 8b0b6ac (.)
-=======
-];
->>>>>>> 1c4a063 (.)
