@@ -4,14 +4,23 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-use Illuminate\Database\Eloquent\Relations\MorphPivot;
+// use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+// use Laravel\Scout\Searchable;
+// ---------- traits
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Traits\Updater;
 
 /**
- * Class BaseMorphPivot.
+ * Class BaseModel.
+ *
  */
-abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
+abstract class BaseModel extends \Modules\Xot\Models\XotBaseModel
 {
+    use \Modules\Xot\Models\Traits\HasXotFactory;
+
+    // use Searchable;
+    // use Cachable;
     use Updater;
 
     /**
@@ -32,10 +41,11 @@ abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
     /** @var int */
     protected $perPage = 30;
 
+    /** @var string */
     protected $connection = 'lang';
 
     /** @var list<string> */
-    protected $appends = [];
+    protected $fillable = ['id'];
 
     /** @var string */
     protected $primaryKey = 'id';
@@ -44,23 +54,20 @@ abstract class BaseMorphPivot extends \Modules\Xot\Models\XotBaseMorphPivot
     protected $keyType = 'string';
 
     /** @var list<string> */
-    protected $fillable = [
-        'id',
-        'post_id',
-        'post_type',
-        'related_type',
-        'user_id',
-        'note',
+    protected $hidden = [
+        // 'password'
     ];
 
+    /**
+     * @return array<string, string> */
     protected function casts(): array
     {
         return [
             'id' => 'string',
             'uuid' => 'string',
+            'published_at' => 'datetime',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
-            'deleted_at' => 'datetime',
         ];
     }
 }
