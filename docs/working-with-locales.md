@@ -90,16 +90,26 @@ Il posto migliore per questo codice è un middleware, che verrà trattato in det
 
 Considerando le regole di localizzazione del progetto `<nome progetto>`, che richiedono il prefisso della lingua negli URL (`/{locale}/{sezione}/{risorsa}`), è essenziale configurare correttamente la lingua predefinita e di fallback. Propongo di impostare 'it' (italiano) come lingua predefinita, poiché è probabile che sia la lingua principale per gli utenti target. La lingua di fallback sarà 'en' (inglese) per garantire che ci sia sempre una traduzione disponibile, anche se non perfetta.
 
+<<<<<<< HEAD
 Inoltre, data la limitazione del fallback con i file JSON, raccomando di continuare a utilizzare principalmente file PHP per le traduzioni strutturate, come discusso nella documentazione precedente (`/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/static-text-translation.md`). I file JSON possono essere utilizzati per testi più lunghi, ma con la consapevolezza che il fallback non funzionerà come previsto.
 
 Per l'impostazione dinamica della lingua, suggerisco di integrare questa logica con il pacchetto `mcamara/laravel-localization`, che è già documentato in `/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/laravel-localization-complete.md`. Questo pacchetto gestisce il cambio di lingua tramite middleware, il che si allinea con le migliori pratiche.
+=======
+Inoltre, data la limitazione del fallback con i file JSON, raccomando di continuare a utilizzare principalmente file PHP per le traduzioni strutturate, come discusso nella documentazione precedente (`../Modules/Lang/project_docs/static-text-translation.md`). I file JSON possono essere utilizzati per testi più lunghi, ma con la consapevolezza che il fallback non funzionerà come previsto.
+
+Per l'impostazione dinamica della lingua, suggerisco di integrare questa logica con il pacchetto `mcamara/laravel-localization`, che è già documentato in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`. Questo pacchetto gestisce il cambio di lingua tramite middleware, il che si allinea con le migliori pratiche.
+>>>>>>> 9ce799e (Check & fix styling)
 
 ## Modifiche Proposte
 
 Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la gestione delle lingue nel progetto `<nome progetto>`:
 
 1. **Configurazione della Lingua Predefinita e di Fallback**:
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/config/app.php`:
+=======
+   - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/config/app.php`:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      /*
       * Application Locale Configuration
@@ -122,8 +132,13 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - **Ragionamento**: Impostare 'it' come lingua predefinita riflette il pubblico principale del progetto `<nome progetto>`. 'en' come fallback garantisce che ci sia una traduzione di riserva, migliorando l'esperienza utente rispetto alla visualizzazione di chiavi non tradotte.
 
 2. **Integrazione con `mcamara/laravel-localization` per l'Impostazione Dinamica della Lingua**:
+<<<<<<< HEAD
    - Assicurarsi che il pacchetto sia installato come descritto in `/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/laravel-localization-complete.md`.
    - Verificare che i middleware siano registrati in `/var/www/html/<nome progetto>/laravel/app/Http/Kernel.php`:
+=======
+   - Assicurarsi che il pacchetto sia installato come descritto in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`.
+   - Verificare che i middleware siano registrati in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/app/Http/Kernel.php`:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      protected $routeMiddleware = [
          // ...
@@ -134,7 +149,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
      ];
      ```
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/routes/web.php` per utilizzare il middleware di localizzazione:
+=======
+   - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/routes/web.php` per utilizzare il middleware di localizzazione:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      Route::group([
          'prefix' => LaravelLocalization::setLocale(),
@@ -151,7 +170,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - **Ragionamento**: Utilizzare `mcamara/laravel-localization` per gestire dinamicamente la lingua tramite URL e preferenze utente è più efficiente rispetto a un middleware personalizzato. Questo approccio si allinea con le regole del progetto che richiedono il prefisso della lingua negli URL e garantisce che la lingua sia impostata correttamente prima del caricamento delle traduzioni.
 
 3. **Configurazione delle Lingue Supportate**:
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/config/laravellocalization.php` per definire le lingue supportate:
+=======
+   - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/config/laravellocalization.php` per definire le lingue supportate:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      // Lingue supportate
      'supportedLocales' => [
@@ -166,8 +189,13 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - **Ragionamento**: Definire chiaramente le lingue supportate garantisce che il pacchetto `mcamara/laravel-localization` possa gestire correttamente i cambi di lingua. Mantenere `hideDefaultLocaleInURL` su `false` è coerente con la regola del progetto di includere sempre il prefisso della lingua negli URL.
 
 4. **Uso di File PHP per Traduzioni Strutturate**:
+<<<<<<< HEAD
    - Continuare a utilizzare file PHP per traduzioni strutturate, come raccomandato in `/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/static-text-translation.md`.
    - Esempio di file in `/var/www/html/<nome progetto>/laravel/lang/it/auth.php`:
+=======
+   - Continuare a utilizzare file PHP per traduzioni strutturate, come raccomandato in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/static-text-translation.md`.
+   - Esempio di file in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      return [
          'register' => [

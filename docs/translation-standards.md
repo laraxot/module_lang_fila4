@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Standard per le Traduzioni nel Progetto <nome progetto>
+=======
+# Standard per le Traduzioni nel Progetto 
+>>>>>>> 9ce799e (Check & fix styling)
 
 ## Struttura delle Cartelle
 
@@ -164,7 +168,11 @@ return [
 - Serenità zen: codice e traduzioni sempre coerenti
 
 ### Collegamenti
+<<<<<<< HEAD
 - [<nome progetto>/docs/appointment-management.md](../../<nome progetto>/docs/appointment-management.md)
+=======
+- [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md)
+>>>>>>> 9ce799e (Check & fix styling)
 - [Lang/translation_keys_best_practices.md](./translation_keys_best_practices.md)
 
 ### Checklist aggiornata

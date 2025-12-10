@@ -242,10 +242,18 @@ php artisan lang:export
 - [Translation Standards](./translation-standards.md)
 - [Translation System](./translation-system.md)
 - [Best Practices](./translation-keys-best-practices.md)
+<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/docs/localization)
+=======
+- [Laravel Localization](https://laravel.com/project_docs/localization)
+>>>>>>> 9ce799e (Check & fix styling)
 
 ## Note per lo Sviluppo
 
 1. **Performance**: Utilizzare cache per i file di traduzione
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
+<<<<<<< HEAD
+=======
+4. **Usabilità**: Interfaccia intuitiva per i traduttori 
+>>>>>>> 9ce799e (Check & fix styling)

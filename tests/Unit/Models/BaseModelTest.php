@@ -12,8 +12,12 @@ use Tests\TestCase;
 uses(TestCase::class, RefreshDatabase::class);
 
 beforeEach(function () {
+<<<<<<< HEAD
     $this->baseModel = new class() extends BaseModel
     {
+=======
+    $this->baseModel = new class extends BaseModel {
+>>>>>>> 9ce799e (Check & fix styling)
         protected $table = 'test_lang_table';
     };
 });

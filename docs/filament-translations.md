@@ -21,7 +21,11 @@
 - Consulta anche:
   - [translation_keys_best_practices.md](../translation_keys_best_practices.md)
   - [translation_keys_rules.md](../translation_keys_rules.md)
+<<<<<<< HEAD
   - [docs <nome progetto>](../../<nome progetto>/docs/translations.md)
+=======
+  - [docs Modulo Generico](../../<nome modulo>/docs/translations.md)
+>>>>>>> 9ce799e (Check & fix styling)
 
 ## Struttura Corretta per le Traduzioni
 
@@ -89,8 +93,13 @@ TextInput::make('title')
 
 ## Collegamenti Bidirezionali
 
+<<<<<<< HEAD
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
 - [Regole Generali](../../Xot/docs/README.md) - Best practice e linee guida generali
+=======
+- [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
+- [Regole Generali](../../Xot/project_docs/README.md) - Best practice e linee guida generali
+>>>>>>> 9ce799e (Check & fix styling)
 
 ---
 
@@ -101,7 +110,11 @@ Questo documento è linkato anche dalla documentazione del modulo Cms per garant
 
 - Tutte le label sono gestite tramite i file di traduzione del modulo.
 - Consulta anche:
+<<<<<<< HEAD
   - [docs <nome progetto>](../../<nome progetto>/docs/README.md)
+=======
+  - [docs Modulo Generico](../../<nome modulo>/docs/README.md)
+>>>>>>> 9ce799e (Check & fix styling)
   - [docs Xot](../../Xot/docs/README.md)
 
 ## Policy DRY sulle Traduzioni di Disponibilità/Appuntamenti

@@ -11,7 +11,11 @@ La traduzione di testi statici in Laravel può essere gestita utilizzando due ap
 I file PHP sono stati il metodo predefinito per lungo tempo. Le traduzioni sono organizzate in file separati per lingua e funzionalità.
 
 **Esempio**:
+<<<<<<< HEAD
 In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/auth/register.blade.php`, potremmo avere:
+=======
+In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/register.blade.php`, potremmo avere:
+>>>>>>> 9ce799e (Check & fix styling)
 ```php
 <!-- Nome -->
 <div>
@@ -21,7 +25,11 @@ In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/aut
 </div>
 ```
 
+<<<<<<< HEAD
 La traduzione corrispondente sarebbe in `/var/www/html/<nome progetto>/laravel/lang/it/auth.php`:
+=======
+La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
+>>>>>>> 9ce799e (Check & fix styling)
 ```php
 return [
     'register' => [
@@ -55,7 +63,11 @@ php artisan lang:publish
 I file JSON contengono un elenco unico di traduzioni per ogni lingua, con chiavi leggibili dall'uomo.
 
 **Esempio**:
+<<<<<<< HEAD
 In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/auth/register.blade.php`, potremmo avere:
+=======
+In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/register.blade.php`, potremmo avere:
+>>>>>>> 9ce799e (Check & fix styling)
 ```php
 <!-- Nome -->
 <div>
@@ -65,7 +77,11 @@ In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/aut
 </div>
 ```
 
+<<<<<<< HEAD
 La traduzione corrispondente sarebbe in `/var/www/html/<nome progetto>/laravel/lang/it.json`:
+=======
+La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`:
+>>>>>>> 9ce799e (Check & fix styling)
 ```json
 {
     "Nome": "Il Tuo Nome"
@@ -85,7 +101,11 @@ La traduzione corrispondente sarebbe in `/var/www/html/<nome progetto>/laravel/l
 
 ## Problemi nel Mescolare File PHP e JSON
 
+<<<<<<< HEAD
 Mescolare i due approcci può causare problemi se una chiave JSON corrisponde al nome di un file PHP. Ad esempio, se esiste un file `/var/www/html/<nome progetto>/laravel/lang/it/auth.php` e una chiave `"Auth": "Autenticazione"` in `/var/www/html/<nome progetto>/laravel/lang/it.json`, chiamare `__('Auth')` restituirà il contenuto di `auth.php` invece della traduzione attesa.
+=======
+Mescolare i due approcci può causare problemi se una chiave JSON corrisponde al nome di un file PHP. Ad esempio, se esiste un file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php` e una chiave `"Auth": "Autenticazione"` in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`, chiamare `__('Auth')` restituirà il contenuto di `auth.php` invece della traduzione attesa.
+>>>>>>> 9ce799e (Check & fix styling)
 
 ## `trans()` vs `__()`: Quale Usare?
 
@@ -111,11 +131,19 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      ```bash
      php artisan lang:publish
      ```
+<<<<<<< HEAD
    - Questo creerà la cartella `/var/www/html/<nome progetto>/laravel/lang/` con le sottocartelle per le lingue supportate (es. `en`, `it`).
 
 2. **Struttura dei File di Traduzione PHP**:
    - Creare file di traduzione per ogni modulo in `/var/www/html/<nome progetto>/laravel/lang/it/` e `/var/www/html/<nome progetto>/laravel/lang/en/`.
    - Esempio per il modulo di autenticazione in `/var/www/html/<nome progetto>/laravel/lang/it/auth.php`:
+=======
+   - Questo creerà la cartella `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/` con le sottocartelle per le lingue supportate (es. `en`, `it`).
+
+2. **Struttura dei File di Traduzione PHP**:
+   - Creare file di traduzione per ogni modulo in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/` e `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/`.
+   - Esempio per il modulo di autenticazione in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      return [
          'register' => [
@@ -142,8 +170,13 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Creare file simili per altri moduli come `patient.php`, `dental.php`, ecc.
 
 3. **File JSON per Testi Lunghi**:
+<<<<<<< HEAD
    - Creare file JSON per testi lunghi o frasi complete in `/var/www/html/<nome progetto>/laravel/lang/it.json` e `/var/www/html/<nome progetto>/laravel/lang/en.json`.
    - Esempio per `/var/www/html/<nome progetto>/laravel/lang/it.json`:
+=======
+   - Creare file JSON per testi lunghi o frasi complete in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json` e `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en.json`.
+   - Esempio per `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`:
+>>>>>>> 9ce799e (Check & fix styling)
      ```json
      {
          "Benvenuto nel sistema di gestione sanitaria": "Benvenuto nel sistema di gestione sanitaria",
@@ -153,7 +186,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 
 4. **Modifica dei File Blade per Utilizzare le Traduzioni**:
    - Modificare i file Blade per utilizzare la funzione `__()` con chiavi appropriate.
+<<<<<<< HEAD
    - Esempio per `/var/www/html/<nome progetto>/laravel/resources/views/auth/login.blade.php`:
+=======
+   - Esempio per `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/login.blade.php`:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      <!-- Email -->
      <div>
@@ -192,8 +229,13 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Applicare modifiche simili a tutti i file Blade rilevanti nel progetto.
 
 5. **Integrazione con `mcamara/laravel-localization`**:
+<<<<<<< HEAD
    - Assicurarsi che il pacchetto `mcamara/laravel-localization` sia installato e configurato come descritto nella documentazione `/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/laravel-localization-complete.md`.
    - Modificare il file `/var/www/html/<nome progetto>/laravel/routes/web.php` per aggiungere il prefisso della lingua:
+=======
+   - Assicurarsi che il pacchetto `mcamara/laravel-localization` sia installato e configurato come descritto nella documentazione `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`.
+   - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/routes/web.php` per aggiungere il prefisso della lingua:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      Route::group([
          'prefix' => LaravelLocalization::setLocale(),
@@ -208,7 +250,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      ```
 
 6. **Creazione di un Selettore di Lingua**:
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/resources/views/layouts/navigation.blade.php` per aggiungere un selettore di lingua:
+=======
+   - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/layouts/navigation.blade.php` per aggiungere un selettore di lingua:
+>>>>>>> 9ce799e (Check & fix styling)
      ```php
      @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
          <x-nav-link rel="alternate" hreflang="{{ $localeCode }}"

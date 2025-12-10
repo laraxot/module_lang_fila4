@@ -154,3 +154,7 @@ La migrazione ora segue completamente gli standard del progetto:
 4. **Documentare completamente** lo scopo e la struttura
 5. **Seguire gli standard del progetto** per coerenza
 
+<<<<<<< HEAD
+=======
+La migrazione è ora corretta e pronta per l'uso! 🚀 
+>>>>>>> 9ce799e (Check & fix styling)
