@@ -242,11 +242,7 @@ php artisan lang:export
 - [Translation Standards](./translation-standards.md)
 - [Translation System](./translation-system.md)
 - [Best Practices](./translation-keys-best-practices.md)
-<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/docs/localization)
-=======
-- [Laravel Localization](https://laravel.com/project_docs/localization)
->>>>>>> a7ee0d6 (.)
 
 ## Note per lo Sviluppo
 

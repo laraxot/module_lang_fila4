@@ -2,26 +2,11 @@
 
 declare(strict_types=1);
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> a7ee0d6 (.)
 namespace Modules\Lang\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Lang\Models\BaseModel;
-<<<<<<< HEAD
-=======
-=======
-namespace Modules\Lang\Tests\Unit\Models;
-
-use Modules\Lang\Models\BaseModel;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Database\Eloquent\Model;
->>>>>>> origin/develop
 use Tests\TestCase;
 
 uses(TestCase::class, RefreshDatabase::class);
@@ -32,6 +17,7 @@ beforeEach(function () {
     {
 =======
     $this->baseModel = new class extends BaseModel {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +71,8 @@ beforeEach(function () {
 >>>>>>> origin/develop
 >>>>>>> a7ee0d6 (.)
 >>>>>>> d5dfb13 (.)
+=======
+>>>>>>> ce33e49 (.)
         protected $table = 'test_lang_table';
     };
 });
