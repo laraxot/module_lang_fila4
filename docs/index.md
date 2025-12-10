@@ -240,7 +240,11 @@ php artisan lang:debug [--log-missing] [--log-performance]
 ## 🔗 **Riferimenti Esterni**
 
 ### **Framework e Documentazione**
+<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/project_docs/localization) - Documentazione ufficiale
+=======
+- [Laravel Localization](https://laravel.com/docs/localization) - Documentazione ufficiale
+>>>>>>> cbfeb6b (.)
 - [Filament Documentation](https://filamentphp.com/docs) - Documentazione Filament
 - [Laraxot Framework](https://github.com/laraxot/laraxot) - Framework principale
 - [PHPStan Documentation](https://phpstan.org/) - Analisi statica
@@ -248,7 +252,11 @@ php artisan lang:debug [--log-missing] [--log-performance]
 ### **Strumenti e Risorse**
 - [Laravel IDE Helper](https://github.com/barryvdh/laravel-ide-helper) - Autocompletamento IDE
 - [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar) - Debug e profiling
+<<<<<<< HEAD
 - [Laravel Telescope](https://laravel.com/project_docs/telescope) - Monitoring applicazione
+=======
+- [Laravel Telescope](https://laravel.com/docs/telescope) - Monitoring applicazione
+>>>>>>> cbfeb6b (.)
 
 ---
 
