@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestione automatica delle label in Filament tramite LangServiceProvider
 
 ## Funzionamento
@@ -38,3 +39,5 @@ Ultimo aggiornamento: maggio 2025.
 =======
 Ultimo aggiornamento: maggio 2025.
 >>>>>>> 9059f82 (.)
+=======
+>>>>>>> 121b362 (.)

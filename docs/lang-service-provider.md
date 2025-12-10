@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # LangServiceProvider: Analisi e Proposte di Miglioramento
 
 ## Analisi dell'Implementazione Attuale
@@ -230,3 +231,5 @@ __('patient.registration.title')  // "Registrazione Paziente"
 - Gestire fallback locale
 - Supportare namespace personalizzati
 - Ottimizzare performance
+=======
+>>>>>>> 121b362 (.)

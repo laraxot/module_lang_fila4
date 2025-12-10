@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Integrazione Livewire Volt + mcamara/laravel-localization
 
 ## 1. Obiettivo
@@ -132,3 +133,5 @@ $current = app()->getLocale();
 - [ ] I componenti Volt accedono e gestiscono la lingua corrente correttamente
 - [ ] La documentazione è aggiornata e linkata nei README
 </rewritten_file> 
+=======
+>>>>>>> 121b362 (.)

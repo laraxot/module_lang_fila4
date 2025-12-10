@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Traduzioni Automatiche con LangServiceProvider
 
 ## Regola Fondamentale
@@ -91,3 +92,5 @@ Per gli step dei wizard, la chiave di traduzione segue un formato leggermente di
 
 =======
 >>>>>>> 9059f82 (.)
+=======
+>>>>>>> 121b362 (.)

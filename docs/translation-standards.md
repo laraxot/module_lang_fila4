@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Standard per le Traduzioni nel Progetto <nome progetto>
 =======
 # Standard per le Traduzioni nel Progetto 
@@ -165,3 +166,5 @@ La struttura delle traduzioni per le risorse cliniche (es. appuntamenti) è stat
 - Aggiornare la documentazione ogni volta che si modifica una risorsa clinica
 - Non duplicare chiavi tra moduli
 - Seguire sempre la filosofia DRY, KISS, centralizzazione
+=======
+>>>>>>> 121b362 (.)

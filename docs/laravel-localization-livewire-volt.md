@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Integrazione di mcamara/laravel-localization con Livewire Volt
 
 ## Obiettivo
@@ -120,3 +121,5 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 >>>>>>> 9059f82 (.)
 ## 7. Best Practices operative (.mdc)
 Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative. 
+=======
+>>>>>>> 121b362 (.)

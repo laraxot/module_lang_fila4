@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Analisi Modelli, Factory e Seeder - Modulo Lang
 
 ## Panoramica
@@ -113,3 +114,5 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 6 modelli, sistema traduzioni completo*
+=======
+>>>>>>> 121b362 (.)

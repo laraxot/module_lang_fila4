@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestione File di Traduzione
 
 ## Panoramica
@@ -182,3 +183,5 @@ php artisan lang:export
 =======
 4. **Usabilità**: Interfaccia intuitiva per i traduttori 
 >>>>>>> 9059f82 (.)
+=======
+>>>>>>> 121b362 (.)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Traduzione dei Messaggi di Validazione
 
 ## Introduzione
@@ -284,3 +285,5 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 >>>>>>> 9059f82 (.)
    - Contenuto: Identico al file per Cursor.
    - **Ragionamento**: Creare file di metadati `.mdc` per Cursor e Windsurf nelle directory specificate garantisce che le regole di personalizzazione dei messaggi di validazione siano documentate e accessibili per future reference, rispettando le regole di organizzazione del progetto.
+=======
+>>>>>>> 121b362 (.)

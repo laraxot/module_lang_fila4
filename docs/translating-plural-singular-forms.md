@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Traduzione di Forme Plurali e Singolari
 
 ## Introduzione
@@ -156,3 +157,5 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          @choice('messages.newPatientIndicator', $userPatientsCount)
      </div>
    - **Ragionamento**: Usare la direttiva `@choice` nelle viste Blade è un modo pulito e leggibile per gestire traduzioni plurali, evitando condizioni `if` complesse. Questo esempio si applica a una dashboard utente nel modulo `User`, dove è comune mostrare conteggi di messaggi, appuntamenti o pazienti. La direttiva `@choice` recupera automaticamente la traduzione corretta dalla chiave specificata nel file di lingua, basandosi sul conteggio passato, migliorando la manutenibilità del codice.
+=======
+>>>>>>> 121b362 (.)

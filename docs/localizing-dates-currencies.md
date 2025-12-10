@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Localizzazione di Date e Valute
 
 ## Introduzione
@@ -166,3 +167,5 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      <p>Costo: {{ formatCurrency($appointment->cost) }}</p>
    - **Ragionamento**: Nelle viste di `<nome progetto>`, come quelle per gli appuntamenti dentistici, mostrare date e differenze temporali con Carbon garantisce che siano localizzate automaticamente in base alla lingua dell'utente (es. 'lunedì, 3 aprile 2023' in italiano). Usare la funzione `formatCurrency()` per i costi assicura che i prezzi siano formattati correttamente (es. '35,578.88 €' in italiano). Questo migliora l'usabilità e rispetta le regole di localizzazione del progetto che richiedono l'uso del locale corrente per tutti gli elementi visibili all'utente.
    - **Ragionamento**: Nelle viste di `saluteora`, come quelle per gli appuntamenti dentistici, mostrare date e differenze temporali con Carbon garantisce che siano localizzate automaticamente in base alla lingua dell'utente (es. 'lunedì, 3 aprile 2023' in italiano). Usare la funzione `formatCurrency()` per i costi assicura che i prezzi siano formattati correttamente (es. '35,578.88 €' in italiano). Questo migliora l'usabilità e rispetta le regole di localizzazione del progetto che richiedono l'uso del locale corrente per tutti gli elementi visibili all'utente.
+=======
+>>>>>>> 121b362 (.)

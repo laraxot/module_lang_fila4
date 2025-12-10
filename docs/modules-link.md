@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Collegamenti ai Moduli che utilizzano le Traduzioni
 
 Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento alle traduzioni centralizzate.
@@ -68,3 +69,5 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 >>>>>>> 9059f82 (.)
 ---
 Per ogni risorsa o campo localizzato, consulta sia la documentazione del modulo che la documentazione di Lang per garantire coerenza e aggiornamento delle traduzioni.
+=======
+>>>>>>> 121b362 (.)

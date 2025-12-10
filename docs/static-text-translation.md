@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Traduzione di Testi Statici in Laravel
 
 ## Introduzione
@@ -401,3 +402,5 @@ Implementare un sistema di traduzione per testi statici nel progetto `<nome prog
 Implementare un sistema di traduzione per testi statici nel progetto `saluteora` migliorerà l'accessibilità e l'esperienza utente per utenti di diverse lingue. L'approccio con file PHP è raccomandato per la maggior parte delle traduzioni a causa della sua flessibilità e organizzazione, mentre i file JSON possono essere utilizzati per testi più lunghi o frasi complete. Le modifiche proposte ai file Blade, ai file di traduzione e alle route garantiranno che il sistema di localizzazione sia robusto e conforme alle regole del progetto, come l'uso del prefisso della lingua negli URL.
 ## Risorse
 - Corso Laravel Daily: [Multi-Language Laravel 11: All You Need to Know](https://laraveldaily.com/course/multi-language-laravel)
+=======
+>>>>>>> 121b362 (.)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema di Traduzione in il progetto
 
 ## LangServiceProvider
@@ -90,3 +91,5 @@ return [
 >>>>>>> fe4a1a8 (.)
 =======
 >>>>>>> 9059f82 (.)
+=======
+>>>>>>> 121b362 (.)

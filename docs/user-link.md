@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Collegamenti al Modulo User
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Lang e il modulo User.
@@ -84,3 +85,5 @@ Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/do
 
 =======
 >>>>>>> 9059f82 (.)
+=======
+>>>>>>> 121b362 (.)

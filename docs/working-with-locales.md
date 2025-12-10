@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestione delle Lingue (Locales) in Laravel
 
 ## Introduzione
@@ -237,3 +238,5 @@ La gestione delle lingue in Laravel richiede una configurazione attenta della li
 La gestione delle lingue in Laravel richiede una configurazione attenta della lingua predefinita e di fallback, tenendo conto delle limitazioni dei file JSON rispetto ai file PHP. Per il progetto `saluteora`, impostare 'it' come lingua predefinita e 'en' come fallback, insieme all'uso del pacchetto `mcamara/laravel-localization` per l'impostazione dinamica della lingua, garantirà un'esperienza utente coerente e conforme alle regole di localizzazione del progetto. Le modifiche proposte ai file di configurazione e alle route implementano queste best practices, migliorando l'accessibilità multilingue dell'applicazione.
 ## Risorse
 - Corso Laravel Daily: [Multi-Language Laravel 11: All You Need to Know](https://laraveldaily.com/course/multi-language-laravel)
+=======
+>>>>>>> 121b362 (.)

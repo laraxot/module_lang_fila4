@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 <<<<<<< HEAD
@@ -83,3 +84,5 @@ La root `docs/` deve contenere solo il link a questo file, non la guida completa
 =======
 La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
 >>>>>>> 9059f82 (.)
+=======
+>>>>>>> 121b362 (.)
