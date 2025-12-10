@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 <<<<<<< HEAD
@@ -39,6 +40,11 @@ file_put_contents(/var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/L
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
+=======
+# Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
+
+> **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
+>>>>>>> 1bb26ee (.)
 
 ## Problema
 
@@ -65,11 +71,15 @@ file_put_contents(/var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.p
    ```
    - `664` = scrittura per owner e gruppo, lettura per tutti.
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 3. **Best practice:**
    - Tutti i file di lingua devono essere di proprietà `www-data:www-data` e con permessi `664`.
    - Se si lavora in team, impostare anche la cartella `lang/it` con:
      ```bash
+<<<<<<< HEAD
 <<<<<<< HEAD
      sudo chown -R www-data:www-data /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it
      sudo find /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it -type f -exec chmod 664 {} \;
@@ -120,6 +130,8 @@ La root `docs/` deve contenere solo il link a questo file, non la guida completa
 =======
 >>>>>>> 121b362 (.)
 =======
+=======
+>>>>>>> 1bb26ee (.)
      sudo chown -R www-data:www-data /var/www/html/ptvx/laravel/Modules/Lang/lang/it
      sudo find /var/www/html/ptvx/laravel/Modules/Lang/lang/it -type f -exec chmod 664 {} \;
      ```
@@ -141,11 +153,20 @@ sudo chmod 664 /var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.php
 ```
 
 ## Collegamenti
+<<<<<<< HEAD
 - [Indice e collegamenti root](../../../docs/links.md)
 - [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
+=======
+- [Indice e collegamenti root](../../../project_docs/links.md)
+- [Documentazione MCP e gestione errori](../../../project_docs/mcp_errors_and_lessons.md)
+>>>>>>> 1bb26ee (.)
 
 ---
 
 **Nota:**
+<<<<<<< HEAD
 La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
 >>>>>>> d5fc9cd (.)
+=======
+La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
+>>>>>>> 1bb26ee (.)

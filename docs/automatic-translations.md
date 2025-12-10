@@ -1,23 +1,32 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 # Traduzioni Automatiche con LangServiceProvider
 
 ## Regola Fondamentale
 In il progetto, **NON utilizzare mai** il metodo `->label()` nei componenti Filament. Le etichette vengono gestite automaticamente dal `LangServiceProvider` attraverso i file di traduzione.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Come Funziona
 ### 1. Registrazione Automatica
 Il `LangServiceProvider` registra automaticamente tutti i componenti Filament (Field, Column, Filter, Step, ecc.) e applica le traduzioni basate su chiavi generate automaticamente.
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ## Come Funziona
 
 ### 1. Registrazione Automatica
 Il `LangServiceProvider` registra automaticamente tutti i componenti Filament (Field, Column, Filter, Step, ecc.) e applica le traduzioni basate su chiavi generate automaticamente.
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ```php
 // Questo viene fatto automaticamente dal LangServiceProvider
 Field::configureUsing(function (Field $component) {
@@ -26,14 +35,19 @@ Field::configureUsing(function (Field $component) {
 });
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 ### 2. Generazione delle Chiavi di Traduzione
 Le chiavi di traduzione vengono generate automaticamente basandosi su:
 - Il modulo corrente
 - Il nome della risorsa
 - Il nome del campo
+<<<<<<< HEAD
 <<<<<<< HEAD
 Il formato della chiave è:
 {modulo}::{risorsa}.fields.{nome_campo}.label
@@ -42,6 +56,8 @@ patient::doctor.fields.first_name.label
 ### 3. File di Traduzione
 Le traduzioni vengono salvate in file PHP nella directory `lang/{locale}/` di ciascun modulo:
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 Il formato della chiave è:
 ```
@@ -57,7 +73,10 @@ patient::doctor.fields.first_name.label
 Le traduzioni vengono salvate in file PHP nella directory `lang/{locale}/` di ciascun modulo:
 
 ```php
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 // /Modules/Patient/lang/it/doctor.php
 return [
     'fields' => [
@@ -67,6 +86,7 @@ return [
         'last_name' => [
             'label' => 'Cognome',
 <<<<<<< HEAD
+<<<<<<< HEAD
     ],
 ];
 ### 4. Creazione Automatica
@@ -98,6 +118,8 @@ Per gli step dei wizard, la chiave di traduzione segue un formato leggermente di
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> 1bb26ee (.)
         ],
     ],
 ];
@@ -164,6 +186,7 @@ Per gli step dei wizard, la chiave di traduzione segue un formato leggermente di
 
 ## Collegamenti Bidirezionali
 - [LangServiceProvider](/var/www/html/base_<nome progetto>/laravel/Modules/Lang/app/Providers/LangServiceProvider.php)
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
 - [Convenzioni di Traduzione](/var/www/html/base_<nome progetto>/laravel/Modules/Lang/docs/translation-conventions.md)
 - [Best Practices Filament](/var/www/html/base_<nome progetto>/laravel/Modules/Xot/docs/filament-best-practices.md)
@@ -201,3 +224,11 @@ Per gli step dei wizard, la chiave di traduzione segue un formato leggermente di
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+- [Convenzioni di Traduzione](/var/www/html/base_<nome progetto>/laravel/Modules/Lang/project_docs/translation-conventions.md)
+- [Best Practices Filament](/var/www/html/base_<nome progetto>/laravel/Modules/Xot/project_docs/filament-best-practices.md)
+
+## Collegamenti tra versioni di automatic-translations.md
+* [automatic-translations.md](../../UI/project_docs/filament/automatic-translations.md)
+
+>>>>>>> 1bb26ee (.)

@@ -1,7 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 # Gestione automatica delle label in Filament tramite LangServiceProvider
 
 ## Funzionamento
@@ -9,13 +12,18 @@
 - Non serve mai usare ->label(): la label viene ricavata dalla chiave di traduzione secondo convenzione.
 - Se la traduzione non esiste, il sistema può crearla o segnalarla (fallback).
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 ## Pattern
 - Label, heading, help e placeholder SOLO in file di traduzione modulo.
 - Convenzione chiavi: `modulo.resource.fields.campo.label` o `modulo.resource.actions.azione.label`.
 - Nessuna label hardcoded nei file Filament.
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Anti-pattern
 - Uso di ->label() nei componenti Filament.
@@ -65,3 +73,19 @@ Ultimo aggiornamento: maggio 2025.
 
 Ultimo aggiornamento: maggio 2025.
 >>>>>>> d5fc9cd (.)
+=======
+
+## Anti-pattern
+- Uso di ->label() nei componenti Filament.
+- Label hardcoded.
+
+## Test di regressione
+- Test statico che cerca ->label( nei file Filament.
+- Test che verifica la presenza di tutte le chiavi di traduzione.
+
+## Collegamenti
+- [docs root](../../../../project_docs/actions.md)
+- [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
+
+Ultimo aggiornamento: maggio 2025.
+>>>>>>> 1bb26ee (.)

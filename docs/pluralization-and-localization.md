@@ -1,14 +1,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Plurale/Singolare e Localizzazione Date/Valute
 
 ## Pluralizzazione
 =======
+=======
+>>>>>>> 1bb26ee (.)
 # Plurale/Singolare e Localizzazione Date/Valute
 
 ## Pluralizzazione
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ### Uso di `trans_choice()` e `@choice()`
 - Per messaggi che variano in base al conteggio, usa `trans_choice()` o la direttiva Blade `@choice()`.
 - Sintassi tipica in PHP:
@@ -22,9 +28,13 @@
   ```blade
   @choice('messages.newMessageIndicator', $messagesCount)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   ```
 >>>>>>> d5fc9cd (.)
+=======
+  ```
+>>>>>>> 1bb26ee (.)
 - Sintassi delle regole plurali:
   - `{0}`: caso zero
   - `{1}`: caso singolare
@@ -36,13 +46,18 @@
   - Nei Blade, sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
   - Evitare l'uso del JSON per le stringhe plurali.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 ### 1.4 Modifiche Proposte ai File
 - **File PHP**: Inserire tutte le stringhe plurali in file dedicati (es. `lang/en/messages.php` e `lang/it/messages.php`).
 - **Blade**: Sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
 - **File JSON**: Evitare l'uso per le stringhe plurali, salvo casi di necessità per traduttori non-dev.
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### 1.5 Esempio Completo
 <<<<<<< HEAD
@@ -65,11 +80,17 @@
 ### 1.5 Esempio Completo
 - `/var/www/html/saluteora/laravel/lang/en/messages.php`:
 >>>>>>> d5fc9cd (.)
+=======
+
+### 1.5 Esempio Completo
+- `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
+>>>>>>> 1bb26ee (.)
   ```php
   return [
       'newMessageIndicator' => '{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages',
   ];
   ```
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -92,6 +113,9 @@
       'newMessageIndicator' => '{0} Non hai nuovi messaggi|{1} Hai 1 nuovo messaggio|[2,*] Hai :count nuovi messaggi',
 =======
 - `/var/www/html/saluteora/laravel/lang/it/messages.php`:
+=======
+- `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`:
+>>>>>>> 1bb26ee (.)
   ```php
   return [
       'newMessageIndicator' => '{0} Non hai nuovi messaggi|{1} Hai 1 nuovo messaggio|[2,*] Hai :count nuovi messaggi',
@@ -102,18 +126,24 @@
   @choice('messages.newMessageIndicator', $messagesCount)
   ```
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ### 1.6 Checklist
 - [ ] Tutte le stringhe plurali sono in file PHP dedicati
 - [ ] Si usano chiavi descrittive e strutturate
 - [ ] Si documenta la presenza di stringhe plurali nei file PHP
 - [ ] Si versionano i file di traduzione dopo ogni modifica
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 ## Localizzazione Date con Carbon
 ### Setup
 - In `app/Providers/AppServiceProvider.php`:
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ---
 
@@ -122,18 +152,24 @@
 ### Setup
 - In `app/Providers/AppServiceProvider.php`:
   ```php
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
   use Carbon\Carbon;
   public function boot()
   {
       Carbon::setLocale(app()->getLocale());
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   {{ now()->isoFormat('dddd, D MMMM YYYY') }}
   // Output: lunedì, 3 aprile 2023 (it) | Monday, 3 April 2023 (en)
 ### Localizzazione differenze temporali
 - In Controller:
 =======
+=======
+>>>>>>> 1bb26ee (.)
   ```
 - In Blade:
   ```blade
@@ -144,11 +180,15 @@
 ### Localizzazione differenze temporali
 - In Controller:
   ```php
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
   $start = now()->subMinutes(56)->subSeconds(33)->subHour();
   $end = now();
   $difference = $end->longRelativeDiffForHumans($start, 5);
   // Output: 1 ora 56 minuti 33 secondi dopo (it)
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### Formati diversi per lingua
 - Per cambiare l'ordine/casing, usa formati diversi per ogni lingua:
@@ -166,6 +206,8 @@
 ### Helper globale
 - In `app/helpers.php`:
 =======
+=======
+>>>>>>> 1bb26ee (.)
   ```
 
 ### Formati diversi per lingua
@@ -197,7 +239,10 @@
 ### Helper globale
 - In `app/helpers.php`:
   ```php
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
   if (! function_exists('formatCurrency')) {
       function formatCurrency($amount, $locale = null, $currency = 'EUR')
       {
@@ -206,9 +251,12 @@
           return $formatter->formatCurrency($amount, $currency);
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
   {{ formatCurrency(35578.883) }}
   // Output: 35.578,88 € (it) | $35,578.88 (en)
 =======
+=======
+>>>>>>> 1bb26ee (.)
   }
   ```
 - In Blade:
@@ -217,12 +265,16 @@
   // Output: 35.578,88 € (it) | $35,578.88 (en)
   ```
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ### Modifiche proposte
 - Aggiungi/aggiorna `app/helpers.php` con la funzione `formatCurrency`.
 - Usa sempre il locale corrente per formattare date e valute.
 - Definisci i formati data in `/lang/{locale}/date.php` per ogni lingua.
 - Documenta l'uso di Carbon e NumberFormatter nei README dei moduli coinvolti.
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Middleware e Configurazione Locale
 ### Middleware SetLocale
@@ -230,6 +282,8 @@
 - Esempio:
   public function handle($request, Closure $next)
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ---
 
@@ -241,11 +295,15 @@
   ```php
   public function handle($request, Closure $next)
   {
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
       $locale = ... // da URL, session, DB
       app()->setLocale($locale);
       Carbon::setLocale($locale);
       return $next($request);
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### Configurazione
 - In `config/app.php`:
@@ -279,6 +337,8 @@
 - [Corso Laravel Daily](https://laraveldaily.com/course/multi-language-laravel)
 ## 3. FAQ e Problemi Comuni
 =======
+=======
+>>>>>>> 1bb26ee (.)
   }
   ```
 
@@ -292,36 +352,54 @@
 ---
 
 ## Riferimenti
+<<<<<<< HEAD
 - [Carbon Docs](https://carbon.nesbot.com/docs/)
 - [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
 - [Laravel Localization](https://laravel.com/docs/12.x/localization)
+=======
+- [Carbon Docs](https://carbon.nesbot.com/project_docs/)
+- [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
+- [Laravel Localization](https://laravel.com/project_docs/12.x/localization)
+>>>>>>> 1bb26ee (.)
 - [Corso Laravel Daily](https://laraveldaily.com/course/multi-language-laravel)
 
 ---
 
 ## 3. FAQ e Problemi Comuni
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - **Come gestire plurale/singolare in più lingue?**  
   Usa sempre file PHP e chiavi strutturate, sfrutta `trans_choice()` e `@choice()`.
 - **Come localizzare date e valute?**  
   Usa Carbon per le date e NumberFormatter per le valute, impostando la locale corretta.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 4. Collegamenti correlati
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ---
 
 ## 4. Collegamenti correlati
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - [translations-faq.md](./translations-faq.md)
 - [TRANSLATION_KEYS_BEST_PRACTICES.md](./TRANSLATION_KEYS_BEST_PRACTICES.md)
 - [translations-storage.md](./translations-storage.md)
 - [translation-process.md](./translation-process.md)
 - [README.md](./README.md) 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 121b362 (.)
 =======
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)

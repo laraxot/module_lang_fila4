@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1bb26ee (.)
 # Processo di Traduzione: Da Sviluppatore a Traduttore
 
 ## Indice
@@ -13,10 +16,14 @@
 ## Introduzione
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Questo documento descrive il processo di gestione delle traduzioni nel progetto <nome progetto>, con particolare attenzione alla collaborazione tra sviluppatori e traduttori.
 =======
 Questo documento descrive il processo di gestione delle traduzioni nel progetto , con particolare attenzione alla collaborazione tra sviluppatori e traduttori.
 >>>>>>> edc07c9 (.)
+=======
+Questo documento descrive il processo di gestione delle traduzioni nel progetto , con particolare attenzione alla collaborazione tra sviluppatori e traduttori.
+>>>>>>> 1bb26ee (.)
 
 ## Struttura dei File di Traduzione
 
@@ -82,9 +89,12 @@ Per le traduzioni di base di Laravel:
 
 ```bash
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> edc07c9 (.)
+=======
+>>>>>>> 1bb26ee (.)
 # Installazione
 composer require laravel-lang/common --dev
 
@@ -118,9 +128,12 @@ Traduci in italiano mantenendo la struttura JSON:
 
 ```bash
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> edc07c9 (.)
+=======
+>>>>>>> 1bb26ee (.)
 # Creare un branch dedicato
 git checkout -b feature/italian-translations
 
@@ -244,9 +257,13 @@ find lang -type f -name "*.php" -o -name "*.json" | xargs dos2unix
 ## Conclusione
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Questo documento fornisce una guida completa per la gestione delle traduzioni nel progetto <nome progetto>. Seguendo queste linee guida, è possibile garantire un processo di traduzione fluido e coerente in tutto il team di sviluppo.
 =======
 Questo documento fornisce una guida completa per la gestione delle traduzioni nel progetto . Seguendo queste linee guida, è possibile garantire un processo di traduzione fluido e coerente in tutto il team di sviluppo.
 >>>>>>> edc07c9 (.)
 =======
 >>>>>>> 121b362 (.)
+=======
+Questo documento fornisce una guida completa per la gestione delle traduzioni nel progetto . Seguendo queste linee guida, è possibile garantire un processo di traduzione fluido e coerente in tutto il team di sviluppo.
+>>>>>>> 1bb26ee (.)

@@ -3,15 +3,20 @@
 # ==============================================
 # Modulo Lang Laraxot - Template standardizzato
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Ultimo aggiornamento: 2025-01-31
 =======
 # Ultimo aggiornamento: 2025-01-06
 >>>>>>> 412393b (.)
+=======
+# Ultimo aggiornamento: 2025-01-06
+>>>>>>> cbfeb6b (.)
 # ==============================================
 
 # ==============================================
 # DEPENDENCIES & PACKAGES
 # ==============================================
+<<<<<<< HEAD
 <<<<<<< HEAD
 /vendor/
 /vendor
@@ -24,21 +29,29 @@ composer.lock
 yarn-error.log
 npm-debug.log
 =======
+=======
+>>>>>>> cbfeb6b (.)
 vendor/
 node_modules/
 package-lock.json
 yarn.lock
 composer.lock
+<<<<<<< HEAD
 >>>>>>> 412393b (.)
+=======
+>>>>>>> cbfeb6b (.)
 
 # ==============================================
 # BUILD & COMPILED FILES
 # ==============================================
 /build
 <<<<<<< HEAD
+<<<<<<< HEAD
 /build/
 =======
 >>>>>>> 412393b (.)
+=======
+>>>>>>> cbfeb6b (.)
 build/
 dist/
 docs/cache/
@@ -137,6 +150,7 @@ docs/cache/
 
 # ==============================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 # LANGUAGE FILES
 # ==============================================
 lang/lang/
@@ -151,6 +165,8 @@ database/Seeders_old/
 database/Factories_old/
 database_old/
 =======
+=======
+>>>>>>> cbfeb6b (.)
 # OLD DIRECTORIES (LEGACY CLEANUP)
 # ==============================================
 resources/views/Components_old/
@@ -164,7 +180,10 @@ database/Factories_old
 database/Factories_
 database_old/
 database_old
+<<<<<<< HEAD
 >>>>>>> 412393b (.)
+=======
+>>>>>>> cbfeb6b (.)
 
 # ==============================================
 # MODULE SPECIFIC - LANG
@@ -191,11 +210,16 @@ test_translations.sql
 # ==============================================
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # File specifici del progetto
 =======
 
 # 🚫 File specifici del progetto
 >>>>>>> 412393b (.)
+=======
+
+# 🚫 File specifici del progetto
+>>>>>>> cbfeb6b (.)
 *.fila2
 laravel
 public_html

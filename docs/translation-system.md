@@ -1,11 +1,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Sistema di Traduzione in il progetto
 
 ## LangServiceProvider
 Il `LangServiceProvider` è il cuore del sistema di traduzione e gestisce automaticamente le label dei componenti Filament.
 ### Funzionamento
 =======
+=======
+>>>>>>> 1bb26ee (.)
 # Sistema di Traduzione in il progetto
 
 ## LangServiceProvider
@@ -14,23 +17,34 @@ Il `LangServiceProvider` è il cuore del sistema di traduzione e gestisce automa
 
 ### Funzionamento
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 1. **Caricamento Traduzioni**
    - Le traduzioni sono caricate dai file nella cartella `lang` di ogni modulo
    - Supporta sia file PHP che JSON
    - Usa il nome del modulo in minuscolo come namespace delle traduzioni
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 2. **Gestione Automatica Label**
    - Non si usa mai il metodo `->label()` direttamente sui componenti
    - Le label sono gestite automaticamente dal provider
    - Usa i file di traduzione per tutte le etichette
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 3. **Struttura File Traduzioni**
 ```php
 return [
@@ -44,12 +58,18 @@ return [
 ];
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Componenti Supportati
 =======
 
 ### Componenti Supportati
 
 >>>>>>> d5fc9cd (.)
+=======
+
+### Componenti Supportati
+
+>>>>>>> 1bb26ee (.)
 - `Filament\Forms\Components\Field`
 - `Filament\Tables\Columns\Column`
 - `Filament\Forms\Components\Placeholder`
@@ -57,12 +77,18 @@ return [
 - `Filament\Tables\Filters\BaseFilter`
 - `Filament\Forms\Components\Wizard\Step`
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Best Practices
 =======
 
 ## Best Practices
 
 >>>>>>> d5fc9cd (.)
+=======
+
+## Best Practices
+
+>>>>>>> 1bb26ee (.)
 1. **Mai Usare label() Direttamente**
    ```php
    // ❌ Errato
@@ -72,29 +98,42 @@ return [
    TextInput::make('first_name') // Label da file traduzione
    ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 2. **Struttura Traduzioni**
    - Usa array nidificati per organizzare le traduzioni
    - Separa label, placeholder, help e altre proprietà
    - Mantieni coerenza nella struttura tra i moduli
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 3. **Namespace Traduzioni**
    - Usa il nome del modulo come namespace
    - Organizza le traduzioni per entità/risorsa
    - Mantieni una gerarchia logica
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
 4. **Manutenibilità**
    - Centralizza le traduzioni nei file lang
    - Evita testo hardcoded nel codice
    - Facilita il supporto multilingua
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Collegamenti
 <<<<<<< HEAD
@@ -145,3 +184,14 @@ return [
 =======
 - [Filament i18n](https://filamentphp.com/docs/internationalization) 
 >>>>>>> d5fc9cd (.)
+=======
+
+## Collegamenti
+- [Form Components](../Patient/project_docs/filament-form-components.md)
+- [Wizard Structure](../Patient/project_docs/filament-wizard-structure.md)
+- [Best Practices](../Xot/project_docs/filament-best-practices.md)
+
+## Vedi Anche
+- [Laravel Translations](https://laravel.com/project_docs/localization)
+- [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
+>>>>>>> 1bb26ee (.)

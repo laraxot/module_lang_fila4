@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1bb26ee (.)
 # Analisi Modelli, Factory e Seeder - Modulo Lang
 
 ## Panoramica
@@ -40,10 +43,14 @@ Questo documento analizza tutti i modelli del modulo Lang verificando la presenz
 - **Namespace Support**: Supporto namespace moduli
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Business Logic <nome progetto>**:
 =======
 **Business Logic **:
 >>>>>>> edc07c9 (.)
+=======
+**Business Logic **:
+>>>>>>> 1bb26ee (.)
 - **Medical Terms**: Traduzioni terminologia medica
 - **UI Elements**: Elementi interfaccia multilingua
 - **Error Messages**: Messaggi errore localizzati
@@ -104,15 +111,22 @@ Tutti i modelli attivi hanno le factory corrispondenti.
 
 ### Moduli Collegati
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [<nome progetto> Module](../../<nome progetto>/docs/modelli_factory_seeder_analisi.md) - Traduzioni mediche
 =======
 - [ Module](../../<nome modulo>/docs/modelli_factory_seeder_analisi.md) - Traduzioni mediche
 >>>>>>> edc07c9 (.)
+=======
+- [ Module](../../<nome modulo>/docs/modelli_factory_seeder_analisi.md) - Traduzioni mediche
+>>>>>>> 1bb26ee (.)
 - [User Module](../../User/docs/modelli_factory_seeder_analisi.md) - Traduzioni utente
 - [Cms Module](../../Cms/docs/modelli_factory_seeder_analisi.md) - Contenuti multilingua
 - [Notify Module](../../Notify/docs/modelli_factory_seeder_analisi.md) - Notifiche multilingua
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Analisi completa di 6 modelli, sistema traduzioni completo*
+<<<<<<< HEAD
 =======
 >>>>>>> 121b362 (.)
+=======
+>>>>>>> 1bb26ee (.)

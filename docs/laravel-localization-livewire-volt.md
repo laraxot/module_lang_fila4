@@ -1,16 +1,22 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 # Integrazione di mcamara/laravel-localization con Livewire Volt
 
 ## Obiettivo
 Fornire una guida pratica per integrare la localizzazione delle rotte e dei contenuti con Livewire Volt, sfruttando le potenzialità di mcamara/laravel-localization.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ---
 ## 1. Cos'è Livewire Volt?
 Volt è una sintassi semplificata per creare componenti Livewire, che permette di scrivere componenti reattivi direttamente in Blade, con una sintassi più concisa e moderna.
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ---
 
@@ -19,11 +25,15 @@ Volt è una sintassi semplificata per creare componenti Livewire, che permette d
 
 ---
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ## 2. Sfida dell'integrazione
 - **Volt** genera componenti Livewire che vengono richiamati tramite rotte Laravel.
 - **mcamara/laravel-localization** lavora a livello di routing, aggiungendo il prefisso della lingua e gestendo la localizzazione delle rotte.
 - È necessario assicurarsi che i componenti Volt siano accessibili tramite rotte localizzate e che i contenuti siano tradotti correttamente.
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## 3. Best Practice per l'integrazione
 ### a) Registrazione delle rotte Volt nel gruppo localizzato
@@ -31,6 +41,8 @@ Assicurati che tutte le rotte che richiamano componenti Volt siano dichiarate al
 ```php
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ---
 
@@ -42,7 +54,10 @@ Assicurati che tutte le rotte che richiamano componenti Volt siano dichiarate al
 ```php
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -57,16 +72,22 @@ Route::group(
 );
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Nota:**
 Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo localizzato.
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 **Nota:**
 Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo localizzato.
 
 ---
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ### b) Traduzione dei contenuti nei componenti Volt
 - Usa sempre le funzioni di traduzione Laravel (`__()`, `@lang`) all'interno dei template Blade dei componenti Volt.
 - Esempio:
@@ -78,6 +99,7 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
   ```php
   $this->notify(__('Profile updated successfully!'));
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### c) Gestione dei redirect e dei link
 - Quando effettui redirect o generi link all'interno dei componenti Volt, usa sempre i nomi delle rotte localizzate:
   return redirect()->route(LaravelLocalization::getCurrentLocale().'.dashboard');
@@ -92,6 +114,8 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - Se vuoi tradurre anche i path delle rotte Volt (es: `/it/bacheca` invece di `/it/dashboard`), usa la funzionalità di route translation mapping di mcamara/laravel-localization.
 - Esempio in `resources/lang/it/routes.php`:
 =======
+=======
+>>>>>>> 1bb26ee (.)
   ```
 
 ---
@@ -124,15 +148,21 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - Se vuoi tradurre anche i path delle rotte Volt (es: `/it/bacheca` invece di `/it/dashboard`), usa la funzionalità di route translation mapping di mcamara/laravel-localization.
 - Esempio in `resources/lang/it/routes.php`:
   ```php
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
   return [
       'dashboard' => 'bacheca',
       'profile' => 'profilo',
   ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 - E registra le rotte Volt usando le chiavi tradotte:
   Volt::route(__('routes.dashboard'), 'dashboard');
 =======
+=======
+>>>>>>> 1bb26ee (.)
   ```
 - E registra le rotte Volt usando le chiavi tradotte:
   ```php
@@ -141,12 +171,16 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 
 ---
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ## 4. Checklist
 - [ ] Tutte le rotte Volt sono dentro il gruppo localizzato.
 - [ ] Tutti i testi nei componenti Volt sono tradotti con `__()` o `@lang`.
 - [ ] Tutti i link e redirect usano nomi di rotte localizzate.
 - [ ] Se necessario, i path delle rotte Volt sono tradotti tramite mapping.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -174,6 +208,12 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 ---
 
 >>>>>>> d5fc9cd (.)
+=======
+- [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md`.
+
+---
+
+>>>>>>> 1bb26ee (.)
 ## 5. FAQ e problemi comuni
 - **Perché il componente Volt non si localizza?**  
   Verifica che la rotta sia dentro il gruppo localizzato e che il middleware sia applicato.
@@ -182,11 +222,17 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - **Come gestisco la lingua nei redirect?**  
   Usa sempre `LaravelLocalization::getCurrentLocale()` nei redirect e nei link.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 ---
 
 >>>>>>> d5fc9cd (.)
+=======
+
+---
+
+>>>>>>> 1bb26ee (.)
 ## 6. Modifiche consigliate ai file del progetto
 - **web.php**:  
   Sposta tutte le rotte Volt dentro il gruppo localizzato.
@@ -195,6 +241,7 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - **Componenti Volt**:  
   Verifica che tutti i testi siano tradotti e che i redirect usino le rotte localizzate.
 - **Documentazione**:  
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -222,10 +269,16 @@ Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/ru
 >>>>>>> 121b362 (.)
 =======
   Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
+=======
+  Aggiorna sempre `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
+>>>>>>> 1bb26ee (.)
 
 ---
 
 ## 7. Best Practices operative (.mdc)
 
 Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative. 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)

@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Traduzione di Forme Plurali e Singolari
 
 ## Introduzione
@@ -16,11 +17,22 @@ In un'applicazione multilingue, è comune dover gestire traduzioni che cambiano 
 ## Uso di `trans_choice()` per Pluralizzazione
 
 >>>>>>> d5fc9cd (.)
+=======
+# Traduzione di Forme Plurali e Singolari
+
+## Introduzione
+
+In un'applicazione multilingue, è comune dover gestire traduzioni che cambiano in base al conteggio di elementi (singolare/plurale). Laravel offre strumenti come `trans_choice()` per semplificare questo processo. Questa documentazione, basata sul corso di Laravel Daily, esplora come implementare la pluralizzazione nel progetto `<nome progetto>`, sia nei file JSON che PHP, e come utilizzare la direttiva `@choice` nelle viste Blade.
+
+## Uso di `trans_choice()` per Pluralizzazione
+
+>>>>>>> 1bb26ee (.)
 Laravel fornisce la funzione helper `trans_choice()` che permette di scegliere la traduzione corretta in base a un numero passato come parametro. Le regole per definire le traduzioni plurali sono:
 - Usare il carattere `|` per separare le diverse opzioni di conteggio.
 - Usare `:count` per inserire il numero passato alla funzione.
 - Usare `{INT}` per specificare una traduzione per un numero esatto.
 - Usare `[INT,*]` per specificare una traduzione per un numero e tutti i numeri successivi.
+<<<<<<< HEAD
 <<<<<<< HEAD
 **Esempio** di stringa di traduzione:
 ```
@@ -50,6 +62,8 @@ I file JSON supportano la pluralizzazione, ma non in modo particolarmente pulito
 =======
 >>>>>>> 9059f82 (.)
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 **Esempio** di stringa di traduzione:
 ```
@@ -65,12 +79,17 @@ La funzione `trans_choice()` seleziona la traduzione appropriata basandosi sul c
 
 I file JSON supportano la pluralizzazione, ma non in modo particolarmente pulito, poiché la chiave e il valore sono identici.
 
+<<<<<<< HEAD
 **Esempio** in `/var/www/html/saluteora/laravel/lang/en.json`:
 >>>>>>> d5fc9cd (.)
+=======
+**Esempio** in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en.json`:
+>>>>>>> 1bb26ee (.)
 ```json
 {
     "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages": "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages"
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 **Uso in Blade**:
 ```blade
@@ -99,6 +118,8 @@ I file PHP offrono un modo più pulito per gestire la pluralizzazione, utilizzan
 =======
 >>>>>>> 9059f82 (.)
 =======
+=======
+>>>>>>> 1bb26ee (.)
 ```
 
 **Uso in Blade**:
@@ -117,12 +138,17 @@ I file PHP offrono un modo più pulito per gestire la pluralizzazione, utilizzan
 
 I file PHP offrono un modo più pulito per gestire la pluralizzazione, utilizzando chiavi specifiche.
 
+<<<<<<< HEAD
 **Esempio** in `/var/www/html/saluteora/laravel/lang/en/messages.php`:
 >>>>>>> d5fc9cd (.)
+=======
+**Esempio** in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
+>>>>>>> 1bb26ee (.)
 ```php
 return [
     'newMessageIndicator' => '{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages',
 ];
+<<<<<<< HEAD
 <<<<<<< HEAD
 {{ trans_choice('messages.newMessageIndicator', $messagesCount) }}
 Oppure con la direttiva Blade:
@@ -154,6 +180,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 =======
 >>>>>>> 9059f82 (.)
 =======
+=======
+>>>>>>> 1bb26ee (.)
 ```
 
 **Uso in Blade**:
@@ -167,6 +195,7 @@ Oppure con la direttiva Blade:
 
 **Vantaggi**: Questo approccio è molto più pulito rispetto ai file JSON, poiché si utilizza una chiave specifica (`messages.newMessageIndicator`) che può essere riutilizzata in più punti senza dover riscrivere l'intera condizione di pluralizzazione.
 
+<<<<<<< HEAD
 ## Analisi e Ragionamento per il Progetto `saluteora`
 
 Nel contesto del progetto `saluteora`, la gestione delle forme plurali e singolari è importante per elementi come notifiche, appuntamenti o pazienti, dove il conteggio può variare. Raccomando di utilizzare file PHP per le traduzioni plurali, poiché offrono un approccio più strutturato e leggibile rispetto ai file JSON. Questo è coerente con le linee guida esistenti del progetto di usare file PHP per traduzioni modulari e strutturate. La direttiva `@choice` dovrebbe essere utilizzata nelle viste Blade per mantenere il codice pulito e leggibile.
@@ -178,6 +207,18 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 1. **Aggiunta di Traduzioni Plurali nei File di Lingua PHP**:
    - File: `/var/www/html/saluteora/laravel/lang/it/messages.php`
 >>>>>>> d5fc9cd (.)
+=======
+## Analisi e Ragionamento per il Progetto `<nome progetto>`
+
+Nel contesto del progetto `<nome progetto>`, la gestione delle forme plurali e singolari è importante per elementi come notifiche, appuntamenti o pazienti, dove il conteggio può variare. Raccomando di utilizzare file PHP per le traduzioni plurali, poiché offrono un approccio più strutturato e leggibile rispetto ai file JSON. Questo è coerente con le linee guida esistenti del progetto di usare file PHP per traduzioni modulari e strutturate. La direttiva `@choice` dovrebbe essere utilizzata nelle viste Blade per mantenere il codice pulito e leggibile.
+
+## Modifiche Proposte
+
+Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la traduzione di forme plurali e singolari nel progetto `<nome progetto>`:
+
+1. **Aggiunta di Traduzioni Plurali nei File di Lingua PHP**:
+   - File: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`
+>>>>>>> 1bb26ee (.)
    - Modifica: Creare o aggiornare il file con traduzioni plurali:
      ```php
      return [
@@ -186,6 +227,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'newPatientIndicator' => '{0} Non hai nuovi pazienti|{1} Hai 1 nuovo paziente|[2,*] Hai :count nuovi pazienti',
      ];
      ```
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -230,6 +272,9 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 >>>>>>> 9059f82 (.)
 =======
    - File: `/var/www/html/saluteora/laravel/lang/en/messages.php`
+=======
+   - File: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`
+>>>>>>> 1bb26ee (.)
    - Modifica: Creare o aggiornare il file con traduzioni equivalenti in inglese:
      ```php
      return [
@@ -238,11 +283,18 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'newPatientIndicator' => '{0} You have no new patients|{1} You have 1 new patient|[2,*] You have :count new patients',
      ];
      ```
+<<<<<<< HEAD
    - **Ragionamento**: Usare file PHP per le traduzioni plurali è più strutturato e leggibile rispetto ai file JSON, come raccomandato nelle linee guida del progetto. Ho scelto chiavi specifiche per notifiche relative a messaggi, appuntamenti e pazienti, che sono contesti comuni in un'applicazione sanitaria come `saluteora`. Le traduzioni plurali sono definite con la sintassi `{0}`, `{1}`, `[2,*]` per coprire i casi più comuni, e l'uso di `:count` permette di mostrare il numero esatto quando necessario. Creare file separati per ogni lingua supportata (es. 'it' e 'en') è coerente con il sistema di localizzazione del progetto.
 
 2. **Uso di `trans_choice()` o `@choice` nelle Viste Blade**:
    - File: `/var/www/html/saluteora/laravel/Modules/User/Resources/views/dashboard.blade.php`
 >>>>>>> d5fc9cd (.)
+=======
+   - **Ragionamento**: Usare file PHP per le traduzioni plurali è più strutturato e leggibile rispetto ai file JSON, come raccomandato nelle linee guida del progetto. Ho scelto chiavi specifiche per notifiche relative a messaggi, appuntamenti e pazienti, che sono contesti comuni in un'applicazione sanitaria come `<nome progetto>`. Le traduzioni plurali sono definite con la sintassi `{0}`, `{1}`, `[2,*]` per coprire i casi più comuni, e l'uso di `:count` permette di mostrare il numero esatto quando necessario. Creare file separati per ogni lingua supportata (es. 'it' e 'en') è coerente con il sistema di localizzazione del progetto.
+
+2. **Uso di `trans_choice()` o `@choice` nelle Viste Blade**:
+   - File: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/User/Resources/views/dashboard.blade.php`
+>>>>>>> 1bb26ee (.)
    - Modifica: Aggiungere o aggiornare l'uso della direttiva `@choice` per mostrare notifiche:
      ```blade
      <div class="notification-bar">
@@ -251,6 +303,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          @choice('messages.newPatientIndicator', $userPatientsCount)
      </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
    - **Ragionamento**: Usare la direttiva `@choice` nelle viste Blade è un modo pulito e leggibile per gestire traduzioni plurali, evitando condizioni `if` complesse. Questo esempio si applica a una dashboard utente nel modulo `User`, dove è comune mostrare conteggi di messaggi, appuntamenti o pazienti. La direttiva `@choice` recupera automaticamente la traduzione corretta dalla chiave specificata nel file di lingua, basandosi sul conteggio passato, migliorando la manutenibilità del codice.
 =======
 >>>>>>> 121b362 (.)
@@ -258,3 +311,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      ```
    - **Ragionamento**: Usare la direttiva `@choice` nelle viste Blade è un modo pulito e leggibile per gestire traduzioni plurali, evitando condizioni `if` complesse. Questo esempio si applica a una dashboard utente nel modulo `User`, dove è comune mostrare conteggi di messaggi, appuntamenti o pazienti. La direttiva `@choice` recupera automaticamente la traduzione corretta dalla chiave specificata nel file di lingua, basandosi sul conteggio passato, migliorando la manutenibilità del codice.
 >>>>>>> d5fc9cd (.)
+=======
+     ```
+   - **Ragionamento**: Usare la direttiva `@choice` nelle viste Blade è un modo pulito e leggibile per gestire traduzioni plurali, evitando condizioni `if` complesse. Questo esempio si applica a una dashboard utente nel modulo `User`, dove è comune mostrare conteggi di messaggi, appuntamenti o pazienti. La direttiva `@choice` recupera automaticamente la traduzione corretta dalla chiave specificata nel file di lingua, basandosi sul conteggio passato, migliorando la manutenibilità del codice.
+>>>>>>> 1bb26ee (.)

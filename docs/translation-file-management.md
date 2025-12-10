@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Gestione File di Traduzione
 
 ## Panoramica
@@ -8,6 +9,8 @@ Il sistema di gestione dei file di traduzione permette di visualizzare, modifica
 ### Modello TranslationFile
 Il modello `TranslationFile` utilizza il pattern Sushi per creare un modello Eloquent che rappresenta i file di traduzione come record del database.
 =======
+=======
+>>>>>>> 1bb26ee (.)
 # Gestione File di Traduzione
 
 ## Panoramica
@@ -20,24 +23,35 @@ Il sistema di gestione dei file di traduzione permette di visualizzare, modifica
 
 Il modello `TranslationFile` utilizza il pattern Sushi per creare un modello Eloquent che rappresenta i file di traduzione come record del database.
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ```php
 class TranslationFile extends BaseModel
 {
     use \Sushi\Sushi;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
     protected $fillable = [
         'id',
         'name', 
         'path',
     ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
@@ -50,24 +64,36 @@ class TranslationFile extends BaseModel
 }
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Action GetAllTranslationAction
 =======
 
 ### Action GetAllTranslationAction
 
 >>>>>>> d5fc9cd (.)
+=======
+
+### Action GetAllTranslationAction
+
+>>>>>>> 1bb26ee (.)
 L'action `GetAllTranslationAction` è responsabile di:
 - Scansionare tutti i file di traduzione nei moduli
 - Generare una lista strutturata dei file disponibili
 - Fornire metadati per ogni file (chiave, percorso)
 <<<<<<< HEAD
+<<<<<<< HEAD
 public function execute(): array
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ```php
 public function execute(): array
 {
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
     $lang = app()->getLocale();
     $path = base_path('Modules/*/lang/'.$lang.'/*.php');
     $files = glob($path);
@@ -80,9 +106,12 @@ public function execute(): array
         ];
     });
 <<<<<<< HEAD
+<<<<<<< HEAD
     return $files;
 ### Resource TranslationFileResource
 =======
+=======
+>>>>>>> 1bb26ee (.)
     
     return $files;
 }
@@ -90,16 +119,22 @@ public function execute(): array
 
 ### Resource TranslationFileResource
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 Il resource Filament fornisce l'interfaccia per:
 - Visualizzare la lista dei file di traduzione
 - Modificare le traduzioni inline
 - Gestire le chiavi di traduzione
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Struttura dei Dati
 ### File di Traduzione
 I file di traduzione seguono la struttura standard Laravel:
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ## Struttura dei Dati
 
@@ -108,7 +143,10 @@ I file di traduzione seguono la struttura standard Laravel:
 I file di traduzione seguono la struttura standard Laravel:
 
 ```php
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 // Modules/User/lang/it/auth.php
 return [
     'login' => [
@@ -122,10 +160,13 @@ return [
         'title' => 'Registrati',
         'name' => 'Nome Completo',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'submit' => 'Registrati',
 ];
 ### Metadati File
 =======
+=======
+>>>>>>> 1bb26ee (.)
         'email' => 'Indirizzo Email',
         'password' => 'Password',
         'submit' => 'Registrati',
@@ -135,12 +176,16 @@ return [
 
 ### Metadati File
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 Ogni file di traduzione è rappresentato con:
 - `id`: Chiave univoca (es: `user::auth`)
 - `name`: Nome del file (es: `auth`)
 - `path`: Percorso completo del file
 - `key`: Chiave completa con namespace (es: `user::auth`)
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Funzionalità
 ### 1. Visualizzazione File
@@ -149,6 +194,8 @@ Ogni file di traduzione è rappresentato con:
 - Informazioni su percorso e dimensione
 ### 2. Modifica Traduzioni
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ## Funzionalità
 
@@ -160,11 +207,15 @@ Ogni file di traduzione è rappresentato con:
 
 ### 2. Modifica Traduzioni
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - Editor inline per modificare le traduzioni
 - Validazione della sintassi PHP
 - Backup automatico prima delle modifiche
 - Preview delle modifiche
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### 3. Gestione Chiavi
 - Aggiunta di nuove chiavi di traduzione
@@ -178,6 +229,8 @@ Ogni file di traduzione è rappresentato con:
 ### 1. Struttura Chiavi
 // ✅ Corretto - Struttura gerarchica
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ### 3. Gestione Chiavi
 
@@ -198,12 +251,16 @@ Ogni file di traduzione è rappresentato con:
 ```php
 // ✅ Corretto - Struttura gerarchica
 return [
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
     'auth' => [
         'login' => [
             'title' => 'Accedi',
             'email' => 'Indirizzo Email',
         ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 // ❌ Errato - Chiavi piatte
     'auth_login_title' => 'Accedi',
@@ -235,6 +292,8 @@ class TranslationFileResource extends XotBaseResource
     protected static ?string $model = TranslationFile::class;
     public static function getFormSchema(): array
 =======
+=======
+>>>>>>> 1bb26ee (.)
     ],
 ];
 
@@ -289,11 +348,15 @@ class TranslationFileResource extends XotBaseResource
     public static function getFormSchema(): array
     {
         return [
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
             Components\TextInput::make('key')
                 ->required()
                 ->maxLength(255),
             Components\Textarea::make('content')
+<<<<<<< HEAD
 <<<<<<< HEAD
                 ->rows(20)
                 ->monospace(),
@@ -350,6 +413,8 @@ php artisan lang:export
 =======
 >>>>>>> 121b362 (.)
 =======
+=======
+>>>>>>> 1bb26ee (.)
                 ->required()
                 ->rows(20)
                 ->monospace(),
@@ -395,12 +460,20 @@ php artisan lang:export
 - [Translation Standards](./translation-standards.md)
 - [Translation System](./translation-system.md)
 - [Best Practices](./translation-keys-best-practices.md)
+<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/docs/localization)
+=======
+- [Laravel Localization](https://laravel.com/project_docs/localization)
+>>>>>>> 1bb26ee (.)
 
 ## Note per lo Sviluppo
 
 1. **Performance**: Utilizzare cache per i file di traduzione
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
+<<<<<<< HEAD
 4. **Usabilità**: Interfaccia intuitiva per i traduttori 
 >>>>>>> d5fc9cd (.)
+=======
+4. **Usabilità**: Interfaccia intuitiva per i traduttori 
+>>>>>>> 1bb26ee (.)

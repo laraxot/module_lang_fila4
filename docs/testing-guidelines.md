@@ -8,10 +8,17 @@ All tests MUST use `.env.testing` configuration:
 APP_ENV=testing
 DB_CONNECTION=sqlite
 <<<<<<< HEAD
+<<<<<<< HEAD
 DB_DATABASE=<nome progetto>_data_test
 =======
 DB_DATABASE=saluteora_data_test
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+DB_DATABASE=saluteora_data_test
+=======
+DB_DATABASE=<nome progetto>_data_test
+>>>>>>> cbfeb6b (.)
+>>>>>>> 1bb26ee (.)
 APP_LOCALE=en
 APP_FALLBACK_LOCALE=en
 ```

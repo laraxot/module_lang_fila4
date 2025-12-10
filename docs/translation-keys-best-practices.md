@@ -282,6 +282,7 @@ Per blocchi di testo lunghi, valuta se usare chiavi dedicate in PHP (es. `onboar
 ## [AGGIORNAMENTO 2024-06-XX] - Correzione appointment.php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 La traduzione appointment.php del modulo <nome progetto> è stata riscritta secondo le regole di centralizzazione, DRY, KISS, nessun lock-in, e struttura gerarchica inglese. Tutte le chiavi sono ora coerenti con enums, actions, messages, filters, calendar, notifications. La motivazione è filosofica (un solo punto di verità), logica (manutenzione semplice), religiosa (nessuna duplicazione), politica (nessun lock-in tra moduli), zen (serenità del codice).
 
 Vedi esempio e motivazione in [<nome progetto>/docs/appointment-management.md](../../<nome progetto>/docs/appointment-management.md) e [translation-standards.md](./translation-standards.md).
@@ -290,6 +291,11 @@ La traduzione appointment.php del modulo SaluteOra è stata riscritta secondo le
 
 Vedi esempio e motivazione in [SaluteOra/docs/appointment-management.md](../../SaluteOra/docs/appointment-management.md) e [translation-standards.md](./translation-standards.md).
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+La traduzione appointment.php del modulo  è stata riscritta secondo le regole di centralizzazione, DRY, KISS, nessun lock-in, e struttura gerarchica inglese. Tutte le chiavi sono ora coerenti con enums, actions, messages, filters, calendar, notifications. La motivazione è filosofica (un solo punto di verità), logica (manutenzione semplice), religiosa (nessuna duplicazione), politica (nessun lock-in tra moduli), zen (serenità del codice).
+
+Vedi esempio e motivazione in [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md) e [translation-standards.md](./translation-standards.md).
+>>>>>>> 1bb26ee (.)
 
 ### Checklist aggiornata
 - Usare solo chiavi inglesi e struttura gerarchica

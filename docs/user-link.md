@@ -1,11 +1,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Collegamenti al Modulo User
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Lang e il modulo User.
 ## Traduzioni nel Modulo User
 Il modulo User utilizza le traduzioni fornite dal modulo Lang per:
 =======
+=======
+>>>>>>> 1bb26ee (.)
 # Collegamenti al Modulo User
 
 Questo documento fornisce collegamenti bidirezionali tra il modulo Lang e il modulo User.
@@ -14,11 +17,15 @@ Questo documento fornisce collegamenti bidirezionali tra il modulo Lang e il mod
 
 Il modulo User utilizza le traduzioni fornite dal modulo Lang per:
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - Etichette dei campi utente
 - Messaggi di validazione
 - Notifiche e messaggi di sistema
 - Interfaccia di autenticazione
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Collegamenti Principali
 <<<<<<< HEAD
@@ -106,6 +113,14 @@ Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/do
 - [Traduzioni del Modulo User](../../User/docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
 - [Gestione Utenti](../../User/docs/README.md) - Panoramica del modulo User
 - [Modelli Utente](../../User/docs/user_profile_models.md) - Documentazione sui modelli utente e profili
+=======
+
+## Collegamenti Principali
+
+- [Traduzioni del Modulo User](../../User/project_docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
+- [Gestione Utenti](../../User/project_docs/README.md) - Panoramica del modulo User
+- [Modelli Utente](../../User/project_docs/user_profile_models.md) - Documentazione sui modelli utente e profili
+>>>>>>> 1bb26ee (.)
 
 ## Integrazione con Lang
 
@@ -117,12 +132,22 @@ Il modulo User integra il modulo Lang attraverso:
 
 ## Collegamento Bidirezionale
 
+<<<<<<< HEAD
 Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/docs/lang-link.md) nel modulo User.
+=======
+Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/project_docs/lang-link.md) nel modulo User.
+>>>>>>> 1bb26ee (.)
 
 > Aggiorna entrambi i riferimenti se modifichi la struttura delle traduzioni o aggiungi nuove funzionalità che richiedono traduzioni.
 
 ## Collegamenti tra versioni di user-link.md
+<<<<<<< HEAD
 * [user-link.md](../../../Lang/docs/user-link.md)
 * [user-link.md](../../../Cms/docs/user-link.md)
 
 >>>>>>> d5fc9cd (.)
+=======
+* [user-link.md](../../../Lang/project_docs/user-link.md)
+* [user-link.md](../../../Cms/project_docs/user-link.md)
+
+>>>>>>> 1bb26ee (.)

@@ -142,9 +142,15 @@ La migrazione ora segue completamente gli standard del progetto:
 
 ## Riferimenti
 
+<<<<<<< HEAD
 - [Standard Migrazioni](../../Xot/docs/migration_standards.md)
 - [Best Practices Migrazioni Lang](migration_best_practices.md)
 - [Documentazione Generale](../../Xot/docs/migration_guidelines.md)
+=======
+- [Standard Migrazioni](../../Xot/project_docs/migration_standards.md)
+- [Best Practices Migrazioni Lang](migration_best_practices.md)
+- [Documentazione Generale](../../Xot/project_docs/migration_guidelines.md)
+>>>>>>> cbfeb6b (.)
 
 ## Lezioni Apprese
 

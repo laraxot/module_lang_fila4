@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Integrazione Livewire Volt + mcamara/laravel-localization
 
 ## 1. Obiettivo
@@ -10,6 +11,8 @@
 ## 2. Setup di base
 ### 2.1. Installazione pacchetti
 =======
+=======
+>>>>>>> 1bb26ee (.)
 # Integrazione Livewire Volt + mcamara/laravel-localization
 
 ## 1. Obiettivo
@@ -24,12 +27,16 @@
 
 ### 2.1. Installazione pacchetti
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 ```bash
 composer require livewire/volt
 composer require mcamara/laravel-localization
 php artisan vendor:publish --provider="Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider"
 ```
+<<<<<<< HEAD
 <<<<<<< HEAD
 ### 2.2. Configurazione delle route
 Tutte le route che montano componenti Volt devono essere wrappate dal gruppo localizzato:
@@ -37,6 +44,8 @@ Tutte le route che montano componenti Volt devono essere wrappate dal gruppo loc
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Laravel\Folio\Facades\Folio; // se usi Folio
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ### 2.2. Configurazione delle route
 
@@ -46,7 +55,10 @@ Tutte le route che montano componenti Volt devono essere wrappate dal gruppo loc
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Laravel\Folio\Facades\Folio; // se usi Folio
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -58,23 +70,32 @@ Route::group(
             return view('dashboard');
         })->name('dashboard');
 <<<<<<< HEAD
+<<<<<<< HEAD
         // Route che montano componenti Volt
         Route::get('/profile', \Livewire\Volt\Volt::component('profile'))->name('profile');
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
         // Route che montano componenti Volt
         Route::get('/profile', \Livewire\Volt\Volt::component('profile'))->name('profile');
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
         // Oppure, se usi Folio:
         Folio::route('pages');
     }
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente localizzate se Folio è incluso nel gruppo localizzato.
 ## 3. Localizzazione delle route Volt
 ### 3.1. Traduzione delle route
 =======
+=======
+>>>>>>> 1bb26ee (.)
 ```
 
 Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente localizzate se Folio è incluso nel gruppo localizzato.
@@ -85,7 +106,10 @@ Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente
 
 ### 3.1. Traduzione delle route
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - Crea i file `lang/{locale}/routes.php` per ogni lingua, come da [documentazione mcamara](https://github.com/mcamara/laravel-localization#translated-routes).
 - Esempio:
   ```php
@@ -96,6 +120,7 @@ Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente
   ];
   // lang/it/routes.php
 <<<<<<< HEAD
+<<<<<<< HEAD
       'profile' => 'profilo',
       'dashboard' => 'bacheca',
   ```
@@ -103,6 +128,8 @@ Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente
   Route::get(LaravelLocalization::transRoute('routes.profile'), \Livewire\Volt\Volt::component('profile'))->name('profile');
 ### 3.2. Link localizzati nei Blade/Volt
 =======
+=======
+>>>>>>> 1bb26ee (.)
   return [
       'profile' => 'profilo',
       'dashboard' => 'bacheca',
@@ -115,18 +142,24 @@ Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente
 
 ### 3.2. Link localizzati nei Blade/Volt
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - Nei template Blade o Volt, usa sempre i metodi di LaravelLocalization per generare i link:
   ```blade
   <a href="{{ LaravelLocalization::getLocalizedURL(app()->getLocale(), route('profile')) }}">
       {{ __('Profile') }}
   </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 4. Gestione della lingua nei componenti Volt
 ### 4.1. Accesso alla lingua corrente
 - All'interno di un componente Volt, puoi accedere alla lingua corrente con:
   $locale = app()->getLocale();
 =======
+=======
+>>>>>>> 1bb26ee (.)
   ```
 
 ---
@@ -139,35 +172,51 @@ Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente
   ```php
   $locale = app()->getLocale();
   ```
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - Puoi usare questa variabile per:
   - Caricare dati localizzati
   - Cambiare la lingua delle validazioni
   - Mostrare contenuti diversi in base alla lingua
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### 4.2. Cambio lingua da Volt
 =======
 
 ### 4.2. Cambio lingua da Volt
 
 >>>>>>> d5fc9cd (.)
+=======
+
+### 4.2. Cambio lingua da Volt
+
+>>>>>>> 1bb26ee (.)
 - Per cambiare lingua da un componente Volt (es. tramite un pulsante), puoi:
   - Emettere un redirect verso la stessa route con il nuovo prefisso lingua:
     ```php
     use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> d5fc9cd (.)
+=======
+
+>>>>>>> 1bb26ee (.)
     $changeLocale = function ($locale) {
         return redirect(LaravelLocalization::getLocalizedURL($locale, url()->current()));
     };
     ```
   - Oppure aggiornare la sessione/cookie e ricaricare la pagina.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### 4.3. Esempio di language switcher in Volt
 <?php
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ### 4.3. Esempio di language switcher in Volt
 
@@ -176,7 +225,10 @@ Se usi Folio, tutte le pagine in `resources/views/pages` saranno automaticamente
 
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 $locales = LaravelLocalization::getSupportedLocales();
 $current = app()->getLocale();
 ?>
@@ -196,12 +248,15 @@ $current = app()->getLocale();
     });
 </script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## 5. Validazione e messaggi localizzati
 - Livewire/Volt usa le stesse regole di validazione di Laravel.
 - I messaggi di errore saranno automaticamente localizzati se la route è localizzata e la lingua è corretta.
 - Puoi personalizzare i messaggi nei file `lang/{locale}/validation.php`.
 ## 6. Best practice e note operative
 =======
+=======
+>>>>>>> 1bb26ee (.)
 ```
 
 ---
@@ -216,12 +271,16 @@ $current = app()->getLocale();
 
 ## 6. Best practice e note operative
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - Tutte le route che montano componenti Volt devono essere wrappate dal gruppo localizzato.
 - Usa sempre i metodi di LaravelLocalization per generare link e redirect.
 - Versiona i file di route tradotte e aggiorna la documentazione ogni volta che aggiungi nuove pagine Volt.
 - Testa la localizzazione sia per le route che per i contenuti dinamici dei componenti Volt.
 - Per la cache delle route, usa sempre `php artisan route:trans:cache` se usi la cache delle route localizzate.
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## 7. Collegamenti utili
 <<<<<<< HEAD
@@ -246,12 +305,18 @@ $current = app()->getLocale();
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 ## 8. Checklist finale
 =======
+=======
+>>>>>>> 1bb26ee (.)
 
 ---
 
 ## 7. Collegamenti utili
 
+<<<<<<< HEAD
 - [Livewire Volt - Docs](https://livewire.laravel.com/docs/volt)
+=======
+- [Livewire Volt - Docs](https://livewire.laravel.com/project_docs/volt)
+>>>>>>> 1bb26ee (.)
 - [mcamara/laravel-localization - GitHub](https://github.com/mcamara/laravel-localization)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 
@@ -259,12 +324,16 @@ $current = app()->getLocale();
 
 ## 8. Checklist finale
 
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> 1bb26ee (.)
 - [ ] Tutte le route Volt sono wrappate dal gruppo localizzato
 - [ ] I link nei Blade/Volt usano i metodi di LaravelLocalization
 - [ ] I file `lang/{locale}/routes.php` sono completi e versionati
 - [ ] I componenti Volt accedono e gestiscono la lingua corrente correttamente
 - [ ] La documentazione è aggiornata e linkata nei README
+<<<<<<< HEAD
 <<<<<<< HEAD
 </rewritten_file> 
 =======
@@ -273,3 +342,7 @@ $current = app()->getLocale();
 
 </rewritten_file> 
 >>>>>>> d5fc9cd (.)
+=======
+
+</rewritten_file> 
+>>>>>>> 1bb26ee (.)
