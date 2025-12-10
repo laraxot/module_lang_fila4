@@ -46,8 +46,26 @@ abstract class BaseMorphPivot extends MorphPivot
     /** @var list<string> */
     protected $fillable = [
         'id',
+<<<<<<< HEAD
         'post_id',
         'post_type',
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        'post_id',
+        'post_type',
+=======
+        'post_id', 'post_type',
+>>>>>>> a12f125f4a (.)
+=======
+        'post_id',
+        'post_type',
+>>>>>>> b93ef594b4 (.)
+=======
+        'post_id', 'post_type',
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
         'related_type',
         'user_id',
         'note',
@@ -57,10 +75,30 @@ abstract class BaseMorphPivot extends MorphPivot
     {
         return [
             'id' => 'string',
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b93ef594b4 (.)
+>>>>>>> a7ee0d6 (.)
             'uuid' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
         ];
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+            'uuid' => 'string', 'created_at' => 'datetime', 'updated_at' => 'datetime', 'deleted_at' => 'datetime'];
+>>>>>>> a12f125f4a (.)
+=======
+>>>>>>> b93ef594b4 (.)
+=======
+            'uuid' => 'string', 'created_at' => 'datetime', 'updated_at' => 'datetime', 'deleted_at' => 'datetime'];
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
     }
 }

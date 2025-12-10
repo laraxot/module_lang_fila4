@@ -119,9 +119,15 @@ return [
 
 ## Collegamenti
 
+<<<<<<< HEAD
 - [Translation Rules](../Xot/docs/translation_rules.md)
 - [Translation Standards](./translation-standards.md)
 - [Best Practices](../Xot/docs/translations-best-practices.md)
+=======
+- [Translation Rules](../Xot/project_docs/translation_rules.md)
+- [Translation Standards](./translation-standards.md)
+- [Best Practices](../Xot/project_docs/translations-best-practices.md)
+>>>>>>> a7ee0d6 (.)
 
 ## Prossimi Passi
 
