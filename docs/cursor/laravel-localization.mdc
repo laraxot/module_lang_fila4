@@ -4,6 +4,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `<nome progetto>` project.
 # Laravel Localization Metadata for Cursor
 
@@ -13,19 +14,30 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `fixcity` project.
 >>>>>>> 9ce799e (Check & fix styling)
 =======
+=======
+>>>>>>> d5dfb13 (.)
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `fixcity` project.
 =======
+=======
+>>>>>>> a7ee0d6 (.)
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `saluteora` project.
 # Laravel Localization Metadata for Cursor
 
 ## Context
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `prediction market platform` project.
+<<<<<<< HEAD
 >>>>>>> a1de4f9 (.)
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+=======
+>>>>>>> a7ee0d6 (.)
+>>>>>>> d5dfb13 (.)
 
 ## Key Points
 
 - **Package**: `mcamara/laravel-localization`
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - **Purpose**: Enhance localization capabilities in Laravel applications for prediction market platforms.
@@ -38,6 +50,8 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 =======
 =======
 >>>>>>> d5fc9cd (.)
+=======
+>>>>>>> d5dfb13 (.)
 - **Purpose**: Enhance localization capabilities in Laravel applications for city management platforms.
 - **Suggested Actions**:
   - Add package to `composer.json`.
@@ -49,6 +63,8 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 >>>>>>> 9ce799e (Check & fix styling)
 =======
 =======
+=======
+>>>>>>> a7ee0d6 (.)
 - **Purpose**: Enhance localization capabilities in Laravel applications for prediction market platforms.
 - **Suggested Actions**:
   - Add package to `composer.json`.
@@ -56,13 +72,20 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
   - Register middleware for language redirects.
   - Implement language selector UI component for traders.
 - **Benefits**: Improved user experience with localized URLs and translated routes for global prediction markets.
+<<<<<<< HEAD
 >>>>>>> a1de4f9 (.)
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+=======
+>>>>>>> a7ee0d6 (.)
+>>>>>>> d5dfb13 (.)
 
 ## Implementation Notes
 
 - Configure routes for multiple languages
 - Set up middleware for automatic language detection
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 - Create language switcher component for trading interface
@@ -74,6 +97,8 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 - Test localization with different city management scenarios
 >>>>>>> 9ce799e (Check & fix styling)
 =======
+=======
+>>>>>>> d5dfb13 (.)
 - Create language switcher component for city management interface
 - Ensure city data translations are accurate
 - Test localization with different city management scenarios
@@ -82,7 +107,15 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 - Ensure market data translations are accurate
 - Test localization with different market scenarios
 >>>>>>> a1de4f9 (.)
+<<<<<<< HEAD
 >>>>>>> d5fc9cd (.)
+=======
+=======
+- Create language switcher component for trading interface
+- Ensure market data translations are accurate
+- Test localization with different market scenarios
+>>>>>>> a7ee0d6 (.)
+>>>>>>> d5dfb13 (.)
 
 ## Related Documentation
 
