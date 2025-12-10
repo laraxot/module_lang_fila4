@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Spatie\QueueableAction\QueueableAction;
 
 class ReadTranslationFileAction
@@ -14,36 +13,38 @@ class ReadTranslationFileAction
     /**
      * Legge il contenuto di un file di traduzione.
      *
-     * @param  string  $filePath  Percorso del file di traduzione
-     * @return array<string, mixed> Contenuto del file di traduzione
+     * @param string $filePath Percorso del file di traduzione
      *
-     * @throws Exception Se il file non esiste o non è leggibile
+     * @throws \Exception Se il file non esiste o non è leggibile
+     *
+     * @return array<string, mixed> Contenuto del file di traduzione
      */
     public function execute(string $filePath): array
     {
         if (! file_exists($filePath)) {
-            throw new Exception("File di traduzione non trovato: {$filePath}");
+            throw new \Exception("File di traduzione non trovato: {$filePath}");
         }
 
         if (! is_readable($filePath)) {
-            throw new Exception("File di traduzione non leggibile: {$filePath}");
+            throw new \Exception("File di traduzione non leggibile: {$filePath}");
         }
 
         // Carica il file di traduzione
         $translations = require $filePath;
 
         if (! is_array($translations)) {
-            throw new Exception("File di traduzione non valido: {$filePath}");
+            throw new \Exception("File di traduzione non valido: {$filePath}");
         }
 
-        /** @phpstan-ignore return.type */
+        /* @phpstan-ignore return.type */
         return $translations;
     }
 
     /**
      * Converte un array di traduzioni in formato PHP.
      *
-     * @param  array<string, mixed>  $translations  Traduzioni da convertire
+     * @param array<string, mixed> $translations Traduzioni da convertire
+     *
      * @return string Codice PHP del file di traduzione
      */
     public function toPhp(array $translations): string
@@ -58,8 +59,9 @@ class ReadTranslationFileAction
     /**
      * Converte un array in formato PHP con indentazione.
      *
-     * @param  array<string, mixed>  $array  Array da convertire
-     * @param  int  $indent  Livello di indentazione
+     * @param array<string, mixed> $array  Array da convertire
+     * @param int                  $indent Livello di indentazione
+     *
      * @return string Codice PHP dell'array
      */
     private function arrayToPhp(array $array, int $indent = 0): string
