@@ -46,17 +46,8 @@ abstract class BaseMorphPivot extends MorphPivot
     /** @var list<string> */
     protected $fillable = [
         'id',
-<<<<<<< HEAD
-<<<<<<< HEAD
         'post_id',
         'post_type',
-=======
-        'post_id', 'post_type',
->>>>>>> 8b0b6ac (.)
-=======
-        'post_id',
-        'post_type',
->>>>>>> 1c4a063 (.)
         'related_type',
         'user_id',
         'note',
@@ -66,20 +57,10 @@ abstract class BaseMorphPivot extends MorphPivot
     {
         return [
             'id' => 'string',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 1c4a063 (.)
             'uuid' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
             'deleted_at' => 'datetime',
         ];
-<<<<<<< HEAD
-=======
-            'uuid' => 'string', 'created_at' => 'datetime', 'updated_at' => 'datetime', 'deleted_at' => 'datetime'];
->>>>>>> 8b0b6ac (.)
-=======
->>>>>>> 1c4a063 (.)
     }
 }
