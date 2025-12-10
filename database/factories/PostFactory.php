@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Lang\Models\Post;
 
 /**
- * Post Factory.
+ * Post Factory
  *
  * @extends Factory<Post>
  */

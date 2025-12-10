@@ -9,12 +9,13 @@ use Filament\Tables\Columns\TextColumn;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
+use Override;
 
 class ListTranslationFiles extends XotBaseListRecords
 {
     protected static string $resource = TranslationFileResource::class;
 
-    #[\Override]
+    #[Override]
     public function getTableColumns(): array
     {
         return [
@@ -25,7 +26,7 @@ class ListTranslationFiles extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[\Override]
+    #[Override]
     protected function getHeaderActions(): array
     {
         $parentActions = parent::getHeaderActions();

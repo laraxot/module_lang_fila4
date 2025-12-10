@@ -1,670 +1,198 @@
-# 🌐 Lang Module - Advanced Translation Management System
+# Modulo Lang - Documentazione
 
-## 📋 Overview
+## Panoramica
+Il modulo Lang gestisce automaticamente le traduzioni per tutti i componenti Filament dell'applicazione Laraxot/PTVX tramite:
+1. **LangServiceProvider**: Traduzione automatica componenti (elimina necessità di `->label()`, `->placeholder()`, `->helperText()`)
+2. **Spatie Translatable Plugin**: Supporto contenuti multilingua nei modelli (integrazione Lara Zeus)
 
-Modulo avanzato per la gestione automatica delle traduzioni in Laraxot/PTVX con integrazione Filament 4.x, Spatie Translatable e supporto HTML2PDF per report di traduzione.
-
-**Namespace:** `Modules\Lang`  
-**Filament:** v4.2.0 (Full Integration)  
-**Spatie Translatable:** v3.x  
-**PHPStan:** Level 10 Compliant  
-**HTML2PDF:** Report Traduzioni  
-
----
-
-## 🎯 Core Features
-
-### 1. Automatic Translation System
-- ✅ Traduzione automatica componenti Filament
-- ✅ Eliminazione necessità `->label()`, `->placeholder()`, `->helperText()`
-- ✅ Supporto struttura espansa traduzioni
-- ✅ Integrazione con AutoLabelAction
-- ✅ Gestione messaggi validazione
-
-### 2. Spatie Translatable Integration
-- ✅ Supporto contenuti multilingua modelli
-- ✅ LangBase classes (Resource, Page, etc.)
-- ✅ LocaleSwitcher per Filament
-- ✅ Plugin Lara Zeus registrato
-- ✅ Gestione campi JSON traducibili
-
-### 3. Advanced Translation Services
-- ✅ TranslatorService personalizzato
-- ✅ AutoLabelAction intelligente
-- ✅ Traduzione contestuale
-- ✅ Supporto placeholder dinamici
-- ✅ Validazione sintassi traduzioni
-
-### 4. Translation Reports
-- ✅ Report copertura traduzioni
-- ✅ Analisi traduzioni mancanti
-- ✅ Report PDF con HTML2PDF
-- ✅ Statistiche utilizzo traduzioni
-- ✅ Export/Import traduzioni
-
----
-
-## 🏗️ Architecture
-
-### Directory Structure
-
-```
-Modules/Lang/
-├── app/
-│   ├── Actions/
-│   │   ├── AutoLabelAction.php        # Auto-traduzione componenti
-│   │   ├── ReadTranslationFileAction.php
-│   │   ├── WriteTranslationFileAction.php
-│   │   └── EditTranslationFileAction.php
-│   ├── Services/
-│   │   ├── TranslatorService.php      # Estensione translator Laravel
-│   │   ├── TranslationReportService.php # Report traduzioni
-│   │   └── TranslationValidationService.php
-│   ├── Providers/
-│   │   └── LangServiceProvider.php     # Service provider principale
-│   ├── Filament/
-│   │   ├── Resources/
-│   │   │   └── TranslationResource/
-│   │   ├── Pages/
-│   │   │   ├── ManageTranslations.php
-│   │   │   └── TranslationCoverage.php
-│   │   └── Widgets/
-│   │       ├── TranslationStatsWidget.php
-│   │       └── LocaleSwitcherWidget.php
-│   ├── Models/
-│   │   ├── Translation.php
-│   │   └── Locale.php
-│   └── Base/
-│       ├── LangBaseResource.php       # Resource con translatable
-│       ├── LangBaseListRecords.php
-│       ├── LangBaseCreateRecord.php
-│       └── LangBaseEditRecord.php
-├── lang/
-│   ├── it/
-│   │   ├── txt.php                    # Traduzioni generiche
-│   │   ├── validation.php            # Validazione
-│   │   └── filament.php              # Filament specific
-│   └── en/
-│       ├── txt.php
-│       ├── validation.php
-│       └── filament.php
-├── tests/
-│   ├── Unit/
-│   │   ├── AutoLabelActionTest.php
-│   │   ├── TranslatorServiceTest.php
-│   │   └── TranslationValidationTest.php
-│   └── Feature/
-└── docs/
-    ├── README.md                      # This file
-    ├── translation-reports.md         # PDF reports guide
-    ├── spatie-translatable-guide.md    # Spatie guide
-    └── best-practices.md              # Best practices
-```
-
----
-
-## 🔧 Core Services
+## Componenti Principali
 
 ### LangServiceProvider
+Service Provider che estende `XotBaseServiceProvider` e configura automaticamente tutti i componenti Filament per utilizzare le traduzioni.
 
+**Caratteristiche:**
+- Registrazione automatica delle traduzioni per tutti i componenti Filament
+- Supporto per Field, Column, Entry, BaseFilter, Action, Section, Step
+- Integrazione con AutoLabelAction per traduzione automatica
+- Gestione dei messaggi di validazione
+
+**Pattern utilizzato:**
 ```php
-class LangServiceProvider extends XotBaseServiceProvider
-{
-    public function boot(): void
-    {
-        // Auto-configurazione componenti Filament
-        Field::configureUsing(function (Field $component) {
-            return app(AutoLabelAction::class)->execute($component);
-        });
-        
-        Select::configureUsing(function (Select $component) {
-            $component = app(AutoLabelAction::class)->execute($component);
-            // Placeholder default per select
-            if (!$component->getPlaceholder()) {
-                $component->placeholder(__('txt.select_placeholder'));
-            }
-            return $component;
-        });
-        
-        // Configurazione altri componenti...
-    }
-}
+Field::configureUsing(function (Field $component) {
+    $component = app(AutoLabelAction::class)->execute($component);
+    // Auto-traduzione di label, placeholder, helperText, description
+    return $component;
+});
 ```
 
-### AutoLabelAction
+## Struttura Traduzioni
+
+### File di Traduzione
+Le traduzioni sono organizzate in `Modules/Lang/lang/{locale}/`:
+
+- `txt.php` - Traduzioni generiche
+- Altri file specifici per contesto
+
+### Struttura Espansa
+Tutti i file di traduzione seguono la struttura espansa:
 
 ```php
-class AutoLabelAction
-{
-    public function execute($component): mixed
-    {
-        $name = $this->getComponentName($component);
-        $translation = $this->getTranslation($name);
-        
-        // Applica traduzioni automatiche
-        if (method_exists($component, 'label') && !$component->getLabel()) {
-            $component->label($translation['label'] ?? $name);
-        }
-        
-        if (method_exists($component, 'placeholder') && !$component->getPlaceholder()) {
-            $component->placeholder($translation['placeholder'] ?? '');
-        }
-        
-        if (method_exists($component, 'helperText') && !$component->getHelperText()) {
-            $component->helperText($translation['helper_text'] ?? '');
-        }
-        
-        return $component;
-    }
-    
-    private function getTranslation(string $name): array
-    {
-        $key = "txt.{$name}";
-        $translation = __($key);
-        
-        // Se la traduzione è un array espanso, restituiscilo
-        if (is_array($translation)) {
-            return $translation;
-        }
-        
-        // Altrimenti crea struttura espansa
-        return [
-            'label' => $translation,
-            'placeholder' => __("{$key}_placeholder"),
-            'helper_text' => __("{$key}_helper_text"),
-            'description' => __("{$key}_description"),
-        ];
-    }
-}
+'field_name' => [
+    'label' => 'Etichetta',
+    'placeholder' => 'Placeholder',
+    'helper_text' => 'Testo di aiuto',
+    'description' => 'Descrizione',
+],
 ```
 
-### TranslationReportService
+## AutoLabelAction
 
+### Funzionamento
+L'action `AutoLabelAction` è il cuore del sistema di traduzione automatica:
+
+1. Riceve un componente Filament
+2. Determina il nome del campo/componente
+3. Cerca la traduzione appropriata nei file di traduzione
+4. Applica la traduzione al componente
+5. Restituisce il componente tradotto
+
+### Metodi Supportati
+- `label` - Etichetta principale
+- `placeholder` - Testo segnaposto
+- `helperText` - Testo di aiuto
+- `description` - Descrizione
+- `heading` - Intestazione (per Section)
+- `icon` - Icona (per Action)
+
+## Best Practices
+
+### ✅ Pattern Corretto
 ```php
-class TranslationReportService
-{
-    public function generateCoverageReport(array $options = []): string
-    {
-        try {
-            $data = $this->prepareCoverageData($options);
-            
-            $html = view('lang::pdf.translation-coverage', [
-                'data' => $data,
-                'options' => $options,
-                'generatedAt' => now(),
-            ])->render();
-            
-            $html2pdf = new Html2Pdf('P', 'A4', 'it', true, 'UTF-8', [15, 20, 15, 20]);
-            $html2pdf->setDefaultFont('Helvetica');
-            $html2pdf->writeHTML($html);
-            
-            return $html2pdf->output('', 'S');
-            
-        } catch (Html2PdfException $e) {
-            $html2pdf->clean();
-            throw new TranslationReportException('Failed to generate coverage report: ' . $e->getMessage());
-        }
-    }
-    
-    private function prepareCoverageData(array $options): array
-    {
-        return [
-            'coverage_statistics' => $this->getCoverageStatistics($options),
-            'missing_translations' => $this->getMissingTranslations($options),
-            'unused_translations' => $this->getUnusedTranslations($options),
-            'locale_comparison' => $this->getLocaleComparison($options),
-            'recommendations' => $this->generateRecommendations($options),
-        ];
-    }
-}
+// Nel Resource o nella Page
+TextInput::make('email')
+    ->required()
+    ->email();
+
+// La traduzione viene applicata automaticamente dal LangServiceProvider
 ```
 
----
+### ❌ Anti-Pattern (da evitare)
+```php
+// MAI fare questo
+TextInput::make('email')
+    ->label('Email')  // ❌ VIETATO
+    ->placeholder('Inserisci email')  // ❌ VIETATO
+    ->helperText('Email valida')  // ❌ VIETATO
+    ->required();
+```
 
-## 🌍 Spatie Translatable Integration
+## TranslatorService
 
-### Plugin Registration
+### Descrizione
+Estensione del translator Laravel standard con funzionalità aggiuntive per l'integrazione con il sistema di gestione traduzioni.
+
+**Nota:** Attualmente non registrato di default (metodo `registerTranslator()` commentato nel ServiceProvider).
+
+## Componenti Configurati Automaticamente
+
+Il LangServiceProvider configura automaticamente:
+
+1. **Field** - Tutti i campi form
+2. **Select** - Campo select con placeholder default
+3. **Column** - Colonne tabelle con wrapping e allineamento
+4. **Entry** - Entry di Infolist
+5. **BaseFilter** - Filtri tabelle
+6. **Action** - Tutte le azioni
+7. **Section** - Sezioni con heading
+8. **Step** - Step di wizard
+
+## Integrazione con Altri Moduli
+
+### Modulo Xot
+Il modulo Lang dipende dal modulo Xot per:
+- `XotBaseServiceProvider` - Classe base per ServiceProvider
+- `BladeService` - Registrazione componenti Blade (commentato)
+
+### Modulo User
+- Utilizza le traduzioni di validazione da `user::validation`
+
+## Troubleshooting
+
+### Le traduzioni non vengono applicate
+1. Verificare che il LangServiceProvider sia registrato in `config/app.php`
+2. Pulire le cache: `php artisan cache:clear && php artisan config:clear`
+3. Verificare la struttura del file di traduzione (deve essere espansa)
+
+### Conflitti con traduzioni esistenti
+Se un componente ha già una label impostata manualmente, rimuoverla e affidarsi al sistema automatico.
+
+## Sviluppi Futuri
+
+### Funzionalità Pianificate
+- Registrazione componenti Blade custom
+- Attivazione TranslatorService personalizzato
+- Supporto per ulteriori componenti Filament
+
+## Spatie Translatable Plugin
+
+### Overview
+
+Il modulo Lang fornisce integrazione con **Lara Zeus Spatie Translatable** per supportare contenuti multilingua.
+
+### Panel Registration
+
+Il plugin è registrato in `AdminPanelProvider`:
 
 ```php
-// In AdminPanelProvider
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 
 $panel->plugins([
     SpatieTranslatablePlugin::make()
         ->defaultLocales(['it', 'en']),
-        ->flags([
-            'it' => asset('flags/it.svg'),
-            'en' => asset('flags/en.svg'),
-        ]),
 ]);
 ```
 
-### LangBase Resource
+### LangBase Classes
 
-```php
-abstract class LangBaseResource extends XotBaseResource
-{
-    use HasTranslations;
-    
-    public static function getModel(): string
-    {
-        // Il modello deve avere il trait HasTranslations
-        return static::$model;
-    }
-    
-    public static function getFormSchema(): array
-    {
-        return [
-            // Campo traducibile automatico
-            TextInput::make('name')
-                ->required()
-                ->maxLength(255),
-            
-            // Campi traducibili espliciti
-            Tabs::make('Translations')
-                ->tabs([
-                    Tab::make('Italian')
-                        ->schema([
-                            TextInput::make('title_it')
-                                ->label('Titolo'),
-                            TextArea::make('description_it')
-                                ->label('Descrizione'),
-                        ]),
-                    Tab::make('English')
-                        ->schema([
-                            TextInput::make('title_en')
-                                ->label('Title'),
-                            TextArea::make('description_en')
-                                ->label('Description'),
-                        ]),
-                ]),
-        ];
-    }
-}
-```
+Classi base che forniscono funzionalità multilingua:
 
-### Model Requirements
+- `LangBaseResource` - Resource con trait Translatable
+- `LangBaseListRecords` - ListRecords con LocaleSwitcher
+- `LangBaseCreateRecord` - CreateRecord con supporto lingue  
+- `LangBaseEditRecord` - EditRecord con supporto lingue
 
-```php
-use Spatie\Translatable\HasTranslations;
+### Requisiti per Usare LangBase
 
-class Article extends Model
-{
-    use HasTranslations;
-    
-    protected $fillable = ['title', 'description', 'content'];
-    
-    public $translatable = ['title', 'description', 'content'];
-    
-    // Accessor per traduzione corrente
-    public function getTitleAttribute($value): string
-    {
-        return $this->getTranslation('title', app()->getLocale());
-    }
-}
-```
+Per estendere le classi `LangBase*`:
 
----
+1. ✅ Il **panel** deve avere il plugin registrato
+2. ✅ Il **modello** deve avere trait `HasTranslations`
+3. ✅ I **campi traducibili** devono essere JSON nel database
 
-## 📄 Translation Reports
+### Moduli che Richiedono il Plugin
 
-### Coverage Report Template
+Tutti i moduli le cui risorse estendono `LangBase*` devono registrare il plugin nel proprio `AdminPanelProvider`:
 
-```blade
-{{-- resources/views/pdf/translation-coverage.blade.php --}}
-<page backtop="20mm" backbottom="20mm" backleft="25mm" backright="25mm">
-    <page_header>
-        <h1 style="font-size: 16pt; text-align: center; color: #2c3e50;">
-            Translation Coverage Report
-        </h1>
-        <p style="text-align: center; font-size: 10pt; color: #7f8c8d;">
-            Generated: {{ $generatedAt->format('d/m/Y H:i') }}
-        </p>
-    </page_header>
+- ✅ `Lang` - ha plugin registrato
+- ✅ `Notify` - **FIX APPLICATO** (plugin registrato)
+- ⚠️  Altri moduli - verificare se usano LangBase
 
-    <div style="margin: 15mm 0;">
-        <!-- Coverage Statistics -->
-        <h2 style="font-size: 14pt; color: #2c3e50; margin-bottom: 8mm;">Coverage Statistics</h2>
-        
-        <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-                <td style="width: 25%; padding: 8mm; background-color: #d4edda; border: 1px solid #dee2e6;">
-                    <div style="font-size: 18pt; font-weight: bold; text-align: center;">
-                        {{ $data['coverage_statistics']['total_keys'] }}
-                    </div>
-                    <div style="font-size: 9pt; text-align: center;">Total Keys</div>
-                </td>
-                <td style="width: 25%; padding: 8mm; background-color: #d4edda; border: 1px solid #dee2e6;">
-                    <div style="font-size: 18pt; font-weight: bold; text-align: center;">
-                        {{ $data['coverage_statistics']['translated_keys'] }}
-                    </div>
-                    <div style="font-size: 9pt; text-align: center;">Translated</div>
-                </td>
-                <td style="width: 25%; padding: 8mm; background-color: #fff3cd; border: 1px solid #dee2e6;">
-                    <div style="font-size: 18pt; font-weight: bold; text-align: center;">
-                        {{ $data['coverage_statistics']['missing_keys'] }}
-                    </div>
-                    <div style="font-size: 9pt; text-align: center;">Missing</div>
-                </td>
-                <td style="width: 25%; padding: 8mm; background-color: #f8d7da; border: 1px solid #dee2e6;">
-                    <div style="font-size: 18pt; font-weight: bold; text-align: center;">
-                        {{ $data['coverage_statistics']['coverage_rate'] }}%
-                    </div>
-                    <div style="font-size: 9pt; text-align: center;">Coverage</div>
-                </td>
-            </tr>
-        </table>
+### Documentazione
 
-        <!-- Missing Translations -->
-        <h2 style="font-size: 14pt; margin-bottom: 8mm;">Missing Translations</h2>
-        
-        <table style="width: 100%; border-collapse: collapse;">
-            <tr style="background-color: #e9ecef;">
-                <th style="border: 1px solid #dee2e6; padding: 5mm; font-size: 10pt;">Key</th>
-                <th style="border: 1px solid #dee2e6; padding: 5mm; font-size: 10pt;">Locale</th>
-                <th style="border: 1px solid #dee2e6; padding: 5mm; font-size: 10pt;">Context</th>
-            </tr>
-            @foreach($data['missing_translations'] as $missing)
-            <tr>
-                <td style="border: 1px solid #dee2e6; padding: 4mm; font-size: 9pt;">
-                    {{ $missing['key'] }}
-                </td>
-                <td style="border: 1px solid #dee2e6; padding: 4mm; font-size: 9pt;">
-                    {{ $missing['locale'] }}
-                </td>
-                <td style="border: 1px solid #dee2e6; padding: 4mm; font-size: 9pt;">
-                    {{ $missing['context'] }}
-                </td>
-            </tr>
-            @endforeach
-        </table>
-    </div>
+Consultare [Notify Spatie Translatable Integration](../../Notify/docs/spatie-translatable-integration.md) per esempio completo.
 
-    <page_footer>
-        <table style="width: 100%; font-size: 8pt; color: #7f8c8d;">
-            <tr>
-                <td style="width: 50%;">
-                    Lang Module Report - Generated by PTVX System
-                </td>
-                <td style="width: 50%; text-align: right;">
-                    Page [[page_cu]] of [[page_nb]]
-                </td>
-            </tr>
-        </table>
-    </page_footer>
-</page>
-```
+## Collegamenti
 
----
+- [Modulo Xot](../../Xot/docs/readme.md)
+- [Best Practices Filament](../../Xot/docs/filament-best-practices.md)
+- [Regole Traduzioni Laraxot](./../../../docs/laraxot-conventions.md)
+- [Notify Spatie Translatable](../../Notify/docs/spatie-translatable-integration.md)
+- [Lara Zeus Spatie Translatable Docs](https://filamentphp.com/plugins/lara-zeus-spatie-translatable)
 
-## 🎨 Filament Integration
+## Regole Fondamentali
 
-### Translation Management Resource
+> **MAI usare ->label(), ->placeholder(), ->helperText() nei componenti Filament**
+> 
+> Tutte le traduzioni DEVONO essere gestite automaticamente tramite il LangServiceProvider e i file di traduzione con struttura espansa.
 
-```php
-class TranslationResource extends XotBaseResource
-{
-    protected static ?string $model = Translation::class;
-    
-    public static function getPages(): array
-    {
-        return [
-            'index' => Pages\ManageTranslations::route('/'),
-            'coverage' => Pages\TranslationCoverage::route('/coverage'),
-        ];
-    }
-    
-    public static function getWidgets(): array
-    {
-        return [
-            TranslationStatsWidget::class,
-            LocaleSwitcherWidget::class,
-        ];
-    }
-}
-```
-
-### Translation Stats Widget
-
-```php
-class TranslationStatsWidget extends XotBaseWidget
-{
-    protected static string $view = 'lang::filament.widgets.translation-stats';
-    
-    public function getViewData(): array
-    {
-        $service = app(TranslationReportService::class);
-        
-        return [
-            'total_keys' => $service->getTotalKeys(),
-            'translated_keys' => $service->getTranslatedKeys(),
-            'missing_keys' => $service->getMissingKeys(),
-            'coverage_rate' => $service->getCoverageRate(),
-            'locales' => $service->getActiveLocales(),
-        ];
-    }
-}
-```
-
----
-
-## 🧪 Testing
-
-### AutoLabelAction Test
-
-```php
-class AutoLabelActionTest extends TestCase
-{
-    /** @test */
-    public function it_translates_text_input_component()
-    {
-        $action = new AutoLabelAction();
-        $component = TextInput::make('email');
-        
-        $translated = $action->execute($component);
-        
-        $this->assertEquals(__('txt.email.label'), $translated->getLabel());
-        $this->assertEquals(__('txt.email.placeholder'), $translated->getPlaceholder());
-    }
-    
-    /** @test */
-    public function it_preserves_existing_labels()
-    {
-        $action = new AutoLabelAction();
-        $component = TextInput::make('email')
-            ->label('Custom Email Label');
-        
-        $translated = $action->execute($component);
-        
-        $this->assertEquals('Custom Email Label', $translated->getLabel());
-    }
-}
-```
-
-### Translation Validation Test
-
-```php
-class TranslationValidationTest extends TestCase
-{
-    /** @test */
-    public function it_validates_expanded_structure()
-    {
-        $validator = app(TranslationValidationService::class);
-        
-        $valid = [
-            'field_name' => [
-                'label' => 'Label',
-                'placeholder' => 'Placeholder',
-            ],
-        ];
-        
-        $this->assertTrue($validator->validateStructure($valid));
-    }
-    
-    /** @test */
-    public function it_detects_missing_expanded_keys()
-    {
-        $validator = app(TranslationValidationService::class);
-        
-        $invalid = [
-            'field_name' => 'Simple string', // Should be array
-        ];
-        
-        $issues = $validator->validateStructure($invalid);
-        $this->assertNotEmpty($issues);
-    }
-}
-```
-
----
-
-## 📊 Quality Metrics
-
-| Metric | Current | Target | Status |
-|--------|---------|--------|--------|
-| Translation Coverage | 92% | 95% | 🔄 In Progress |
-| AutoLabel Success Rate | 98% | 99% | ✅ Good |
-| Spatie Integration | 100% | 100% | ✅ Complete |
-| PHPStan Level | 10 | 10 | ✅ Pass |
-| Test Coverage | 85% | 90% | 🔄 In Progress |
-
----
-
-## 🚀 Installation & Setup
-
-### 1. Module Installation
-
-```bash
-# Enable the module
-php artisan module:enable Lang
-
-# Publish translations
-php artisan vendor:publish --tag=lang-translations
-
-# Clear caches
-php artisan cache:clear
-php artisan config:clear
-```
-
-### 2. Spatie Translatable Setup
-
-```bash
-# Install Spatie Translatable
-composer require spatie/laravel-translatable
-
-# Publish migration
-php artisan vendor:publish --provider="Spatie\Translatable\TranslatableServiceProvider" --tag="translatable-migrations"
-
-# Run migration
-php artisan migrate
-```
-
-### 3. Panel Configuration
-
-```php
-// In app/Providers/Filament/AdminPanelProvider.php
-use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
-
-public function panel(Panel $panel): Panel
-{
-    return $panel
-        ->plugin(
-            SpatieTranslatablePlugin::make()
-                ->defaultLocales(['it', 'en'])
-        );
-}
-```
-
----
-
-## 🎯 Best Practices
-
-### 1. Translation Structure
-
-```php
-// ✅ GOOD: Expanded structure
-return [
-    'email' => [
-        'label' => 'Email',
-        'placeholder' => 'Inserisci la tua email',
-        'helper_text' => 'Usa un indirizzo email valido',
-    ],
-];
-
-// ❌ BAD: Flat structure
-return [
-    'email' => 'Email',
-    'email_placeholder' => 'Inserisci email',
-];
-```
-
-### 2. Component Usage
-
-```php
-// ✅ GOOD: Automatic translation
-TextInput::make('email')
-    ->required()
-    ->email();
-
-// ❌ BAD: Manual labels
-TextInput::make('email')
-    ->label('Email')  // ❌ VIETATO
-    ->placeholder('Email');  // ❌ VIETATO
-```
-
-### 3. Translatable Models
-
-```php
-// ✅ GOOD: Proper translatable setup
-class Article extends Model
-{
-    use HasTranslations;
-    
-    public $translatable = ['title', 'content'];
-}
-
-// ❌ BAD: Missing translatable trait
-class Article extends Model
-{
-    public $translatable = ['title']; // ❌ No HasTranslations trait
-}
-```
-
----
-
-## 📚 Documentation Links
-
-### Internal Documentation
-- [Translation Reports Guide](./translation-reports.md)
-- [Spatie Translatable Guide](./spatie-translatable-guide.md)
-- [Best Practices](./best-practices.md)
-- [HTML2PDF Best Practices](../Xot/docs/html2pdf-best-practices.md)
-
-### Related Modules
-- [Notify Module](../Notify/docs/README.md) - Spatie integration example
-- [Xot Module](../Xot/docs/README.md) - Base framework
-- [Activity Module](../Activity/docs/README.md) - Activity logging
-
-### External Resources
-- [Laravel Localization](https://laravel.com/docs/localization)
-- [Spatie Translatable](https://github.com/spatie/laravel-translatable)
-- [Lara Zeus Plugin](https://filamentphp.com/plugins/lara-zeus-spatie-translatable)
-
----
-
-## 🔗 Quick Links
-
-- **Module Overview**: [Modules/Lang](../Lang)
-- **Translation Management**: [Manage Translations](./manage-translations.md)
-- **Coverage Reports**: [Translation Reports](./translation-reports.md)
-- **Spatie Guide**: [Spatie Translatable](./spatie-translatable-guide.md)
-- **Best Practices**: [Best Practices](./best-practices.md)
-
----
-
-**Last Updated:** 2025-12-09  
-**Version:** 2.1.0  
-**Status:** ✅ Production Ready  
-**PHPStan Level:** 10 ✅  
-**Translation Coverage:** 92% 🔄  
-**HTML2PDF Integration:** ✅
+*Ultimo aggiornamento: gennaio 2025*
