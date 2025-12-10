@@ -1,8 +1,8 @@
 # Collegamenti ai Moduli che utilizzano le Traduzioni
 
 Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento alle traduzioni centralizzate.
-
 ## Moduli con collegamento
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -23,6 +23,8 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 =======
 =======
 >>>>>>> fe4a1a8 (.)
+=======
+>>>>>>> 9059f82 (.)
 - [Activity](../../Activity/project_docs/lang-link.md)
 - [Chart](../../Chart/project_docs/lang-link.md)
 - [Cms](../../Cms/project_docs/lang-link.md)
@@ -38,9 +40,12 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [User](../../User/project_docs/lang-link.md)
 - [Xot](../../Xot/project_docs/lang-link.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 9ce799e (Check & fix styling)
 =======
 =======
+=======
+>>>>>>> 9059f82 (.)
 - [Activity](../../Activity/docs/lang-link.md)
 - [Chart](../../Chart/docs/lang-link.md)
 - [Cms](../../Cms/docs/lang-link.md)
@@ -55,9 +60,11 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/docs/lang-link.md)
 - [User](../../User/docs/lang-link.md)
 - [Xot](../../Xot/docs/lang-link.md)
+<<<<<<< HEAD
 >>>>>>> 8b0b6ac (.)
 >>>>>>> fe4a1a8 (.)
 
+=======
+>>>>>>> 9059f82 (.)
 ---
-
 Per ogni risorsa o campo localizzato, consulta sia la documentazione del modulo che la documentazione di Lang per garantire coerenza e aggiornamento delle traduzioni.
