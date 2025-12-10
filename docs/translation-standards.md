@@ -1,8 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Standard per le Traduzioni nel Progetto <nome progetto>
 =======
 # Standard per le Traduzioni nel Progetto 
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+# Standard per le Traduzioni nel Progetto 
+=======
+# Standard per le Traduzioni nel Progetto SaluteOra
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 ## Struttura delle Cartelle
 
@@ -169,10 +176,17 @@ return [
 
 ### Collegamenti
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [<nome progetto>/docs/appointment-management.md](../../<nome progetto>/docs/appointment-management.md)
 =======
 - [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md)
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+- [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md)
+=======
+- [SaluteOra/docs/appointment-management.md](../../SaluteOra/docs/appointment-management.md)
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 - [Lang/translation_keys_best_practices.md](./translation_keys_best_practices.md)
 
 ### Checklist aggiornata

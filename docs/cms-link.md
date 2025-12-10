@@ -9,10 +9,17 @@ Il modulo Lang fornisce il sistema di traduzione utilizzato dal modulo Cms nei s
 ## Convenzioni di Namespace e Struttura
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 =======
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
+=======
+Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 ## Punti di Integrazione
 
@@ -23,12 +30,21 @@ Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzi
 ## Collegamenti Bidirezionali
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
 =======
 - [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/project_docs/lang-link.md)
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+- [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
+- [Lang Link nel modulo Cms](../../Cms/project_docs/lang-link.md)
+=======
+- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
+- [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 ---
 
@@ -40,14 +56,26 @@ Quando aggiungi nuovi componenti Filament nel modulo Cms, ricorda di:
 
 ## Collegamenti tra versioni di cms-link.md
 <<<<<<< HEAD
+<<<<<<< HEAD
 * [cms-link.md](../../../Xot/docs/cms-link.md)
 * [cms-link.md](../../../User/docs/cms-link.md)
 * [cms-link.md](../../../UI/docs/cms-link.md)
 * [cms-link.md](../../../Lang/docs/cms-link.md)
 =======
+=======
+>>>>>>> fe4a1a8 (.)
 * [cms-link.md](../../../Xot/project_docs/cms-link.md)
 * [cms-link.md](../../../User/project_docs/cms-link.md)
 * [cms-link.md](../../../UI/project_docs/cms-link.md)
 * [cms-link.md](../../../Lang/project_docs/cms-link.md)
+<<<<<<< HEAD
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+=======
+* [cms-link.md](../../../Xot/docs/cms-link.md)
+* [cms-link.md](../../../User/docs/cms-link.md)
+* [cms-link.md](../../../UI/docs/cms-link.md)
+* [cms-link.md](../../../Lang/docs/cms-link.md)
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 

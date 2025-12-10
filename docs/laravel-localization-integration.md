@@ -123,10 +123,17 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 - Usa sempre i metodi di LaravelLocalization per link e redirect nei Blade
 - Testa la localizzazione sia per le route che per i contenuti delle pagine Folio
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Documenta la strategia in `/Modules/Lang/docs/laravel-localization-integration.md` e linka dal README
 =======
 - Documenta la strategia in `/Modules/Lang/project_docs/laravel-localization-integration.md` e linka dal README
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+- Documenta la strategia in `/Modules/Lang/project_docs/laravel-localization-integration.md` e linka dal README
+=======
+- Documenta la strategia in `/Modules/Lang/docs/laravel-localization-integration.md` e linka dal README
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 - Per la cache delle route, usa sempre `php artisan route:trans:cache`
 
 ---
@@ -138,10 +145,17 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 - Nei Blade Folio, sostituisci tutti i link hardcoded con i metodi di LaravelLocalization
 - Se usi parametri dinamici multilingua, aggiorna i model per supportare `LocalizedUrlRoutable`
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Documenta la strategia in `/Modules/Lang/docs/laravel-localization-integration.md` e linka dal README
 =======
 - Documenta la strategia in `/Modules/Lang/project_docs/laravel-localization-integration.md` e linka dal README
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+- Documenta la strategia in `/Modules/Lang/project_docs/laravel-localization-integration.md` e linka dal README
+=======
+- Documenta la strategia in `/Modules/Lang/docs/laravel-localization-integration.md` e linka dal README
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 ---
 
@@ -160,9 +174,16 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 
 - [mcamara/laravel-localization - GitHub](https://github.com/mcamara/laravel-localization)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Laravel Folio - Docs](https://laravel.com/docs/12.x/folio)
 =======
 - [Laravel Folio - Docs](https://laravel.com/project_docs/12.x/folio)
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+- [Laravel Folio - Docs](https://laravel.com/project_docs/12.x/folio)
+=======
+- [Laravel Folio - Docs](https://laravel.com/docs/12.x/folio)
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 - [Esempio di override parametri dinamici](https://github.com/mcamara/laravel-localization#translatable-route-parameters)

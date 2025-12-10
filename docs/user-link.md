@@ -14,6 +14,7 @@ Il modulo User utilizza le traduzioni fornite dal modulo Lang per:
 ## Collegamenti Principali
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Traduzioni del Modulo User](../../User/docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
 - [Gestione Utenti](../../User/docs/README.md) - Panoramica del modulo User
 - [Modelli Utente](../../User/docs/user_profile_models.md) - Documentazione sui modelli utente e profili
@@ -22,6 +23,16 @@ Il modulo User utilizza le traduzioni fornite dal modulo Lang per:
 - [Gestione Utenti](../../User/project_docs/README.md) - Panoramica del modulo User
 - [Modelli Utente](../../User/project_docs/user_profile_models.md) - Documentazione sui modelli utente e profili
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+- [Traduzioni del Modulo User](../../User/project_docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
+- [Gestione Utenti](../../User/project_docs/README.md) - Panoramica del modulo User
+- [Modelli Utente](../../User/project_docs/user_profile_models.md) - Documentazione sui modelli utente e profili
+=======
+- [Traduzioni del Modulo User](../../User/docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
+- [Gestione Utenti](../../User/docs/README.md) - Panoramica del modulo User
+- [Modelli Utente](../../User/docs/user_profile_models.md) - Documentazione sui modelli utente e profili
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 ## Integrazione con Lang
 
@@ -34,14 +45,22 @@ Il modulo User integra il modulo Lang attraverso:
 ## Collegamento Bidirezionale
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/docs/lang-link.md) nel modulo User.
 =======
 Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/project_docs/lang-link.md) nel modulo User.
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/project_docs/lang-link.md) nel modulo User.
+=======
+Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/docs/lang-link.md) nel modulo User.
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 > Aggiorna entrambi i riferimenti se modifichi la struttura delle traduzioni o aggiungi nuove funzionalità che richiedono traduzioni.
 
 ## Collegamenti tra versioni di user-link.md
+<<<<<<< HEAD
 <<<<<<< HEAD
 * [user-link.md](../../../Lang/docs/user-link.md)
 * [user-link.md](../../../Cms/docs/user-link.md)
@@ -49,4 +68,12 @@ Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/pr
 * [user-link.md](../../../Lang/project_docs/user-link.md)
 * [user-link.md](../../../Cms/project_docs/user-link.md)
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+* [user-link.md](../../../Lang/project_docs/user-link.md)
+* [user-link.md](../../../Cms/project_docs/user-link.md)
+=======
+* [user-link.md](../../../Lang/docs/user-link.md)
+* [user-link.md](../../../Cms/docs/user-link.md)
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 

@@ -20,12 +20,19 @@
 
 ## Collegamenti
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [docs root](../../../../docs/actions.md)
 - [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
 
 =======
+=======
+>>>>>>> fe4a1a8 (.)
 - [docs root](../../../../project_docs/actions.md)
 - [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
+=======
+- [docs root](../../../../docs/actions.md)
+- [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
+>>>>>>> 8b0b6ac (.)
 
 Ultimo aggiornamento: maggio 2025.
 >>>>>>> 9ce799e (Check & fix styling)

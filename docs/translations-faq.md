@@ -41,16 +41,28 @@ Aggiorna sempre la documentazione in `/Modules/Lang/docs` e spiega la strategia 
 ## 12. Come personalizzare i messaggi di validazione?
 - Usa i metodi `attributes()` e `messages()` nelle Form Request.
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Consulta la guida dettagliata in `/Modules/Lang/docs/validation-messages.md`.
 
 ## 13. Come gestire plurale/singolare e localizzazione di date/valute?
 - Consulta la guida dettagliata in `/Modules/Lang/docs/pluralization-and-localization.md`.
 =======
+=======
+>>>>>>> fe4a1a8 (.)
 - Consulta la guida dettagliata in `/Modules/Lang/project_docs/validation-messages.md`.
 
 ## 13. Come gestire plurale/singolare e localizzazione di date/valute?
 - Consulta la guida dettagliata in `/Modules/Lang/project_docs/pluralization-and-localization.md`.
+<<<<<<< HEAD
 >>>>>>> 9ce799e (Check & fix styling)
+=======
+=======
+- Consulta la guida dettagliata in `/Modules/Lang/docs/validation-messages.md`.
+
+## 13. Come gestire plurale/singolare e localizzazione di date/valute?
+- Consulta la guida dettagliata in `/Modules/Lang/docs/pluralization-and-localization.md`.
+>>>>>>> 8b0b6ac (.)
+>>>>>>> fe4a1a8 (.)
 
 ## FAQ
 
