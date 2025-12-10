@@ -3,6 +3,9 @@
 declare(strict_types=1);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 namespace Modules\Lang\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -19,8 +22,11 @@ beforeEach(function () {
 =======
     $this->baseModel = new class extends BaseModel {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 9ce799e (Check & fix styling)
 =======
+=======
+>>>>>>> 235147c (.)
 =======
 use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\BaseModel;
@@ -29,7 +35,12 @@ beforeEach(function () {
     $this->baseModel = new class extends BaseModel
     {
 >>>>>>> 8b0b6ac (.)
+<<<<<<< HEAD
 >>>>>>> fe4a1a8 (.)
+=======
+=======
+>>>>>>> 1c4a063 (.)
+>>>>>>> 235147c (.)
         protected $table = 'test_lang_table';
     };
 });
