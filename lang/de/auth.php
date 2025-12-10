@@ -5,6 +5,9 @@ declare(strict_types=1);
 return [
     /*
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
      * |--------------------------------------------------------------------------
      * | Authentication Language Lines
      * |--------------------------------------------------------------------------
@@ -14,6 +17,7 @@ return [
      * | these language lines according to your application's requirements.
      * |
      */
+<<<<<<< HEAD
 =======
     |--------------------------------------------------------------------------
     | Authentication Language Lines
@@ -25,14 +29,19 @@ return [
     |
     */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
     'failed' => 'Diese Anmeldedaten stimmen nicht mit unseren Aufzeichnungen überein.',
     'password' => 'Das angegebene Passwort ist falsch.',
     'throttle' => 'Zu viele Anmeldeversuche. Bitte versuchen Sie es in :seconds Sekunden erneut.',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'login' => [
         'title' => 'Melden Sie sich in Ihrem Konto an',
         'email' => 'E-Mail',
@@ -45,9 +54,12 @@ return [
         'link' => 'Anmelden',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'register' => [
         'title' => 'Ein neues Konto erstellen',
         'name' => 'Name',
@@ -59,9 +71,12 @@ return [
         'link' => 'Registrieren',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'verify' => [
         'title' => 'Bestätigen Sie Ihre E-Mail-Adresse',
         'success' => 'Ein neuer Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet.',
@@ -69,18 +84,24 @@ return [
         'another_request' => 'klicken Sie hier, um eine andere anzufordern',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'forgot_password' => [
         'title' => 'Passwort vergessen',
         'email' => 'E-Mail',
         'submit' => 'Reset-Link senden',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'reset_password' => [
         'title' => 'Passwort zurücksetzen',
         'email' => 'E-Mail',
@@ -89,18 +110,24 @@ return [
         'submit' => 'Passwort zurücksetzen',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'confirm_password' => [
         'title' => 'Passwort bestätigen',
         'password' => 'Passwort',
         'submit' => 'Bestätigen',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'logout' => [
         'submit' => 'Abmelden',
         'title' => 'Abmelden',
@@ -116,9 +143,12 @@ return [
         'processing' => 'Abmeldung läuft...',
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     'user_dropdown' => [
         'manage_account' => 'Konto verwalten',
         'profile' => 'Profil',
