@@ -188,7 +188,7 @@ use Modules\Lang\Services\AutoTranslationService;
 // Crea una nuova chiave di traduzione
 $key = TranslationKey::create([
     'key' => 'welcome.message',
-    'module' => 'saluteora',
+    'module' => '<nome progetto>',
     'description' => 'Messaggio di benvenuto'
 ]);
 
@@ -276,7 +276,7 @@ class TranslationSyncListener
 // Gestore traduzioni multi-modulo
 class TranslationManager
 {
-    private array $modules = ['saluteora', 'user', 'geo', 'chart'];
+    private array $modules = ['<nome progetto>', 'user', 'geo', 'chart'];
     
     public function syncTranslations(string $module): void
     {
@@ -442,7 +442,7 @@ return [
     ],
     'sync' => [
         'enabled' => true,
-        'modules' => ['saluteora', 'user', 'geo', 'chart'],
+        'modules' => ['<nome progetto>', 'user', 'geo', 'chart'],
         'interval' => 3600, // 1 ora
     ],
     'quality' => [
