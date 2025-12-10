@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # LangServiceProvider: Analisi e Proposte di Miglioramento
 
 ## Analisi dell'Implementazione Attuale
@@ -201,19 +202,38 @@ Il `
 ## Introduzione
 Il LangServiceProvider è un componente fondamentale per la gestione delle traduzioni nell'applicazione SaluteOra. Questo documento fornisce una panoramica del sistema di traduzioni e collega alla documentazione dettagliata nel modulo Lang.
 ## Caratteristiche Principali
+=======
+# LangServiceProvider
+
+## Introduzione
+
+Il LangServiceProvider è un componente fondamentale per la gestione delle traduzioni nell'applicazione SaluteOra. Questo documento fornisce una panoramica del sistema di traduzioni e collega alla documentazione dettagliata nel modulo Lang.
+
+## Caratteristiche Principali
+
+>>>>>>> d5fc9cd (.)
 1. **Gestione Traduzioni**
    - Supporto multilingua
    - Caching efficiente
    - Validazione automatica
    - Fallback intelligente
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5fc9cd (.)
 2. **Integrazione Moduli**
    - Namespace per modulo
    - Auto-discovery traduzioni
    - Gestione centralizzata
+<<<<<<< HEAD
+=======
+
+>>>>>>> d5fc9cd (.)
 3. **Performance**
    - Cache Redis
    - Lazy loading
    - Ottimizzazione memoria
+<<<<<<< HEAD
 ## Collegamenti alla Documentazione
 Per una documentazione dettagliata sulle implementazioni e miglioramenti del LangServiceProvider, consultare:
 - [Miglioramenti LangServiceProvider](../laravel/Modules/Lang/docs/lang-service-provider-improvements.md)
@@ -225,11 +245,36 @@ __('common.welcome')  // "Benvenuto"
 // Traduzioni modulo specifico
 __('dentist.registration.title')  // "Registrazione Odontoiatra"
 __('patient.registration.title')  // "Registrazione Paziente"
+=======
+
+## Collegamenti alla Documentazione
+
+Per una documentazione dettagliata sulle implementazioni e miglioramenti del LangServiceProvider, consultare:
+
+- [Miglioramenti LangServiceProvider](../laravel/Modules/Lang/docs/lang-service-provider-improvements.md)
+- [Guida Implementazione](../laravel/Modules/Lang/docs/implementation-guide.md)
+- [Best Practices](../laravel/Modules/Lang/docs/best-practices.md)
+
+## Utilizzo Base
+
+```php
+// Traduzioni generiche
+__('common.welcome')  // "Benvenuto"
+
+// Traduzioni modulo specifico
+__('dentist.registration.title')  // "Registrazione Odontoiatra"
+__('patient.registration.title')  // "Registrazione Paziente"
+```
+
+>>>>>>> d5fc9cd (.)
 ## Note Tecniche
 - Utilizzare Redis per il caching
 - Implementare validazione delle chiavi
 - Gestire fallback locale
 - Supportare namespace personalizzati
 - Ottimizzare performance
+<<<<<<< HEAD
 =======
 >>>>>>> 121b362 (.)
+=======
+>>>>>>> d5fc9cd (.)
