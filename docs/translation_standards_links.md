@@ -3,6 +3,9 @@
 ## Problemi Identificati e Correzioni in Corso
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 Stiamo standardizzando i file di traduzione nel modulo Notify che presentano problemi di conformità con le convenzioni di <nome progetto>. Questo documento fornisce collegamenti rapidi a tutta la documentazione pertinente.
 
 ## Documentazione nel Modulo Notify
@@ -12,6 +15,7 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 - [Guida alla Struttura dei File di Traduzione](../../Notify/docs/TRANSLATION_FILE_STRUCTURE_GUIDE.md)
 - [Convenzioni di Traduzione nel Modulo Notify](../../Notify/docs/TRANSLATION_CONVENTIONS.md)
 - [Guida alla Correzione dei File di Traduzione](../../Notify/docs/TRANSLATION_FILE_CORRECTION_GUIDE.md)
+<<<<<<< HEAD
 =======
 Stiamo standardizzando i file di traduzione nel modulo Notify che presentano problemi di conformità con le convenzioni di SaluteOra. Questo documento fornisce collegamenti rapidi a tutta la documentazione pertinente.
 
@@ -23,6 +27,8 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 - [Convenzioni di Traduzione nel Modulo Notify](../../Notify/project_docs/TRANSLATION_CONVENTIONS.md)
 - [Guida alla Correzione dei File di Traduzione](../../Notify/project_docs/TRANSLATION_FILE_CORRECTION_GUIDE.md)
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 
 ## Documentazione nel Modulo Lang
 
@@ -55,7 +61,11 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 3. Testare tutte le funzionalità che utilizzano questi file di traduzione
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di <nome progetto>. 
 =======
 **Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di SaluteOra. 
 >>>>>>> 8b0b6ac (.)
+=======
+**Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di <nome progetto>. 
+>>>>>>> 1c4a063 (.)
