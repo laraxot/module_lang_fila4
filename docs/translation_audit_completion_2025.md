@@ -3,7 +3,7 @@
 ## Riepilogo Lavoro Effettuato
 
 ### Problema Identificato
-Durante l'audit delle traduzioni del progetto <main module>, sono state identificate numerose traduzioni italiane presenti in file di lingua tedesca e inglese, causando incoerenza nell'interfaccia utente.
+Durante l'audit delle traduzioni del progetto SaluteOra, sono state identificate numerose traduzioni italiane presenti in file di lingua tedesca e inglese, causando incoerenza nell'interfaccia utente.
 
 ### Pattern di Errore
 - **Errore**: `'required' => 'Campo obbligatorio'` in file `lang/de/` e `lang/en/`
@@ -23,7 +23,7 @@ Durante l'audit delle traduzioni del progetto <main module>, sono state identifi
 - **File inglesi**: 5 file corretti
 - **Pattern**: `'required' => 'Pflichtfeld'` (DE) / `'required' => 'Required field'` (EN)
 
-#### ✅ Modulo <main module>
+#### ✅ Modulo SaluteOra
 - **File tedeschi**: 4 file corretti
 - **File inglesi**: 4 file corretti
 - **Pattern**: `'required' => 'Dieses Feld ist erforderlich'` (DE) / `'required' => 'This field is required'` (EN)
@@ -130,12 +130,12 @@ Durante l'audit delle traduzioni del progetto <main module>, sono state identifi
 
 ### Moduli con Documentazione Aggiornata
 1. **Lang Module**: `laravel/Modules/Lang/docs/translation_errors_correction_2025.md`
-2. **<main module> Module**: `laravel/Modules/<main module>/docs/translation_refactor_summary_2025.md`
+2. **SaluteOra Module**: `laravel/Modules/SaluteOra/docs/translation_refactor_summary_2025.md`
 
 ### Collegamenti Bidirezionali Creati
 - [Root Docs: Translation Standards](translation_standards.md)
 - [Lang Module: Translation Best Practices](../laravel/Modules/Lang/docs/translation_best_practices.md)
-- [<main module> Module: Translation Guidelines](../laravel/Modules/<main module>/docs/translation_guidelines.md)
+- [SaluteOra Module: Translation Guidelines](../laravel/Modules/SaluteOra/docs/translation_guidelines.md)
 
 ## Prevenzione Errori Futuri
 
