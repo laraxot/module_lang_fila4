@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 # ==============================================
 # LARAXOT MODULE LANG - .GITIGNORE
 # ==============================================
@@ -86,6 +89,7 @@ lerna-debug.log*
 # ==============================================
 # LARAVEL SPECIFIC
 # ==============================================
+<<<<<<< HEAD
 =======
 # Dependencies
 vendor/
@@ -112,6 +116,8 @@ cache/
 
 # Laravel specific
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -120,6 +126,9 @@ public_html/storage
 public_html/hot
 storage/*.key
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
 .env
 .env.*
 !.env.example
@@ -251,6 +260,7 @@ test_translations.sql
 *.fila2
 laravel
 public_html
+<<<<<<< HEAD
 =======
 
 # Environment and configuration
@@ -277,3 +287,5 @@ docs/phpstan/
 .cursor/
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
