@@ -19,6 +19,7 @@
 - Test che verifica la presenza di tutte le chiavi di traduzione.
 
 ## Collegamenti
+<<<<<<< HEAD
 - [docs root](../../../../docs/actions.md)
 - [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
 =======
