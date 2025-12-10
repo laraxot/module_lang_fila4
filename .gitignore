@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ==============================================
 # LARAXOT MODULE LANG - .GITIGNORE
 # ==============================================
@@ -85,6 +86,32 @@ lerna-debug.log*
 # ==============================================
 # LARAVEL SPECIFIC
 # ==============================================
+=======
+# Dependencies
+vendor/
+node_modules/
+package-lock.json
+yarn-error.log
+npm-debug.log
+
+# Build and compiled files
+/build
+docs/cache/
+cache/
+
+# Cache and temporary files
+*.cache
+*.lock
+*.phar
+*.log
+*.stackdump
+*.exe
+*:Zone.Identifier
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Laravel specific
+>>>>>>> 8b0b6ac (.)
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -92,6 +119,7 @@ public/hot
 public_html/storage
 public_html/hot
 storage/*.key
+<<<<<<< HEAD
 .env
 .env.*
 !.env.example
@@ -223,3 +251,29 @@ test_translations.sql
 *.fila2
 laravel
 public_html
+=======
+
+# Environment and configuration
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# Git related
+.git-rewrite/
+.git-blame-ignore-revs
+
+# Backup files
+*.old
+*.old1
+*.backup
+*.bak
+
+# PHPStan documentation
+docs/phpstan/
+
+# Other
+.windsurf/
+.cursor/
+
+>>>>>>> 8b0b6ac (.)
