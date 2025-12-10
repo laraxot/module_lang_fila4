@@ -209,11 +209,6 @@ Dopo aver applicato le correzioni:
 
 ## Riferimenti
 
-<<<<<<< HEAD
-- [SafeFloatCastAction Documentation](../../Xot/docs/safe-casting-actions.md)
-=======
-- [SafeFloatCastAction Documentation](../../Xot/docs/safe-casting-actions.md)- [SafeFloatCastAction Documentation](../../Xot/project_docs/safe-casting-actions.md)
->>>>>>> cbfeb6b (.)
 - [PHP Type Casting](https://www.php.net/manual/en/language.types.type-juggling.php)
 - [PHPStan Mixed Type](https://phpstan.org/writing-php-code/phpdoc-types#mixed)
 
@@ -221,12 +216,5 @@ Dopo aver applicato le correzioni:
 
 - [Root PHPStan Rules](../../../docs/phpstan_rules.md)
 - [Lang Module Structure](./README.md)
-<<<<<<< HEAD
-- [Xot Safe Casting Actions](../../Xot/docs/safe-casting-actions.md)
-=======
-- [Xot Safe Casting Actions](../../Xot/docs/safe-casting-actions.md)- [Root PHPStan Rules](../../../project_docs/phpstan_rules.md)
-- [Lang Module Structure](./README.md)
-- [Xot Safe Casting Actions](../../Xot/project_docs/safe-casting-actions.md)
->>>>>>> cbfeb6b (.)
 
 *Ultimo aggiornamento: 2025-07-31*

@@ -1,25 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Collegamenti ai Moduli che utilizzano le Traduzioni
-
-Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento alle traduzioni centralizzate.
-## Moduli con collegamento
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1bb26ee (.)
 # Collegamenti ai Moduli che utilizzano le Traduzioni
 
 Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento alle traduzioni centralizzate.
 
 ## Moduli con collegamento
 
-<<<<<<< HEAD
->>>>>>> d5fc9cd (.)
 - [Activity](../../Activity/docs/lang-link.md)
 - [Chart](../../Chart/docs/lang-link.md)
 - [Cms](../../Cms/docs/lang-link.md)
@@ -34,14 +18,6 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/docs/lang-link.md)
 - [User](../../User/docs/lang-link.md)
 - [Xot](../../Xot/docs/lang-link.md)
-<<<<<<< HEAD
-=======
-=======
->>>>>>> fe4a1a8 (.)
-=======
->>>>>>> 9059f82 (.)
-=======
->>>>>>> 1bb26ee (.)
 - [Activity](../../Activity/project_docs/lang-link.md)
 - [Chart](../../Chart/project_docs/lang-link.md)
 - [Cms](../../Cms/project_docs/lang-link.md)
@@ -56,14 +32,6 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/project_docs/lang-link.md)
 - [User](../../User/project_docs/lang-link.md)
 - [Xot](../../Xot/project_docs/lang-link.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
-=======
->>>>>>> 9059f82 (.)
 - [Activity](../../Activity/docs/lang-link.md)
 - [Chart](../../Chart/docs/lang-link.md)
 - [Cms](../../Cms/docs/lang-link.md)
@@ -78,24 +46,10 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/docs/lang-link.md)
 - [User](../../User/docs/lang-link.md)
 - [Xot](../../Xot/docs/lang-link.md)
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
 
-=======
->>>>>>> 9059f82 (.)
 ---
 Per ogni risorsa o campo localizzato, consulta sia la documentazione del modulo che la documentazione di Lang per garantire coerenza e aggiornamento delle traduzioni.
-=======
->>>>>>> 121b362 (.)
-=======
-=======
->>>>>>> 1bb26ee (.)
 
 ---
 
 Per ogni risorsa o campo localizzato, consulta sia la documentazione del modulo che la documentazione di Lang per garantire coerenza e aggiornamento delle traduzioni.
-<<<<<<< HEAD
->>>>>>> d5fc9cd (.)
-=======
->>>>>>> 1bb26ee (.)

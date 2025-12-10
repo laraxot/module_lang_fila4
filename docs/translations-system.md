@@ -198,8 +198,3 @@ return [
 
 *Ultimo aggiornamento: Gennaio 2025*
 *Versione: 2.0*
-<<<<<<< HEAD
-*Compatibilità: Laravel 12.x, Filament 4.x* 
-=======
-*Compatibilità: Laravel 12.x, Filament 3.x* 
->>>>>>> cbfeb6b (.)

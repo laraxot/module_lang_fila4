@@ -837,11 +837,6 @@ public function get(string $key, array $replace = [], ?string $locale = null): s
 
 ### **3. Framework**
 - [Laraxot Framework](https://github.com/laraxot/laraxot)
-<<<<<<< HEAD
-- [Laravel Localization](https://laravel.com/project_docs/localization)
-=======
-- [Laravel Localization](https://laravel.com/docs/localization)
->>>>>>> cbfeb6b (.)
 
 ---
 

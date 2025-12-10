@@ -1,27 +1,10 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> d5fc9cd (.)
-=======
->>>>>>> 1bb26ee (.)
 # Storage delle Traduzioni: PHP vs JSON
 
 ## Introduzione
 In Laravel puoi salvare le traduzioni in file PHP strutturati o in file JSON flat. Ogni approccio ha vantaggi, svantaggi e impatti diversi su fallback, gestione team e manutenzione.
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Confronto tra PHP e JSON
-=======
 
 ## Confronto tra PHP e JSON
 
->>>>>>> d5fc9cd (.)
-=======
-
-## Confronto tra PHP e JSON
-
->>>>>>> 1bb26ee (.)
 | Caratteristica         | PHP Files                        | JSON Files                      |
 |-----------------------|----------------------------------|---------------------------------|
 | **Struttura**         | Annidata, multi-livello          | Flat, chiave = frase            |
@@ -32,52 +15,20 @@ In Laravel puoi salvare le traduzioni in file PHP strutturati o in file JSON fla
 | **Per dev**           | Più flessibile, DRY              | Più semplice, meno controllo    |
 | **Consistenza**       | Più facile con chiavi            | Rischio duplicati/frasi simili  |
 | **Uso consigliato**   | UI, errori, messaggi brevi       | Frasi lunghe, onboarding, email |
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Best Practice per <nome progetto>
-=======
-## Best Practice per 
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 ## Best Practice per 
 ## Best Practice per SaluteOra
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
-=======
->>>>>>> 9059f82 (.)
-=======
 
 ## Best Practice per SaluteOra
->>>>>>> d5fc9cd (.)
-=======
 
 ## Best Practice per 
->>>>>>> 1bb26ee (.)
 - **Usa file PHP** per UI, errori, messaggi brevi, validazione, notifiche.
 - **Usa JSON** solo per frasi lunghe o onboarding, se serve collaborazione con traduttori non-dev.
 - **Non mischiare** chiavi tra PHP e JSON con lo stesso nome.
 - **Fallback:** solo i file PHP supportano il fallback_locale. I JSON mostrano la chiave se manca la traduzione.
 - **Mantieni la coerenza**: scegli uno stile e seguilo in tutto il progetto.
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Esempi
-=======
 
 ## Esempi
 
->>>>>>> d5fc9cd (.)
-=======
-
-## Esempi
-
->>>>>>> 1bb26ee (.)
 ### PHP
 /lang/en/auth.php
 ```php
@@ -88,16 +39,6 @@ return [
     ],
     'login' => [
         'login' => 'Login',
-<<<<<<< HEAD
-<<<<<<< HEAD
-];
-```
-Uso:
-```blade
-{{ __('auth.register.name') }}
-=======
-=======
->>>>>>> 1bb26ee (.)
     ],
 ];
 ```
@@ -107,82 +48,26 @@ Uso:
 {{ __('auth.register.name') }}
 ```
 
-<<<<<<< HEAD
->>>>>>> d5fc9cd (.)
-=======
->>>>>>> 1bb26ee (.)
 ### JSON
 /lang/en.json
 ```json
 {
   "Register to Join our Community": "Sign up to join our community"
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-{{ __('Register to Join our Community') }}
-## Raccomandazioni
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- Per <nome progetto>, **PHP è la scelta principale**. JSON solo per casi particolari.
-=======
-- Per , **PHP è la scelta principale**. JSON solo per casi particolari.
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 - Per , **PHP è la scelta principale**. JSON solo per casi particolari.
 - Per SaluteOra, **PHP è la scelta principale**. JSON solo per casi particolari.
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
-=======
->>>>>>> 9059f82 (.)
 - Documenta sempre la scelta e spiega ai traduttori/dev come aggiungere nuove stringhe.
 - Per fallback, imposta sempre `fallback_locale` in `config/app.php`.
 - Per traduzioni lunghe, valuta se usare chiavi dedicate in PHP o, solo se necessario, JSON.
 ## Fonti
 - [Laravel Daily: Store in PHP or JSON?](https://laraveldaily.com/lesson/multi-language-laravel/mcamara-laravel-localization)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Laravel Docs](https://laravel.com/docs/11.x/localization)
-=======
-- [Laravel Docs](https://laravel.com/project_docs/11.x/localization)
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 - [Laravel Docs](https://laravel.com/project_docs/11.x/localization)
 - [Laravel Docs](https://laravel.com/docs/11.x/localization)
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
-=======
->>>>>>> 9059f82 (.)
 - [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization)
 ## Processo Dev → Traduttore: Checklist e Istruzioni
 1. **Preparazione**
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-   - Esporta i file PHP/JSON di riferimento da `/var/www/html/<nome progetto>/laravel/lang/en/` o `/lang/en.json`.
-=======
-   - Esporta i file PHP/JSON di riferimento da `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/` o `/lang/en.json`.
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
    - Esporta i file PHP/JSON di riferimento da `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/` o `/lang/en.json`.
    - Esporta i file PHP/JSON di riferimento da `/var/www/html/saluteora/laravel/lang/en/` o `/lang/en.json`.
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
-=======
->>>>>>> 9059f82 (.)
-=======
-=======
->>>>>>> 1bb26ee (.)
 ```
 
 Uso:
@@ -191,33 +76,18 @@ Uso:
 ```
 
 ## Raccomandazioni
-<<<<<<< HEAD
-- Per SaluteOra, **PHP è la scelta principale**. JSON solo per casi particolari.
-=======
-- Per , **PHP è la scelta principale**. JSON solo per casi particolari.
->>>>>>> 1bb26ee (.)
 - Documenta sempre la scelta e spiega ai traduttori/dev come aggiungere nuove stringhe.
 - Per fallback, imposta sempre `fallback_locale` in `config/app.php`.
 - Per traduzioni lunghe, valuta se usare chiavi dedicate in PHP o, solo se necessario, JSON.
 
 ## Fonti
 - [Laravel Daily: Store in PHP or JSON?](https://laraveldaily.com/lesson/multi-language-laravel/mcamara-laravel-localization)
-<<<<<<< HEAD
-- [Laravel Docs](https://laravel.com/docs/11.x/localization)
-=======
-- [Laravel Docs](https://laravel.com/project_docs/11.x/localization)
->>>>>>> 1bb26ee (.)
 - [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization)
 
 ## Processo Dev → Traduttore: Checklist e Istruzioni
 
 1. **Preparazione**
-<<<<<<< HEAD
-   - Esporta i file PHP/JSON di riferimento da `/var/www/html/saluteora/laravel/lang/en/` o `/lang/en.json`.
->>>>>>> d5fc9cd (.)
-=======
    - Esporta i file PHP/JSON di riferimento da `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/` o `/lang/en.json`.
->>>>>>> 1bb26ee (.)
    - Elimina tutte le stringhe non usate prima di inviare ai traduttori.
 2. **Istruzioni per i Traduttori**
    - Nei file PHP: traduci solo il testo a destra di `=>`, non cambiare chiavi o struttura.
@@ -227,32 +97,15 @@ Uso:
 3. **Reintegrazione**
    - Sostituisci i file tradotti in `/lang/{locale}/` o `/lang/{locale}.json`.
    - Verifica la sintassi e testa l'applicazione.
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> d5fc9cd (.)
-=======
-
->>>>>>> 1bb26ee (.)
 ### Modifiche Proposte
 - Uniformare la struttura delle chiavi in tutti i file PHP.
 - Usare sempre chiavi strutturate in inglese.
 - Nei Blade, sostituire stringhe hardcoded con chiavi (es. `__('auth.login.submit_button')`).
 - Documentare ogni file PHP con commenti per i traduttori. 
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Gestione Plurale/Singolare nelle Traduzioni
-=======
 
 ## Gestione Plurale/Singolare nelle Traduzioni
 
->>>>>>> d5fc9cd (.)
-=======
-
-## Gestione Plurale/Singolare nelle Traduzioni
-
->>>>>>> 1bb26ee (.)
 ### Uso di `trans_choice()` e `@choice`
 - Per messaggi che variano in base al conteggio, usa `trans_choice()` o la direttiva Blade `@choice()`.
 - Sintassi tipica in PHP:
@@ -265,47 +118,20 @@ Uso:
 - In Blade:
   ```blade
   @choice('messages.newMessageIndicator', $messagesCount)
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   ```
 
->>>>>>> d5fc9cd (.)
-=======
-  ```
-
->>>>>>> 1bb26ee (.)
 ### Sintassi delle Regole Plurali
 - `{0}`: caso zero
 - `{1}`: caso singolare
 - `[2,*]`: da 2 in poi
 - Usa `:count` per il numero
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> d5fc9cd (.)
-=======
-
->>>>>>> 1bb26ee (.)
 ### Plurale in JSON
 - Supportato ma meno leggibile:
   ```json
   {
     "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages": "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages"
   }
-<<<<<<< HEAD
-<<<<<<< HEAD
-  {{ trans_choice('{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages', $messagesCount) }}
-- **Raccomandazione**: Preferire i file PHP per le stringhe plurali.
-- Inserire tutte le stringhe plurali in `/lang/{locale}/messages.php`.
-- Nei Blade, sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
-- Evitare l'uso del JSON per le stringhe plurali.
-=======
->>>>>>> 121b362 (.)
-=======
-=======
->>>>>>> 1bb26ee (.)
   ```
 - In Blade:
   ```blade
@@ -317,7 +143,3 @@ Uso:
 - Inserire tutte le stringhe plurali in `/lang/{locale}/messages.php`.
 - Nei Blade, sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
 - Evitare l'uso del JSON per le stringhe plurali.
-<<<<<<< HEAD
->>>>>>> d5fc9cd (.)
-=======
->>>>>>> 1bb26ee (.)

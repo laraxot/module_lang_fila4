@@ -15,12 +15,6 @@ class Flag extends Component
 {
     public function __construct(
         public string $name,
-<<<<<<< HEAD
-    ) {}
-=======
-    ) {
-    }
->>>>>>> 9ce799e (Check & fix styling)
 
     public function render(): Renderable
     {

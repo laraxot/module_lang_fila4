@@ -9,15 +9,7 @@
 
 ## Panoramica
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<nome progetto> utilizza il pacchetto `mcamara/laravel-localization` per gestire la localizzazione dell'applicazione. Questo documento descrive come implementare correttamente il selettore di lingue e come utilizzare le funzioni del pacchetto.
-=======
-SaluteOra utilizza il pacchetto `mcamara/laravel-localization` per gestire la localizzazione dell'applicazione. Questo documento descrive come implementare correttamente il selettore di lingue e come utilizzare le funzioni del pacchetto.
->>>>>>> 9ce799e (Check & fix styling)
-=======
  utilizza il pacchetto `mcamara/laravel-localization` per gestire la localizzazione dell'applicazione. Questo documento descrive come implementare correttamente il selettore di lingue e come utilizzare le funzioni del pacchetto.
->>>>>>> 1bb26ee (.)
 
 ## Regole Fondamentali
 
@@ -164,12 +156,4 @@ Il pacchetto `mcamara/laravel-localization` fornisce diversi middleware per gest
 
 ## Conclusione
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Seguendo queste linee guida, è possibile implementare correttamente la localizzazione  utilizzando il pacchetto `mcamara/laravel-localization` senza creare rotte o controller personalizzati. Questo approccio è coerente con la filosofia di <nome progetto> di utilizzare Filament e Folio per gestire la maggior parte delle funzionalità dell'applicazione.
-=======
-Seguendo queste linee guida, è possibile implementare correttamente la localizzazione  utilizzando il pacchetto `mcamara/laravel-localization` senza creare rotte o controller personalizzati. Questo approccio è coerente con la filosofia di SaluteOra di utilizzare Filament e Folio per gestire la maggior parte delle funzionalità dell'applicazione.
->>>>>>> 9ce799e (Check & fix styling)
-=======
 Seguendo queste linee guida, è possibile implementare correttamente la localizzazione  utilizzando il pacchetto `mcamara/laravel-localization` senza creare rotte o controller personalizzati. Questo approccio è coerente con la filosofia di  di utilizzare Filament e Folio per gestire la maggior parte delle funzionalità dell'applicazione.
->>>>>>> 1bb26ee (.)

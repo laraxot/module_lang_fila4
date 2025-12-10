@@ -21,10 +21,4 @@ use Modules\Xot\Contracts\UserContract;
  * @property UserContract|null $user
  * @property Post              $post
  */
-<<<<<<< HEAD
 trait LinkedTrait {}
-=======
-trait LinkedTrait
-{
-}
->>>>>>> 9ce799e (Check & fix styling)

@@ -1,26 +1,6 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-> **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
-=======
-> **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 > **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
 
-=======
->>>>>>> 9059f82 (.)
 ## Problema
 Durante operazioni di scrittura su file come `lang_service.php` in `Modules/Lang/lang/it/`, può comparire l'errore:
 ```
@@ -36,15 +16,12 @@ file_put_contents(/var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/L
 2. **Impostare permessi sicuri e scrivibili:**
    sudo chmod 664 /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it/lang_service.php
    - `664` = scrittura per owner e gruppo, lettura per tutti.
-=======
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
-=======
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 > **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
->>>>>>> 1bb26ee (.)
 
 ## Problema
 
@@ -71,67 +48,18 @@ file_put_contents(/var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.p
    ```
    - `664` = scrittura per owner e gruppo, lettura per tutti.
 
-<<<<<<< HEAD
->>>>>>> d5fc9cd (.)
-=======
->>>>>>> 1bb26ee (.)
 3. **Best practice:**
    - Tutti i file di lingua devono essere di proprietà `www-data:www-data` e con permessi `664`.
    - Se si lavora in team, impostare anche la cartella `lang/it` con:
      ```bash
-<<<<<<< HEAD
-<<<<<<< HEAD
-     sudo chown -R www-data:www-data /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it
-     sudo find /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it -type f -exec chmod 664 {} \;
-     ```
-   - Evitare permessi `777` per motivi di sicurezza.
-## Motivazione
-- Garantisce che sia il webserver che gli sviluppatori possano scrivere senza errori.
-- Evita problemi di permission denied in produzione e sviluppo.
-- Mantiene la sicurezza del filesystem.
-## Esempio pratico
-Supponiamo che il file sia stato creato da un utente locale (es. `msottana`). Per correggere:
-```bash
-sudo chown www-data:www-data /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it/lang_service.php
-sudo chmod 664 /var/www/html/_bases/base_fixcity_fila4_mono/laravel/Modules/Lang/lang/it/lang_service.php
-## Collegamenti
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Indice e collegamenti root](../../../docs/links.md)
-- [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
-=======
-- [Indice e collegamenti root](../../../project_docs/links.md)
-- [Documentazione MCP e gestione errori](../../../project_docs/mcp_errors_and_lessons.md)
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 - [Indice e collegamenti root](../../../project_docs/links.md)
 - [Documentazione MCP e gestione errori](../../../project_docs/mcp_errors_and_lessons.md)
 - [Indice e collegamenti root](../../../docs/links.md)
 - [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
 
-=======
->>>>>>> 9059f82 (.)
 ---
 **Nota:**
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
->>>>>>> 9ce799e (Check & fix styling)
-=======
-La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
->>>>>>> 9059f82 (.)
-=======
->>>>>>> 121b362 (.)
-=======
-=======
->>>>>>> 1bb26ee (.)
      sudo chown -R www-data:www-data /var/www/html/ptvx/laravel/Modules/Lang/lang/it
      sudo find /var/www/html/ptvx/laravel/Modules/Lang/lang/it -type f -exec chmod 664 {} \;
      ```
@@ -153,20 +81,8 @@ sudo chmod 664 /var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.php
 ```
 
 ## Collegamenti
-<<<<<<< HEAD
-- [Indice e collegamenti root](../../../docs/links.md)
-- [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
-=======
-- [Indice e collegamenti root](../../../project_docs/links.md)
-- [Documentazione MCP e gestione errori](../../../project_docs/mcp_errors_and_lessons.md)
->>>>>>> 1bb26ee (.)
 
 ---
 
 **Nota:**
-<<<<<<< HEAD
 La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
->>>>>>> d5fc9cd (.)
-=======
-La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
->>>>>>> 1bb26ee (.)

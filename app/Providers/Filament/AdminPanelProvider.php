@@ -7,10 +7,6 @@ namespace Modules\Lang\Providers\Filament;
 use Filament\Panel;
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
-<<<<<<< HEAD
-use Override;
-=======
->>>>>>> 9ce799e (Check & fix styling)
 
 class AdminPanelProvider extends XotBasePanelProvider
 {

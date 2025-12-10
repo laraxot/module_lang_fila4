@@ -8,28 +8,13 @@ I collegamenti nei file di documentazione devono **sempre** utilizzare percorsi 
 
 ✅ **CORRETTO**:
 ```markdown
-<<<<<<< HEAD
-[Regole Generali](../../Xot/docs/translations.md)
-=======
-[Regole Generali](../../Xot/project_docs/translations.md)
->>>>>>> 1bb26ee (.)
 [Best Practices](../TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
 
 ❌ **ERRATO**:
 ```markdown
-<<<<<<< HEAD
-<<<<<<< HEAD
-[Regole Generali](/var/www/html/<nome progetto>/laravel/Modules/Xot/docs/translations.md)
-[Best Practices](/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
-=======
-[Regole Generali](/var/www/html/saluteora/laravel/Modules/Xot/docs/translations.md)
-[Best Practices](/var/www/html/saluteora/laravel/Modules/Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
->>>>>>> 9ce799e (Check & fix styling)
-=======
 [Regole Generali](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Xot/project_docs/translations.md)
 [Best Practices](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
->>>>>>> 1bb26ee (.)
 ```
 
 ### 2. Navigazione Tra Cartelle
@@ -41,23 +26,11 @@ Per navigare nella struttura delle cartelle, utilizzare:
 
 Esempi:
 - Per collegare a un file nello stesso modulo: `[File](./altro_file.md)` o `[File](altro_file.md)`
-<<<<<<< HEAD
-- Per collegare a un file in un altro modulo: `[File](../../AltroModulo/docs/file.md)`
-
-### 3. Struttura della Documentazione
-
-<<<<<<< HEAD
-Quando si creano collegamenti, considerare la struttura standard dei moduli <nome progetto>:
-=======
-Quando si creano collegamenti, considerare la struttura standard dei moduli SaluteOra:
->>>>>>> 9ce799e (Check & fix styling)
-=======
 - Per collegare a un file in un altro modulo: `[File](../../AltroModulo/project_docs/file.md)`
 
 ### 3. Struttura della Documentazione
 
 Quando si creano collegamenti, considerare la struttura standard dei moduli :
->>>>>>> 1bb26ee (.)
 
 ```
 laravel/
@@ -77,19 +50,6 @@ laravel/
 Per collegare documenti tra moduli diversi:
 
 ```markdown
-<<<<<<< HEAD
-<!-- Da Modules/ModuloA/docs/file.md a Modules/ModuloB/docs/file.md -->
-[Link a ModuloB](../../ModuloB/docs/file.md)
-
-<!-- Da Modules/ModuloA/docs/file.md a docs/file.md nella root -->
-[Link a docs root](../../../docs/file.md)
-=======
-<!-- Da Modules/ModuloA/project_docs/file.md a Modules/ModuloB/project_docs/file.md -->
-[Link a ModuloB](../../ModuloB/project_docs/file.md)
-
-<!-- Da Modules/ModuloA/project_docs/file.md a docs/file.md nella root -->
-[Link a docs root](../../../project_docs/file.md)
->>>>>>> 1bb26ee (.)
 ```
 
 ### 5. Verificare Sempre i Link
@@ -101,31 +61,6 @@ Prima di fare commit dei documenti:
 
 ## Esempi Pratici
 
-<<<<<<< HEAD
-### Da Modules/Lang/docs/ a Modules/Notify/docs/
-```markdown
-[Convenzioni Notify](../../Notify/docs/TRANSLATION_CONVENTIONS.md)
-```
-
-### Da Modules/Lang/docs/ a docs/ nella root
-```markdown
-[Documentazione Principale](../../../docs/README.md)
-```
-
-### Da Modules/Lang/docs/ a un altro file nella stessa cartella
-=======
-### Da Modules/Lang/project_docs/ a Modules/Notify/project_docs/
-```markdown
-[Convenzioni Notify](../../Notify/project_docs/TRANSLATION_CONVENTIONS.md)
-```
-
-### Da Modules/Lang/project_docs/ a docs/ nella root
-```markdown
-[Documentazione Principale](../../../project_docs/README.md)
-```
-
-### Da Modules/Lang/project_docs/ a un altro file nella stessa cartella
->>>>>>> 1bb26ee (.)
 ```markdown
 [Best Practices](TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
@@ -135,12 +70,4 @@ Prima di fare commit dei documenti:
 1. **Portabilità**: La documentazione funziona in qualsiasi ambiente
 2. **Manutenibilità**: Se la struttura cambia, sono necessarie meno modifiche
 3. **Collaborazione**: Facilita il lavoro di più sviluppatori
-<<<<<<< HEAD
-<<<<<<< HEAD
-4. **Coerenza**: Rispetta gli standard del progetto <nome progetto>
-=======
-4. **Coerenza**: Rispetta gli standard del progetto SaluteOra
->>>>>>> 9ce799e (Check & fix styling)
-=======
 4. **Coerenza**: Rispetta gli standard del progetto 
->>>>>>> 1bb26ee (.)

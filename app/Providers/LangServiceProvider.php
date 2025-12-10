@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-<<<<<<< HEAD
-use Closure;
-=======
->>>>>>> 9ce799e (Check & fix styling)
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Placeholder;
@@ -22,10 +18,6 @@ use Illuminate\Container\Container;
 use Modules\Lang\Actions\Filament\AutoLabelAction;
 use Modules\Lang\Services\TranslatorService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
-<<<<<<< HEAD
-use Override;
-=======
->>>>>>> 9ce799e (Check & fix styling)
 use Webmozart\Assert\Assert;
 
 /**
@@ -45,11 +37,6 @@ class LangServiceProvider extends XotBaseServiceProvider
      */
     protected string $module_ns = __NAMESPACE__;
 
-<<<<<<< HEAD
-    #[Override]
-=======
-    #[\Override]
->>>>>>> 9ce799e (Check & fix styling)
     public function boot(): void
     {
         parent::boot();
@@ -74,11 +61,6 @@ class LangServiceProvider extends XotBaseServiceProvider
                 // Convertiamo l'array generico in un array<string, string> per soddisfare il tipo richiesto
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-<<<<<<< HEAD
-                    if (is_string($key) && (is_string($value) || $value instanceof Closure)) {
-=======
-                    if (is_string($key) && (is_string($value) || $value instanceof \Closure)) {
->>>>>>> 9ce799e (Check & fix styling)
                         $typedMessages[$key] = $value;
                     }
                 }

@@ -1,63 +1,17 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Collegamento al Modulo Cms
-
-Questo documento descrive le relazioni e i collegamenti tra il modulo Lang e il modulo Cms per quanto riguarda le traduzioni e l'internazionalizzazione.
-## Traduzioni nei Componenti Filament
-Il modulo Lang fornisce il sistema di traduzione utilizzato dal modulo Cms nei suoi componenti Filament. È fondamentale seguire le [regole per le traduzioni in Filament](./filament-translations.md) quando si lavora con i componenti nel modulo Cms.
-## Convenzioni di Namespace e Struttura
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
-=======
-Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
 
-=======
->>>>>>> 9059f82 (.)
 ## Punti di Integrazione
 - **LangServiceProvider**: Gestisce automaticamente le etichette dei componenti Filament nel modulo Cms
 - **File di traduzione**: I file di traduzione in `Modules/Cms/lang/<lingua>/` seguono la struttura definita da questo modulo
 - **AutoLabelAction**: Applicata automaticamente ai componenti Filament nel modulo Cms
 ## Collegamenti Bidirezionali
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
-- [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
-=======
-- [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
-- [Lang Link nel modulo Cms](../../Cms/project_docs/lang-link.md)
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
->>>>>>> 9059f82 (.)
 - [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/project_docs/lang-link.md)
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
 
-=======
->>>>>>> 9059f82 (.)
 ---
-=======
-=======
->>>>>>> 1bb26ee (.)
 # Collegamento al Modulo Cms
 
 Questo documento descrive le relazioni e i collegamenti tra il modulo Lang e il modulo Cms per quanto riguarda le traduzioni e l'internazionalizzazione.
@@ -68,11 +22,6 @@ Il modulo Lang fornisce il sistema di traduzione utilizzato dal modulo Cms nei s
 
 ## Convenzioni di Namespace e Struttura
 
-<<<<<<< HEAD
-Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
-=======
-Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
->>>>>>> 1bb26ee (.)
 
 ## Punti di Integrazione
 
@@ -82,69 +31,27 @@ Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzi
 
 ## Collegamenti Bidirezionali
 
-<<<<<<< HEAD
-- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
-- [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
-
----
-
->>>>>>> d5fc9cd (.)
-=======
 - [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/project_docs/lang-link.md)
 
 ---
 
->>>>>>> 1bb26ee (.)
 ### Nota Importante
 Quando aggiungi nuovi componenti Filament nel modulo Cms, ricorda di:
 1. NON utilizzare mai `->label()` direttamente
 2. Aggiungere le traduzioni appropriate nei file di lingua
 3. Mantenere aggiornata la documentazione in entrambi i moduli
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Collegamenti tra versioni di cms-link.md
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-* [cms-link.md](../../../Xot/docs/cms-link.md)
-* [cms-link.md](../../../User/docs/cms-link.md)
-* [cms-link.md](../../../UI/docs/cms-link.md)
-* [cms-link.md](../../../Lang/docs/cms-link.md)
-=======
-=======
->>>>>>> fe4a1a8 (.)
-=======
->>>>>>> 9059f82 (.)
-=======
 
 ## Collegamenti tra versioni di cms-link.md
->>>>>>> 1bb26ee (.)
 * [cms-link.md](../../../Xot/project_docs/cms-link.md)
 * [cms-link.md](../../../User/project_docs/cms-link.md)
 * [cms-link.md](../../../UI/project_docs/cms-link.md)
 * [cms-link.md](../../../Lang/project_docs/cms-link.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 9ce799e (Check & fix styling)
-=======
-=======
-=======
->>>>>>> 9059f82 (.)
 * [cms-link.md](../../../Xot/docs/cms-link.md)
 * [cms-link.md](../../../User/docs/cms-link.md)
 * [cms-link.md](../../../UI/docs/cms-link.md)
 * [cms-link.md](../../../Lang/docs/cms-link.md)
-<<<<<<< HEAD
->>>>>>> 8b0b6ac (.)
->>>>>>> fe4a1a8 (.)
 
-=======
->>>>>>> 9059f82 (.)
-=======
->>>>>>> 121b362 (.)
-=======
 
 ## Collegamenti tra versioni di cms-link.md
 * [cms-link.md](../../../Xot/docs/cms-link.md)
@@ -152,7 +59,4 @@ Quando aggiungi nuovi componenti Filament nel modulo Cms, ricorda di:
 * [cms-link.md](../../../UI/docs/cms-link.md)
 * [cms-link.md](../../../Lang/docs/cms-link.md)
 
->>>>>>> d5fc9cd (.)
-=======
 
->>>>>>> 1bb26ee (.)
