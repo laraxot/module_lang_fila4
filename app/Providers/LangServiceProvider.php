@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-use Override;
 use Closure;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
@@ -20,6 +19,7 @@ use Illuminate\Container\Container;
 use Modules\Lang\Actions\Filament\AutoLabelAction;
 use Modules\Lang\Services\TranslatorService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
+use Override;
 use Webmozart\Assert\Assert;
 
 /**
