@@ -1,9 +1,9 @@
 # Standard per le Traduzioni nel Progetto 
-# Standard per le Traduzioni nel Progetto SaluteOra
+# Standard per le Traduzioni nel Progetto <nome progetto>
 
 ## Struttura delle Cartelle
 Le traduzioni vanno posizionate nella cartella `lang` di ogni modulo, organizzate per lingua:
-# Standard per le Traduzioni nel Progetto SaluteOra
+# Standard per le Traduzioni nel Progetto <nome progetto>
 # Standard per le Traduzioni nel Progetto 
 
 ## Struttura delle Cartelle
@@ -169,11 +169,11 @@ return [
 - Nessun lock-in: ogni modulo può evolvere senza dipendenze nascoste
 - Serenità zen: codice e traduzioni sempre coerenti
 - [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md)
-- [SaluteOra/docs/appointment-management.md](../../SaluteOra/docs/appointment-management.md)
+- [<nome progetto>/docs/appointment-management.md](../../<nome progetto>/docs/appointment-management.md)
 - [Lang/translation_keys_best_practices.md](./translation_keys_best_practices.md)
 
 ### Collegamenti
-- [SaluteOra/docs/appointment-management.md](../../SaluteOra/docs/appointment-management.md)
+- [<nome progetto>/docs/appointment-management.md](../../<nome progetto>/docs/appointment-management.md)
 - [Lang/translation_keys_best_practices.md](./translation_keys_best_practices.md)
 
 

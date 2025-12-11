@@ -15,8 +15,8 @@ I collegamenti nei file di documentazione devono **sempre** utilizzare percorsi 
 ```markdown
 [Regole Generali](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Xot/project_docs/translations.md)
 [Best Practices](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
-[Regole Generali](/var/www/html/saluteora/laravel/Modules/Xot/project_docs/translations.md)
-[Best Practices](/var/www/html/saluteora/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
+[Regole Generali](/var/www/html/<nome progetto>/laravel/Modules/Xot/project_docs/translations.md)
+[Best Practices](/var/www/html/<nome progetto>/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
 
 ### 2. Navigazione Tra Cartelle
@@ -33,7 +33,7 @@ Esempi:
 ### 3. Struttura della Documentazione
 
 Quando si creano collegamenti, considerare la struttura standard dei moduli :
-Quando si creano collegamenti, considerare la struttura standard dei moduli SaluteOra:
+Quando si creano collegamenti, considerare la struttura standard dei moduli <nome progetto>:
 
 ```
 laravel/
@@ -74,4 +74,4 @@ Prima di fare commit dei documenti:
 2. **Manutenibilità**: Se la struttura cambia, sono necessarie meno modifiche
 3. **Collaborazione**: Facilita il lavoro di più sviluppatori
 4. **Coerenza**: Rispetta gli standard del progetto 
-4. **Coerenza**: Rispetta gli standard del progetto SaluteOra
+4. **Coerenza**: Rispetta gli standard del progetto <nome progetto>
