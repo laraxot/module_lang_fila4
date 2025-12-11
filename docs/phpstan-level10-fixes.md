@@ -55,6 +55,21 @@ Questo documento traccia gli errori PHPStan di livello 10 identificati nel modul
 - Implementare valori di fallback per i casi in cui i valori non sono stringhe
 - Utilizzare metodi più sicuri per la conversione di tipi
 
+### 5. Gestione del locale nel RouteServiceProvider
+
+**Problema**: PHPStan segnalava che la chiamata a `app()->setLocale()` poteva ricevere un valore `string|null` ricavato da `request()->segment($n)`, mentre il metodo accetta solo `string`.
+
+**File interessato**:
+- `Providers/RouteServiceProvider.php`
+
+**Soluzione**:
+- Introdotta una variabile temporanea `$segment` per memorizzare il valore di `request()->segment($n)`
+- Aggiunto controllo esplicito con `is_string($segment)` prima di utilizzarlo
+- Utilizzato `in_array` con terzo parametro `true` per un confronto strettamente tipizzato
+- Chiamato `app()->setLocale($segment)` solo quando `$segment` è effettivamente una stringa valida presente tra le lingue supportate
+
+In questo modo PHPStan può garantire che il parametro passato a `setLocale` sia sempre una stringa non nulla, eliminando l'errore di tipo e rendendo più robusta la gestione del locale.
+
 ## Principi Applicati nelle Correzioni
 
 1. **Controlli di tipo espliciti**: Verificare sempre il tipo di un valore prima di utilizzarlo in operazioni che richiedono un tipo specifico.

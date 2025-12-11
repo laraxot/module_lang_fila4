@@ -17,26 +17,6 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     public string $name = 'Lang';
 
     /**
-     * The name of the module.
-     */
-    public string $name = 'Lang';
-
-    /**
-     * The name of the module.
-     */
-    public string $name = 'Lang';
-
-    /**
-     * The name of the module.
-     */
-    public string $name = 'Lang';
-
-    /**
-     * The name of the module.
-     */
-    public string $name = 'Lang';
-
-    /**
      * The module namespace to assume when generating URLs to actions.
      */
     protected string $moduleNamespace = 'Modules\Lang\Http\Controllers';
@@ -54,14 +34,6 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
      * @SuppressWarnings("CamelCasePropertyName")
      */
     protected string $module_ns = __NAMESPACE__;
-
-    /**
-     * Bootstrap the module services.
-     */
-
-    /**
-     * Register the module services.
-     */
 
     /**
      * Registra le impostazioni di lingua basate sulla configurazione.
@@ -91,11 +63,10 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
             $n = 3;
         }
 
-        if (\in_array(request()->segment($n), $langs, false)) {
-            /** @var string|null $lang */
-            $lang = request()->segment($n);
-                app()->setLocale($lang);
-            }
+        $segment = request()->segment($n);
+
+        if (\is_string($segment) && \in_array($segment, $langs, true)) {
+            app()->setLocale($segment);
         }
     }
 }
