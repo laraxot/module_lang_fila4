@@ -30,7 +30,6 @@ use Modules\Xot\Contracts\ProfileContract;
  * @property string|null          $item
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
- *
  * @method static TranslationFactory                  factory($count = null, $state = [])
  * @method static EloquentBuilder<static>|Translation newModelQuery()
  * @method static EloquentBuilder<static>|Translation newQuery()
@@ -49,7 +48,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static EloquentBuilder<static>|Translation whereUpdatedAt($value)
  * @method static EloquentBuilder<static>|Translation whereUpdatedBy($value)
  * @method static EloquentBuilder<static>|Translation whereValue($value)
- *
+ * @property-read \Modules\TechPlanner\Models\Profile|null $deleter
  * @mixin \Eloquent
  */
 class Translation extends BaseModel
