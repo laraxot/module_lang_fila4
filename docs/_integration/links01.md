@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # links01
 
 <!-- Contenuto migrato da _docs/links01.txt -->
@@ -13,31 +12,4 @@ https://medium.com/@mwaqasiu/translating-text-in-laravel-made-easy-with-translat
 
 //----------------
 
-=======
-# links
-
-<!-- Contenuto migrato da _docs/links.txt -->
-
-///---
-https://freek.dev/593-a-laravel-package-to-store-language-lines-in-the-database
-https://github.com/spatie/laravel-translation-loader
-//----
-
-https://github.com/statikbe/laravel-filament-chained-translation-manager
-
------------------
-
-https://github.com/barryvdh/laravel-translation-manager
-
-
----
-
-https://github.com/tanmuhittin/laravel-google-translate
-
-----
-
-https://github.com/Astrotomic/laravel-translatable
-
-https://github.com/dimsav/laravel-translatable#step-1-install-package
->>>>>>> e8163a6 (.)
 

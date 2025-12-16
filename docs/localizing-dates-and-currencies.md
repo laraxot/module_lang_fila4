@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+# Localizzazione di Date e Valute
+
+## Introduzione
+
+La localizzazione di date e valute è un aspetto cruciale per un'applicazione multilingue come `<nome progetto>`. Tradurre manualmente mesi, giorni e simboli di valuta per ogni lingua sarebbe un lavoro enorme. Fortunatamente, Laravel e PHP offrono strumenti potenti come Carbon per le date e `NumberFormatter` per le valute, che gestiscono automaticamente la formattazione in base alla lingua. Questa documentazione, basata sul corso di Laravel Daily, esplora come implementare queste funzionalità nel progetto `<nome progetto>`.
+>>>>>>> e8163a6 (.)
 
 ## Localizzazione di Date con Carbon
 
@@ -96,6 +104,7 @@ if (!function_exists('formatCurrency')) {
 **Vantaggi**: Un helper centralizzato rende la formattazione delle valute accessibile ovunque, con parametri personalizzabili per locale e valuta.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Nel contesto di `<nome progetto>`, un'applicazione sanitaria multilingue, la localizzazione di date e valute è essenziale per garantire un'interfaccia utente coerente e comprensibile in diverse lingue. Propongo di:
 - Configurare Carbon per utilizzare il locale corrente, garantendo che date e differenze temporali siano mostrate correttamente in italiano (`it`), inglese (`en`), o altre lingue supportate.
 - Implementare `NumberFormatter` per formattare valute, specialmente per costi di trattamenti o pagamenti, rispettando le convenzioni locali (es. simbolo € in Europa).
@@ -129,6 +138,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 1. **Configurazione di Carbon per la Localizzazione delle Date**:
    - File: `/var/www/html/saluteora/laravel/app/Providers/AppServiceProvider.php`
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 ## Analisi e Ragionamento per il Progetto `<nome progetto>`
 
 Nel contesto di `<nome progetto>`, un'applicazione sanitaria multilingue, la localizzazione di date e valute è essenziale per garantire un'interfaccia utente coerente e comprensibile in diverse lingue. Propongo di:
@@ -155,6 +166,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
              // ...
              Carbon::setLocale(app()->getLocale());
 <<<<<<< HEAD
+<<<<<<< HEAD
    - **Ragionamento**: Impostare il locale di Carbon con `app()->getLocale()` garantisce che le date siano formattate correttamente in base alla lingua corrente dell'utente (es. 'it' o 'en'), rispettando le convenzioni di formattazione di ogni lingua. Questo è particolarmente importante per un'applicazione come `<nome progetto>`, dove date di appuntamenti o trattamenti devono essere chiare per gli utenti. L'uso di `app()->getLocale()` si integra con il sistema di localizzazione esistente basato su `mcamara/laravel-localization`.
    - File: `/var/www/html/<nome progetto>/laravel/app/helpers.php`
 =======
@@ -176,10 +188,19 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - **Ragionamento**: Un helper per formattare le valute centralizza la logica di localizzazione, rendendola accessibile in tutte le viste e i controller. Impostare il locale di default con `app()->getLocale()` (es. 'it_IT') garantisce coerenza con la lingua corrente dell'utente, mentre permettere di specificare un locale o una valuta diversi offre flessibilità (es. per mostrare costi in USD). Questo è utile per `saluteora` in scenari di fatturazione o pagamenti internazionali.
    - File: `/var/www/html/saluteora/laravel/Modules/Dental/Resources/views/appointments/index.blade.php`
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
              // ...
          }
      }
      ```
+<<<<<<< HEAD
+=======
+   - **Ragionamento**: Impostare il locale di Carbon con `app()->getLocale()` garantisce che le date siano formattate correttamente in base alla lingua corrente dell'utente (es. 'it' o 'en'), rispettando le convenzioni di formattazione di ogni lingua. Questo è particolarmente importante per un'applicazione come `<nome progetto>`, dove date di appuntamenti o trattamenti devono essere chiare per gli utenti. L'uso di `app()->getLocale()` si integra con il sistema di localizzazione esistente basato su `mcamara/laravel-localization`.
+
+2. **Creazione di un Helper per la Formattazione delle Valute**:
+   - File: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/app/helpers.php`
+>>>>>>> e8163a6 (.)
    - Modifica: Creare o aggiornare il file per aggiungere la funzione `formatCurrency()`:
      ```php
      if (!function_exists('formatCurrency')) {
@@ -210,8 +231,11 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      ```ini
      extension=intl
      ```
+<<<<<<< HEAD
    - **Ragionamento**: `NumberFormatter` richiede l'estensione `intl` per funzionare. Senza di essa, la formattazione delle valute fallirà. Verificare questa configurazione nel ambiente di sviluppo e produzione di `saluteora` è essenziale per evitare errori runtime, specialmente per funzionalità di pagamento o fatturazione.
      ```
    - **Ragionamento**: `NumberFormatter` richiede l'estensione `intl` per funzionare. Senza di essa, la formattazione delle valute fallirà. Verificare questa configurazione nel ambiente di sviluppo e produzione di `<nome progetto>` è essenziale per evitare errori runtime, specialmente per funzionalità di pagamento o fatturazione.
      ```
+=======
+>>>>>>> e8163a6 (.)
    - **Ragionamento**: `NumberFormatter` richiede l'estensione `intl` per funzionare. Senza di essa, la formattazione delle valute fallirà. Verificare questa configurazione nel ambiente di sviluppo e produzione di `<nome progetto>` è essenziale per evitare errori runtime, specialmente per funzionalità di pagamento o fatturazione.

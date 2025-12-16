@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+# Gestione delle Lingue (Locales) in Laravel
+
+## Introduzione
+
+In Laravel, la gestione delle lingue (locales) è fondamentale per determinare quale lingua utilizzare per le traduzioni. Ogni progetto Laravel ha una lingua predefinita e una di fallback. Questa documentazione, basata sul corso di Laravel Daily, esplora come configurare queste impostazioni e propone modifiche per il progetto `<nome progetto>`.
+>>>>>>> e8163a6 (.)
 
 ## Configurazione della Lingua Predefinita
 
@@ -57,6 +65,7 @@ Con traduzione in `lang/en.json`:
 {
     "Register to Join our Community": "Sign up to join our community"
 }
+<<<<<<< HEAD
 Inoltre, data la limitazione del fallback con i file JSON, raccomando di continuare a utilizzare principalmente file PHP per le traduzioni strutturate, come discusso nella documentazione precedente (`../Modules/Lang/project_docs/static-text-translation.md`). I file JSON possono essere utilizzati per testi più lunghi, ma con la consapevolezza che il fallback non funzionerà come previsto.
 Per l'impostazione dinamica della lingua, suggerisco di integrare questa logica con il pacchetto `mcamara/laravel-localization`, che è già documentato in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`. Questo pacchetto gestisce il cambio di lingua tramite middleware, il che si allinea con le migliori pratiche.
 
@@ -78,6 +87,8 @@ Per l'impostazione dinamica della lingua, suggerisco di integrare questa logica 
 Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la gestione delle lingue nel progetto `saluteora`:
    - Modificare il file `/var/www/html/saluteora/laravel/config/app.php`:
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 ```
 
 Anche con il fallback configurato, se manca in `lang/it.json`, l'output sarà 'Register to Join our Community' invece della traduzione attesa.
@@ -126,6 +137,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
       */
      'locale' => 'it',
 <<<<<<< HEAD
+<<<<<<< HEAD
    - **Ragionamento**: Impostare 'it' come lingua predefinita riflette il pubblico principale del progetto `<nome progetto>`. 'en' come fallback garantisce che ci sia una traduzione di riserva, migliorando l'esperienza utente rispetto alla visualizzazione di chiavi non tradotte.
    - Assicurarsi che il pacchetto sia installato come descritto in `/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/laravel-localization-complete.md`.
    - Verificare che i middleware siano registrati in `/var/www/html/<nome progetto>/laravel/app/Http/Kernel.php`:
@@ -135,6 +147,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Verificare che i middleware siano registrati in `/var/www/html/saluteora/laravel/app/Http/Kernel.php`:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
 
      /*
       * Application Fallback Locale
@@ -159,6 +173,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'localeCookieRedirect'    => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
          'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
      ];
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/routes/web.php` per utilizzare il middleware di localizzazione:
 <<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/routes/web.php` per utilizzare il middleware di localizzazione:
@@ -172,6 +187,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Modificare il file `/var/www/html/saluteora/laravel/routes/web.php` per utilizzare il middleware di localizzazione:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
      ```
    - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/routes/web.php` per utilizzare il middleware di localizzazione:
      ```php
@@ -186,6 +203,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          // altre route...
          require __DIR__ . '/auth.php';
      });
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/config/laravellocalization.php` per definire le lingue supportate:
 <<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/config/laravellocalization.php` per definire le lingue supportate:
@@ -193,6 +211,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Modificare il file `/var/www/html/saluteora/laravel/config/laravellocalization.php` per definire le lingue supportate:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
      ```
    - **Ragionamento**: Utilizzare `mcamara/laravel-localization` per gestire dinamicamente la lingua tramite URL e preferenze utente è più efficiente rispetto a un middleware personalizzato. Questo approccio si allinea con le regole del progetto che richiedono il prefisso della lingua negli URL e garantisce che la lingua sia impostata correttamente prima del caricamento delle traduzioni.
 
@@ -205,6 +225,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'en' => ['name' => 'English', 'script' => 'Latn', 'native' => 'English', 'regional' => 'en_GB'],
          // Aggiungere altre lingue se necessario
      ],
+<<<<<<< HEAD
    - Continuare a utilizzare file PHP per traduzioni strutturate, come raccomandato in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/static-text-translation.md`.
    - Esempio di file in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
 <<<<<<< HEAD
@@ -215,6 +236,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Esempio di file in `/var/www/html/saluteora/laravel/lang/it/auth.php`:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
 
      // Nascondere la lingua predefinita nell'URL (opzionale)
      'hideDefaultLocaleInURL' => false,
@@ -236,6 +259,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'failed' => 'Queste credenziali non corrispondono ai nostri record.',
      ];
      ```
+<<<<<<< HEAD
    - **Ragionamento**: I file PHP offrono un fallback funzionante, essenziale per evitare di mostrare chiavi non tradotte agli utenti. La struttura modulare si adatta bene all'organizzazione del progetto `saluteora`.
 
 ## Conclusione
@@ -250,6 +274,8 @@ La gestione delle lingue in Laravel richiede una configurazione attenta della li
 La gestione delle lingue in Laravel richiede una configurazione attenta della lingua predefinita e di fallback, tenendo conto delle limitazioni dei file JSON rispetto ai file PHP. Per il progetto `<nome progetto>`, impostare 'it' come lingua predefinita e 'en' come fallback, insieme all'uso del pacchetto `mcamara/laravel-localization` per l'impostazione dinamica della lingua, garantirà un'esperienza utente coerente e conforme alle regole di localizzazione del progetto. Le modifiche proposte ai file di configurazione e alle route implementano queste best practices, migliorando l'accessibilità multilingue dell'applicazione.
      ];
      ```
+=======
+>>>>>>> e8163a6 (.)
    - **Ragionamento**: I file PHP offrono un fallback funzionante, essenziale per evitare di mostrare chiavi non tradotte agli utenti. La struttura modulare si adatta bene all'organizzazione del progetto `<nome progetto>`.
 
 ## Conclusione

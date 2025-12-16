@@ -15,6 +15,7 @@ In Laravel puoi salvare le traduzioni in file PHP strutturati o in file JSON fla
 | **Per dev**           | Più flessibile, DRY              | Più semplice, meno controllo    |
 | **Consistenza**       | Più facile con chiavi            | Rischio duplicati/frasi simili  |
 | **Uso consigliato**   | UI, errori, messaggi brevi       | Frasi lunghe, onboarding, email |
+<<<<<<< HEAD
 ## Best Practice per 
 <<<<<<< HEAD
 ## Best Practice per <nome progetto>
@@ -25,6 +26,8 @@ In Laravel puoi salvare le traduzioni in file PHP strutturati o in file JSON fla
 
 ## Best Practice per SaluteOra
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 
 ## Best Practice per 
 - **Usa file PHP** per UI, errori, messaggi brevi, validazione, notifiche.
@@ -60,6 +63,7 @@ Uso:
 {
   "Register to Join our Community": "Sign up to join our community"
 }
+<<<<<<< HEAD
 - Per , **PHP è la scelta principale**. JSON solo per casi particolari.
 <<<<<<< HEAD
 - Per <nome progetto>, **PHP è la scelta principale**. JSON solo per casi particolari.
@@ -82,6 +86,8 @@ Uso:
 =======
    - Esporta i file PHP/JSON di riferimento da `/var/www/html/saluteora/laravel/lang/en/` o `/lang/en.json`.
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 ```
 
 Uso:
@@ -90,12 +96,20 @@ Uso:
 ```
 
 ## Raccomandazioni
+<<<<<<< HEAD
+=======
+- Per , **PHP è la scelta principale**. JSON solo per casi particolari.
+>>>>>>> e8163a6 (.)
 - Documenta sempre la scelta e spiega ai traduttori/dev come aggiungere nuove stringhe.
 - Per fallback, imposta sempre `fallback_locale` in `config/app.php`.
 - Per traduzioni lunghe, valuta se usare chiavi dedicate in PHP o, solo se necessario, JSON.
 
 ## Fonti
 - [Laravel Daily: Store in PHP or JSON?](https://laraveldaily.com/lesson/multi-language-laravel/mcamara-laravel-localization)
+<<<<<<< HEAD
+=======
+- [Laravel Docs](https://laravel.com/project_docs/11.x/localization)
+>>>>>>> e8163a6 (.)
 - [mcamara/laravel-localization](https://github.com/mcamara/laravel-localization)
 
 ## Processo Dev → Traduttore: Checklist e Istruzioni

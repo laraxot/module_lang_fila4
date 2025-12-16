@@ -40,6 +40,7 @@ Aggiorna sempre la documentazione in `/Modules/Lang/docs` e spiega la strategia 
 
 ## 12. Come personalizzare i messaggi di validazione?
 - Usa i metodi `attributes()` e `messages()` nelle Form Request.
+<<<<<<< HEAD
 - Consulta la guida dettagliata in `/Modules/Lang/docs/validation-messages.md`.
 
 ## 13. Come gestire plurale/singolare e localizzazione di date/valute?
@@ -53,6 +54,8 @@ Aggiorna sempre la documentazione in `/Modules/Lang/docs` e spiega la strategia 
 ## FAQ
 ### Devo registrare manualmente i comandi console?
 **No!** Tutti i comandi console sono autoregistrati tramite XotBaseServiceProvider. Non aggiungere mai `$this->commands([...])` nei provider. Perché? Vedi [lang-service-provider.md](./lang-service-provider.md) e [PHILOSOPHY.md](./PHILOSOPHY.md) 
+=======
+>>>>>>> e8163a6 (.)
 - Consulta la guida dettagliata in `/Modules/Lang/project_docs/validation-messages.md`.
 
 ## 13. Come gestire plurale/singolare e localizzazione di date/valute?

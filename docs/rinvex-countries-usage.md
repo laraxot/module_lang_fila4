@@ -33,6 +33,7 @@ echo $italy->getOfficialName(); // "Italian Republic"
 echo $italy->getIsoAlpha2(); // "IT"
 echo $italy->getIsoAlpha3(); // "ITA"
 echo $italy->getIsoNumeric(); // "380"
+<<<<<<< HEAD
 The `NationalFlagSelect` component in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/app/Filament/Forms/Components/NationalFlagSelect.php` demonstrates practical usage:
 <<<<<<< HEAD
 The `NationalFlagSelect` component in `/var/www/html/_bases/base_<nome progetto>/laravel/Modules/Lang/app/Filament/Forms/Components/NationalFlagSelect.php` demonstrates practical usage:
@@ -41,6 +42,8 @@ The `NationalFlagSelect` component in `/var/www/html/_bases/base_saluteora/larav
 >>>>>>> 51659f3 (.)
 
 ```php
+=======
+>>>>>>> e8163a6 (.)
 ```
 
 ### Getting All Countries
@@ -56,6 +59,7 @@ $oceaniaCountries = \Rinvex\Country\CountryLoader::where('geo.continent', ['OC' 
 ## Usage in NationalFlagSelect Component
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 The `NationalFlagSelect` component in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/app/Filament/Forms/Components/NationalFlagSelect.php` demonstrates practical usage:
 <<<<<<< HEAD
 The `NationalFlagSelect` component in `/var/www/html/_bases/base_<nome progetto>/laravel/Modules/Lang/app/Filament/Forms/Components/NationalFlagSelect.php` demonstrates practical usage:
@@ -64,6 +68,9 @@ The `NationalFlagSelect` component in `/var/www/html/_bases/base_<nome progetto>
 The `NationalFlagSelect` component in `/var/www/html/_bases/base_saluteora/laravel/Modules/Lang/app/Filament/Forms/Components/NationalFlagSelect.php` demonstrates practical usage:
 >>>>>>> 8b0b6ac (.)
 >>>>>>> 51659f3 (.)
+=======
+The `NationalFlagSelect` component in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/app/Filament/Forms/Components/NationalFlagSelect.php` demonstrates practical usage:
+>>>>>>> e8163a6 (.)
 
 ```php
 protected function getCountryOptions(): array

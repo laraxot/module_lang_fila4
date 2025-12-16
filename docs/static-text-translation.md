@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/register.blade.php`, potremmo avere:
 <<<<<<< HEAD
 In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/auth/register.blade.php`, potremmo avere:
@@ -13,6 +14,8 @@ La traduzione di testi statici in Laravel può essere gestita utilizzando due ap
 =======
 La traduzione di testi statici in Laravel può essere gestita utilizzando due approcci principali: file PHP e file JSON. Questa documentazione, basata sul corso di Laravel Daily, analizza entrambi i metodi, evidenziando vantaggi e svantaggi, e propone un'implementazione per il progetto `saluteora`.
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 # Traduzione di Testi Statici in Laravel
 
 ## Introduzione
@@ -35,6 +38,7 @@ In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/
     <x-input-error :messages="$errors->get('name')" class="mt-2" />
 </div>
 ```
+<<<<<<< HEAD
 La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
 <<<<<<< HEAD
 La traduzione corrispondente sarebbe in `/var/www/html/<nome progetto>/laravel/lang/it/auth.php`:
@@ -48,6 +52,8 @@ La traduzione corrispondente sarebbe in `/var/www/html/saluteora/laravel/lang/it
 La traduzione corrispondente sarebbe in `/var/www/html/saluteora/laravel/lang/it/auth.php`:
 >>>>>>> 51659f3 (.)
 ```php
+=======
+>>>>>>> e8163a6 (.)
 
 La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
 ```php
@@ -77,12 +83,15 @@ php artisan lang:publish
 - Necessità di definire tutte le stringhe immediatamente per evitare di mostrare chiavi non tradotte agli utenti.
 - Difficoltà per traduttori non tecnici a causa della struttura dei file.
 - Rischio di creare confusione con molti file e cartelle.
+<<<<<<< HEAD
 In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/register.blade.php`, potremmo avere:
 <<<<<<< HEAD
 In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/auth/register.blade.php`, potremmo avere:
 =======
 In un file Blade come `/var/www/html/saluteora/laravel/resources/views/auth/register.blade.php`, potremmo avere:
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 
 ### File JSON
 
@@ -99,6 +108,7 @@ In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/
 </div>
 ```
 
+<<<<<<< HEAD
     <x-input-label for="name" :value="__('Nome')" />
 La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`:
 <<<<<<< HEAD
@@ -108,6 +118,8 @@ La traduzione corrispondente sarebbe in `/var/www/html/<nome progetto>/laravel/l
 La traduzione corrispondente sarebbe in `/var/www/html/saluteora/laravel/lang/it.json`:
 La traduzione corrispondente sarebbe in `/var/www/html/saluteora/laravel/lang/it.json`:
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
 La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`:
 ```json
 {
@@ -125,6 +137,7 @@ La traduzione corrispondente sarebbe in `/var/www/html/_bases/base_techplanner_f
 - Mancanza di contesto per traduzioni ambigue.
 - File di traduzione molto grandi in progetti complessi.
 - Impossibilità di aggiungere commenti nei file JSON.
+<<<<<<< HEAD
 Mescolare i due approcci può causare problemi se una chiave JSON corrisponde al nome di un file PHP. Ad esempio, se esiste un file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php` e una chiave `"Auth": "Autenticazione"` in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`, chiamare `__('Auth')` restituirà il contenuto di `auth.php` invece della traduzione attesa.
 <<<<<<< HEAD
 Mescolare i due approcci può causare problemi se una chiave JSON corrisponde al nome di un file PHP. Ad esempio, se esiste un file `/var/www/html/<nome progetto>/laravel/lang/it/auth.php` e una chiave `"Auth": "Autenticazione"` in `/var/www/html/<nome progetto>/laravel/lang/it.json`, chiamare `__('Auth')` restituirà il contenuto di `auth.php` invece della traduzione attesa.
@@ -198,6 +211,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare il sistema di traduzione nel progetto `saluteora`:
 >>>>>>> 51659f3 (.)
 
+=======
+>>>>>>> e8163a6 (.)
 
 ## Problemi nel Mescolare File PHP e JSON
 
@@ -228,6 +243,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      php artisan lang:publish
      ```
    - Questo creerà la cartella `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/` con le sottocartelle per le lingue supportate (es. `en`, `it`).
+<<<<<<< HEAD
 2. **Struttura dei File di Traduzione PHP**:
    - Creare file di traduzione per ogni modulo in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/` e `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/`.
    - Esempio per il modulo di autenticazione in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/auth.php`:
@@ -251,6 +267,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Esempio per il modulo di autenticazione in `/var/www/html/saluteora/laravel/lang/it/auth.php`:
 >>>>>>> 51659f3 (.)
    - Questo creerà la cartella `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/` con le sottocartelle per le lingue supportate (es. `en`, `it`).
+=======
+>>>>>>> e8163a6 (.)
 
 2. **Struttura dei File di Traduzione PHP**:
    - Creare file di traduzione per ogni modulo in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/` e `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/`.
@@ -277,6 +295,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          'password_incorrect' => 'La password fornita non è corretta.',
          'throttle' => 'Troppi tentativi di accesso. Riprova tra :seconds secondi.',
      ];
+<<<<<<< HEAD
    - Creare file JSON per testi lunghi o frasi complete in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json` e `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en.json`.
    - Esempio per `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it.json`:
 <<<<<<< HEAD
@@ -286,6 +305,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Creare file JSON per testi lunghi o frasi complete in `/var/www/html/saluteora/laravel/lang/it.json` e `/var/www/html/saluteora/laravel/lang/en.json`.
    - Esempio per `/var/www/html/saluteora/laravel/lang/it.json`:
 >>>>>>> 51659f3 (.)
+=======
+>>>>>>> e8163a6 (.)
      ```
    - Creare file simili per altri moduli come `patient.php`, `dental.php`, ecc.
 
@@ -297,6 +318,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          "Benvenuto nel sistema di gestione sanitaria": "Benvenuto nel sistema di gestione sanitaria",
          "Hai dimenticato la password? Nessun problema. Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la password.": "Hai dimenticato la password? Nessun problema. Inserisci il tuo indirizzo email e ti invieremo un link per reimpostare la password."
      }
+<<<<<<< HEAD
    - Esempio per `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/login.blade.php`:
 <<<<<<< HEAD
    - Esempio per `/var/www/html/<nome progetto>/laravel/resources/views/auth/login.blade.php`:
@@ -304,6 +326,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Esempio per `/var/www/html/saluteora/laravel/resources/views/auth/login.blade.php`:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
      ```
 
 4. **Modifica dei File Blade per Utilizzare le Traduzioni**:
@@ -338,6 +362,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
                  {{ __('auth.login.forgot_password') }}
              </a>
          @endif
+<<<<<<< HEAD
    - Assicurarsi che il pacchetto `mcamara/laravel-localization` sia installato e configurato come descritto nella documentazione `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/laravel-localization-complete.md`.
    - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/routes/web.php` per aggiungere il prefisso della lingua:
 <<<<<<< HEAD
@@ -348,6 +373,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Modificare il file `/var/www/html/saluteora/laravel/routes/web.php` per aggiungere il prefisso della lingua:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
 
          <x-primary-button class="ms-4">
              {{ __('auth.login.login') }}
@@ -370,6 +397,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
          });
          // altre route...
      });
+<<<<<<< HEAD
    - Modificare il file `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/layouts/navigation.blade.php` per aggiungere un selettore di lingua:
 <<<<<<< HEAD
    - Modificare il file `/var/www/html/<nome progetto>/laravel/resources/views/layouts/navigation.blade.php` per aggiungere un selettore di lingua:
@@ -386,6 +414,8 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - Modificare il file `/var/www/html/saluteora/laravel/resources/views/layouts/navigation.blade.php` per aggiungere un selettore di lingua:
 >>>>>>> 51659f3 (.)
      ```php
+=======
+>>>>>>> e8163a6 (.)
      ```
 
 6. **Creazione di un Selettore di Lingua**:
@@ -456,6 +486,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 
 ## Conclusione
 
+<<<<<<< HEAD
 Implementare un sistema di traduzione per testi statici nel progetto `saluteora` migliorerà l'accessibilità e l'esperienza utente per utenti di diverse lingue. L'approccio con file PHP è raccomandato per la maggior parte delle traduzioni a causa della sua flessibilità e organizzazione, mentre i file JSON possono essere utilizzati per testi più lunghi o frasi complete. Le modifiche proposte ai file Blade, ai file di traduzione e alle route garantiranno che il sistema di localizzazione sia robusto e conforme alle regole del progetto, come l'uso del prefisso della lingua negli URL.
 
 ## Conclusione
@@ -464,6 +495,8 @@ Implementare un sistema di traduzione per testi statici nel progetto `<nome prog
 
 ## Conclusione
 
+=======
+>>>>>>> e8163a6 (.)
 Implementare un sistema di traduzione per testi statici nel progetto `<nome progetto>` migliorerà l'accessibilità e l'esperienza utente per utenti di diverse lingue. L'approccio con file PHP è raccomandato per la maggior parte delle traduzioni a causa della sua flessibilità e organizzazione, mentre i file JSON possono essere utilizzati per testi più lunghi o frasi complete. Le modifiche proposte ai file Blade, ai file di traduzione e alle route garantiranno che il sistema di localizzazione sia robusto e conforme alle regole del progetto, come l'uso del prefisso della lingua negli URL.
 
 ## Risorse
