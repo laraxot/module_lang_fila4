@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gestione automatica delle label in Filament tramite LangServiceProvider
 
 ## Funzionamento
@@ -10,7 +9,6 @@
 - Label, heading, help e placeholder SOLO in file di traduzione modulo.
 - Convenzione chiavi: `modulo.resource.fields.campo.label` o `modulo.resource.actions.azione.label`.
 - Nessuna label hardcoded nei file Filament.
-<<<<<<< HEAD
 - [docs root](../../../../project_docs/actions.md)
 - [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
 - [docs root](../../../../docs/actions.md)
@@ -73,26 +71,3 @@ Ultimo aggiornamento: maggio 2025.
 >>>>>>> 51659f3 (.)
 
 Ultimo aggiornamento: maggio 2025.
-=======
-
-## Anti-pattern
-- Uso di ->label() nei componenti Filament.
-- Label hardcoded.
-
-## Test di regressione
-- Test statico che cerca ->label( nei file Filament.
-- Test che verifica la presenza di tutte le chiavi di traduzione.
-
-## Collegamenti
-<<<<<<< HEAD
-- [docs root](../../../../project_docs/actions.md)
-- [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
-=======
-- [docs root](../../../../docs/actions.md)
-- [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
->>>>>>> 8b0b6ac (.)
-
-Ultimo aggiornamento: maggio 2025.
->>>>>>> e8163a6 (.)
-=======
->>>>>>> e07991e (.)

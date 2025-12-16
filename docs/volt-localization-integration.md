@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Integrazione Livewire Volt + mcamara/laravel-localization
 
 ## 1. Obiettivo
@@ -155,23 +154,16 @@ $current = app()->getLocale();
 - Versiona i file di route tradotte e aggiorna la documentazione ogni volta che aggiungi nuove pagine Volt.
 - Testa la localizzazione sia per le route che per i contenuti dinamici dei componenti Volt.
 - Per la cache delle route, usa sempre `php artisan route:trans:cache` se usi la cache delle route localizzate.
-<<<<<<< HEAD
 - [Livewire Volt - Docs](https://livewire.laravel.com/project_docs/volt)
 - [Livewire Volt - Docs](https://livewire.laravel.com/docs/volt)
 - [mcamara/laravel-localization - GitHub](https://github.com/mcamara/laravel-localization)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 ## 8. Checklist finale
-=======
->>>>>>> e8163a6 (.)
 
 ---
 
 ## 7. Collegamenti utili
 
-<<<<<<< HEAD
-=======
-- [Livewire Volt - Docs](https://livewire.laravel.com/project_docs/volt)
->>>>>>> e8163a6 (.)
 - [mcamara/laravel-localization - GitHub](https://github.com/mcamara/laravel-localization)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 
@@ -186,10 +178,5 @@ $current = app()->getLocale();
 - [ ] La documentazione è aggiornata e linkata nei README
 
 </rewritten_file> 
-<<<<<<< HEAD
 
 </rewritten_file> 
-=======
->>>>>>> e8163a6 (.)
-=======
->>>>>>> e07991e (.)

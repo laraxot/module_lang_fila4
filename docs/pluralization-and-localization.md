@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Plurale/Singolare e Localizzazione Date/Valute
 
 ## Pluralizzazione
@@ -31,7 +30,6 @@
 - **File PHP**: Inserire tutte le stringhe plurali in file dedicati (es. `lang/en/messages.php` e `lang/it/messages.php`).
 - **Blade**: Sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
 - **File JSON**: Evitare l'uso per le stringhe plurali, salvo casi di necessità per traduttori non-dev.
-<<<<<<< HEAD
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
 <<<<<<< HEAD
 - `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`:
@@ -44,8 +42,6 @@
 ### 1.5 Esempio Completo
 - `/var/www/html/saluteora/laravel/lang/en/messages.php`:
 >>>>>>> 51659f3 (.)
-=======
->>>>>>> e8163a6 (.)
 
 ### 1.5 Esempio Completo
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
@@ -56,7 +52,6 @@
   ```
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`:
 <<<<<<< HEAD
-<<<<<<< HEAD
 - `/var/www/html/<nome progetto>/laravel/lang/it/messages.php`:
   ```php
   return [
@@ -70,8 +65,6 @@
 - `/var/www/html/saluteora/laravel/lang/it/messages.php`:
 >>>>>>> 51659f3 (.)
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`:
-=======
->>>>>>> e8163a6 (.)
   ```php
   return [
       'newMessageIndicator' => '{0} Non hai nuovi messaggi|{1} Hai 1 nuovo messaggio|[2,*] Hai :count nuovi messaggi',
@@ -180,7 +173,6 @@
       app()->setLocale($locale);
       Carbon::setLocale($locale);
       return $next($request);
-<<<<<<< HEAD
 - [Carbon Docs](https://carbon.nesbot.com/project_docs/)
 - [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
 - [Laravel Localization](https://laravel.com/project_docs/12.x/localization)
@@ -188,8 +180,6 @@
 - [Laravel Localization](https://laravel.com/docs/12.x/localization)
 - [Corso Laravel Daily](https://laraveldaily.com/course/multi-language-laravel)
 ## 3. FAQ e Problemi Comuni
-=======
->>>>>>> e8163a6 (.)
   }
   ```
 
@@ -203,12 +193,6 @@
 ---
 
 ## Riferimenti
-<<<<<<< HEAD
-=======
-- [Carbon Docs](https://carbon.nesbot.com/project_docs/)
-- [NumberFormatter PHP](https://www.php.net/manual/en/class.numberformatter.php)
-- [Laravel Localization](https://laravel.com/project_docs/12.x/localization)
->>>>>>> e8163a6 (.)
 - [Corso Laravel Daily](https://laraveldaily.com/course/multi-language-laravel)
 
 ---
@@ -229,5 +213,3 @@
 - [translations-storage.md](./translations-storage.md)
 - [translation-process.md](./translation-process.md)
 - [README.md](./README.md) 
-=======
->>>>>>> e07991e (.)

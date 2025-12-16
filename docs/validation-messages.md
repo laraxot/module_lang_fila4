@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gestione delle Traduzioni dei Messaggi di Validazione
 
 ## Obiettivo
@@ -122,14 +121,11 @@ class StoreOrderRequest extends FormRequest
 - [ ] Gestisci array di campi con `*` e placeholder `:position`
 - [ ] Centralizza i messaggi comuni in `validation.php` e usa override solo se necessario
 - [ ] Documenta le regole e le eccezioni in `/Modules/Lang/project_docs/validation-messages.md`
-<<<<<<< HEAD
 - [ ] Documenta le regole e le eccezioni in `/Modules/Lang/docs/validation-messages.md`
 - [ ] Aggiorna la documentazione ogni volta che cambi la strategia di validazione
 ## 7. Modifiche consigliate ai file del progetto
 - [ ] Documenta le regole e le eccezioni in `/Modules/Lang/docs/validation-messages.md`
 - [ ] Documenta le regole e le eccezioni in `/Modules/Lang/project_docs/validation-messages.md`
-=======
->>>>>>> e8163a6 (.)
 - [ ] Aggiorna la documentazione ogni volta che cambi la strategia di validazione
 
 ---
@@ -163,5 +159,3 @@ class StoreOrderRequest extends FormRequest
 - [translations-storage.md](./translations-storage.md)
 - [translation-process.md](./translation-process.md)
 - [README.md](./README.md) 
-=======
->>>>>>> e07991e (.)

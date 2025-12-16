@@ -123,12 +123,7 @@ class StoreOrderRequest extends FormRequest
 <<<<<<< HEAD
 - [ ] Documenta le regole e le eccezioni in `/Modules/Lang/docs/validation-messages.md`
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- [ ] Documenta le regole e le eccezioni in `/Modules/Lang/project_docs/validation-messages.md`
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 - [ ] Aggiorna la documentazione ogni volta che cambi la strategia di validazione
 
 ---

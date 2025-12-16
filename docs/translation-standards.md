@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # Standard per le Traduzioni nel Progetto 
-<<<<<<< HEAD
 <<<<<<< HEAD
 # Standard per le Traduzioni nel Progetto <nome progetto>
 
@@ -15,8 +13,6 @@ Le traduzioni vanno posizionate nella cartella `lang` di ogni modulo, organizzat
 # Standard per le Traduzioni nel Progetto SaluteOra
 >>>>>>> 51659f3 (.)
 # Standard per le Traduzioni nel Progetto 
-=======
->>>>>>> e8163a6 (.)
 
 ## Struttura delle Cartelle
 
@@ -180,7 +176,6 @@ return [
 - Centralizzazione: un solo punto di verità
 - Nessun lock-in: ogni modulo può evolvere senza dipendenze nascoste
 - Serenità zen: codice e traduzioni sempre coerenti
-<<<<<<< HEAD
 - [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md)
 <<<<<<< HEAD
 - [<nome progetto>/docs/appointment-management.md](../../<nome progetto>/docs/appointment-management.md)
@@ -197,8 +192,6 @@ return [
 >>>>>>> 51659f3 (.)
 - [Lang/translation_keys_best_practices.md](./translation_keys_best_practices.md)
 
-=======
->>>>>>> e8163a6 (.)
 
 ### Collegamenti
 - [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md)
@@ -210,5 +203,3 @@ return [
 - Aggiornare la documentazione ogni volta che si modifica una risorsa clinica
 - Non duplicare chiavi tra moduli
 - Seguire sempre la filosofia DRY, KISS, centralizzazione
-=======
->>>>>>> e07991e (.)

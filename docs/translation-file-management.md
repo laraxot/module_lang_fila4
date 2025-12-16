@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Gestione File di Traduzione
 
 ## Panoramica
@@ -198,7 +197,6 @@ class TranslationFileResource extends XotBaseResource
                 ->required()
                 ->maxLength(255),
             Components\Textarea::make('content')
-<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/project_docs/localization)
 - [Laravel Localization](https://laravel.com/docs/localization)
 
@@ -207,8 +205,6 @@ class TranslationFileResource extends XotBaseResource
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
 4. **Usabilità**: Interfaccia intuitiva per i traduttori 
-=======
->>>>>>> e8163a6 (.)
                 ->required()
                 ->rows(20)
                 ->monospace(),
@@ -254,20 +250,10 @@ php artisan lang:export
 - [Translation Standards](./translation-standards.md)
 - [Translation System](./translation-system.md)
 - [Best Practices](./translation-keys-best-practices.md)
-<<<<<<< HEAD
-=======
-- [Laravel Localization](https://laravel.com/project_docs/localization)
->>>>>>> e8163a6 (.)
 
 ## Note per lo Sviluppo
 
 1. **Performance**: Utilizzare cache per i file di traduzione
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
-<<<<<<< HEAD
 4. **Usabilità**: Interfaccia intuitiva per i traduttori 
-=======
-4. **Usabilità**: Interfaccia intuitiva per i traduttori 
->>>>>>> e8163a6 (.)
-=======
->>>>>>> e07991e (.)

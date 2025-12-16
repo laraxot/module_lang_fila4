@@ -90,11 +90,6 @@ Il file `Modules/Lang/app/Filament/Resources/TranslationFileResource/Pages/EditT
 <<<<<<< HEAD
 - [Modules/Lang/docs/](../docs/)
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- [Modules/Lang/project_docs/](../project_docs/)
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 *Ultimo aggiornamento: 29 luglio 2025*

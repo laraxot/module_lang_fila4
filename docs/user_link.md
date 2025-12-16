@@ -18,14 +18,7 @@ Il modulo User utilizza le traduzioni fornite dal modulo Lang per:
 - [Gestione Utenti](../../User/docs/README.md) - Panoramica del modulo User
 - [Modelli Utente](../../User/docs/user_profile_models.md) - Documentazione sui modelli utente e profili
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- [Traduzioni del Modulo User](../../User/project_docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
-- [Gestione Utenti](../../User/project_docs/README.md) - Panoramica del modulo User
-- [Modelli Utente](../../User/project_docs/user_profile_models.md) - Documentazione sui modelli utente e profili
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 ## Integrazione con Lang
 
@@ -40,12 +33,7 @@ Il modulo User integra il modulo Lang attraverso:
 <<<<<<< HEAD
 Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/docs/lang-link.md) nel modulo User.
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/project_docs/lang-link.md) nel modulo User.
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 > Aggiorna entrambi i riferimenti se modifichi la struttura delle traduzioni o aggiungi nuove funzionalità che richiedono traduzioni.
 
@@ -54,11 +42,5 @@ Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/pr
 * [user-link.md](../../../Lang/docs/user-link.md)
 * [user-link.md](../../../Cms/docs/user-link.md)
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-* [user-link.md](../../../Lang/project_docs/user-link.md)
-* [user-link.md](../../../Cms/project_docs/user-link.md)
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 

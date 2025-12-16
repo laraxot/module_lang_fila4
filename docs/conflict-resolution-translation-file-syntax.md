@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Risoluzione Conflitto translation-file-syntax.md
 
 ## Problema Identificato
@@ -212,11 +211,5 @@ Quando si lavora sui file di traduzione, non è mai consentito rimuovere chiavi 
 - **Modulo**: Lang
 - **File**: `docs/translation-file-syntax.md`
 - **Tipo Conflitto**: Documentazione best practice
-<<<<<<< HEAD
 - **Scelta**: Versione HEAD (mantenere best practice 2025) 
 - **Scelta**: Versione HEAD (mantenere best practice 2025) 
-=======
-- **Scelta**: Versione HEAD (mantenere best practice 2025) 
->>>>>>> e8163a6 (.)
-=======
->>>>>>> e07991e (.)

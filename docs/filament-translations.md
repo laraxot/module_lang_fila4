@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Regole per le Traduzioni in Filament
 
 > **Regola fondamentale:** MAI utilizzare il metodo `->label()` nei componenti Filament, specialmente nei Blocks. Le etichette sono gestite automaticamente dal LangServiceProvider.
@@ -15,7 +14,6 @@
   ],
   ```
 - **Esempio ERRATO:**
-<<<<<<< HEAD
   - [docs Modulo Generico](../../<nome modulo>/docs/translations.md)
 <<<<<<< HEAD
   - [docs <nome progetto>](../../<nome progetto>/docs/translations.md)
@@ -25,8 +23,6 @@
 
 ## Struttura Corretta per le Traduzioni
 Le traduzioni in Filament devono seguire questa struttura nei file di traduzione:
-=======
->>>>>>> e8163a6 (.)
   ```php
   'group' => 'patient.navigation',
   'label' => 'patient.navigation',
@@ -34,10 +30,6 @@ Le traduzioni in Filament devono seguire questa struttura nei file di traduzione
 - Consulta anche:
   - [translation_keys_best_practices.md](../translation_keys_best_practices.md)
   - [translation_keys_rules.md](../translation_keys_rules.md)
-<<<<<<< HEAD
-=======
-  - [docs Modulo Generico](../../<nome modulo>/docs/translations.md)
->>>>>>> e8163a6 (.)
 
 ## Struttura Corretta per le Traduzioni
 
@@ -102,7 +94,6 @@ TextInput::make('title')
 2. **Multilingua**: facilita la traduzione in più lingue
 3. **Manutenibilità**: le etichette sono centralizzate nei file di traduzione
 4. **Performance**: ottimizzazioni di caching implementate nel LangServiceProvider
-<<<<<<< HEAD
 - [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
 - [Regole Generali](../../Xot/project_docs/README.md) - Best practice e linee guida generali
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
@@ -127,8 +118,6 @@ Tutte le label, placeholder, messaggi e azioni relativi a disponibilità e appun
 
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) - Regole per i namespace e componenti Filament
 - [Regole Generali](../../Xot/docs/README.md) - Best practice e linee guida generali
-=======
->>>>>>> e8163a6 (.)
 
 ## Collegamenti Bidirezionali
 
@@ -144,10 +133,6 @@ Questo documento è linkato anche dalla documentazione del modulo Cms per garant
 
 - Tutte le label sono gestite tramite i file di traduzione del modulo.
 - Consulta anche:
-<<<<<<< HEAD
-=======
-  - [docs Modulo Generico](../../<nome modulo>/docs/README.md)
->>>>>>> e8163a6 (.)
   - [docs Xot](../../Xot/docs/README.md)
 
 ## Policy DRY sulle Traduzioni di Disponibilità/Appuntamenti
@@ -158,5 +143,3 @@ Tutte le label, placeholder, messaggi e azioni relativi a disponibilità e appun
 - Un solo punto di verità: nessuna duplicazione, nessun lock-in
 - DRY, KISS, serenità del codice
 - Refactoring sicuro, massima estendibilità
-=======
->>>>>>> e07991e (.)

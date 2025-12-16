@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 # Collegamenti ai Moduli che utilizzano le Traduzioni
 
 Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento alle traduzioni centralizzate.
 
 ## Moduli con collegamento
 
-<<<<<<< HEAD
 - [Activity](../../Activity/docs/lang-link.md)
 - [Chart](../../Chart/docs/lang-link.md)
 - [Cms](../../Cms/docs/lang-link.md)
@@ -20,8 +18,6 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/docs/lang-link.md)
 - [User](../../User/docs/lang-link.md)
 - [Xot](../../Xot/docs/lang-link.md)
-=======
->>>>>>> e8163a6 (.)
 - [Activity](../../Activity/project_docs/lang-link.md)
 - [Chart](../../Chart/project_docs/lang-link.md)
 - [Cms](../../Cms/project_docs/lang-link.md)
@@ -36,7 +32,6 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/project_docs/lang-link.md)
 - [User](../../User/project_docs/lang-link.md)
 - [Xot](../../Xot/project_docs/lang-link.md)
-<<<<<<< HEAD
 - [Activity](../../Activity/docs/lang-link.md)
 - [Chart](../../Chart/docs/lang-link.md)
 - [Cms](../../Cms/docs/lang-link.md)
@@ -54,11 +49,7 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 
 ---
 Per ogni risorsa o campo localizzato, consulta sia la documentazione del modulo che la documentazione di Lang per garantire coerenza e aggiornamento delle traduzioni.
-=======
->>>>>>> e8163a6 (.)
 
 ---
 
 Per ogni risorsa o campo localizzato, consulta sia la documentazione del modulo che la documentazione di Lang per garantire coerenza e aggiornamento delle traduzioni.
-=======
->>>>>>> e07991e (.)

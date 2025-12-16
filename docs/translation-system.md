@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Sistema di Traduzione in il progetto
 
 ## LangServiceProvider
@@ -64,7 +63,6 @@ return [
    - Centralizza le traduzioni nei file lang
    - Evita testo hardcoded nel codice
    - Facilita il supporto multilingua
-<<<<<<< HEAD
 - [Form Components](../Patient/docs/filament-form-components.md)
 - [Wizard Structure](../Patient/docs/filament-wizard-structure.md)
 - [Best Practices](../Xot/docs/filament-best-practices.md)
@@ -83,8 +81,6 @@ return [
 - [Laravel Translations](https://laravel.com/docs/localization)
 - [Filament i18n](https://filamentphp.com/docs/internationalization) 
 - [Filament i18n](https://filamentphp.com/docs/internationalization) 
-=======
->>>>>>> e8163a6 (.)
 
 ## Collegamenti
 - [Form Components](../Patient/project_docs/filament-form-components.md)
@@ -93,10 +89,4 @@ return [
 
 ## Vedi Anche
 - [Laravel Translations](https://laravel.com/project_docs/localization)
-<<<<<<< HEAD
 - [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
-=======
-- [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
->>>>>>> e8163a6 (.)
-=======
->>>>>>> e07991e (.)

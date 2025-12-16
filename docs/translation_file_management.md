@@ -245,12 +245,7 @@ php artisan lang:export
 <<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/docs/localization)
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- [Laravel Localization](https://laravel.com/project_docs/localization)
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 ## Note per lo Sviluppo
 

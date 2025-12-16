@@ -162,12 +162,7 @@ $current = app()->getLocale();
 <<<<<<< HEAD
 - [Livewire Volt - Docs](https://livewire.laravel.com/docs/volt)
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- [Livewire Volt - Docs](https://livewire.laravel.com/project_docs/volt)
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 - [mcamara/laravel-localization - GitHub](https://github.com/mcamara/laravel-localization)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 

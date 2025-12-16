@@ -46,15 +46,7 @@ Aggiorna sempre la documentazione in `/Modules/Lang/docs` e spiega la strategia 
 ## 13. Come gestire plurale/singolare e localizzazione di date/valute?
 - Consulta la guida dettagliata in `/Modules/Lang/docs/pluralization-and-localization.md`.
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- Consulta la guida dettagliata in `/Modules/Lang/project_docs/validation-messages.md`.
-
-## 13. Come gestire plurale/singolare e localizzazione di date/valute?
-- Consulta la guida dettagliata in `/Modules/Lang/project_docs/pluralization-and-localization.md`.
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 ## FAQ
 

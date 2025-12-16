@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Convenzioni per i Link nella Documentazione
 
 ## Regole Fondamentali per i Link Markdown
@@ -9,16 +8,11 @@ I collegamenti nei file di documentazione devono **sempre** utilizzare percorsi 
 
 ✅ **CORRETTO**:
 ```markdown
-<<<<<<< HEAD
-=======
-[Regole Generali](../../Xot/project_docs/translations.md)
->>>>>>> e8163a6 (.)
 [Best Practices](../TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
 
 ❌ **ERRATO**:
 ```markdown
-<<<<<<< HEAD
 <<<<<<< HEAD
 [Regole Generali](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Xot/project_docs/translations.md)
 [Best Practices](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
@@ -31,10 +25,6 @@ I collegamenti nei file di documentazione devono **sempre** utilizzare percorsi 
 [Best Practices](/var/www/html/saluteora/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 >>>>>>> 8b0b6ac (.)
 >>>>>>> 51659f3 (.)
-=======
-[Regole Generali](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Xot/project_docs/translations.md)
-[Best Practices](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
->>>>>>> e8163a6 (.)
 ```
 
 ### 2. Navigazione Tra Cartelle
@@ -51,7 +41,6 @@ Esempi:
 ### 3. Struttura della Documentazione
 
 <<<<<<< HEAD
-<<<<<<< HEAD
 Quando si creano collegamenti, considerare la struttura standard dei moduli :
 <<<<<<< HEAD
 Quando si creano collegamenti, considerare la struttura standard dei moduli <nome progetto>:
@@ -60,9 +49,6 @@ Quando si creano collegamenti, considerare la struttura standard dei moduli <nom
 Quando si creano collegamenti, considerare la struttura standard dei moduli SaluteOra:
 >>>>>>> 8b0b6ac (.)
 >>>>>>> 51659f3 (.)
-=======
-Quando si creano collegamenti, considerare la struttura standard dei moduli :
->>>>>>> e8163a6 (.)
 
 ```
 laravel/
@@ -82,14 +68,6 @@ laravel/
 Per collegare documenti tra moduli diversi:
 
 ```markdown
-<<<<<<< HEAD
-=======
-<!-- Da Modules/ModuloA/project_docs/file.md a Modules/ModuloB/project_docs/file.md -->
-[Link a ModuloB](../../ModuloB/project_docs/file.md)
-
-<!-- Da Modules/ModuloA/project_docs/file.md a docs/file.md nella root -->
-[Link a docs root](../../../project_docs/file.md)
->>>>>>> e8163a6 (.)
 ```
 
 ### 5. Verificare Sempre i Link
@@ -101,20 +79,6 @@ Prima di fare commit dei documenti:
 
 ## Esempi Pratici
 
-<<<<<<< HEAD
-=======
-### Da Modules/Lang/project_docs/ a Modules/Notify/project_docs/
-```markdown
-[Convenzioni Notify](../../Notify/project_docs/TRANSLATION_CONVENTIONS.md)
-```
-
-### Da Modules/Lang/project_docs/ a docs/ nella root
-```markdown
-[Documentazione Principale](../../../project_docs/README.md)
-```
-
-### Da Modules/Lang/project_docs/ a un altro file nella stessa cartella
->>>>>>> e8163a6 (.)
 ```markdown
 [Best Practices](TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
@@ -125,7 +89,6 @@ Prima di fare commit dei documenti:
 2. **Manutenibilità**: Se la struttura cambia, sono necessarie meno modifiche
 3. **Collaborazione**: Facilita il lavoro di più sviluppatori
 <<<<<<< HEAD
-<<<<<<< HEAD
 4. **Coerenza**: Rispetta gli standard del progetto 
 <<<<<<< HEAD
 4. **Coerenza**: Rispetta gli standard del progetto <nome progetto>
@@ -134,8 +97,3 @@ Prima di fare commit dei documenti:
 4. **Coerenza**: Rispetta gli standard del progetto SaluteOra
 >>>>>>> 8b0b6ac (.)
 >>>>>>> 51659f3 (.)
-=======
-4. **Coerenza**: Rispetta gli standard del progetto 
->>>>>>> e8163a6 (.)
-=======
->>>>>>> e07991e (.)

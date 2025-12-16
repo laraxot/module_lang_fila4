@@ -3,12 +3,7 @@
 <<<<<<< HEAD
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-> **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 ## Problema
 
@@ -64,13 +59,7 @@ sudo chmod 664 /var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.php
 - [Indice e collegamenti root](../../../docs/links.md)
 - [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
 =======
-<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
-=======
-- [Indice e collegamenti root](../../../project_docs/links.md)
-- [Documentazione MCP e gestione errori](../../../project_docs/mcp_errors_and_lessons.md)
->>>>>>> a7ee0d6 (.)
->>>>>>> 08291f8 (.)
 
 ---
 

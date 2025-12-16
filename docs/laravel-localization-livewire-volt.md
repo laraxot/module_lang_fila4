@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Integrazione di mcamara/laravel-localization con Livewire Volt
 
 ## Obiettivo
@@ -105,7 +104,6 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - [ ] Tutti i link e redirect usano nomi di rotte localizzate.
 - [ ] Se necessario, i path delle rotte Volt sono tradotti tramite mapping.
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md`.
-<<<<<<< HEAD
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/docs/laravel-localization-livewire-volt.md`.
 
 ---
@@ -115,8 +113,6 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 ---
 
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md`.
-=======
->>>>>>> e8163a6 (.)
 
 ---
 
@@ -139,7 +135,6 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
   Verifica che tutti i testi siano tradotti e che i redirect usino le rotte localizzate.
 - **Documentazione**:  
   Aggiorna sempre `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
-<<<<<<< HEAD
   Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
 
 ---
@@ -148,13 +143,9 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative. 
   Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
   Aggiorna sempre `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
-=======
->>>>>>> e8163a6 (.)
 
 ---
 
 ## 7. Best Practices operative (.mdc)
 
 Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative. 
-=======
->>>>>>> e07991e (.)
