@@ -91,7 +91,7 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder<static>|Post whereUserId($value)
  * @method static Builder<static>|Post whereViewsCount($value)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @method static \Modules\Lang\Database\Factories\PostFactory factory($count = null, $state = [])
  *

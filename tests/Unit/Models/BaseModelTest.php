@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\BaseModel;
 use Tests\TestCase;
 
-<<<<<<< HEAD
 uses(TestCase::class, RefreshDatabase::class);
-=======
->>>>>>> 18cdca4e (.)
 
 beforeEach(function () {
 use Illuminate\Database\Eloquent\Model;

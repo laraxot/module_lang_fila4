@@ -50,7 +50,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static EloquentBuilder<static>|Translation whereUpdatedBy($value)
  * @method static EloquentBuilder<static>|Translation whereValue($value)
  *
- * @property \Modules\TechPlanner\Models\Profile|null $deleter
+ * @property \Modules\Xot\Contracts\ProfileContract|null $deleter
  *
  * @mixin \Eloquent
  */

@@ -62,10 +62,7 @@ class LangServiceProvider extends XotBaseServiceProvider
                 /** @var array<string, string> $typedMessages */
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-<<<<<<< HEAD
                     if (is_string($key) && is_string($value)) {
-=======
->>>>>>> 51659f3 (.)
                         $typedMessages[$key] = $value;
                     }
                 }
