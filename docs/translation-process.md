@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> e8163a6 (.)
 # Processo di Traduzione: Da Sviluppatore a Traduttore
@@ -245,3 +246,5 @@ Questo documento fornisce una guida completa per la gestione delle traduzioni ne
 =======
 Questo documento fornisce una guida completa per la gestione delle traduzioni nel progetto . Seguendo queste linee guida, è possibile garantire un processo di traduzione fluido e coerente in tutto il team di sviluppo.
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> e07991e (.)

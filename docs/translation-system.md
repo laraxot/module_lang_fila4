@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema di Traduzione in il progetto
 
 ## LangServiceProvider
@@ -97,3 +98,5 @@ return [
 =======
 - [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> e07991e (.)

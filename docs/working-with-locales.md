@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 # Gestione delle Lingue (Locales) in Laravel
 
@@ -285,3 +286,5 @@ La gestione delle lingue in Laravel richiede una configurazione attenta della li
 ## Risorse
 
 - Corso Laravel Daily: [Multi-Language Laravel 11: All You Need to Know](https://laraveldaily.com/course/multi-language-laravel)
+=======
+>>>>>>> e07991e (.)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Standard per le Traduzioni nel Progetto 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -209,3 +210,5 @@ return [
 - Aggiornare la documentazione ogni volta che si modifica una risorsa clinica
 - Non duplicare chiavi tra moduli
 - Seguire sempre la filosofia DRY, KISS, centralizzazione
+=======
+>>>>>>> e07991e (.)

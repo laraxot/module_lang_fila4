@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 In un file Blade come `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/resources/views/auth/register.blade.php`, potremmo avere:
 <<<<<<< HEAD
 In un file Blade come `/var/www/html/<nome progetto>/laravel/resources/views/auth/register.blade.php`, potremmo avere:
@@ -502,3 +503,5 @@ Implementare un sistema di traduzione per testi statici nel progetto `<nome prog
 ## Risorse
 
 - Corso Laravel Daily: [Multi-Language Laravel 11: All You Need to Know](https://laraveldaily.com/course/multi-language-laravel)
+=======
+>>>>>>> e07991e (.)

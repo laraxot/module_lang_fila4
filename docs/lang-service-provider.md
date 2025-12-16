@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 Il `LangServiceProvider` è un componente fondamentale di  che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
 1. **Coerenza**: Tutte le etichette seguono lo stesso pattern di traduzione
@@ -336,3 +337,5 @@ Per dettagli tecnici, vedi anche la documentazione di `XotBaseServiceProvider` e
 ## Conclusioni e Raccomandazioni
 
 Il `
+=======
+>>>>>>> e07991e (.)

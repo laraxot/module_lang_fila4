@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # links01
 
 <!-- Contenuto migrato da _docs/links01.txt -->
@@ -41,3 +42,5 @@ https://github.com/Astrotomic/laravel-translatable
 https://github.com/dimsav/laravel-translatable#step-1-install-package
 >>>>>>> e8163a6 (.)
 
+=======
+>>>>>>> e07991e (.)

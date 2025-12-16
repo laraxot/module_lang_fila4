@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -31,3 +32,5 @@ return new class extends Migration {
         Schema::dropIfExists('language_lines');
     }
 };
+=======
+>>>>>>> e07991e (.)

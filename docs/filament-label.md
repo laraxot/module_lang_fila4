@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Gestione automatica delle label in Filament tramite LangServiceProvider
 
 ## Funzionamento
@@ -93,3 +94,5 @@ Ultimo aggiornamento: maggio 2025.
 
 Ultimo aggiornamento: maggio 2025.
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> e07991e (.)

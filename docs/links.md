@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 https://github.com/JoggApp/laravel-google-translate
 
 https://github.com/tanmuhittin/laravel-google-translate
@@ -150,3 +151,5 @@ php artisan translations:clean     # Pulisce le traduzioni non utilizzate
 >>>>>>> e8163a6 (.)
 
 
+=======
+>>>>>>> e07991e (.)

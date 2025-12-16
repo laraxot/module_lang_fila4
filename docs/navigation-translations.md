@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Traduzioni con ".navigation" - Audit Completo 2025
 
 ## Riepilogo Problema
@@ -100,3 +101,5 @@ Molte traduzioni utilizzano ancora il pattern `.navigation` invece di traduzioni
 - [Correzioni Errori Sintassi 2025](../correzioni_errori_sintassi_2025.md)
 - [Best Practices Traduzioni](../../Xot/docs/TRANSLATION_RULES.md)
 
+=======
+>>>>>>> e07991e (.)

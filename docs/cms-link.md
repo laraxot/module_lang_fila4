@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 
@@ -70,3 +71,5 @@ Quando aggiungi nuovi componenti Filament nel modulo Cms, ricorda di:
 =======
 >>>>>>> e8163a6 (.)
 
+=======
+>>>>>>> e07991e (.)

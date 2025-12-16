@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lang Module - PHPStan Level 7 Fixes - Gennaio 2025
 
 ## ✅ **Stato Completato**
@@ -87,3 +88,5 @@ private function castWithAction(mixed $value): string
 - **Generic Types**: Aggiornati PHPDoc per generic types corretti
 - **Method Signatures**: Allineate tutte le signature con le classi base
 *Stato: ✅ Completato - 0 errori PHPStan*
+=======
+>>>>>>> e07991e (.)

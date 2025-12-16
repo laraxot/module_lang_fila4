@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 > **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
 
@@ -101,3 +102,5 @@ La root `docs/` deve contenere solo il link a questo file, non la guida completa
 =======
 La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> e07991e (.)

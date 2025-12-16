@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Regole per le Traduzioni in Filament
 
 > **Regola fondamentale:** MAI utilizzare il metodo `->label()` nei componenti Filament, specialmente nei Blocks. Le etichette sono gestite automaticamente dal LangServiceProvider.
@@ -157,3 +158,5 @@ Tutte le label, placeholder, messaggi e azioni relativi a disponibilità e appun
 - Un solo punto di verità: nessuna duplicazione, nessun lock-in
 - DRY, KISS, serenità del codice
 - Refactoring sicuro, massima estendibilità
+=======
+>>>>>>> e07991e (.)

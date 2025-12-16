@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 # Traduzione dei Messaggi di Validazione
 
@@ -432,3 +433,5 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
    - File: `/var/www/html/_bases/base_techplanner_fila3_mono/.windsurf/rules/translating-validation-messages.mdc`
    - Contenuto: Identico al file per Cursor.
    - **Ragionamento**: Creare file di metadati `.mdc` per Cursor e Windsurf nelle directory specificate garantisce che le regole di personalizzazione dei messaggi di validazione siano documentate e accessibili per future reference, rispettando le regole di organizzazione del progetto.
+=======
+>>>>>>> e07991e (.)

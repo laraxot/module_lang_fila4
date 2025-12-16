@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Convenzioni per i Link nella Documentazione
 
 ## Regole Fondamentali per i Link Markdown
@@ -136,3 +137,5 @@ Prima di fare commit dei documenti:
 =======
 4. **Coerenza**: Rispetta gli standard del progetto 
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> e07991e (.)

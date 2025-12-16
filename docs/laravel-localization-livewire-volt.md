@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Integrazione di mcamara/laravel-localization con Livewire Volt
 
 ## Obiettivo
@@ -155,3 +156,5 @@ Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/ru
 ## 7. Best Practices operative (.mdc)
 
 Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative. 
+=======
+>>>>>>> e07991e (.)

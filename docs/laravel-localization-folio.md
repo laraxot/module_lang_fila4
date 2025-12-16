@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Integrazione tra mcamara/laravel-localization e Laravel Folio
 
 ## Obiettivo
@@ -174,3 +175,5 @@ Se la localizzazione dei path è fondamentale, valuta se usare ancora le rotte c
 ---
 
 **Se vuoi che aggiorni direttamente la documentazione o vuoi esempi pratici di override/mapping path Folio, chiedi pure!** 
+=======
+>>>>>>> e07991e (.)
