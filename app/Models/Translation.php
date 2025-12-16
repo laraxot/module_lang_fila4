@@ -8,30 +8,31 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Lang\Database\Factories\TranslationFactory;
+use DB;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Carbon;
-use Modules\Lang\Database\Factories\TranslationFactory;
-use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modules\Lang\Models\Translation.
  *
- * @property string               $id
- * @property string|null          $lang
- * @property string|null          $key
- * @property string|null          $value
- * @property string|null          $created_by
- * @property string|null          $updated_by
- * @property Carbon|null          $created_at
- * @property Carbon|null          $updated_at
- * @property string               $namespace
- * @property string               $group
- * @property string|null          $item
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
+ * @property string $id
+ * @property string|null $lang
+ * @property string|null $key
+ * @property string|null $value
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property string $namespace
+ * @property string $group
+ * @property string|null $item
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
  *
- * @method static TranslationFactory                  factory($count = null, $state = [])
+ * @method static TranslationFactory factory($count = null, $state = [])
  * @method static EloquentBuilder<static>|Translation newModelQuery()
  * @method static EloquentBuilder<static>|Translation newQuery()
  * @method static EloquentBuilder<static>|Translation ofTranslatedGroup(string $group)
@@ -91,12 +92,12 @@ class Translation extends BaseModel
 
     public function scopeSelectDistinctGroup(EloquentBuilder $query): EloquentBuilder|QueryBuilder
     {
-        $select = match (\DB::getDriverName()) {
+        $select = match (DB::getDriverName()) {
             'mysql' => 'DISTINCT `group`',
             default => 'DISTINCT "group"',
         };
 
-        return $query->select(\DB::raw($select));
+        return $query->select(DB::raw($select));
     }
 
     /*

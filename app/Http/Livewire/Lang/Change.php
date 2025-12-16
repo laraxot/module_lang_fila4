@@ -35,6 +35,7 @@ class Change extends Component
         $langs = Arr::map($langs, function (array $item, string $key): array {
             // Recupera la URL localizzata corrente
             $url = LaravelLocalization::getLocalizedURL($key, $this->url, [], true);
+<<<<<<< HEAD
 
             // Verifichiamo che $url sia una stringa o la convertiamo in modo sicuro
             if (! is_string($url)) {
@@ -44,6 +45,15 @@ class Change extends Component
                 $url = Str::of($url)
                     ->replace(url(''), '')
                     ->toString();
+=======
+                // Verifichiamo che $url sia una stringa o lo convertiamo in modo sicuro
+                if (! is_string($url)) {
+                    // Se non è una stringa, utilizziamo una URL di fallback
+                    $url = '/'.$key;
+                } else {
+                    $url = Str::of($url)->replace(url(''), '')->toString();
+                }
+>>>>>>> 51659f3 (.)
             }
 
             $item['url'] = $url;

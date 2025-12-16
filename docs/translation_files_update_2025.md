@@ -119,13 +119,19 @@ return [
 
 ## Collegamenti
 
+<<<<<<< HEAD
 - [Translation Rules](../Xot/docs/translation_rules.md)
 - [Translation Standards](./translation-standards.md)
 - [Best Practices](../Xot/docs/translations-best-practices.md)
+=======
+>>>>>>> 51659f3 (.)
 
 ## Prossimi Passi
 
 1. **Test**: Verificare il funzionamento in ambiente di sviluppo
 2. **Documentazione**: Aggiornare la documentazione dei moduli Notify e Lang
 3. **Review**: Code review per confermare le modifiche
+<<<<<<< HEAD
 4. **Deploy**: Deploy in ambiente di staging per test completi 
+=======
+>>>>>>> 51659f3 (.)

@@ -12,7 +12,11 @@ Laravel fornisce la funzione helper `trans_choice()` che permette di scegliere l
 - Usare `{INT}` per specificare una traduzione per un numero esatto.
 - Usare `[INT,*]` per specificare una traduzione per un numero e tutti i numeri successivi.
 **Esempio** in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en.json`:
+<<<<<<< HEAD
 **Esempio** in `/var/www/html/<nome progetto>/laravel/lang/en.json`:
+=======
+**Esempio** in `/var/www/html/saluteora/laravel/lang/en.json`:
+>>>>>>> 51659f3 (.)
 
 **Esempio** di stringa di traduzione:
 ```
@@ -34,7 +38,11 @@ I file JSON supportano la pluralizzazione, ma non in modo particolarmente pulito
     "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages": "{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages"
 }
 **Esempio** in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
+<<<<<<< HEAD
 **Esempio** in `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`:
+=======
+**Esempio** in `/var/www/html/saluteora/laravel/lang/en/messages.php`:
+>>>>>>> 51659f3 (.)
 ```
 
 **Uso in Blade**:
@@ -58,10 +66,17 @@ I file PHP offrono un modo più pulito per gestire la pluralizzazione, utilizzan
 return [
     'newMessageIndicator' => '{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages',
 ];
+<<<<<<< HEAD
 ## Analisi e Ragionamento per il Progetto `<nome progetto>`
 Nel contesto del progetto `<nome progetto>`, la gestione delle forme plurali e singolari è importante per elementi come notifiche, appuntamenti o pazienti, dove il conteggio può variare. Raccomando di utilizzare file PHP per le traduzioni plurali, poiché offrono un approccio più strutturato e leggibile rispetto ai file JSON. Questo è coerente con le linee guida esistenti del progetto di usare file PHP per traduzioni modulari e strutturate. La direttiva `@choice` dovrebbe essere utilizzata nelle viste Blade per mantenere il codice pulito e leggibile.
 Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la traduzione di forme plurali e singolari nel progetto `<nome progetto>`:
    - File: `/var/www/html/<nome progetto>/laravel/lang/it/messages.php`
+=======
+## Analisi e Ragionamento per il Progetto `saluteora`
+Nel contesto del progetto `saluteora`, la gestione delle forme plurali e singolari è importante per elementi come notifiche, appuntamenti o pazienti, dove il conteggio può variare. Raccomando di utilizzare file PHP per le traduzioni plurali, poiché offrono un approccio più strutturato e leggibile rispetto ai file JSON. Questo è coerente con le linee guida esistenti del progetto di usare file PHP per traduzioni modulari e strutturate. La direttiva `@choice` dovrebbe essere utilizzata nelle viste Blade per mantenere il codice pulito e leggibile.
+Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la traduzione di forme plurali e singolari nel progetto `saluteora`:
+   - File: `/var/www/html/saluteora/laravel/lang/it/messages.php`
+>>>>>>> 51659f3 (.)
 ```
 
 **Uso in Blade**:
@@ -94,16 +109,26 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      ];
      ```
    - File: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`
+<<<<<<< HEAD
    - File: `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`
+=======
+   - File: `/var/www/html/saluteora/laravel/lang/en/messages.php`
+>>>>>>> 51659f3 (.)
    - Modifica: Creare o aggiornare il file con traduzioni equivalenti in inglese:
          'newMessageIndicator' => '{0} You have no new messages|{1} You have 1 new message|[2,*] You have :count new messages',
          'newAppointmentIndicator' => '{0} You have no new appointments|{1} You have 1 new appointment|[2,*] You have :count new appointments',
          'newPatientIndicator' => '{0} You have no new patients|{1} You have 1 new patient|[2,*] You have :count new patients',
    - **Ragionamento**: Usare file PHP per le traduzioni plurali è più strutturato e leggibile rispetto ai file JSON, come raccomandato nelle linee guida del progetto. Ho scelto chiavi specifiche per notifiche relative a messaggi, appuntamenti e pazienti, che sono contesti comuni in un'applicazione sanitaria come `<nome progetto>`. Le traduzioni plurali sono definite con la sintassi `{0}`, `{1}`, `[2,*]` per coprire i casi più comuni, e l'uso di `:count` permette di mostrare il numero esatto quando necessario. Creare file separati per ogni lingua supportata (es. 'it' e 'en') è coerente con il sistema di localizzazione del progetto.
 2. **Uso di `trans_choice()` o `@choice` nelle Viste Blade**:
+<<<<<<< HEAD
    - **Ragionamento**: Usare file PHP per le traduzioni plurali è più strutturato e leggibile rispetto ai file JSON, come raccomandato nelle linee guida del progetto. Ho scelto chiavi specifiche per notifiche relative a messaggi, appuntamenti e pazienti, che sono contesti comuni in un'applicazione sanitaria come `<nome progetto>`. Le traduzioni plurali sono definite con la sintassi `{0}`, `{1}`, `[2,*]` per coprire i casi più comuni, e l'uso di `:count` permette di mostrare il numero esatto quando necessario. Creare file separati per ogni lingua supportata (es. 'it' e 'en') è coerente con il sistema di localizzazione del progetto.
    - File: `/var/www/html/<nome progetto>/laravel/Modules/User/Resources/views/dashboard.blade.php`
    - File: `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`
+=======
+   - **Ragionamento**: Usare file PHP per le traduzioni plurali è più strutturato e leggibile rispetto ai file JSON, come raccomandato nelle linee guida del progetto. Ho scelto chiavi specifiche per notifiche relative a messaggi, appuntamenti e pazienti, che sono contesti comuni in un'applicazione sanitaria come `saluteora`. Le traduzioni plurali sono definite con la sintassi `{0}`, `{1}`, `[2,*]` per coprire i casi più comuni, e l'uso di `:count` permette di mostrare il numero esatto quando necessario. Creare file separati per ogni lingua supportata (es. 'it' e 'en') è coerente con il sistema di localizzazione del progetto.
+   - File: `/var/www/html/saluteora/laravel/Modules/User/Resources/views/dashboard.blade.php`
+   - File: `/var/www/html/saluteora/laravel/lang/en/messages.php`
+>>>>>>> 51659f3 (.)
    - File: `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`
    - Modifica: Creare o aggiornare il file con traduzioni equivalenti in inglese:
      ```php

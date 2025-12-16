@@ -2,7 +2,10 @@
 
 ## Problema Identificato
 
+<<<<<<< HEAD
 Il file `Modules/Lang/docs/translation-file-syntax.md` presenta un conflitto Git nella sezione finale:
+=======
+>>>>>>> 51659f3 (.)
 
 **Linea 49**: Sezione "Novità 2025: Best practice obbligatorie" vs rimozione completa
 
@@ -196,7 +199,10 @@ Quando si lavora sui file di traduzione, non è mai consentito rimuovere chiavi 
 - [Translation Standards](../translation-standards.md)
 - [Translation File Management](../translation-file-management.md)
 - [Best Practices](../translation-keys-best-practices.md)
+<<<<<<< HEAD
 - [PHP Array Configuration Best Practices](../../Xot/docs/php_array_configuration_best_practices.md)
+=======
+>>>>>>> 51659f3 (.)
 
 ## Note per Sviluppatori Futuri
 
@@ -211,4 +217,7 @@ Quando si lavora sui file di traduzione, non è mai consentito rimuovere chiavi 
 - **Modulo**: Lang
 - **File**: `docs/translation-file-syntax.md`
 - **Tipo Conflitto**: Documentazione best practice
+<<<<<<< HEAD
 - **Scelta**: Versione HEAD (mantenere best practice 2025) 
+=======
+>>>>>>> 51659f3 (.)

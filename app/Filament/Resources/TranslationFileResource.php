@@ -10,6 +10,7 @@ use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslatio
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\ListTranslationFiles;
 use Modules\Lang\Models\TranslationFile;
 use Modules\Xot\Filament\Resources\XotBaseResource;
+use Override;
 
 class TranslationFileResource extends XotBaseResource
 {
@@ -25,7 +26,7 @@ class TranslationFileResource extends XotBaseResource
         return ['it', 'en'];
     }
 
-    #[\Override]
+    #[Override]
     public static function getFormSchema(): array
     {
         return [];
@@ -63,7 +64,7 @@ class TranslationFileResource extends XotBaseResource
          */
     }
 
-    #[\Override]
+    #[Override]
     public static function getPages(): array
     {
         return [

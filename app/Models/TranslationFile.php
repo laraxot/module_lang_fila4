@@ -8,27 +8,28 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+use Exception;
+use Modules\Xot\Contracts\ProfileContract;
+use Modules\Lang\Database\Factories\TranslationFileFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
-use Modules\Lang\Database\Factories\TranslationFileFactory;
-use Modules\Xot\Contracts\ProfileContract;
+use Override;
+use Sushi\Sushi;
 
 use function Safe\json_encode;
 
-use Sushi\Sushi;
-
 /**
- * @property string|null                  $key
- * @property string|null                  $path
- * @property string|null                  $id
- * @property string|null                  $name
+ * @property string|null $key
+ * @property string|null $path
+ * @property string|null $id
+ * @property string|null $name
  * @property array<array-key, mixed>|null $content
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
+ * @property-read ProfileContract|null $creator
+ * @property-read ProfileContract|null $updater
  *
- * @method static TranslationFileFactory          factory($count = null, $state = [])
+ * @method static TranslationFileFactory factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -79,7 +80,7 @@ class TranslationFile extends BaseModel
                     try {
                         $content = File::getRequire($path);
                         $item['content'] = json_encode($content);
-                    } catch (\Exception $e) {
+                    } catch (Exception $e) {
                         $item['content'] = '';
                     }
                 } else {
@@ -108,7 +109,7 @@ class TranslationFile extends BaseModel
      *
      * @return array<string, string>
      */
-    #[\Override]
+    #[Override]
     protected function casts(): array
     {
         return [

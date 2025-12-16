@@ -31,10 +31,17 @@
 - **Blade**: Sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
 - **File JSON**: Evitare l'uso per le stringhe plurali, salvo casi di necessità per traduttori non-dev.
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
+<<<<<<< HEAD
 - `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`:
 
 ### 1.5 Esempio Completo
 - `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`:
+=======
+- `/var/www/html/saluteora/laravel/lang/en/messages.php`:
+
+### 1.5 Esempio Completo
+- `/var/www/html/saluteora/laravel/lang/en/messages.php`:
+>>>>>>> 51659f3 (.)
 
 ### 1.5 Esempio Completo
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/en/messages.php`:
@@ -44,11 +51,19 @@
   ];
   ```
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`:
+<<<<<<< HEAD
 - `/var/www/html/<nome progetto>/laravel/lang/it/messages.php`:
   ```php
   return [
       'newMessageIndicator' => '{0} Non hai nuovi messaggi|{1} Hai 1 nuovo messaggio|[2,*] Hai :count nuovi messaggi',
 - `/var/www/html/<nome progetto>/laravel/lang/it/messages.php`:
+=======
+- `/var/www/html/saluteora/laravel/lang/it/messages.php`:
+  ```php
+  return [
+      'newMessageIndicator' => '{0} Non hai nuovi messaggi|{1} Hai 1 nuovo messaggio|[2,*] Hai :count nuovi messaggi',
+- `/var/www/html/saluteora/laravel/lang/it/messages.php`:
+>>>>>>> 51659f3 (.)
 - `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/lang/it/messages.php`:
   ```php
   return [

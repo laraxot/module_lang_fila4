@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Datas;
 
+use Exception;
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Actions\File\FixPathAction;
 use Spatie\LaravelData\Data;
@@ -27,13 +28,13 @@ class TranslationData extends Data
 
     public function getFilename(): string
     {
-        if (null !== $this->filename) {
+        if ($this->filename !== null) {
             return $this->filename;
         }
         $hints = app('translator')->getLoader()->namespaces();
         $path = collect($hints)->get($this->namespace);
-        if (null === $path) {
-            throw new \Exception('['.__LINE__.']['.class_basename($this).']');
+        if ($path === null) {
+            throw new Exception('['.__LINE__.']['.class_basename($this).']');
         }
 
         // Verifichiamo che $path sia una stringa
@@ -53,7 +54,7 @@ class TranslationData extends Data
             $data = File::getRequire($filename);
         }
         if (! is_array($data)) {
-            throw new \Exception('['.__LINE__.']['.class_basename($this).']');
+            throw new Exception('['.__LINE__.']['.class_basename($this).']');
         }
 
         return $data;

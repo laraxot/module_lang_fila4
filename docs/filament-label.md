@@ -16,6 +16,23 @@
 
 Ultimo aggiornamento: maggio 2025.
 Ultimo aggiornamento: maggio 2025.
+<<<<<<< HEAD
+
+## Anti-pattern
+- Uso di ->label() nei componenti Filament.
+- Label hardcoded.
+
+## Test di regressione
+- Test statico che cerca ->label( nei file Filament.
+- Test che verifica la presenza di tutte le chiavi di traduzione.
+
+## Collegamenti
+- [docs root](../../../../docs/actions.md)
+- [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
+
+Ultimo aggiornamento: maggio 2025.
+=======
+>>>>>>> 51659f3 (.)
 
 ## Anti-pattern
 - Uso di ->label() nei componenti Filament.
@@ -40,9 +57,17 @@ Ultimo aggiornamento: maggio 2025.
 - Test che verifica la presenza di tutte le chiavi di traduzione.
 
 ## Collegamenti
+<<<<<<< HEAD
 - [docs root](../../../../project_docs/actions.md)
 - [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
+<<<<<<< HEAD
 - [docs root](../../../../docs/actions.md)
 - [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
+=======
+=======
+- [docs root](../../../../docs/actions.md)
+- [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
+>>>>>>> 8b0b6ac (.)
+>>>>>>> 51659f3 (.)
 
 Ultimo aggiornamento: maggio 2025.

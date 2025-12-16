@@ -13,9 +13,12 @@ Il modulo User utilizza le traduzioni fornite dal modulo Lang per:
 
 ## Collegamenti Principali
 
+<<<<<<< HEAD
 - [Traduzioni del Modulo User](../../User/docs/translations.md) - Documentazione specifica sulle traduzioni nel modulo User
 - [Gestione Utenti](../../User/docs/README.md) - Panoramica del modulo User
 - [Modelli Utente](../../User/docs/user_profile_models.md) - Documentazione sui modelli utente e profili
+=======
+>>>>>>> 51659f3 (.)
 
 ## Integrazione con Lang
 
@@ -27,11 +30,17 @@ Il modulo User integra il modulo Lang attraverso:
 
 ## Collegamento Bidirezionale
 
+<<<<<<< HEAD
 Questo documento è collegato bidirezionalmente con [lang-link.md](../../User/docs/lang-link.md) nel modulo User.
+=======
+>>>>>>> 51659f3 (.)
 
 > Aggiorna entrambi i riferimenti se modifichi la struttura delle traduzioni o aggiungi nuove funzionalità che richiedono traduzioni.
 
 ## Collegamenti tra versioni di user-link.md
+<<<<<<< HEAD
 * [user-link.md](../../../Lang/docs/user-link.md)
 * [user-link.md](../../../Cms/docs/user-link.md)
+=======
+>>>>>>> 51659f3 (.)
 

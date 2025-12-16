@@ -8,5 +8,9 @@
 - Questa regola si applica a tutti i moduli, ma va documentata qui in Lang/docs e referenziata negli altri moduli coinvolti.
 
 - [docs di FixCity](../../FixCity/docs/traduzioni-navigation.mdc)
+<<<<<<< HEAD
 - [docs di <nome progetto>](../../<nome progetto>/docs/traduzioni-navigation.mdc)
+=======
+- [docs di SaluteOra](../../SaluteOra/docs/traduzioni-navigation.mdc)
+>>>>>>> 51659f3 (.)
 - [docs di Xot](../../Xot/docs/traduzioni-navigation.mdc)

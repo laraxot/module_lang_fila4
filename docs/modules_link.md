@@ -4,6 +4,7 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 
 ## Moduli con collegamento
 
+<<<<<<< HEAD
 - [Activity](../../Activity/docs/lang-link.md)
 - [Chart](../../Chart/docs/lang-link.md)
 - [Cms](../../Cms/docs/lang-link.md)
@@ -18,6 +19,8 @@ Questa pagina elenca, per ogni modulo, la presenza di un file di collegamento al
 - [UI](../../UI/docs/lang-link.md)
 - [User](../../User/docs/lang-link.md)
 - [Xot](../../Xot/docs/lang-link.md)
+=======
+>>>>>>> 51659f3 (.)
 
 ---
 
