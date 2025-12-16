@@ -128,3 +128,4 @@ return [
 1. **Test**: Verificare il funzionamento in ambiente di sviluppo
 2. **Documentazione**: Aggiornare la documentazione dei moduli Notify e Lang
 3. **Review**: Code review per confermare le modifiche
+4. **Deploy**: Deploy in ambiente di staging per test completi 

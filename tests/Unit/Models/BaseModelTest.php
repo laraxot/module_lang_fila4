@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace Modules\Lang\Tests\Unit\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Modules\Lang\Models\BaseModel;
 use Tests\TestCase;
 
+<<<<<<< HEAD
 uses(TestCase::class, RefreshDatabase::class);
+=======
+>>>>>>> 18cdca4e (.)
 
 beforeEach(function () {
     $this->baseModel = new class extends BaseModel {
