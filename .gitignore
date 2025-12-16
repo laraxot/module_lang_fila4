@@ -1,23 +1,60 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b93ef594b4 (.)
+>>>>>>> a7ee0d6 (.)
 # ==============================================
 # LARAXOT MODULE LANG - .GITIGNORE
 # Modulo Lang Laraxot - Template standardizzato
+<<<<<<< HEAD
 # Ultimo aggiornamento: 2025-01-31
+=======
+# Ultimo aggiornamento: 2025-01-06
+>>>>>>> a7ee0d6 (.)
 # ==============================================
 
 # ==============================================
 # DEPENDENCIES & PACKAGES
 # ==============================================
+<<<<<<< HEAD
 vendor/
 node_modules/
+=======
+<<<<<<< HEAD
+/vendor/
+/vendor
+/node_modules/
+/node_modules
+/docs/vendor/
+>>>>>>> 08291f8 (.)
 package-lock.json
 yarn.lock
 composer.lock
 yarn-error.log
 npm-debug.log
+=======
+<<<<<<< HEAD
+vendor/
+node_modules/
+package-lock.json
+yarn.lock
+composer.lock
+>>>>>>> a7ee0d6 (.)
 
 # ==============================================
 # BUILD & COMPILED FILES
 # ==============================================
+<<<<<<< HEAD
+=======
+/build
+<<<<<<< HEAD
+/build/
+=======
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 build/
 dist/
 docs/cache/
@@ -51,6 +88,87 @@ lerna-debug.log*
 # ==============================================
 # LARAVEL SPECIFIC
 # ==============================================
+<<<<<<< HEAD
+=======
+=======
+# Dependencies
+=======
+>>>>>>> b93ef594b4 (.)
+vendor/
+node_modules/
+package-lock.json
+yarn.lock
+composer.lock
+
+# ==============================================
+# BUILD & COMPILED FILES
+# ==============================================
+/build
+build/
+dist/
+docs/cache/
+cache/
+
+# ==============================================
+# CACHE & TEMPORARY FILES
+# ==============================================
+*.cache
+*.lock
+*.phar
+*.jar
+*.tmp
+*.swp
+*.swo
+*.stackdump
+*:Zone.Identifier
+v8-compile-cache-*
+.php-cs-fixer.cache
+.phpunit.result.cache
+
+<<<<<<< HEAD
+# Laravel specific
+>>>>>>> a12f125f4a (.)
+=======
+# ==============================================
+# LOG FILES
+# ==============================================
+*.log
+error_log
+npm-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ==============================================
+# LARAVEL SPECIFIC
+# ==============================================
+>>>>>>> b93ef594b4 (.)
+=======
+# Dependencies
+vendor/
+node_modules/
+package-lock.json
+yarn-error.log
+npm-debug.log
+
+# Build and compiled files
+/build
+docs/cache/
+cache/
+
+# Cache and temporary files
+*.cache
+*.lock
+*.phar
+*.log
+*.stackdump
+*.exe
+*:Zone.Identifier
+.phpunit.result.cache
+.php-cs-fixer.cache
+
+# Laravel specific
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -58,6 +176,12 @@ public/hot
 public_html/storage
 public_html/hot
 storage/*.key
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> a7ee0d6 (.)
 .env
 .env.*
 !.env.example
@@ -114,6 +238,16 @@ docs/phpstan/
 docs/cache/
 
 # ==============================================
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# LANGUAGE FILES
+# ==============================================
+lang/lang/
+resources/lang/
+
+# ==============================================
+>>>>>>> 08291f8 (.)
 # OLD DIRECTORIES (LEGACY CLEANUP)
 # ==============================================
 resources/views/Components_old/
@@ -121,6 +255,21 @@ database/Migrations_old/
 database/Seeders_old/
 database/Factories_old/
 database_old/
+=======
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
+resources/views/Components_old/
+resources/views/Components_old
+database/Migrations_old/
+database/Migrations_old
+database/Seeders_old/
+database/Seeders_old
+database/Factories_old/
+database/Factories_old
+database/Factories_
+database_old/
+database_old
+>>>>>>> a7ee0d6 (.)
 
 # ==============================================
 # MODULE SPECIFIC - LANG
@@ -145,10 +294,160 @@ test_translations.sql
 # ==============================================
 # FILE SPECIFICI DEL PROGETTO
 # ==============================================
+<<<<<<< HEAD
 *.fila2
 laravel
 public_html
+=======
+
+<<<<<<< HEAD
+# 🚫 File specifici del progetto
+*.fila2
+laravel
+public_html
+=======
+
+# 🚫 File specifici del progetto
+*.fila2
+laravel
+public_html
+=======
+
+# Environment and configuration
+=======
+>>>>>>> b93ef594b4 (.)
+.env
+.env.*
+!.env.example
+
+# ==============================================
+# ENVIRONMENT & CONFIGURATION
+# ==============================================
+Homestead.yaml
+Homestead.json
+/.vagrant
+/.idea
+.phpintel
+
+# ==============================================
+# GIT SPECIFIC
+# ==============================================
+.git-rewrite/
+.git-rewrite
+.git-blame-ignore-revs
+
+# ==============================================
+# SYSTEM FILES
+# ==============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==============================================
+# BACKUP FILES
+# ==============================================
+*.old
+*.old1
+*.old2
+*.backup
+*.backup.*
+*.bak
+*.bakcup
+*.new
+
+# ==============================================
+# DEVELOPMENT TOOLS
+# ==============================================
+.windsurf/
+.cursor/
+.phpstorm.meta.php
+
+<<<<<<< HEAD
+>>>>>>> a12f125f4a (.)
+=======
+# ==============================================
+# DOCUMENTATION CACHE
+# ==============================================
+docs/phpstan/
+docs/cache/
+
+# ==============================================
+# OLD DIRECTORIES (LEGACY CLEANUP)
+# ==============================================
+resources/views/Components_old/
+resources/views/Components_old
+database/Migrations_old/
+database/Migrations_old
+database/Seeders_old/
+database/Seeders_old
+database/Factories_old/
+database/Factories_old
+database/Factories_
+database_old/
+database_old
+
+# ==============================================
+# MODULE SPECIFIC - LANG
+# ==============================================
+# File di configurazione locale
+config/local.php
+config/development.php
+
+# Cache traduzioni
+storage/lang/
+storage/translations/
+
+# File temporanei di traduzione
+lang/temp/
+lang/drafts/
+lang/exports/
+
+# File di test traduzioni
+lang_test_data.json
+test_translations.sql
+>>>>>>> 08291f8 (.)
 
 # ==============================================
 # END OF LANG .GITIGNORE
 # ==============================================
+<<<<<<< HEAD
+=======
+
+
+# 🚫 File specifici del progetto
+*.fila2
+laravel
+public_html
+>>>>>>> b93ef594b4 (.)
+=======
+
+# Environment and configuration
+.env
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# Git related
+.git-rewrite/
+.git-blame-ignore-revs
+
+# Backup files
+*.old
+*.old1
+*.backup
+*.bak
+
+# PHPStan documentation
+docs/phpstan/
+
+# Other
+.windsurf/
+.cursor/
+
+>>>>>>> origin/develop
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)

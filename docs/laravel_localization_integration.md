@@ -125,7 +125,12 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 <<<<<<< HEAD
 - Documenta la strategia in `/Modules/Lang/docs/laravel-localization-integration.md` e linka dal README
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+- Documenta la strategia in `/Modules/Lang/project_docs/laravel-localization-integration.md` e linka dal README
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 - Per la cache delle route, usa sempre `php artisan route:trans:cache`
 
 ---
@@ -139,7 +144,12 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 <<<<<<< HEAD
 - Documenta la strategia in `/Modules/Lang/docs/laravel-localization-integration.md` e linka dal README
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+- Documenta la strategia in `/Modules/Lang/project_docs/laravel-localization-integration.md` e linka dal README
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ---
 
@@ -160,6 +170,11 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 <<<<<<< HEAD
 - [Laravel Folio - Docs](https://laravel.com/docs/12.x/folio)
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+- [Laravel Folio - Docs](https://laravel.com/project_docs/12.x/folio)
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 - [Esempio di override parametri dinamici](https://github.com/mcamara/laravel-localization#translatable-route-parameters)

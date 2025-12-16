@@ -106,7 +106,12 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 <<<<<<< HEAD
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/docs/laravel-localization-livewire-volt.md`.
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+- [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md`.
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ---
 
@@ -131,7 +136,12 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 <<<<<<< HEAD
   Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+  Aggiorna sempre `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ---
 

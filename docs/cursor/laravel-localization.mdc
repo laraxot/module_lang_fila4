@@ -3,14 +3,22 @@
 ## Context
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `<nome progetto>` project.
 =======
+<<<<<<< HEAD
+This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `fixcity` project.
+>>>>>>> 08291f8 (.)
+=======
+=======
+>>>>>>> a7ee0d6 (.)
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `saluteora` project.
 >>>>>>> 8b0b6ac (.)
 # Laravel Localization Metadata for Cursor
 
 ## Context
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `prediction market platform` project.
+<<<<<<< HEAD
 <<<<<<< HEAD
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `fixcity` project.
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `<nome progetto>` project.
@@ -20,6 +28,11 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `prediction market platform` project.
 =======
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> a1de4f9 (.)
+=======
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ## Key Points
 
@@ -32,6 +45,7 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
   - Implement language selector UI component for traders.
 - **Benefits**: Improved user experience with localized URLs and translated routes for global prediction markets.
 <<<<<<< HEAD
+<<<<<<< HEAD
 - **Purpose**: Enhance localization capabilities in Laravel applications for city management platforms.
 - **Suggested Actions**:
   - Add package to `composer.json`.
@@ -39,6 +53,12 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
   - Register middleware for language redirects.
   - Implement language selector UI component for city administrators.
 - **Benefits**: Improved user experience with localized URLs and translated routes for global city management.
+<<<<<<< HEAD
+=======
+=======
+=======
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 - **Purpose**: Enhance localization capabilities in Laravel applications for prediction market platforms.
 - **Suggested Actions**:
   - Add package to `composer.json`.
@@ -46,8 +66,15 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
   - Register middleware for language redirects.
   - Implement language selector UI component for traders.
 - **Benefits**: Improved user experience with localized URLs and translated routes for global prediction markets.
+<<<<<<< HEAD
 =======
 >>>>>>> e8163a6 (.)
+=======
+<<<<<<< HEAD
+>>>>>>> a1de4f9 (.)
+=======
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ## Implementation Notes
 
@@ -57,12 +84,14 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 - Ensure market data translations are accurate
 - Test localization with different market scenarios
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Create language switcher component for city management interface
 - Ensure city data translations are accurate
 - Test localization with different city management scenarios
 - Create language switcher component for trading interface
 - Ensure market data translations are accurate
 - Test localization with different market scenarios
+<<<<<<< HEAD
 - Create language switcher component for trading interface
 - Ensure market data translations are accurate
 - Test localization with different market scenarios
@@ -71,6 +100,14 @@ This document provides metadata for Cursor about the integration of `mcamara/lar
 - Test localization with different market scenarios
 =======
 >>>>>>> e8163a6 (.)
+=======
+>>>>>>> a1de4f9 (.)
+=======
+- Create language switcher component for trading interface
+- Ensure market data translations are accurate
+- Test localization with different market scenarios
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ## Related Documentation
 

@@ -124,7 +124,14 @@ return [
 - [Translation Standards](./translation-standards.md)
 - [Best Practices](../Xot/docs/translations-best-practices.md)
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+- [Translation Rules](../Xot/project_docs/translation_rules.md)
+- [Translation Standards](./translation-standards.md)
+- [Best Practices](../Xot/project_docs/translations-best-practices.md)
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ## Prossimi Passi
 

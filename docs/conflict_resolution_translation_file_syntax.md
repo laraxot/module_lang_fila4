@@ -5,7 +5,12 @@
 <<<<<<< HEAD
 Il file `Modules/Lang/docs/translation-file-syntax.md` presenta un conflitto Git nella sezione finale:
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+Il file `Modules/Lang/project_docs/translation-file-syntax.md` presenta un conflitto Git nella sezione finale:
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 **Linea 49**: Sezione "Novità 2025: Best practice obbligatorie" vs rimozione completa
 
@@ -202,7 +207,12 @@ Quando si lavora sui file di traduzione, non è mai consentito rimuovere chiavi 
 <<<<<<< HEAD
 - [PHP Array Configuration Best Practices](../../Xot/docs/php_array_configuration_best_practices.md)
 =======
+<<<<<<< HEAD
 >>>>>>> 51659f3 (.)
+=======
+- [PHP Array Configuration Best Practices](../../Xot/project_docs/php_array_configuration_best_practices.md)
+>>>>>>> a7ee0d6 (.)
+>>>>>>> 08291f8 (.)
 
 ## Note per Sviluppatori Futuri
 
