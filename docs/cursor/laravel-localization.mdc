@@ -2,7 +2,11 @@
 
 ## Context
 
+<<<<<<< HEAD
 This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `<nome progetto>` project.
+=======
+This document provides metadata for Cursor about the integration of `mcamara/laravel-localization` into the `saluteora` project.
+>>>>>>> 8b0b6ac (.)
 # Laravel Localization Metadata for Cursor
 
 ## Context
