@@ -7,7 +7,6 @@ namespace Modules\Lang\Actions;
 use Illuminate\Support\Str;
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Spatie\QueueableAction\QueueableAction;
-use Throwable;
 
 class GetTransPathAction
 {
@@ -24,7 +23,7 @@ class GetTransPathAction
         $lang = app()->getLocale();
         try {
             $langPath = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
-        } catch (Throwable $e) {
+        } catch (\Throwable $e) {
             $langPath = base_path('Modules/'.$ns.'/lang');
         }
         $fileName = $piece[0] ?? '';
