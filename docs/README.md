@@ -89,6 +89,13 @@ Il modulo Lang dipende dal modulo Xot per:
 3. Verificare la struttura del file di traduzione (deve essere espansa)
 ### Conflitti con traduzioni esistenti
 Se un componente ha già una label impostata manualmente, rimuoverla e affidarsi al sistema automatico.
+
+## Bug Fixes
+### Duplicate Widget Instantiation (2025-12-16)
+**File**: `app/View/Components/LanguageSwitcher.php`  
+**Problema**: Duplicazione istanziazione `LanguageSwitcherWidget` nel costruttore  
+**Fix**: Rimossa riga duplicata, mantenuta una sola istanza  
+**Documentazione**: [bugfix/duplicate-widget-instantiation.md](./bugfix/duplicate-widget-instantiation.md)
 ## Sviluppi Futuri
 ### Funzionalità Pianificate
 - Registrazione componenti Blade custom
