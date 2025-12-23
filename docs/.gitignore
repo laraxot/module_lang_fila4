@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # Dependencies and packages
 /node_modules/
@@ -29,6 +30,8 @@ docs/phpstan/
 # Other
 -e
 =======
+=======
+>>>>>>> a1de4f9 (.)
 /build_*/
 /node_modules/
 /vendor/
@@ -45,4 +48,7 @@ package-lock.json
 -e 
 # PHPStan documentation
 docs/phpstan/
+<<<<<<< HEAD
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> a1de4f9 (.)
