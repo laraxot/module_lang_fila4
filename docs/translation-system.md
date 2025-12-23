@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Sistema di Traduzione in il progetto
 
 ## LangServiceProvider
@@ -74,4 +72,3 @@ return [
 ## Vedi Anche
 - [Laravel Translations](https://laravel.com/project_docs/localization)
 - [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
->>>>>>> a87590b (.)

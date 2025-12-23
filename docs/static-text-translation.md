@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Traduzione di Testi Statici in Laravel
 
 ## Introduzione
@@ -282,4 +280,3 @@ Implementare un sistema di traduzione per testi statici nel progetto `<nome prog
 ## Risorse
 
 - Corso Laravel Daily: [Multi-Language Laravel 11: All You Need to Know](https://laraveldaily.com/course/multi-language-laravel)
->>>>>>> a87590b (.)

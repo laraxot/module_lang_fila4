@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # LangServiceProvider: Analisi e Proposte di Miglioramento
 
 ## Analisi dell'Implementazione Attuale
@@ -263,4 +261,3 @@ Per dettagli tecnici, vedi anche la documentazione di `XotBaseServiceProvider` e
 ## Conclusioni e Raccomandazioni
 
 Il `
->>>>>>> a87590b (.)

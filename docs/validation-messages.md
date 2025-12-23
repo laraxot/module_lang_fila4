@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Gestione delle Traduzioni dei Messaggi di Validazione
 
 ## Obiettivo
@@ -156,4 +154,3 @@ class StoreOrderRequest extends FormRequest
 - [translations-storage.md](./translations-storage.md)
 - [translation-process.md](./translation-process.md)
 - [README.md](./README.md) 
->>>>>>> a87590b (.)

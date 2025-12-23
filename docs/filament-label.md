@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Gestione automatica delle label in Filament tramite LangServiceProvider
 
 ## Funzionamento
@@ -24,4 +22,3 @@
 - [docs root](../../../../project_docs/actions.md)
 - [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
 
->>>>>>> a87590b (.)

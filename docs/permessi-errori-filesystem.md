@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 > **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
@@ -60,4 +58,3 @@ sudo chmod 664 /var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.php
 ---
 
 **Nota:**
->>>>>>> a87590b (.)

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Standard per le Traduzioni nel Progetto 
 
 ## Struttura delle Cartelle
@@ -175,4 +173,3 @@ return [
 - Aggiornare la documentazione ogni volta che si modifica una risorsa clinica
 - Non duplicare chiavi tra moduli
 - Seguire sempre la filosofia DRY, KISS, centralizzazione
->>>>>>> a87590b (.)

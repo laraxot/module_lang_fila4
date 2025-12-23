@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Traduzioni Automatiche con LangServiceProvider
 
 ## Regola Fondamentale
@@ -118,4 +116,3 @@ Per gli step dei wizard, la chiave di traduzione segue un formato leggermente di
 ## Collegamenti tra versioni di automatic-translations.md
 * [automatic-translations.md](../../UI/project_docs/filament/automatic-translations.md)
 
->>>>>>> a87590b (.)

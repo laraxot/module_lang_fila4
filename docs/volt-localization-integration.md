@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Integrazione Livewire Volt + mcamara/laravel-localization
 
 ## 1. Obiettivo
@@ -176,4 +174,3 @@ $current = app()->getLocale();
 - [ ] La documentazione è aggiornata e linkata nei README
 
 </rewritten_file> 
->>>>>>> a87590b (.)

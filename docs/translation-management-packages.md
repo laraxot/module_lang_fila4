@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Translation Management Packages
 
 ## Overview
@@ -86,4 +84,3 @@ Given the healthcare context of `<nome progetto>` where precision in translation
 - **Optional**: Consider **Nikaia Translation Sheet** for collaboration with external translation teams during initial setup or major updates, leveraging Google Sheets for efficiency.
 
 This combination ensures both technical flexibility and user accessibility, crucial for a healthcare application serving diverse linguistic communities.
->>>>>>> a87590b (.)

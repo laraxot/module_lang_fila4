@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Collegamento al Modulo Cms
 
 Questo documento descrive le relazioni e i collegamenti tra il modulo Lang e il modulo Cms per quanto riguarda le traduzioni e l'internazionalizzazione.
@@ -37,4 +35,3 @@ Quando aggiungi nuovi componenti Filament nel modulo Cms, ricorda di:
 * [cms-link.md](../../../UI/project_docs/cms-link.md)
 * [cms-link.md](../../../Lang/project_docs/cms-link.md)
 
->>>>>>> a87590b (.)

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Storage delle Traduzioni: PHP vs JSON
 
 ## Introduzione
@@ -129,4 +127,3 @@ Uso:
 - Inserire tutte le stringhe plurali in `/lang/{locale}/messages.php`.
 - Nei Blade, sostituire blocchi condizionali con `trans_choice()` o `@choice()`.
 - Evitare l'uso del JSON per le stringhe plurali.
->>>>>>> a87590b (.)

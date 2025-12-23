@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Integration of Mcamara Laravel Localization with Laravel Folio
 
 ## Overview
@@ -188,4 +186,3 @@ public function __invoke($locale)
 
 ## Conclusion
 Integrating `mcamara/laravel-localization` with `laravel/folio` requires careful handling of URL prefixes and middleware to ensure seamless localized routing. By using a custom middleware to manage locale prefixes and leveraging `laravel-localization`'s helpers for URL generation, `<nome progetto>` can provide a robust multi-language experience for healthcare users while maintaining the simplicity of Folio's page-based routing. This approach ensures accessibility, SEO benefits, and user-friendly navigation across languages.
->>>>>>> a87590b (.)

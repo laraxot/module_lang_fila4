@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Rinvex Countries Usage in Lang Module
 
 ## Overview
@@ -230,4 +228,3 @@ if ($country) {
 - [Rinvex Countries GitHub Repository](https://github.com/rinvex/countries)
 - [ISO 3166 Country Codes](https://en.wikipedia.org/wiki/ISO_3166-1)
 - [Country Data Sources](https://github.com/rinvex/countries#data-sources)
->>>>>>> a87590b (.)

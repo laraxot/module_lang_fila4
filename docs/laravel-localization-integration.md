@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Integrazione avanzata: mcamara/laravel-localization + Laravel Folio
 
 ## 1. Introduzione
@@ -156,4 +154,3 @@ class Article extends Model implements \Mcamara\LaravelLocalization\Interfaces\L
 - [Laravel Folio - Docs](https://laravel.com/project_docs/12.x/folio)
 - [Traduzione route con mcamara](https://github.com/mcamara/laravel-localization#translated-routes)
 - [Esempio di override parametri dinamici](https://github.com/mcamara/laravel-localization#translatable-route-parameters)
->>>>>>> a87590b (.)

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Gestione Traduzioni Contenuti JSON
 
 Questo documento descrive come gestire le traduzioni per i contenuti JSON nel progetto , con particolare attenzione ai file di contenuto delle pagine.
@@ -229,4 +227,3 @@ done
 - I contenuti JSON sono utilizzati dal sistema CMS per generare pagine dinamiche
 - Le traduzioni devono essere mantenute sincronizzate con le modifiche al contenuto
 - Il sistema utilizza il fallback alla lingua italiana per contenuti mancanti
->>>>>>> a87590b (.)

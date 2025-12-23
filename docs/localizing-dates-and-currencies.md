@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Localizzazione di Date e Valute
 
 ## Introduzione
@@ -166,4 +164,3 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
      extension=intl
      ```
    - **Ragionamento**: `NumberFormatter` richiede l'estensione `intl` per funzionare. Senza di essa, la formattazione delle valute fallirà. Verificare questa configurazione nel ambiente di sviluppo e produzione di `<nome progetto>` è essenziale per evitare errori runtime, specialmente per funzionalità di pagamento o fatturazione.
->>>>>>> a87590b (.)

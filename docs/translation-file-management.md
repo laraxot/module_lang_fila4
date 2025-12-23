@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Gestione File di Traduzione
 
 ## Panoramica
@@ -251,4 +249,3 @@ php artisan lang:export
 1. **Performance**: Utilizzare cache per i file di traduzione
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
->>>>>>> a87590b (.)

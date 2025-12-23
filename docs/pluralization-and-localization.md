@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Plurale/Singolare e Localizzazione Date/Valute
 
 ## Pluralizzazione
@@ -185,4 +183,3 @@
 - [translations-storage.md](./translations-storage.md)
 - [translation-process.md](./translation-process.md)
 - [README.md](./README.md) 
->>>>>>> a87590b (.)

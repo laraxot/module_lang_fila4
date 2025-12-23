@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # PHPStan Mixed Type Casting Errors
 
 ## Problema
@@ -222,4 +220,3 @@ Dopo aver applicato le correzioni:
 - [Xot Safe Casting Actions](../../Xot/docs/safe-casting-actions.md)
 
 *Ultimo aggiornamento: 2025-07-31*
->>>>>>> a87590b (.)

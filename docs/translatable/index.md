@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Spatie Laravel Translatable
 
 Questa documentazione descrive l'implementazione e l'utilizzo del pacchetto `spatie/laravel-translatable` nel progetto, un potente strumento per la gestione di contenuti multilingua nei modelli Eloquent.
@@ -140,4 +138,3 @@ Il sistema supporta anche la traduzione di contenuti JSON per pagine dinamiche. 
 - [Repository GitHub](https://github.com/spatie/laravel-translatable)
 - [Issues e discussioni](https://github.com/spatie/laravel-translatable/issues)
 - [Plugin Filament](https://filamentphp.com/plugins/filament-spatie-translatable)
->>>>>>> a87590b (.)

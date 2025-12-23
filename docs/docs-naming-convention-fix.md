@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 # Correzione Convenzione Naming Cartelle Docs - Gennaio 2025
 
 ## Data Aggiornamento
@@ -79,4 +77,3 @@ Tutti i file e le sottocartelle nelle cartelle `docs` ora rispettano la convenzi
 ## Stato Finale
 ✅ **COMPLETATO** - Tutte le cartelle docs ora rispettano la convenzione di naming
 ✅ **VERIFICATO** - Nessuna violazione trovata in nessun modulo
->>>>>>> a87590b (.)

@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-# Audit Traduzioni Inglesi - <nome progetto>
-
-## Panoramica
-
-Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei file di lingua del progetto <nome progetto>. Molti file nelle cartelle `lang/en/` contengono ancora testo in italiano che deve essere tradotto.
-=======
 # Audit Traduzioni Inglesi - SaluteOra
 
 ## Panoramica
 
 Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei file di lingua del progetto SaluteOra. Molti file nelle cartelle `lang/en/` contengono ancora testo in italiano che deve essere tradotto.
->>>>>>> laraxot/develop
 
 ## Problemi Identificati
 
@@ -33,11 +25,7 @@ Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei fi
 
 ### File con Mix Italiano/Inglese
 
-<<<<<<< HEAD
-1. **Modules/<nome progetto>/lang/en/find_doctor_widget.php** ✅ CORRETTO
-=======
 1. **Modules/SaluteOra/lang/en/find_doctor_widget.php** ✅ CORRETTO
->>>>>>> laraxot/develop
    - Status: Tradotto completamente
    - Conteneva: Placeholder in italiano
    - Risolto: 2025-01-06
@@ -49,11 +37,7 @@ Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei fi
    - Aggiunte: Tutte le voci mancanti (morning, afternoon, morning_label, afternoon_label, etc.)
    - Convertito: Sintassi short array []
 
-<<<<<<< HEAD
-3. **Modules/<nome progetto>/lang/en/doctor.php** ✅ CORRETTO
-=======
 3. **Modules/SaluteOra/lang/en/doctor.php** ✅ CORRETTO
->>>>>>> laraxot/develop
    - Status: Aggiornato completamente
    - Problemi: Sintassi array() invece di [] + molte voci mancanti dalla versione italiana
    - Risolto: 2025-01-06
@@ -61,11 +45,7 @@ Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei fi
    - Convertito: Sintassi short array []
    - Struttura: Allineata completamente con la versione italiana
 
-<<<<<<< HEAD
-4. **Modules/<nome progetto>/lang/de/doctor.php** ✅ CORRETTO
-=======
 4. **Modules/SaluteOra/lang/de/doctor.php** ✅ CORRETTO
->>>>>>> laraxot/develop
    - Status: Aggiornato completamente
    - Problemi: Era completamente in italiano invece che in tedesco + sintassi array() invece di []
    - Risolto: 2025-01-06
@@ -73,22 +53,14 @@ Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei fi
    - Aggiunte: Tutte le voci mancanti dalla versione italiana
    - Convertito: Sintassi short array []
 
-<<<<<<< HEAD
-5. **Modules/<nome progetto>/lang/en/user_type_enum.php** ✅ CORRETTO
-=======
 5. **Modules/SaluteOra/lang/en/user_type_enum.php** ✅ CORRETTO
->>>>>>> laraxot/develop
    - Status: Aggiornato completamente
    - Problemi: Testo in italiano + sintassi array() invece di [] + mancava declare(strict_types=1)
    - Risolto: 2025-01-06
    - Traduzioni: Complete in inglese (Doctor, Patient, Administrator)
    - Convertito: Sintassi short array [] + declare(strict_types=1)
 
-<<<<<<< HEAD
-6. **Modules/<nome progetto>/lang/de/user_type_enum.php** ✅ CORRETTO
-=======
 6. **Modules/SaluteOra/lang/de/user_type_enum.php** ✅ CORRETTO
->>>>>>> laraxot/develop
    - Status: Aggiornato completamente
    - Problemi: Testo in italiano + sintassi array() invece di [] + mancava declare(strict_types=1)
    - Risolto: 2025-01-06
@@ -97,66 +69,11 @@ Questo documento traccia l'audit e la correzione delle traduzioni inglesi nei fi
 
 ## File da Verificare
 
-<<<<<<< HEAD
-### Modulo <nome progetto> - File con Testo Italiano in Cartelle EN/DE
-=======
 ### Modulo SaluteOra - File con Testo Italiano in Cartelle EN/DE
->>>>>>> laraxot/develop
 
 I seguenti file contengono ancora testo in italiano nelle cartelle `en/` e `de/` e necessitano di correzione:
 
 #### Cartella EN (21 file)
-<<<<<<< HEAD
-- `Modules/<nome progetto>/lang/en/admin.php`
-- `Modules/<nome progetto>/lang/en/doctor-resource.php`
-- `Modules/<nome progetto>/lang/en/find_doctor_and_appointment_widget.php`
-- `Modules/<nome progetto>/lang/en/studio.php`
-- `Modules/<nome progetto>/lang/en/doctor_availability.php`
-- `Modules/<nome progetto>/lang/en/patient.php`
-- `Modules/<nome progetto>/lang/en/medical_history.php`
-- `Modules/<nome progetto>/lang/en/doctor_calendar.php`
-- `Modules/<nome progetto>/lang/en/user-resource.php`
-- `Modules/<nome progetto>/lang/en/filament.php`
-- `Modules/<nome progetto>/lang/en/relation-managers.php`
-- `Modules/<nome progetto>/lang/en/<nome progetto>.php`
-- `Modules/<nome progetto>/lang/en/doctor_availability_calendar.php`
-- `Modules/<nome progetto>/lang/en/widgets.php`
-- `Modules/<nome progetto>/lang/en/appointment_workflow.php`
-- `Modules/<nome progetto>/lang/en/studio-resource.php`
-- `Modules/<nome progetto>/lang/en/fields.php`
-- `Modules/<nome progetto>/lang/en/patient-resource.php`
-- `Modules/<nome progetto>/lang/en/user.php`
-
-#### Cartella DE (25 file)
-- `Modules/<nome progetto>/lang/de/clinical_stats.php`
-- `Modules/<nome progetto>/lang/de/admin.php`
-- `Modules/<nome progetto>/lang/de/doctor_availabilities.php`
-- `Modules/<nome progetto>/lang/de/actions.php`
-- `Modules/<nome progetto>/lang/de/find_doctor_widget.php`
-- `Modules/<nome progetto>/lang/de/doctor-resource.php`
-- `Modules/<nome progetto>/lang/de/find-doctor-widget.php`
-- `Modules/<nome progetto>/lang/de/find_doctor_and_appointment_widget.php`
-- `Modules/<nome progetto>/lang/de/notifications.php`
-- `Modules/<nome progetto>/lang/de/studio.php`
-- `Modules/<nome progetto>/lang/de/doctor_availability.php`
-- `Modules/<nome progetto>/lang/de/patient.php`
-- `Modules/<nome progetto>/lang/de/doctor_calendar.php`
-- `Modules/<nome progetto>/lang/de/user-resource.php`
-- `Modules/<nome progetto>/lang/de/filament.php`
-- `Modules/<nome progetto>/lang/de/success.php`
-- `Modules/<nome progetto>/lang/de/appointment.php`
-- `Modules/<nome progetto>/lang/de/relation-managers.php`
-- `Modules/<nome progetto>/lang/de/<nome progetto>.php`
-- `Modules/<nome progetto>/lang/de/doctor_availability_manager.php`
-- `Modules/<nome progetto>/lang/de/doctor_availability_calendar.php`
-- `Modules/<nome progetto>/lang/de/opening_hours.php`
-- `Modules/<nome progetto>/lang/de/widgets.php`
-- `Modules/<nome progetto>/lang/de/appointment_workflow.php`
-- `Modules/<nome progetto>/lang/de/studio-resource.php`
-- `Modules/<nome progetto>/lang/de/fields.php`
-- `Modules/<nome progetto>/lang/de/patient-resource.php`
-- `Modules/<nome progetto>/lang/de/user.php`
-=======
 - `Modules/SaluteOra/lang/en/admin.php`
 - `Modules/SaluteOra/lang/en/doctor-resource.php`
 - `Modules/SaluteOra/lang/en/find_doctor_and_appointment_widget.php`
@@ -206,7 +123,6 @@ I seguenti file contengono ancora testo in italiano nelle cartelle `en/` e `de/`
 - `Modules/SaluteOra/lang/de/fields.php`
 - `Modules/SaluteOra/lang/de/patient-resource.php`
 - `Modules/SaluteOra/lang/de/user.php`
->>>>>>> laraxot/develop
 
 ### Altri Moduli - File da Verificare
 
@@ -220,19 +136,11 @@ I seguenti file sono stati identificati come contenenti testo in italiano e nece
 - `Modules/Notify/lang/en/dashboard.php`
 - `Modules/Notify/lang/en/telegram.php`
 
-<<<<<<< HEAD
-### Modulo <nome progetto>
-- `Modules/<nome progetto>/lang/en/find_doctor_and_appointment_widget.php`
-- `Modules/<nome progetto>/lang/en/doctor_availability.php`
-- `Modules/<nome progetto>/lang/en/doctor_calendar.php`
-- `Modules/<nome progetto>/lang/en/doctor_availability_calendar.php`
-=======
 ### Modulo SaluteOra
 - `Modules/SaluteOra/lang/en/find_doctor_and_appointment_widget.php`
 - `Modules/SaluteOra/lang/en/doctor_availability.php`
 - `Modules/SaluteOra/lang/en/doctor_calendar.php`
 - `Modules/SaluteOra/lang/en/doctor_availability_calendar.php`
->>>>>>> laraxot/develop
 
 ### Altri Moduli
 - `Modules/Geo/lang/en/setting.php`
