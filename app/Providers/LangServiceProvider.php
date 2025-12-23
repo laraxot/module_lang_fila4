@@ -37,7 +37,6 @@ class LangServiceProvider extends XotBaseServiceProvider
      */
     protected string $module_ns = __NAMESPACE__;
 
-    #[\Override]
     public function boot(): void
     {
         parent::boot();
@@ -63,7 +62,7 @@ class LangServiceProvider extends XotBaseServiceProvider
                 /** @var array<string, string> $typedMessages */
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-                    if (is_string($key) && (is_string($value) || $value instanceof \Closure)) {
+                    if (is_string($key) && is_string($value)) {
                         $typedMessages[$key] = $value;
                     }
                 }
