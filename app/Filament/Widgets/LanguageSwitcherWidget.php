@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Widgets;
 
-use Override;
 use Filament\Schemas\Components\Component;
 use Illuminate\Support\Collection;
 use Modules\Xot\Filament\Widgets\XotBaseWidget;
@@ -35,7 +34,7 @@ class LanguageSwitcherWidget extends XotBaseWidget
      *
      * @return array<int, Component>
      */
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return [];

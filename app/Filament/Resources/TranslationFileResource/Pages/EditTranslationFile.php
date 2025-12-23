@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-use Override;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Illuminate\Contracts\Support\Htmlable;
@@ -25,7 +24,7 @@ class EditTranslationFile extends XotBaseEditRecord
         return ['it', 'en'];
     }
 
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return [

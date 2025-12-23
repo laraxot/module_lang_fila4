@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-use Modules\Lang\Database\Factories\PostFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
+use Modules\Lang\Database\Factories\PostFactory;
 // --- traits ---
 use Modules\Xot\Contracts\ProfileContract;
 // use Laravel\Scout\Searchable;
@@ -54,7 +54,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null                  $linkable_type
  * @property int|null                     $views_count
  * @property ProfileContract|null         $creator
- * @property Model|Eloquent|null $linkable
+ * @property Model|\Eloquent|null         $linkable
  * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Post newModelQuery()
