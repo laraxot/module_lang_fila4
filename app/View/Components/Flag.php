@@ -15,6 +15,7 @@ class Flag extends Component
 {
     public function __construct(
         public string $name,
+<<<<<<< HEAD
     ) {}
 
     public function render(): Renderable
@@ -22,6 +23,21 @@ class Flag extends Component
         $view = app(GetViewAction::class)->execute();
         $viewParams = [
             'view' => $view,
+=======
+    ) {
+    }
+
+    public function render(): Renderable
+    {
+        /**
+         * @phpstan-var view-string $view
+         */
+        $view = app(GetViewAction::class)->execute();
+
+        $viewParams = [
+            'view' => $view,
+            'name' => $this->name,
+>>>>>>> laraxot/develop
         ];
 
         return view($view, $viewParams);

@@ -12,8 +12,12 @@ use Tests\TestCase;
 uses(TestCase::class, RefreshDatabase::class);
 
 beforeEach(function () {
+<<<<<<< HEAD
     $this->baseModel = new class extends BaseModel
     {
+=======
+    $this->baseModel = new class extends BaseModel {
+>>>>>>> laraxot/develop
         protected $table = 'test_lang_table';
     };
 });
@@ -36,5 +40,9 @@ test('base model has proper inheritance chain', function () {
 });
 
 test('base model has timestamps enabled', function () {
+<<<<<<< HEAD
     expect($this->baseModel)->usesTimestamps()->toBeTrue();
+=======
+    expect($this->baseModel->usesTimestamps())->toBeTrue();
+>>>>>>> laraxot/develop
 });
