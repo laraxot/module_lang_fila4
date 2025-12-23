@@ -8,7 +8,7 @@ use Filament\Panel;
 use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
-class AdminPanelProvider extends XotBasePanelProvider
+abstract class LangBasePanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Lang';
 

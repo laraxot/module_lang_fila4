@@ -75,7 +75,8 @@ class NationalFlagSelect extends Select
     /**
      * Get filtered country options based on search query.
      *
-     * @param  string  $search  The search query
+     * @param string $search The search query
+     *
      * @return array<string, string>
      */
     protected function getFilteredCountryOptions(string $search): array
@@ -107,16 +108,16 @@ class NationalFlagSelect extends Select
             $localizedName = __('lang::countries.'.$flagName);
             // PHPStan L10: __() can return string|array, handle both
             if (is_array($localizedName)) {
-                return str_contains(strtolower($name), $searchLower) ||
-                    str_contains(strtolower($code), $searchLower);
+                return str_contains(strtolower($name), $searchLower)
+                    || str_contains(strtolower($code), $searchLower);
             }
 
             $localizedNameStr = is_string($localizedName) ? $localizedName : '';
 
             // Search in both English name and localized name
-            return str_contains(strtolower($name), $searchLower) ||
-                str_contains(strtolower($localizedNameStr), $searchLower) ||
-                str_contains(strtolower($code), $searchLower);
+            return str_contains(strtolower($name), $searchLower)
+                || str_contains(strtolower($localizedNameStr), $searchLower)
+                || str_contains(strtolower($code), $searchLower);
         });
 
         // Sort filtered results by name

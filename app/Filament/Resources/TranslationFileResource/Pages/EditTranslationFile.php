@@ -6,11 +6,11 @@ namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
+use Illuminate\Contracts\Support\Htmlable;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
-use Override;
 
 class EditTranslationFile extends XotBaseEditRecord
 {
@@ -24,7 +24,7 @@ class EditTranslationFile extends XotBaseEditRecord
         return ['it', 'en'];
     }
 
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return [
@@ -45,12 +45,12 @@ class EditTranslationFile extends XotBaseEditRecord
         $fields = [];
 
         foreach ($array as $key => $value) {
-            $fullKey = $prefix === '' ? $key : ($prefix.'.'.$key);
+            $fullKey = '' === $prefix ? $key : ($prefix.'.'.$key);
 
             if (is_array($value)) {
                 /** @var array<string, mixed> $childArray */
                 $childArray = $value;
-                /** @var array<\Illuminate\Contracts\Support\Htmlable|string> $childSchema */
+                /** @var array<Htmlable|string> $childSchema */
                 $childSchema = self::makeFromArray($childArray, $fullKey);
                 $fields[] = Section::make($key)
                     ->label($fullKey)
@@ -102,7 +102,7 @@ class EditTranslationFile extends XotBaseEditRecord
         $record = $this->record;
         if (is_object($record) && isset($record->key)) {
             $key = is_string($record->key) ? $record->key : (string) $record->key;
-            /** @var array<string, mixed>|\Illuminate\Contracts\Support\Htmlable|int|string|null $content */
+            /** @var array<string, mixed>|Htmlable|int|string|null $content */
             $content = $data['content'] ?? null;
             app(SaveTransAction::class)->execute($key, $content);
         }
