@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\Lang\Actions\ReadTranslationFileAction;
 
-beforeEach(function (): void {
+beforeEach(function () {
     $this->action = new ReadTranslationFileAction;
     $this->testFilePath = storage_path('test_translations.php');
     $this->testTranslations = [
@@ -19,52 +19,42 @@ beforeEach(function (): void {
     ];
 });
 
-afterEach(function (): void {
-    /** @phpstan-ignore-next-line property.notFound */
+afterEach(function () {
     cleanupTranslationFile($this->testFilePath);
 });
 
-describe('ReadTranslationFileAction Business Logic', function (): void {
-    test('can read valid translation file', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+describe('ReadTranslationFileAction Business Logic', function () {
+    test('can read valid translation file', function () {
         createTranslationFile($this->testFilePath, $this->testTranslations);
 
-        /** @phpstan-ignore-next-line property.notFound */
         $result = $this->action->execute($this->testFilePath);
 
         expect($result)->toBeArray();
         expect($result)->toHaveKey('auth');
         expect($result)->toHaveKey('pagination');
-        /** @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible */
         expect($result['auth']['failed'])->toBe('These credentials do not match our records.');
     });
 
-    test('throws exception for non-existent file', function (): void {
+    test('throws exception for non-existent file', function () {
         $nonExistentFile = storage_path('non_existent.php');
 
-        /** @phpstan-ignore-next-line property.notFound */
         $this->action->execute($nonExistentFile);
     })->throws(Exception::class, 'File di traduzione non trovato:');
 
-    test('throws exception for unreadable file', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    test('throws exception for unreadable file', function () {
         createTranslationFile($this->testFilePath, $this->testTranslations);
-        /** @phpstan-ignore-next-line property.notFound */
         chmod($this->testFilePath, 0o000);
 
-        /** @phpstan-ignore-next-line property.notFound */
         $this->action->execute($this->testFilePath);
     })->throws(Exception::class, 'File di traduzione non leggibile:');
 
-    test('throws exception for invalid file content', function (): void {
-        /** @phpstan-ignore-next-line property.notFound */
+    test('throws exception for invalid file content', function () {
         file_put_contents($this->testFilePath, '<?php return "invalid content";');
 
-        /** @phpstan-ignore-next-line property.notFound */
         $this->action->execute($this->testFilePath);
     })->throws(Exception::class, 'File di traduzione non valido:');
 
-    test('converts array to php format correctly', function (): void {
+    test('converts array to php format correctly', function () {
         $translations = [
             'simple_key' => 'Simple value',
             'nested' => [
@@ -73,7 +63,6 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
             ],
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
 
         expect($phpContent)->toContain("<?php\n\nreturn [");
@@ -83,14 +72,13 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
         expect($phpContent)->toContain("];\n");
     });
 
-    test('handles special characters in translations', function (): void {
+    test('handles special characters in translations', function () {
         $translations = [
             'quotes' => "Text with 'single' and \"double\" quotes",
             'backslashes' => 'Text with \\ backslashes',
             'newlines' => "Text with\nnewlines",
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
 
         expect($phpContent)->toContain("Text with \\'single\\' and \\\"double\\\" quotes");
@@ -98,7 +86,7 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
         expect($phpContent)->toContain('Text with\\nnewlines');
     });
 
-    test('handles deeply nested arrays', function (): void {
+    test('handles deeply nested arrays', function () {
         $translations = [
             'level1' => [
                 'level2' => [
@@ -109,7 +97,6 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
             ],
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
 
         expect($phpContent)->toContain("'level1' => [");
@@ -118,14 +105,13 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
         expect($phpContent)->toContain("'deep_key' => 'Deep value'");
     });
 
-    test('generates proper indentation for nested arrays', function (): void {
+    test('generates proper indentation for nested arrays', function () {
         $translations = [
             'parent' => [
                 'child' => 'value',
             ],
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
         $lines = explode("\n", $phpContent);
 
@@ -137,20 +123,19 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
         expect(current($childLine))->toStartWith('        ');
     });
 
-    test('handles empty arrays', function (): void {
+    test('handles empty arrays', function () {
         $translations = [
             'empty_array' => [],
             'normal_key' => 'normal_value',
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
 
         expect($phpContent)->toContain("'empty_array' => [");
         expect($phpContent)->toContain("'normal_key' => 'normal_value'");
     });
 
-    test('handles numeric values in translations', function (): void {
+    test('handles numeric values in translations', function () {
         $translations = [
             'number' => 123,
             'float' => 45.67,
@@ -158,7 +143,6 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
             'boolean_false' => false,
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
 
         expect($phpContent)->toContain("'number' => '123'");
@@ -167,14 +151,13 @@ describe('ReadTranslationFileAction Business Logic', function (): void {
         expect($phpContent)->toContain("'boolean_false' => ''");
     });
 
-    test('preserves key order in output', function (): void {
+    test('preserves key order in output', function () {
         $translations = [
             'z_last' => 'Last value',
             'a_first' => 'First value',
             'm_middle' => 'Middle value',
         ];
 
-        /** @phpstan-ignore-next-line property.notFound */
         $phpContent = $this->action->toPhp($translations);
         $lines = explode("\n", $phpContent);
 

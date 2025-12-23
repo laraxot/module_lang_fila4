@@ -5,20 +5,19 @@ declare(strict_types=1);
 namespace Modules\Lang\Filament\Actions;
 
 use Filament\Actions\Action;
-use Filament\Facades\Filament;
 use Filament\Forms\Components\Select;
 use Illuminate\Support\Facades\App;
 
 class LocaleSwitcherRefresh extends Action
 {
-    public string $full_url = '#';
+    public string $fullUrl = '#';
 
     public string $lang = '';
 
     protected function setUp(): void
     {
         parent::setUp();
-        $lang_options = [
+        $languageOptions = [
             'en' => '🇬🇧 English',
             'it' => '🇮🇹 Italiano',
         ];
@@ -28,23 +27,23 @@ class LocaleSwitcherRefresh extends Action
         }
         app()->setLocale($lang);
         $this->lang = app()->getLocale();
-        $this->full_url = request()->fullUrl();
+        $this->fullUrl = request()->fullUrl();
         $this->label($this->lang)
             ->schema([
                 Select::make('locale')
                     ->label('Seleziona lingua')
-                    ->options($lang_options)
+                    ->options($languageOptions)
                     ->default($this->lang)
                     ->reactive()
                     ->required(),
             ])
             ->action(function (array $data) {
                 $locale = $data['locale'] ?? 'en';
-                $localeStr = is_string($locale) ? $locale : 'en';
+                $locale = is_string($locale) ? $locale : 'en';
 
-                session()->put('locale', $localeStr);
-                App::setLocale($localeStr);
-                // Filament::setLocale($localeStr);
+                session()->put('locale', $locale);
+                App::setLocale($locale);
+                // Filament::setLocale($locale);
 
                 return redirect(request()->header('Referer'));
             })

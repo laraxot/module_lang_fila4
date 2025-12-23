@@ -5,93 +5,101 @@ declare(strict_types=1);
 namespace Modules\Lang\Models;
 
 use Eloquent;
-use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
+// --- traits ---
 use Modules\Xot\Contracts\ProfileContract;
+// use Laravel\Scout\Searchable;
+use Modules\Xot\Models\Traits\HasXotFactory;
+use Modules\Xot\Traits\Updater;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
  * Modules\Lang\Models\Post.
  *
- * @property int $id
- * @property int|null $user_id
- * @property string|null $post_type
- * @property int|null $post_id
- * @property string|null $lang
- * @property string|null $title
- * @property string|null $subtitle
- * @property string|null $guid
- * @property string|null $txt
- * @property string|null $image_src
- * @property string|null $image_alt
- * @property string|null $image_title
- * @property string|null $meta_description
- * @property string|null $meta_keywords
- * @property int|null $author_id
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property int|null $category_id
- * @property string|null $image
- * @property string|null $content
- * @property int|null $published
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property string|null $url
- * @property array|null $url_lang
- * @property array|null $image_resize_src
- * @property string|null $linked_count
- * @property string|null $related_count
- * @property string|null $relatedrev_count
- * @property string|null $linkable_type
- * @property int|null $views_count
- * @property Eloquent $linkable
- * @method static Builder|Post newModelQuery()
- * @method static Builder|Post newQuery()
- * @method static Builder|Post query()
- * @method static Builder|Post whereAuthorId($value)
- * @method static Builder|Post whereCategoryId($value)
- * @method static Builder|Post whereContent($value)
- * @method static Builder|Post whereCreatedAt($value)
- * @method static Builder|Post whereCreatedBy($value)
- * @method static Builder|Post whereGuid($value)
- * @method static Builder|Post whereId($value)
- * @method static Builder|Post whereImage($value)
- * @method static Builder|Post whereImageAlt($value)
- * @method static Builder|Post whereImageResizeSrc($value)
- * @method static Builder|Post whereImageSrc($value)
- * @method static Builder|Post whereImageTitle($value)
- * @method static Builder|Post whereLang($value)
- * @method static Builder|Post whereLinkableType($value)
- * @method static Builder|Post whereLinkedCount($value)
- * @method static Builder|Post whereMetaDescription($value)
- * @method static Builder|Post whereMetaKeywords($value)
- * @method static Builder|Post wherePostId($value)
- * @method static Builder|Post wherePostType($value)
- * @method static Builder|Post wherePublished($value)
- * @method static Builder|Post whereRelatedCount($value)
- * @method static Builder|Post whereRelatedrevCount($value)
- * @method static Builder|Post whereSubtitle($value)
- * @method static Builder|Post whereTitle($value)
- * @method static Builder|Post whereTxt($value)
- * @method static Builder|Post whereUpdatedAt($value)
- * @method static Builder|Post whereUpdatedBy($value)
- * @method static Builder|Post whereUrl($value)
- * @method static Builder|Post whereUrlLang($value)
- * @method static Builder|Post whereUserId($value)
- * @method static Builder|Post whereViewsCount($value)
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $updater
- * @method static \Modules\Lang\Database\Factories\PostFactory factory($count = null, $state = [])
+ * @property string                       $id
+ * @property int|null                     $user_id
+ * @property string|null                  $post_type
+ * @property int|null                     $post_id
+ * @property string|null                  $lang
+ * @property string|null                  $title
+ * @property string|null                  $subtitle
+ * @property string|null                  $guid
+ * @property string|null                  $txt
+ * @property string|null                  $image_src
+ * @property string|null                  $image_alt
+ * @property string|null                  $image_title
+ * @property string|null                  $meta_description
+ * @property string|null                  $meta_keywords
+ * @property int|null                     $author_id
+ * @property Carbon|null                  $created_at
+ * @property Carbon|null                  $updated_at
+ * @property int|null                     $category_id
+ * @property string|null                  $image
+ * @property string|null                  $content
+ * @property int|null                     $published
+ * @property string|null                  $created_by
+ * @property string|null                  $updated_by
+ * @property string|null                  $url
+ * @property array<array-key, mixed>|null $url_lang
+ * @property array<array-key, mixed>|null $image_resize_src
+ * @property string|null                  $linked_count
+ * @property string|null                  $related_count
+ * @property string|null                  $relatedrev_count
+ * @property string|null                  $linkable_type
+ * @property int|null                     $views_count
+ * @property ProfileContract|null         $creator
+ * @property Model|\Eloquent|null         $linkable
+ * @property ProfileContract|null         $updater
+ *
+ * @method static Builder<static>|Post newModelQuery()
+ * @method static Builder<static>|Post newQuery()
+ * @method static Builder<static>|Post query()
+ * @method static Builder<static>|Post whereAuthorId($value)
+ * @method static Builder<static>|Post whereCategoryId($value)
+ * @method static Builder<static>|Post whereContent($value)
+ * @method static Builder<static>|Post whereCreatedAt($value)
+ * @method static Builder<static>|Post whereCreatedBy($value)
+ * @method static Builder<static>|Post whereGuid($value)
+ * @method static Builder<static>|Post whereId($value)
+ * @method static Builder<static>|Post whereImage($value)
+ * @method static Builder<static>|Post whereImageAlt($value)
+ * @method static Builder<static>|Post whereImageResizeSrc($value)
+ * @method static Builder<static>|Post whereImageSrc($value)
+ * @method static Builder<static>|Post whereImageTitle($value)
+ * @method static Builder<static>|Post whereLang($value)
+ * @method static Builder<static>|Post whereLinkableType($value)
+ * @method static Builder<static>|Post whereLinkedCount($value)
+ * @method static Builder<static>|Post whereMetaDescription($value)
+ * @method static Builder<static>|Post whereMetaKeywords($value)
+ * @method static Builder<static>|Post wherePostId($value)
+ * @method static Builder<static>|Post wherePostType($value)
+ * @method static Builder<static>|Post wherePublished($value)
+ * @method static Builder<static>|Post whereRelatedCount($value)
+ * @method static Builder<static>|Post whereRelatedrevCount($value)
+ * @method static Builder<static>|Post whereSubtitle($value)
+ * @method static Builder<static>|Post whereTitle($value)
+ * @method static Builder<static>|Post whereTxt($value)
+ * @method static Builder<static>|Post whereUpdatedAt($value)
+ * @method static Builder<static>|Post whereUpdatedBy($value)
+ * @method static Builder<static>|Post whereUrl($value)
+ * @method static Builder<static>|Post whereUrlLang($value)
+ * @method static Builder<static>|Post whereUserId($value)
+ * @method static Builder<static>|Post whereViewsCount($value)
+ *
  * @mixin Eloquent
  */
 class Post extends BaseModel
 {
+    use HasXotFactory;
     use HasSlug;
-    use Cachable;
+
+    // use Cachable;
+    use Updater;
 
     /*
      * public function getUrlAttribute($value) {
@@ -169,10 +177,7 @@ class Post extends BaseModel
     }
 
     // -------- relationship ------
-    /**
-     * @return MorphTo
-     */
-    public function linkable()
+    public function linkable(): MorphTo
     {
         return $this->morphTo('post');
     }
@@ -210,7 +215,7 @@ class Post extends BaseModel
      */
     public function getTitleAttribute(?string $value): ?string
     {
-        if ($value !== null) {
+        if (null !== $value) {
             return $value;
         }
 
@@ -232,7 +237,11 @@ class Post extends BaseModel
 
         $this->title = $value;
 
-        $this->save();
+        if (null !== $this->getKey()) {
+            $this->update([
+                'title' => $value,
+            ]);
+        }
 
         return $value;
     }
@@ -242,11 +251,11 @@ class Post extends BaseModel
      */
     public function getGuidAttribute(?string $value): ?string
     {
-        if (\is_string($value) && $value !== '' && ! str_contains($value, ' ')) {
+        if (\is_string($value) && '' !== $value && ! str_contains($value, ' ')) {
             return $value;
         }
         $value = $this->title;
-        if ($value === '') {
+        if ('' === $value) {
             // Assicuriamoci che i valori siano stringhe prima della concatenazione
             $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
                 ? $this->attributes['post_type']
@@ -256,12 +265,17 @@ class Post extends BaseModel
                 : '';
             $value = $postType.' '.$postId;
         }
-        if ($value === null) {
+        if (null === $value) {
             $value = 'u-'.random_int(1, 1000);
         }
         $value = Str::slug($value);
         $this->guid = $value;
-        $this->save();
+
+        if (null !== $this->getKey()) {
+            $this->update([
+                'guid' => $value,
+            ]);
+        }
 
         return $value;
     }
@@ -271,10 +285,7 @@ class Post extends BaseModel
         return $value ?? '';
     }
 
-    /**
-     * @return array
-     */
-    public function toSearchableArray()
+    public function toSearchableArray(): array
     {
         return $this->only(self::SEARCHABLE_FIELDS);
     }

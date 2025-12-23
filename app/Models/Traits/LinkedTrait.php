@@ -19,6 +19,6 @@ use Modules\Xot\Contracts\UserContract;
  * Modules\Lang\Models\Traits\LinkedTrait.
  *
  * @property UserContract|null $user
- * @property Post $post
+ * @property Post              $post
  */
 trait LinkedTrait {}

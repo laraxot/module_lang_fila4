@@ -16,7 +16,7 @@ use Modules\Xot\Filament\Resources\Pages\XotBaseCreateRecord;
  */
 abstract class LangBaseCreateRecord extends XotBaseCreateRecord
 {
-    // use Translatable; // Temporaneamente commentato per compatibilità Filament 4.x
+    use Translatable;
 
     protected function getHeaderActions(): array
     {

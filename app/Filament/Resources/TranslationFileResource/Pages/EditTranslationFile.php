@@ -2,15 +2,12 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-use Filament\Schemas\Components\Section;
-use Override;
-use Filament\Actions;
+use Illuminate\Contracts\Support\Htmlable;
 use Filament\Forms\Components\TextInput;
-use Filament\Notifications\Notification;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Schemas\Components\Section;
+use Illuminate\Contracts\Support\Htmlable;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
@@ -20,6 +17,57 @@ class EditTranslationFile extends XotBaseEditRecord
 {
     protected static string $resource = TranslationFileResource::class;
 
+    /**
+     * @return array<string>
+     */
+    public function getTranslatableLocales(): array
+    {
+        return ['it', 'en'];
+    }
+
+    #[\Override]
+    public function getFormSchema(): array
+    {
+        return [
+            Section::make('content')->schema(function ($record): array {
+                if (is_object($record) && isset($record->content)) {
+                    $content = is_array($record->content) ? $record->content : [];
+                } else {
+                    $content = [];
+                }
+
+                return $this->makeFromArray($content, 'content');
+            }),
+        ];
+    }
+
+    public function makeFromArray(array $array, string $prefix = ''): array
+    {
+        $fields = [];
+
+        foreach ($array as $key => $value) {
+            $fullKey = '' === $prefix ? $key : ($prefix.'.'.$key);
+
+            if (is_array($value)) {
+                /** @var array<string, mixed> $childArray */
+                $childArray = $value;
+                /** @var array<Htmlable|string> $childSchema */
+                $childSchema = self::makeFromArray($childArray, $fullKey);
+                $fields[] = Section::make($key)
+                    ->label($fullKey)
+                    ->schema($childSchema)
+                    ->columns(2);
+            } else {
+                $fields[] = TextInput::make($fullKey)
+                    // ->label($fullKey)
+                    ->label($key)
+                    ->default($value);
+            }
+        }
+
+        return $fields;
+    }
+
     protected function getHeaderActions(): array
     {
         return [
@@ -27,14 +75,6 @@ class EditTranslationFile extends XotBaseEditRecord
             ...parent::getHeaderActions(),
             // ...
         ];
-    }
-
-    /**
-     * @return array<string>
-     */
-    public function getTranslatableLocales()
-    {
-        return ['it', 'en'];
     }
 
     protected function mutateFormDataBeforeSave(array $data): array
@@ -61,16 +101,14 @@ class EditTranslationFile extends XotBaseEditRecord
          * }
          */
         $record = $this->record;
-        $key = '';
-        if (is_object($record) && property_exists($record, 'key')) {
-            $key = is_string($record->key) ? $record->key : '';
+        if (is_object($record) && isset($record->key)) {
+            $key = is_string($record->key) ? $record->key : (string) $record->key;
+            /** @var array<string, mixed>|Htmlable|int|string|null $content */
+            $content = $data['content'] ?? null;
+            app(SaveTransAction::class)->execute($key, $content);
         }
-        
-        $content = $data['content'] ?? null;
-        $contentValue = is_string($content) || is_array($content) ? $content : '';
-        
-        app(SaveTransAction::class)->execute($key, $contentValue);
-        //dddx(['record'=>$this->record,'data'=>$data]);
+
+        // dddx(['record'=>$this->record,'data'=>$data]);
         return $data;
     }
 
@@ -80,51 +118,5 @@ class EditTranslationFile extends XotBaseEditRecord
         if (is_object($this->record)) {
             $this->record->refresh();
         }
-    }
-
-    #[Override]
-    /**
-     * @return array<string, mixed>
-     */
-    public function getFormSchema(): array
-    {
-        return [
-            Section::make('content')->schema(function($record): array {
-                $content = [];
-                if (is_object($record) && property_exists($record, 'content')) {
-                    $content = is_array($record->content) ? $record->content : [];
-                }
-                return $this->makeFromArray($content, 'content');
-            }),
-        ];
-    }
-
-    /**
-     * @return array<string, mixed>
-     */
-    public function makeFromArray(array $array, string $prefix = ''): array
-    {
-        $fields = [];
-
-        foreach ($array as $key => $value) {
-            $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
-
-            if (is_array($value)) {
-                $subFields = $this->makeFromArray($value, $fullKey);
-                /** @var array<\Illuminate\Contracts\Support\Htmlable|string> $subFields */
-                $fields[] = Section::make($key)
-                    ->label($fullKey)
-                    ->schema($subFields)
-                    ->columns(2);
-            } else {
-                $fields[] = TextInput::make($fullKey)
-                    //->label($fullKey)
-                    ->label($key)
-                    ->default($value);
-            }
-        }
-
-        /* @phpstan-ignore-next-line return.type, varTag.nativeType */
-        return $fields;
     }
 }

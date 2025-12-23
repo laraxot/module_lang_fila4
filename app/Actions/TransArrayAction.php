@@ -24,21 +24,40 @@ class TransArrayAction
      */
     public function execute(array $array, ?string $transKey): array
     {
-        if ($transKey === null) {
+        if (null === $transKey) {
             $result = Arr::map($array, SafeStringCastAction::cast(...));
-            return is_array($result) ? array_map(fn($value) => (string) $value, $result) : [];
+            if (is_array($result)) {
+                $stringResult = [];
+                foreach ($result as $key => $value) {
+                    $stringResult[$key] = (string) $value;
+                }
+
+                return $stringResult;
+            }
+
+            return [];
         }
 
         $this->transKey = $transKey;
 
         $result = Arr::map($array, $this->trans(...));
-        return is_array($result) ? array_map(fn($value) => (string) $value, $result) : [];
+        if (is_array($result)) {
+            $stringResult = [];
+            foreach ($result as $key => $value) {
+                $stringResult[$key] = (string) $value;
+            }
+
+            return $stringResult;
+        }
+
+        return [];
     }
 
     /**
      * Traduce un singolo elemento.
      *
-     * @param  mixed  $item  L'elemento da tradurre
+     * @param mixed $item L'elemento da tradurre
+     *
      * @return string L'elemento tradotto o l'elemento originale se la traduzione non esiste
      */
     public function trans(mixed $item): string
@@ -48,7 +67,7 @@ class TransArrayAction
             $item = SafeStringCastAction::cast($item);
         }
 
-        if (empty($item) || $this->transKey === null) {
+        if (empty($item) || null === $this->transKey) {
             return $item;
         }
 

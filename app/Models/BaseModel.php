@@ -4,21 +4,29 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+// use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+// use Laravel\Scout\Searchable;
+// ---------- traits
 use Modules\Xot\Models\XotBaseModel;
 
 /**
- * Base Model for Lang module.
- *
- * Extends XotBaseModel which provides all standard properties and methods.
- *
- * @see \Modules\Xot\Models\XotBaseModel
+ * Class BaseModel.
  */
 abstract class BaseModel extends XotBaseModel
 {
-    /**
-     * The connection name for the model.
-     *
-     * @var string
-     */
+    /** @var string */
     protected $connection = 'lang';
+
+    /**
+     * @return array<string, string> */
+    protected function casts(): array
+    {
+        return [
+            'id' => 'string',
+            'uuid' => 'string',
+            'published_at' => 'datetime',
+            'created_at' => 'datetime',
+            'updated_at' => 'datetime',
+        ];
+    }
 }

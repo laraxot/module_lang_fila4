@@ -6,14 +6,13 @@ namespace Modules\Lang\Filament\Resources\Pages;
 
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use LaraZeus\SpatieTranslatable\Resources\Pages\EditRecord\Concerns\Translatable;
-use Modules\Cms\Filament\Resources\SectionResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 
 abstract class LangBaseEditRecord extends XotBaseEditRecord
 {
-    protected static string $resource; // = SectionResource::class;
+    use Translatable;
 
-    // use Translatable; // Temporaneamente commentato per compatibilità Filament 4.x
+    protected static string $resource; // = SectionResource::class;
 
     protected function getHeaderActions(): array
     {

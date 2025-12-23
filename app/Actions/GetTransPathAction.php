@@ -7,8 +7,6 @@ namespace Modules\Lang\Actions;
 use Illuminate\Support\Str;
 use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
 use Spatie\QueueableAction\QueueableAction;
-use Throwable;
-use Webmozart\Assert\Assert;
 
 class GetTransPathAction
 {
@@ -24,14 +22,12 @@ class GetTransPathAction
         $piece = explode('.', $item);
         $lang = app()->getLocale();
         try {
-            $lang_path = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
-            Assert::string($lang_path, 'Il percorso del modulo deve essere una stringa');
-        } catch (Throwable $e) {
-            $lang_path = base_path('Modules/'.$ns.'/lang');
+            $langPath = app(GetModulePathByGeneratorAction::class)->execute($ns, 'lang');
+        } catch (\Throwable $e) {
+            $langPath = base_path('Modules/'.$ns.'/lang');
         }
-        $file_name = $piece[0] ?? '';
-        // $file_name is always string due to ?? ''
+        $fileName = $piece[0] ?? '';
 
-        return $lang_path.'/'.$lang.'/'.$file_name.'.php';
+        return $langPath.'/'.$lang.'/'.$fileName.'.php';
     }
 }

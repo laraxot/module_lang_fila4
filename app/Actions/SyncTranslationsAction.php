@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Illuminate\Support\Facades\File;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -15,9 +14,10 @@ class SyncTranslationsAction
     /**
      * Sincronizza le traduzioni da una lingua sorgente a lingue target.
      *
-     * @param  string  $sourceLang  Lingua sorgente (default: 'it')
-     * @param  array<string>  $targetLangs  Lingue target (default: ['en', 'de'])
-     * @param  string|null  $specificModule  Modulo specifico (opzionale)
+     * @param string        $sourceLang     Lingua sorgente (default: 'it')
+     * @param array<string> $targetLangs    Lingue target (default: ['en', 'de'])
+     * @param string|null   $specificModule Modulo specifico (opzionale)
+     *
      * @return array<string, mixed> Risultato della sincronizzazione
      */
     public function execute(
@@ -44,7 +44,7 @@ class SyncTranslationsAction
             $results['total_translations'] += is_numeric($moduleResults['translations_added'] ?? null)
                 ? ((int) $moduleResults['translations_added'])
                 : 0;
-            $results['total_modules']++;
+            ++$results['total_modules'];
         }
 
         return $results;
@@ -53,9 +53,10 @@ class SyncTranslationsAction
     /**
      * Sincronizza le traduzioni per un modulo specifico.
      *
-     * @param  string  $module  Nome del modulo
-     * @param  string  $sourceLang  Lingua sorgente
-     * @param  array<string>  $targetLangs  Lingue target
+     * @param string        $module      Nome del modulo
+     * @param string        $sourceLang  Lingua sorgente
+     * @param array<string> $targetLangs Lingue target
+     *
      * @return array<string, mixed> Risultato per il modulo
      */
     private function syncModule(string $module, string $sourceLang, array $targetLangs): array
@@ -86,15 +87,14 @@ class SyncTranslationsAction
         $translationsAdded = 0;
 
         foreach ($sourceFiles as $sourceFile) {
-            $sourceFileStr = is_string($sourceFile) ? $sourceFile : '';
-            $fileName = basename($sourceFileStr);
-            $sourceTranslations = $this->loadTranslations($sourceFileStr);
+            $fileName = basename((string) $sourceFile);
+            $sourceTranslations = $this->loadTranslations((string) $sourceFile);
 
             if (empty($sourceTranslations)) {
                 continue;
             }
 
-            $filesProcessed++;
+            ++$filesProcessed;
 
             foreach ($targetLangs as $targetLang) {
                 $targetPath = "{$moduleLangPath}/{$targetLang}";
@@ -131,7 +131,8 @@ class SyncTranslationsAction
     /**
      * Ottiene la lista dei moduli con cartella lang.
      *
-     * @param  string  $modulesPath  Percorso dei moduli
+     * @param string $modulesPath Percorso dei moduli
+     *
      * @return array<string> Lista dei moduli
      */
     private function getModules(string $modulesPath): array
@@ -140,7 +141,7 @@ class SyncTranslationsAction
         $directories = File::directories($modulesPath);
 
         foreach ($directories as $directory) {
-            $directoryStr = is_string($directory) ? $directory : '';
+            $directoryStr = (string) $directory;
             $moduleName = basename($directoryStr);
             if (File::exists("{$directoryStr}/lang")) {
                 $modules[] = $moduleName;
@@ -153,11 +154,9 @@ class SyncTranslationsAction
     /**
      * Carica le traduzioni da un file.
      *
-     * @param  string  $filePath  Percorso del file
+     * @param string $filePath Percorso del file
+     *
      * @return array<string, mixed> Traduzioni caricate
-     */
-    /**
-     * @return array<string, mixed>
      */
     private function loadTranslations(string $filePath): array
     {
@@ -168,20 +167,20 @@ class SyncTranslationsAction
         try {
             $translations = require $filePath;
 
-            if (! is_array($translations)) {
-                return [];
-            }
-
-            // Assicura che sia array<string, mixed>
-            $result = [];
-            foreach ($translations as $key => $value) {
-                if (is_string($key)) {
-                    $result[$key] = $value;
+            // Ensure we return an array with string keys
+            if (is_array($translations)) {
+                $result = [];
+                foreach ($translations as $key => $value) {
+                    if (is_string($key)) {
+                        $result[$key] = $value;
+                    }
                 }
+
+                return $result;
             }
 
-            return $result;
-        } catch (Exception $e) {
+            return [];
+        } catch (\Exception $e) {
             return [];
         }
     }
@@ -189,7 +188,8 @@ class SyncTranslationsAction
     /**
      * Filtra un array per avere solo chiavi stringa (aiuta PHPStan).
      *
-     * @param  array<mixed, mixed>  $arr
+     * @param array<mixed, mixed> $arr
+     *
      * @return array<string, mixed>
      */
     private function filterStringKeyArray(array $arr): array
@@ -207,8 +207,9 @@ class SyncTranslationsAction
     /**
      * Unisce le traduzioni sorgente con quelle target.
      *
-     * @param  array<string, mixed>  $source  Traduzioni sorgente
-     * @param  array<string, mixed>  $target  Traduzioni target
+     * @param array<string, mixed> $source Traduzioni sorgente
+     * @param array<string, mixed> $target Traduzioni target
+     *
      * @return array<string, mixed> Traduzioni unite
      */
     private function mergeTranslations(array $source, array $target): array
@@ -235,8 +236,8 @@ class SyncTranslationsAction
     /**
      * Salva le traduzioni in un file.
      *
-     * @param  string  $filePath  Percorso del file
-     * @param  array<string, mixed>  $translations  Traduzioni da salvare
+     * @param string               $filePath     Percorso del file
+     * @param array<string, mixed> $translations Traduzioni da salvare
      */
     private function saveTranslations(string $filePath, array $translations): void
     {
@@ -250,8 +251,9 @@ class SyncTranslationsAction
     /**
      * Converte un array in formato PHP.
      *
-     * @param  array<string, mixed>  $array  Array da convertire
-     * @param  int  $indent  Livello di indentazione
+     * @param array<string, mixed> $array  Array da convertire
+     * @param int                  $indent Livello di indentazione
+     *
      * @return string Codice PHP
      */
     private function arrayToPhp(array $array, int $indent = 0): string

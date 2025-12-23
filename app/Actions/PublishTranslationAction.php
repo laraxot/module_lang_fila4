@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\File;
 use Modules\Lang\Datas\TranslationData;
-use Modules\Xot\Actions\Array\SaveArrayAction;
+use Modules\Xot\Actions\Arr\SaveArrayAction;
 use Spatie\QueueableAction\QueueableAction;
 
 class PublishTranslationAction
@@ -36,11 +34,11 @@ class PublishTranslationAction
          * }
          */
         $data = $translationData->getData();
-        $data_up = $data;
-        Arr::set($data_up, $translationData->item, $translationData->value);
-        if ($data !== $data_up) {
+        $updatedData = $data;
+        Arr::set($updatedData, $translationData->item, $translationData->value);
+        if ($data !== $updatedData) {
             app(SaveArrayAction::class)->execute(
-                data: $data_up,
+                data: $updatedData,
                 filename: $filename,
             );
         }

@@ -12,24 +12,33 @@ use Modules\Xot\Providers\XotBaseRouteServiceProvider;
 class RouteServiceProvider extends XotBaseRouteServiceProvider
 {
     /**
+     * The name of the module.
+     */
+    public string $name = 'Lang';
+
+    /**
+     * The name of the module.
+     */
+    public string $name = 'Lang';
+
+    /**
      * The module namespace to assume when generating URLs to actions.
      */
     protected string $moduleNamespace = 'Modules\Lang\Http\Controllers';
 
     /**
      * The directory of the module.
+     *
+     * @SuppressWarnings("CamelCasePropertyName")
      */
     protected string $module_dir = __DIR__;
 
     /**
      * The namespace of the module.
+     *
+     * @SuppressWarnings("CamelCasePropertyName")
      */
     protected string $module_ns = __NAMESPACE__;
-
-    /**
-     * The name of the module.
-     */
-    public string $name = 'Lang';
 
     /**
      * Bootstrap the module services.

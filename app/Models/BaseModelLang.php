@@ -6,23 +6,17 @@ namespace Modules\Lang\Models;
 
 // //use Laravel\Scout\Searchable;
 // ---------- traits
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\Traits\LinkedTrait;
-use Modules\Xot\Traits\Updater;
+use Modules\Xot\Models\XotBaseModel;
 
 /**
  * Class BaseModelLang.
  *
  * @property string|null $post_type
  */
-abstract class BaseModelLang extends Model
+abstract class BaseModelLang extends XotBaseModel
 {
-    use \Modules\Xot\Models\Traits\HasXotFactory;
-
-    // use Searchable;
     use LinkedTrait;
-    use Updater;
 
     /**
      * Indicates whether attributes are snake cased on arrays.

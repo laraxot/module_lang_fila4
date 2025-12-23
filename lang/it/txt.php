@@ -440,6 +440,8 @@ return [
         ],
         'request' => [
             'label' => 'request',
+            'tooltip' => 'request',
+            'icon' => 'request',
         ],
         'cancel' => [
             'label' => 'cancel',

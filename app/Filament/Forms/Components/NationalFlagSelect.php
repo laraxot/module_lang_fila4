@@ -36,47 +36,47 @@ class NationalFlagSelect extends Select
      *
      * @return array<string, string>
      */
-    /**
-     * @return array<string, string>
-     */
     protected function getCountryOptions(): array
     {
         $countries = countries();
-        $countries = Arr::sort($countries, fn ($c) => is_array($c) && isset($c['name']) ? $c['name'] : '');
+        // PHPStan L10: Type narrowing for array offset access
+        $countries = Arr::sort($countries, function ($c) {
+            return is_array($c) && isset($c['name']) ? $c['name'] : '';
+        });
 
-        $options = Arr::mapWithKeys($countries, function ($c) {
-            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2']) || ! isset($c['name'])) {
-                return [];
+        /** @var array<string, string> $options */
+        $options = [];
+
+        foreach ($countries as $c) {
+            // PHPStan L10: Type narrowing for country array
+            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2'])) {
+                continue;
             }
-            
-            $code = is_string($c['iso_3166_1_alpha2']) ? $c['iso_3166_1_alpha2'] : '';
-            $name = is_string($c['name']) ? $c['name'] : '';
-            $flag_name = strtolower($code);
-            $localizedLabel = __('lang::countries.'.$flag_name);
 
-            $flag_src = app(AssetAction::class)->execute('lang::svg/flag/'.$flag_name.'.svg');
-            $flag = '<img src="'.$flag_src.'" class="h-4 w-6 mr-2" inline-block />';
+            $code = $c['iso_3166_1_alpha2'];
+            if (! is_string($code)) {
+                continue;
+            }
+
+            $flagName = strtolower($code);
+            $localizedLabel = __('lang::countries.'.$flagName);
+
+            $flagSrc = app(AssetAction::class)->execute('lang::svg/flag/'.$flagName.'.svg');
+            $flag = '<img src="'.$flagSrc.'" class="h-4 w-6 mr-2" inline-block />';
 
             $html = '<span class="flex items-center gap-2">'.$flag.$localizedLabel.'</span>';
 
-            return [$code => $html];
-        });
-
-        // Assicura che sia array<string, string>
-        $result = [];
-        foreach ($options as $key => $value) {
-            if (is_string($key) && is_string($value)) {
-                $result[$key] = $value;
-            }
+            $options[$code] = $html;
         }
 
-        return $result;
+        return $options;
     }
 
     /**
      * Get filtered country options based on search query.
      *
-     * @param  string  $search  The search query
+     * @param string $search The search query
+     *
      * @return array<string, string>
      */
     protected function getFilteredCountryOptions(string $search): array
@@ -90,53 +90,67 @@ class NationalFlagSelect extends Select
 
         // Filter countries by search term
         $filteredCountries = array_filter($countries, function ($country) use ($searchLower) {
-            if (! is_array($country) || ! isset($country['iso_3166_1_alpha2']) || ! isset($country['name'])) {
+            // PHPStan L10: Type narrowing for country array
+            if (! is_array($country) || ! isset($country['iso_3166_1_alpha2'], $country['name'])) {
                 return false;
             }
-            
-            $code = is_string($country['iso_3166_1_alpha2']) ? $country['iso_3166_1_alpha2'] : '';
-            $flag_name = strtolower($code);
+
+            $code = $country['iso_3166_1_alpha2'];
+            $name = $country['name'];
+
+            if (! is_string($code) || ! is_string($name)) {
+                return false;
+            }
+
+            $flagName = strtolower($code);
 
             // Get localized country name
-            $localizedName = __('lang::countries.'.$flag_name);
+            $localizedName = __('lang::countries.'.$flagName);
+            // PHPStan L10: __() can return string|array, handle both
+            if (is_array($localizedName)) {
+                return str_contains(strtolower($name), $searchLower)
+                    || str_contains(strtolower($code), $searchLower);
+            }
+
+            $localizedNameStr = is_string($localizedName) ? $localizedName : '';
 
             // Search in both English name and localized name
-            $name = is_string($country['name']) ? strtolower($country['name']) : '';
-            return
-                str_contains($name, $searchLower) ||
-                str_contains(strtolower($localizedName), $searchLower) ||
-                str_contains(strtolower($code), $searchLower);
+            return str_contains(strtolower($name), $searchLower)
+                || str_contains(strtolower($localizedNameStr), $searchLower)
+                || str_contains(strtolower($code), $searchLower);
         });
 
         // Sort filtered results by name
-        $filteredCountries = Arr::sort($filteredCountries, fn ($c) => is_array($c) && isset($c['name']) ? $c['name'] : '');
+        $filteredCountries = Arr::sort($filteredCountries, function ($c) {
+            return is_array($c) && isset($c['name']) ? $c['name'] : '';
+        });
 
         // Map to options format with flags
-        $options = Arr::mapWithKeys($filteredCountries, function ($c) {
-            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2']) || ! isset($c['name'])) {
-                return [];
-            }
-            
-            $code = is_string($c['iso_3166_1_alpha2']) ? $c['iso_3166_1_alpha2'] : '';
-            $flag_name = strtolower($code);
-            $localizedLabel = __('lang::countries.'.$flag_name);
+        /** @var array<string, string> $options */
+        $options = [];
 
-            $flag_src = app(AssetAction::class)->execute('lang::svg/flag/'.$flag_name.'.svg');
-            $flag = '<img src="'.$flag_src.'" class="h-4 w-6 mr-2" inline-block />';
+        foreach ($filteredCountries as $c) {
+            // PHPStan L10: Type narrowing for country array
+            if (! is_array($c) || ! isset($c['iso_3166_1_alpha2'])) {
+                continue;
+            }
+
+            $code = $c['iso_3166_1_alpha2'];
+            if (! is_string($code)) {
+                continue;
+            }
+
+            $flagName = strtolower($code);
+            $localizedLabel = __('lang::countries.'.$flagName);
+
+            $flagSrc = app(AssetAction::class)->execute('lang::svg/flag/'.$flagName.'.svg');
+            $flag = '<img src="'.$flagSrc.'" class="h-4 w-6 mr-2" inline-block />';
 
             $html = '<span class="flex items-center gap-2">'.$flag.$localizedLabel.'</span>';
 
-            return [$code => $html];
-        });
-
-        // Assicura che sia array<string, string>
-        $result = [];
-        foreach ($options as $key => $value) {
-            if (is_string($key) && is_string($value)) {
-                $result[$key] = $value;
-            }
+            $options[$code] = $html;
         }
 
-        return $result;
+        return $options;
     }
 }

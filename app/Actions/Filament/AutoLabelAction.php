@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions\Filament;
 
-use Exception;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Schemas\Components\Section;
@@ -18,7 +17,6 @@ use Modules\Lang\Actions\SaveTransAction;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Actions\File\SvgExistsAction;
 use Modules\Xot\Actions\GetTransKeyAction;
-use ReflectionClass;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
@@ -29,29 +27,26 @@ class AutoLabelAction
     /**
      * Undocumented function.
      * return number of input added.
-     *
-     * @param  Field|BaseFilter|Column|Step|Action|Action|Section  $component
-     * @return Field|BaseFilter|Column|Step|Action|Action|Section
      */
-    public function execute($component, string $type = 'label')
+    public function execute(Field|BaseFilter|Column|Step|Action|Section $component, string $type = 'label'): Field|BaseFilter|Column|Step|Action|Section
     {
         $backtrace = debug_backtrace();
         $backtrace_slice = array_slice($backtrace, 2);
         $class = Arr::first($backtrace_slice, function ($item) use ($component) {
-            if ($item['function'] === 'execute') {
+            if ('execute' === $item['function']) {
                 return false;
             }
 
             if (
-                isset($item['object']) &&
-                    Str::startsWith($item['object']::class, 'Modules\\') &&
-                    $item['object'] !== $component
+                isset($item['object'])
+                    && Str::startsWith($item['object']::class, 'Modules\\')
+                    && $item['object'] !== $component
             ) {
                 return true;
             }
 
             if (isset($item['class']) && Str::startsWith($item['class'], 'Modules\\')) {
-                $reflection_class = new ReflectionClass($item['class']);
+                $reflection_class = new \ReflectionClass($item['class']);
                 if (! $reflection_class->isAbstract()) {
                     return true;
                 }
@@ -65,11 +60,11 @@ class AutoLabelAction
             if (isset($class['object'])) {
                 $object_class = $class['object']::class;
             }
-            if (isset($class['class']) && $object_class === null) {
+            if (isset($class['class']) && null === $object_class) {
                 $object_class = $class['class'];
             }
             if (is_null($object_class)) {
-                throw new Exception('No object class found');
+                throw new \Exception('No object class found');
             }
             $trans_key = app(GetTransKeyAction::class)->execute($object_class);
         } else {
@@ -83,9 +78,9 @@ class AutoLabelAction
             Assert::string($val = $component->getLabel());
             $label_tkey = $trans_key.'.steps.'.$val.'';
         }
-        if ($label_tkey === null && $component instanceof Section) {
+        if (null === $label_tkey && $component instanceof Section) {
             $val = $component->getHeading();
-            if ($val === null) {
+            if (null === $val) {
                 $val = 'empty';
             }
             if (! is_string($val)) {
@@ -93,7 +88,7 @@ class AutoLabelAction
             }
             $label_tkey = $trans_key.'.sections.'.$val.'';
         }
-        if ($label_tkey === null && method_exists($component, 'getName')) {
+        if (null === $label_tkey && method_exists($component, 'getName')) {
             Assert::string($val = $component->getName());
             $label_tkey = $trans_key.'.fields.'.$val.'';
         }
@@ -157,16 +152,17 @@ class AutoLabelAction
         }
         if (! is_string($label)) {
             $component->label('FIX:'.$label_key);
+
             return $component;
         }
-        if($label_key == $label || !method_exists($component, $type)){
+        if ($label_key === $label || ! method_exists($component, $type)) {
             return $component;
         }
         /*
         if (is_string($label) && $label_key !== $label && method_exists($component, $type)) {
-            
+
                 if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
-                    
+
                     $component->{$type}('heroicon-o-question-mark-circle');
                     return $component;
                 }
@@ -175,37 +171,38 @@ class AutoLabelAction
                 } else {
                     $component->{$type}($label);
                 }
-             
+
         }
         */
-        if ($type === 'icon' && app(SvgExistsAction::class)->execute($label)) {
+        if ('icon' === $type && app(SvgExistsAction::class)->execute($label)) {
             if (method_exists($component, 'iconButton')) {
                 $component->iconButton();
             }
             $component->{$type}($label);
-            //$component->label('FIX:'.$label_key);
+
+            // $component->label('FIX:'.$label_key);
             return $component;
         }
-        if ($type === 'icon' && !app(SvgExistsAction::class)->execute($label)) {
-            //$component->{$type}($label);
+        if ('icon' === $type && ! app(SvgExistsAction::class)->execute($label)) {
+            // $component->{$type}($label);
             if (method_exists($component, 'iconButton')) {
                 $component->iconButton();
             }
-            //$component->label('FIX:'.$label_key);
+            // $component->label('FIX:'.$label_key);
             // $component->tooltip('FIX:'.$label_key);
             $component->{$type}('heroicon-o-question-mark-circle');
-            //$component->{$type}(null);
+
+            // $component->{$type}(null);
             return $component;
         }
 
         if (strip_tags($label) !== $label && in_array($type, ['helperText'], strict: true)) {
             $component->{$type}(new HtmlString($label));
+
             return $component;
-        } 
-        
+        }
+
         $component->{$type}($label);
-        
-        
 
         return $component;
     }

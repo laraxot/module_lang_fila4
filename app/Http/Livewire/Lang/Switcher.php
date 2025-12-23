@@ -8,9 +8,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Http\Livewire\Lang;
 
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
@@ -64,13 +61,13 @@ class Switcher extends Component
     public function render(): View
     {
         $view = 'lang::livewire.lang.change';
-        $view_params = [
+        $viewParams = [
             'view' => $view,
         ];
         // if ([] === $this->teams) {
         //    $view = 'ui::livewire.empty';
         // }
 
-        return view($view, $view_params);
+        return view($view, $viewParams);
     }
 }

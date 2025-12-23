@@ -15,10 +15,7 @@ class ListTranslationFiles extends XotBaseListRecords
 {
     protected static string $resource = TranslationFileResource::class;
 
-    #[Override]
-    /**
-     * @return array<string, mixed>
-     */
+    #[\Override]
     public function getTableColumns(): array
     {
         return [
@@ -29,7 +26,7 @@ class ListTranslationFiles extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[Override]
+    #[\Override]
     protected function getHeaderActions(): array
     {
         $parentActions = parent::getHeaderActions();

@@ -5,36 +5,34 @@ declare(strict_types=1);
 namespace Modules\Lang\Casts;
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\BaseModelLang;
+use Webmozart\Assert\Assert;
 
 class LangField implements CastsAttributes
 {
     /**
      * Cast the given value.
-     *
-     * @param  BaseModelLang  $model
-     * @param  string  $key
-     * @param  mixed  $_value
-     * @param  array  $_attributes
      */
-    public function get($model, $key, $_value, $_attributes)
+    public function get(Model $model, string $key, mixed $value, array $attributes): mixed
     {
+        unset($value, $attributes);
+        Assert::isInstanceOf($model, BaseModelLang::class);
+
         return $model->post->{$key};
     }
 
     /**
      * Prepare the given value for storage.
-     *
-     * @param  BaseModelLang  $model
-     * @param  string  $key
-     * @param  mixed  $value
-     * @param  array  $_attributes
      */
-    public function set($model, $key, $value, $_attributes): array
+    public function set(Model $model, string $key, mixed $value, array $attributes): array
     {
+        unset($attributes);
+        Assert::isInstanceOf($model, BaseModelLang::class);
+
         $post = $model->post;
         $post->{$key} = $value;
-        tap($post)->save();
+        $post->save();
 
         // parent::__construct([]);
         // return [$key => encrypt($value)];

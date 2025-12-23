@@ -12,10 +12,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
-use Modules\Lang\Actions\ReadTranslationFileAction;
 use Modules\Lang\Database\Factories\TranslationFileFactory;
-use Modules\Xot\Actions\Cast\SafeArrayCastAction;
-use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\ProfileContract;
 
 use function Safe\json_encode;
@@ -43,27 +40,6 @@ use Sushi\Sushi;
  *
  * @mixin \Eloquent
  */
-/**
- * @property string|null                  $key
- * @property string|null                  $path
- * @property string|null                  $id
- * @property string|null                  $name
- * @property array<array-key, mixed>|null $content
- * @property ProfileContract|null         $creator
- * @property ProfileContract|null         $updater
- *
- * @method static \Modules\Lang\Database\Factories\TranslationFileFactory factory($count = null, $state = [])
- * @method static Builder<static>|TranslationFile                         newModelQuery()
- * @method static Builder<static>|TranslationFile                         newQuery()
- * @method static Builder<static>|TranslationFile                         query()
- * @method static Builder<static>|TranslationFile                         whereContent($value)
- * @method static Builder<static>|TranslationFile                         whereId($value)
- * @method static Builder<static>|TranslationFile                         whereKey($value)
- * @method static Builder<static>|TranslationFile                         whereName($value)
- * @method static Builder<static>|TranslationFile                         wherePath($value)
- *
- * @mixin \Eloquent
- */
 class TranslationFile extends BaseModel
 {
     use Sushi;
@@ -83,36 +59,32 @@ class TranslationFile extends BaseModel
         'content' => 'json',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    #[\Override]
-    protected function casts(): array
-    {
-        return [
-            'content' => 'array',
-        ];
-    }
-
-    /**
-     * @return list<array<string, mixed>>
-     */
     public function getRows(): array
     {
         $files = app(GetAllTranslationAction::class)->execute();
-        $rows = Arr::map($files, static function ($item) {
-            $item = SafeArrayCastAction::cast($item);
-            $item['id'] = $item['key'] ?? '';
-            $path = SafeStringCastAction::cast($item['path'] ?? '');
-            $item['name'] = $path ? basename($path, '.php') : '';
 
-            if ($path && File::exists($path)) {
-                $content = File::getRequire($path);
-                $item['content'] = json_encode($content);
+        return Arr::map($files, function ($item) {
+            if (! is_array($item)) {
+                return [];
+            }
+
+            $item['id'] = isset($item['key']) ? (string) $item['key'] : '';
+            $item['name'] = isset($item['path']) ? basename((string) $item['path'], '.php') : '';
+
+            if (isset($item['path'])) {
+                $path = (string) $item['path'];
+                if (File::exists($path)) {
+                    try {
+                        $content = File::getRequire($path);
+                        $item['content'] = json_encode($content);
+                    } catch (\Exception $e) {
+                        $item['content'] = '';
+                    }
+                } else {
+                    $item['content'] = '';
+                }
             } else {
-                $item['content'] = '{}';
+                $item['content'] = '';
             }
 
             /*
@@ -127,8 +99,18 @@ class TranslationFile extends BaseModel
             // dddx($item);
             return $item;
         });
+    }
 
-        /* @phpstan-ignore-next-line return.type */
-        return $rows;
+    /**
+     * Get the attributes that should be cast.
+     *
+     * @return array<string, string>
+     */
+    #[\Override]
+    protected function casts(): array
+    {
+        return [
+            'content' => 'array',
+        ];
     }
 }
