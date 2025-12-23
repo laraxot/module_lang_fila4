@@ -53,7 +53,15 @@ class TranslationFile extends BaseModel
         'content',
     ];
 
+<<<<<<< HEAD
     protected array $form = [
+=======
+<<<<<<< HEAD
+    protected array $form = [
+=======
+    protected array $schema = [
+>>>>>>> a87590b (.)
+>>>>>>> laraxot/develop
         'key' => 'string',
         'path' => 'string',
         'id' => 'string',

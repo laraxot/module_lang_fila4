@@ -1,8 +1,17 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/develop
 # Standardizzazione Traduzioni Modulo Notify
 
 ## Panoramica delle Problematiche
 
+<<<<<<< HEAD
 Durante l'analisi del codice è emerso che numerosi file di traduzione nel modulo Notify non rispettano gli standard definiti per SaluteOra. Questo documento riassume i problemi identificati e le strategie di correzione implementate.
+=======
+Durante l'analisi del codice è emerso che numerosi file di traduzione nel modulo Notify non rispettano gli standard definiti per . Questo documento riassume i problemi identificati e le strategie di correzione implementate.
+>>>>>>> laraxot/develop
 
 ## Standard Violati
 
@@ -96,10 +105,18 @@ La corretta implementazione degli standard di traduzione garantisce:
 - Coerenza nell'interfaccia utente
 - Facilità di manutenzione
 - Miglior supporto per la localizzazione
+<<<<<<< HEAD
 - Conformità alle best practice di Laravel e SaluteOra
+=======
+- Conformità alle best practice di Laravel e 
+>>>>>>> laraxot/develop
 
 ## Collegamenti alla Documentazione
 
 - [Regole Generali per le Traduzioni](./TRANSLATION_KEYS_RULES.md)
 - [Best Practices per le Traduzioni](./TRANSLATION_KEYS_BEST_PRACTICES.md)
 - [Convenzioni di Traduzione nel Modulo Notify](../../Notify/docs/TRANSLATION_CONVENTIONS.md)
+<<<<<<< HEAD
+=======
+>>>>>>> a87590b (.)
+>>>>>>> laraxot/develop

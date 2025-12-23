@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/develop
 # Utilizzo di mcamara/laravel-localization 
 
 ## Collegamenti correlati
@@ -28,7 +33,11 @@ Questo documento descrive come utilizzare correttamente il pacchetto `mcamara/la
 ## Configurazione
 
 Il pacchetto `mcamara/laravel-localization` è già configurato . La configurazione si trova in:
+<<<<<<< HEAD
 - `/var/www/html/saluteora/laravel/config/laravellocalization.php`
+=======
+- `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/config/laravellocalization.php`
+>>>>>>> laraxot/develop
 
 Le lingue supportate sono definite nella chiave `supportedLocales` di questo file.
 
@@ -97,7 +106,11 @@ $currentLocale = app()->getLocale();
 
 ## Utilizzo delle Bandiere SVG
 
+<<<<<<< HEAD
 Le bandiere SVG sono disponibili in `/var/www/html/saluteora/laravel/Modules/UI/resources/svg/flags` e sono autoregistrate come componenti Blade con il prefisso `ui-flags`.
+=======
+Le bandiere SVG sono disponibili in `/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/UI/resources/svg/flags` e sono autoregistrate come componenti Blade con il prefisso `ui-flags`.
+>>>>>>> laraxot/develop
 
 ### Utilizzo Corretto
 
@@ -232,3 +245,7 @@ Questi middleware sono già configurati  e non è necessario modificarli.
 - [Documentazione ufficiale mcamara/laravel-localization](https://github.com/mcamara/laravel-localization)
 - [Documentazione Laravel Localization](https://laravel.com/docs/10.x/localization)
 - [Blade Components Documentation](https://laravel.com/docs/10.x/blade#components)
+<<<<<<< HEAD
+=======
+>>>>>>> a87590b (.)
+>>>>>>> laraxot/develop

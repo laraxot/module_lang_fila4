@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/develop
 # Regole per le Chiavi di Traduzione 
 
 ## Collegamenti correlati
@@ -184,7 +189,11 @@ protected function getFormActions(): array
 
 ### 1. Estrazione Automatica delle Chiavi
 
+<<<<<<< HEAD
 SaluteOra include strumenti per l'estrazione automatica delle chiavi di traduzione:
+=======
+ include strumenti per l'estrazione automatica delle chiavi di traduzione:
+>>>>>>> laraxot/develop
 
 ```bash
 php artisan lang:extract
@@ -208,10 +217,18 @@ php artisan lang:sync
 
 ## Conclusione
 
+<<<<<<< HEAD
 Seguire queste regole per le chiavi di traduzione è fondamentale per garantire la coerenza, la manutenibilità e l'internazionalizzazione dell'applicazione SaluteOra. L'utilizzo di chiavi standardizzate e strutturate gerarchicamente facilita la gestione delle traduzioni e migliora la qualità complessiva del codice.
+=======
+Seguire queste regole per le chiavi di traduzione è fondamentale per garantire la coerenza, la manutenibilità e l'internazionalizzazione dell'applicazione . L'utilizzo di chiavi standardizzate e strutturate gerarchicamente facilita la gestione delle traduzioni e migliora la qualità complessiva del codice.
+>>>>>>> laraxot/develop
 
 ## [2024-07-07] Nota storica: correzione massiva Notify
 
 - Sono state applicate correzioni strutturali alle traduzioni del modulo Notify per allineamento a queste regole.
 - Vedi anche: [TRANSLATION_KEYS_RULES.md](../../../Notify/docs/TRANSLATION_KEYS_RULES.md) per dettagli, esempi e best practice specifiche.
 - Ogni nuova regola o convenzione va riportata sia qui che nella documentazione del modulo coinvolto.
+<<<<<<< HEAD
+=======
+>>>>>>> a87590b (.)
+>>>>>>> laraxot/develop

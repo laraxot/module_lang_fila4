@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/develop
 # Best Practices per le Chiavi di Traduzione
 
 ## Collegamenti correlati
@@ -281,9 +286,15 @@ Per blocchi di testo lunghi, valuta se usare chiavi dedicate in PHP (es. `onboar
 
 ## [AGGIORNAMENTO 2024-06-XX] - Correzione appointment.php
 
+<<<<<<< HEAD
 La traduzione appointment.php del modulo SaluteOra è stata riscritta secondo le regole di centralizzazione, DRY, KISS, nessun lock-in, e struttura gerarchica inglese. Tutte le chiavi sono ora coerenti con enums, actions, messages, filters, calendar, notifications. La motivazione è filosofica (un solo punto di verità), logica (manutenzione semplice), religiosa (nessuna duplicazione), politica (nessun lock-in tra moduli), zen (serenità del codice).
 
 Vedi esempio e motivazione in [SaluteOra/docs/appointment-management.md](../../SaluteOra/docs/appointment-management.md) e [translation-standards.md](./translation-standards.md).
+=======
+La traduzione appointment.php del modulo  è stata riscritta secondo le regole di centralizzazione, DRY, KISS, nessun lock-in, e struttura gerarchica inglese. Tutte le chiavi sono ora coerenti con enums, actions, messages, filters, calendar, notifications. La motivazione è filosofica (un solo punto di verità), logica (manutenzione semplice), religiosa (nessuna duplicazione), politica (nessun lock-in tra moduli), zen (serenità del codice).
+
+Vedi esempio e motivazione in [<nome modulo>/docs/appointment-management.md](../../<nome modulo>/docs/appointment-management.md) e [translation-standards.md](./translation-standards.md).
+>>>>>>> laraxot/develop
 
 ### Checklist aggiornata
 - Usare solo chiavi inglesi e struttura gerarchica
@@ -307,3 +318,7 @@ Seguire queste best practices per le chiavi di traduzione garantirà un'applicaz
 - Nei Blade, sostituisci tutte le stringhe hardcoded con chiavi strutturate.
 - Nei file PHP, uniforma la struttura e aggiungi commenti per i traduttori.
 - Versiona i file di traduzione separatamente.
+<<<<<<< HEAD
+=======
+>>>>>>> a87590b (.)
+>>>>>>> laraxot/develop

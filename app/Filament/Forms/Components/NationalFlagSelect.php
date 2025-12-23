@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
+<<<<<<< HEAD
 namespace Modules\Lang\Filament\Forms\Components;
+=======
+namespace Modules\Notify\Filament\Forms\Components;
+>>>>>>> laraxot/develop
 
 use Filament\Forms\Components\Select;
 use Illuminate\Support\Arr;

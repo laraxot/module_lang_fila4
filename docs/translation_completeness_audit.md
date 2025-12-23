@@ -1,13 +1,21 @@
 # Translation Completeness Audit
 
 ## Overview
+<<<<<<< HEAD
 This document tracks the completeness and quality of translation files across the <nome progetto> system, ensuring all user-facing text is properly localized in Italian, English, and German.
+=======
+This document tracks the completeness and quality of translation files across the SaluteOra system, ensuring all user-facing text is properly localized in Italian, English, and German.
+>>>>>>> laraxot/develop
 
 ## Recent Updates
 
 ### 2025-01-06: Complete PDF Template Internationalization
 
+<<<<<<< HEAD
 **Issue**: PDF template `/var/www/html/_bases/base_<nome progetto>/laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
+=======
+**Issue**: PDF template `/var/www/html/_bases/base_saluteora/laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
+>>>>>>> laraxot/develop
 
 **Files Updated**:
 - `laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` (completely internationalized)
@@ -217,7 +225,11 @@ This document tracks the completeness and quality of translation files across th
 **Files Updated**:
 - `laravel/Modules/Notify/lang/en/opening_hours.php`
 - `laravel/Modules/Notify/lang/en/send_email.php` 
+<<<<<<< HEAD
 - `laravel/Modules/<nome progetto>/lang/en/find_doctor_widget.php`
+=======
+- `laravel/Modules/SaluteOra/lang/en/find_doctor_widget.php`
+>>>>>>> laraxot/develop
 
 **Process**:
 - Translated all Italian content to proper English
@@ -249,7 +261,11 @@ This document tracks the completeness and quality of translation files across th
 ### Completed ✅
 - ✅ Notify module Italian translations (modernized and expanded)
 - ✅ Notify module English translations (completed)
+<<<<<<< HEAD
 - ✅ <nome progetto> module English translations (completed)
+=======
+- ✅ SaluteOra module English translations (completed)
+>>>>>>> laraxot/develop
 - ✅ Theme opening hours translations (improved across all languages)
 - ✅ Theme doctor translations (fixed English and German)
 - ✅ Theme appointment translations (enhanced with complete fields)
@@ -284,7 +300,11 @@ This document tracks the completeness and quality of translation files across th
 
 - [Theme Translation Files](../laravel/Themes/One/lang/)
 - [Notify Module Translations](../laravel/Modules/Notify/lang/)
+<<<<<<< HEAD
 - [<nome progetto> Module Translations](../laravel/Modules/<nome progetto>/lang/)
+=======
+- [SaluteOra Module Translations](../laravel/Modules/SaluteOra/lang/)
+>>>>>>> laraxot/develop
 - [PDF Template](../laravel/Themes/One/resources/views/appointment/report_pdf.blade.php)
 
 ---
