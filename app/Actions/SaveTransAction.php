@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
+use Exception;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
@@ -32,7 +33,7 @@ class SaveTransAction
 
         try {
             $cont = File::getRequire($filename);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             dddx([
                 'key' => $key,
                 'data' => $data,
@@ -53,7 +54,7 @@ class SaveTransAction
         }
 
         if (! is_array($cont)) {
-            throw new \Exception('Error in SaveTransAction');
+            throw new Exception('Error in SaveTransAction');
         }
 
         app(SaveArrayAction::class)->execute(

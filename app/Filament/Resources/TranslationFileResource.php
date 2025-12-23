@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources;
 
+use Override;
 use Illuminate\Support\Facades\Config;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\CreateTranslationFile;
 use Modules\Lang\Filament\Resources\TranslationFileResource\Pages\EditTranslationFile;
@@ -25,7 +26,7 @@ class TranslationFileResource extends XotBaseResource
         return ['it', 'en'];
     }
 
-    #[\Override]
+    #[Override]
     public static function getFormSchema(): array
     {
         return [];
@@ -63,7 +64,7 @@ class TranslationFileResource extends XotBaseResource
          */
     }
 
-    #[\Override]
+    #[Override]
     public static function getPages(): array
     {
         return [
