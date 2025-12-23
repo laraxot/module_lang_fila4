@@ -38,12 +38,7 @@ use Sushi\Sushi;
  * @method static Builder<static>|TranslationFile whereName($value)
  * @method static Builder<static>|TranslationFile wherePath($value)
  *
- * <<<<<<< HEAD
- * =======
- *
  * @property ProfileContract|null $deleter
- *
- * >>>>>>> laraxot/develop
  *
  * @mixin \Eloquent
  */

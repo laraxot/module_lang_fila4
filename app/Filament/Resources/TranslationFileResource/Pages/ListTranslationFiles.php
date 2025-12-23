@@ -9,10 +9,6 @@ use Filament\Tables\Columns\TextColumn;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
-<<<<<<< HEAD
-use Override;
-=======
->>>>>>> laraxot/develop
 
 class ListTranslationFiles extends XotBaseListRecords
 {

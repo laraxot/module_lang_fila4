@@ -4,10 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-<<<<<<< HEAD
-use Illuminate\Contracts\Support\Htmlable;
-=======
->>>>>>> laraxot/develop
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Section;
 use Illuminate\Contracts\Support\Htmlable;

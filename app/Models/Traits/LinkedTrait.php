@@ -21,10 +21,6 @@ use Modules\Xot\Contracts\UserContract;
  * @property UserContract|null $user
  * @property Post              $post
  */
-<<<<<<< HEAD
-trait LinkedTrait {}
-=======
 trait LinkedTrait
 {
 }
->>>>>>> laraxot/develop

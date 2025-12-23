@@ -91,24 +91,16 @@ use Spatie\Sluggable\SlugOptions;
  * @method static Builder<static>|Post whereUserId($value)
  * @method static Builder<static>|Post whereViewsCount($value)
  *
-<<<<<<< HEAD
-=======
  * @property ProfileContract|null $deleter
  *
  * @method static \Modules\Lang\Database\Factories\PostFactory factory($count = null, $state = [])
  *
->>>>>>> laraxot/develop
  * @mixin Eloquent
  */
 class Post extends BaseModel
 {
-<<<<<<< HEAD
-    use HasXotFactory;
-    use HasSlug;
-=======
     use HasSlug;
     use HasXotFactory;
->>>>>>> laraxot/develop
 
     // use Cachable;
     use Updater;

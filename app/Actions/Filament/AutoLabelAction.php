@@ -100,10 +100,6 @@ class AutoLabelAction
 
         /*
          * $component_parent=get_parent_class($component);
-<<<<<<< HEAD
-         * if(in_array($component_parent,['Filament\Forms\Components\Component'])){
-=======
->>>>>>> laraxot/develop
          * $component_key=Str::of(class_basename($component))->plural()->snake()->toString();
          * }else{
          * $component_key=Str::of(class_basename($component_parent))->plural()->snake()->toString();
@@ -191,16 +187,9 @@ class AutoLabelAction
             if (method_exists($component, 'iconButton')) {
                 $component->iconButton();
             }
-<<<<<<< HEAD
             // $component->label('FIX:'.$label_key);
             // $component->tooltip('FIX:'.$label_key);
             $component->{$type}('heroicon-o-question-mark-circle');
-=======
-
-            // $component->label('FIX:'.$label_key);
-            // $component->tooltip('FIX:'.$label_key);
-            // $component->{$type}('heroicon-o-question-mark-circle');
->>>>>>> laraxot/develop
 
             // $component->{$type}(null);
             return $component;
