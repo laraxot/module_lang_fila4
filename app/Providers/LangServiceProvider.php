@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-<<<<<<< HEAD
-use Override;
 use Closure;
-=======
->>>>>>> laraxot/develop
+use Override;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Placeholder;
@@ -42,10 +39,7 @@ class LangServiceProvider extends XotBaseServiceProvider
      */
     protected string $module_ns = __NAMESPACE__;
 
-<<<<<<< HEAD
     #[Override]
-=======
->>>>>>> laraxot/develop
     public function boot(): void
     {
         parent::boot();
@@ -65,26 +59,13 @@ class LangServiceProvider extends XotBaseServiceProvider
         Field::configureUsing(function (Field $component) {
             $component = app(AutoLabelAction::class)->execute($component);
             Assert::isInstanceOf($component, Field::class);
-<<<<<<< HEAD
-            $validationMessages = __('user::validation');
-            if (is_array($validationMessages)) {
-                // Convertiamo l'array generico in un array<string, string> per soddisfare il tipo richiesto
-                $typedMessages = [];
-                foreach ($validationMessages as $key => $value) {
-                    if (is_string($key) && (is_string($value) || $value instanceof Closure)) {
-                        $typedMessages[$key] = $value;
-                    }
-                }
-                $component->validationMessages($typedMessages);
-            }
-=======
 
             $validationMessages = __('user::validation');
             if (is_array($validationMessages) && [] !== $validationMessages) {
                 /** @var array<string, string> $typedMessages */
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-                    if (is_string($key) && is_string($value)) {
+                    if (is_string($key) && (is_string($value) || $value instanceof Closure)) {
                         $typedMessages[$key] = $value;
                     }
                 }
@@ -94,7 +75,6 @@ class LangServiceProvider extends XotBaseServiceProvider
                 }
             }
 
->>>>>>> laraxot/develop
             $component = app(AutoLabelAction::class)->execute($component, 'placeholder');
             $component = app(AutoLabelAction::class)->execute($component, 'helperText');
 
