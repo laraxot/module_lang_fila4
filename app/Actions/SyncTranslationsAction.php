@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Illuminate\Support\Facades\File;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -181,7 +180,7 @@ class SyncTranslationsAction
             }
 
             return [];
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return [];
         }
     }
