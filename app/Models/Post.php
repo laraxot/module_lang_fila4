@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
+use Modules\Lang\Database\Factories\PostFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -54,7 +55,7 @@ use Spatie\Sluggable\SlugOptions;
  * @property string|null                  $linkable_type
  * @property int|null                     $views_count
  * @property ProfileContract|null         $creator
- * @property Model|\Eloquent|null         $linkable
+ * @property Model|Eloquent|null $linkable
  * @property ProfileContract|null         $updater
  *
  * @method static Builder<static>|Post newModelQuery()

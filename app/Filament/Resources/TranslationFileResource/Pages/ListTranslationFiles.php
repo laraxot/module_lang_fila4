@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
+use Override;
 use Filament\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
@@ -14,7 +15,7 @@ class ListTranslationFiles extends XotBaseListRecords
 {
     protected static string $resource = TranslationFileResource::class;
 
-    #[\Override]
+    #[Override]
     public function getTableColumns(): array
     {
         return [
@@ -25,7 +26,7 @@ class ListTranslationFiles extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[\Override]
+    #[Override]
     protected function getHeaderActions(): array
     {
         $parentActions = parent::getHeaderActions();

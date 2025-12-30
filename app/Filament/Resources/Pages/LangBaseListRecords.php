@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Filament\Resources\Pages;
 
+use Override;
 use Filament\Actions\Action;
 use LaraZeus\SpatieTranslatable\Actions\LocaleSwitcher;
 use LaraZeus\SpatieTranslatable\Resources\Pages\ListRecords\Concerns\Translatable;
@@ -18,7 +19,7 @@ abstract class LangBaseListRecords extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[\Override]
+    #[Override]
     protected function getHeaderActions(): array
     {
         $parentActions = parent::getHeaderActions();
