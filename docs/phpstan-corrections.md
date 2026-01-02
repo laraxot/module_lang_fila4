@@ -3,7 +3,28 @@
 ## Panoramica
 Questo documento registra le correzioni PHPStan implementate nel modulo Lang.
 
+**Ultimo aggiornamento**: 2025-01-27  
+**Status PHPStan Level 10**: ✅ **PASSED** - 0 errori
+
 ## Correzioni Implementate
+
+### Post.php - Doppio Import PostFactory (2025-01-27)
+
+**Problema**: Doppio import di `PostFactory` causava conflitto di namespace
+```php
+// ERRORE: Cannot use Modules\Lang\Database\Factories\PostFactory as PostFactory because the name is already in use
+use Modules\Lang\Database\Factories\PostFactory; // Riga 7
+use Modules\Lang\Database\Factories\PostFactory; // Riga 14 - DUPLICATO
+```
+
+**Soluzione**: Rimosso import duplicato alla riga 14
+```php
+// CORRETTO: Un solo import
+use Modules\Lang\Database\Factories\PostFactory;
+```
+
+**File**: `app/Models/Post.php`  
+**Risultato**: ✅ PHPStan Level 10 passa senza errori
 
 ### ConvertTranslations Command
 
