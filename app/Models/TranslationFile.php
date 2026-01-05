@@ -8,28 +8,28 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-use Sushi\Sushi;
-use Override;
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Lang\Database\Factories\TranslationFileFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Lang\Actions\GetAllTranslationAction;
 use Modules\Lang\Actions\ReadTranslationFileAction;
-use Modules\Lang\Actions\WriteTranslationFileAction;
+use Modules\Lang\Database\Factories\TranslationFileFactory;
+use Modules\Xot\Contracts\ProfileContract;
 
 use function Safe\json_encode;
 
+use Sushi\Sushi;
+
 /**
- * @property string|null $key
- * @property string|null $path
- * @property string|null $id
- * @property string|null $name
+ * @property string|null                  $key
+ * @property string|null                  $path
+ * @property string|null                  $id
+ * @property string|null                  $name
  * @property array<array-key, mixed>|null $content
- * @property-read ProfileContract|null $creator
- * @property-read ProfileContract|null $updater
- * @method static TranslationFileFactory factory($count = null, $state = [])
+ * @property ProfileContract|null         $creator
+ * @property ProfileContract|null         $updater
+ *
+ * @method static TranslationFileFactory          factory($count = null, $state = [])
  * @method static Builder<static>|TranslationFile newModelQuery()
  * @method static Builder<static>|TranslationFile newQuery()
  * @method static Builder<static>|TranslationFile query()
@@ -38,6 +38,7 @@ use function Safe\json_encode;
  * @method static Builder<static>|TranslationFile whereKey($value)
  * @method static Builder<static>|TranslationFile whereName($value)
  * @method static Builder<static>|TranslationFile wherePath($value)
+ *
  * @mixin IdeHelperTranslationFile
  * @mixin \Eloquent
  */
@@ -65,7 +66,7 @@ class TranslationFile extends BaseModel
      *
      * @return array<string, string>
      */
-    #[Override]
+    #[\Override]
     protected function casts(): array
     {
         return [
@@ -81,6 +82,7 @@ class TranslationFile extends BaseModel
             $item['name'] = basename($item['path'], '.php');
 
             $item['content'] = json_encode(File::getRequire($item['path']));
+
             /*
              * // Carica il contenuto del file
              * try {
@@ -90,9 +92,10 @@ class TranslationFile extends BaseModel
              * $item['content'] = [];
              * }
              */
-            //dddx($item);
+            // dddx($item);
             return $item;
         });
+
         return $rows;
     }
 }

@@ -4,15 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers;
 
-use Override;
-use Closure;
-use Filament\Schemas\Components\Section;
-use Filament\Schemas\Components\Wizard\Step;
 use Filament\Actions\Action;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Select;
 use Filament\Infolists\Components\Entry;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Components\Wizard\Step;
 use Filament\Support\Components\Component;
 use Filament\Support\Concerns\Configurable;
 use Filament\Tables\Columns\Column;
@@ -20,7 +18,6 @@ use Filament\Tables\Filters\BaseFilter;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Container\Container;
 use Illuminate\Support\Facades\View;
-use Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider;
 use Modules\Lang\Actions\Filament\AutoLabelAction;
 use Modules\Lang\Services\TranslatorService;
 use Modules\Xot\Providers\XotBaseServiceProvider;
@@ -38,17 +35,15 @@ class LangServiceProvider extends XotBaseServiceProvider
 
     protected string $module_ns = __NAMESPACE__;
 
-    #[Override]
+    #[\Override]
     public function boot(): void
     {
         parent::boot();
         // BladeService::registerComponents($this->module_dir.'/../View/Components', 'Modules\\Lang');
         // $this->registerTranslator();
         $this->translatableComponents();
-        //$this->registerFilamentLabel();
+        // $this->registerFilamentLabel();
     }
-
-    
 
     protected function translatableComponents(): void
     {
@@ -66,6 +61,7 @@ class LangServiceProvider extends XotBaseServiceProvider
     {
         Select::configureUsing(function (Select $component) {
             $component->placeholder(__('filament-forms::components.select.placeholder'));
+
             return $component;
         });
         Field::configureUsing(function (Field $component) {
@@ -76,7 +72,7 @@ class LangServiceProvider extends XotBaseServiceProvider
                 // Convertiamo l'array generico in un array<string, string> per soddisfare il tipo richiesto
                 $typedMessages = [];
                 foreach ($validationMessages as $key => $value) {
-                    if (is_string($key) && (is_string($value) || $value instanceof Closure)) {
+                    if (is_string($key) && (is_string($value) || $value instanceof \Closure)) {
                         $typedMessages[$key] = $value;
                     }
                 }
@@ -92,6 +88,7 @@ class LangServiceProvider extends XotBaseServiceProvider
         Section::configureUsing(function (Section $component) {
             $component = app(AutoLabelAction::class)->execute($component);
             $component = app(AutoLabelAction::class)->execute($component, 'heading');
+
             return $component;
         });
 
@@ -157,8 +154,8 @@ class LangServiceProvider extends XotBaseServiceProvider
             // When registering the translator component, we'll need to set the default
             // locale as well as the fallback locale. So, we'll grab the application
             // configuration so we can easily get both of these values from there.
-            Assert::string($locale = $app['config']['app.locale'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
-            Assert::string($fallback_locale = $app['config']['app.fallback_locale'], __FILE__ . ':' . __LINE__ . ' - ' . class_basename(__CLASS__));
+            Assert::string($locale = $app['config']['app.locale'], __FILE__.':'.__LINE__.' - '.class_basename(__CLASS__));
+            Assert::string($fallback_locale = $app['config']['app.fallback_locale'], __FILE__.':'.__LINE__.' - '.class_basename(__CLASS__));
 
             $translatorService = new TranslatorService($loader, $locale);
 

@@ -2,14 +2,13 @@
 
 declare(strict_types=1);
 
-
 // app/Filament/Components/TranslationEditor.php
+
 namespace Modules\Lang\Filament\Forms\Components;
 
-use Filament\Schemas\Components\Section;
 use Filament\Forms\Components\Field;
 use Filament\Forms\Components\TextInput;
-use Illuminate\Support\Arr;
+use Filament\Schemas\Components\Section;
 
 class TranslationEditor extends Field
 {
@@ -28,7 +27,7 @@ class TranslationEditor extends Field
     {
         $components = [];
         $state = $this->getState() ?? [];
-        if (!is_iterable($state)) {
+        if (! is_iterable($state)) {
             return $components;
         }
 

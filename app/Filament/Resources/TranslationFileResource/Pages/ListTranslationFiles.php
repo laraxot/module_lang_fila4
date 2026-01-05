@@ -2,15 +2,10 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
 use Filament\Actions\Action;
-use Override;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Actions;
-use Filament\Resources\Pages\ListRecords;
-use Filament\Tables\Columns;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
@@ -19,7 +14,7 @@ class ListTranslationFiles extends XotBaseListRecords
 {
     protected static string $resource = TranslationFileResource::class;
 
-    #[Override]
+    #[\Override]
     public function getTableColumns(): array
     {
         return [
@@ -30,7 +25,7 @@ class ListTranslationFiles extends XotBaseListRecords
     /**
      * @return array<string, Action>
      */
-    #[Override]
+    #[\Override]
     protected function getHeaderActions(): array
     {
         $parentActions = parent::getHeaderActions();
@@ -42,7 +37,7 @@ class ListTranslationFiles extends XotBaseListRecords
 
         // Aggiungere le azioni parent con chiavi stringa
         foreach ($parentActions as $key => $action) {
-            $actions['parent_' . (is_string($key) ? $key : ((string) $key))] = $action;
+            $actions['parent_'.(is_string($key) ? $key : ((string) $key))] = $action;
         }
 
         return $actions;

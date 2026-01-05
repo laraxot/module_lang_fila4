@@ -2,15 +2,11 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Lang\Filament\Resources\TranslationFileResource\Pages;
 
-use Override;
-use Filament\Schemas\Components\Section;
-use Filament\Actions;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Schemas\Components\Section;
 use Modules\Lang\Actions\SaveTransAction;
 use Modules\Lang\Filament\Actions\LocaleSwitcherRefresh;
 use Modules\Lang\Filament\Resources\TranslationFileResource;
@@ -60,24 +56,25 @@ class EditTranslationFile extends XotBaseEditRecord
          * $this->halt();
          * }
          */
-        /** @phpstan-ignore argument.type, property.nonObject */
+        /* @phpstan-ignore argument.type, property.nonObject */
         app(SaveTransAction::class)->execute($this->record->key, $data['content']);
-        //dddx(['record'=>$this->record,'data'=>$data]);
+
+        // dddx(['record'=>$this->record,'data'=>$data]);
         return $data;
     }
 
     protected function afterSave(): void
     {
         // Ricarica il record per aggiornare i dati
-        /** @phpstan-ignore method.nonObject */
+        /* @phpstan-ignore method.nonObject */
         $this->record->refresh();
     }
 
-    #[Override]
+    #[\Override]
     public function getFormSchema(): array
     {
         return [
-            Section::make('content')->schema(fn($record) => $this->makeFromArray($record->content, 'content')),
+            Section::make('content')->schema(fn ($record) => $this->makeFromArray($record->content, 'content')),
         ];
     }
 
@@ -86,7 +83,7 @@ class EditTranslationFile extends XotBaseEditRecord
         $fields = [];
 
         foreach ($array as $key => $value) {
-            $fullKey = $prefix === '' ? $key : ($prefix . '.' . $key);
+            $fullKey = '' === $prefix ? $key : ($prefix.'.'.$key);
 
             if (is_array($value)) {
                 $fields[] = Section::make($key)
@@ -95,7 +92,7 @@ class EditTranslationFile extends XotBaseEditRecord
                     ->columns(2);
             } else {
                 $fields[] = TextInput::make($fullKey)
-                    //->label($fullKey)
+                    // ->label($fullKey)
                     ->label($key)
                     ->default($value);
             }

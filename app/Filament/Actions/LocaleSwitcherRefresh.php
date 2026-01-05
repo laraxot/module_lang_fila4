@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Lang\Filament\Actions;
 
-use Filament\Forms\Components\Select;
 use Filament\Actions\Action;
 use Filament\Facades\Filament;
+use Filament\Forms\Components\Select;
 use Illuminate\Support\Facades\App;
 
 class LocaleSwitcherRefresh extends Action
@@ -23,7 +22,7 @@ class LocaleSwitcherRefresh extends Action
             'it' => '🇮🇹 Italiano',
         ];
         $lang = session()->get('locale');
-        if (!is_string($lang)) {
+        if (! is_string($lang)) {
             $lang = 'it';
         }
         app()->setLocale($lang);
@@ -43,12 +42,12 @@ class LocaleSwitcherRefresh extends Action
 
                 session()->put('locale', $locale);
                 App::setLocale($locale);
-                //Filament::setLocale($locale);
+                // Filament::setLocale($locale);
 
                 return redirect(request()->header('Referer'));
             })
             ->modalHeading('Cambia lingua')
-            //->icon('heroicon-o-language')
+            // ->icon('heroicon-o-language')
             ->color('gray');
     }
 }

@@ -12,7 +12,7 @@ abstract class LangBasePolicy
 {
     use HandlesAuthorization;
 
-    public function before(UserContract $user, string $_ability): null|bool
+    public function before(UserContract $user, string $_ability): ?bool
     {
         $xotData = XotData::make();
         if ($user->hasRole('super-admin')) {

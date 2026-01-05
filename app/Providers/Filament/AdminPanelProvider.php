@@ -4,16 +4,15 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Providers\Filament;
 
-use Override;
-use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Filament\Panel;
+use LaraZeus\SpatieTranslatable\SpatieTranslatablePlugin;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Lang';
 
-    #[Override]
+    #[\Override]
     public function panel(Panel $panel): Panel
     {
         $panel = parent::panel($panel);

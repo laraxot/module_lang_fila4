@@ -116,8 +116,8 @@ describe('ReadTranslationFileAction Business Logic', function () {
         $lines = explode("\n", $phpContent);
 
         // Find the parent line and check indentation
-        $parentLine = array_filter($lines, fn($line) => str_contains($line, "'parent'"));
-        $childLine = array_filter($lines, fn($line) => str_contains($line, "'child'"));
+        $parentLine = array_filter($lines, fn ($line) => str_contains($line, "'parent'"));
+        $childLine = array_filter($lines, fn ($line) => str_contains($line, "'child'"));
 
         expect(current($parentLine))->toStartWith('    ');
         expect(current($childLine))->toStartWith('        ');

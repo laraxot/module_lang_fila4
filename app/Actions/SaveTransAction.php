@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Lang\Actions;
 
 use Illuminate\Contracts\Support\Htmlable;
-use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
 use Modules\Xot\Actions\Array\SaveArrayAction;
@@ -24,7 +23,7 @@ class SaveTransAction
 
         $filename = app(GetTransPathAction::class)->execute($key);
 
-        if (!File::exists($filename)) {
+        if (! File::exists($filename)) {
             app(SaveArrayAction::class)->execute(
                 data: $cont,
                 filename: $filename,
@@ -33,7 +32,7 @@ class SaveTransAction
 
         try {
             $cont = File::getRequire($filename);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             dddx([
                 'key' => $key,
                 'data' => $data,
@@ -42,7 +41,7 @@ class SaveTransAction
             ]);
         }
 
-        if (!is_array($cont)) {
+        if (! is_array($cont)) {
             $cont = [];
         }
 
@@ -53,8 +52,8 @@ class SaveTransAction
             $cont = $data;
         }
 
-        if (!is_array($cont)) {
-            throw new Exception('Error in SaveTransAction');
+        if (! is_array($cont)) {
+            throw new \Exception('Error in SaveTransAction');
         }
 
         app(SaveArrayAction::class)->execute(

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Lang\Models\Post;
 
 /**
- * Post Factory
+ * Post Factory.
  *
  * @extends Factory<Post>
  */
@@ -31,7 +31,7 @@ class PostFactory extends Factory
 
     public function published(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'status' => 'published',
             'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
         ]);
@@ -39,7 +39,7 @@ class PostFactory extends Factory
 
     public function draft(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'status' => 'draft',
             'published_at' => null,
         ]);
@@ -47,7 +47,7 @@ class PostFactory extends Factory
 
     public function italian(): static
     {
-        return $this->state(fn(array $_attributes): array => [
+        return $this->state(fn (array $_attributes): array => [
             'locale' => 'it',
         ]);
     }

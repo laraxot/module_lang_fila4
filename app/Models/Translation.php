@@ -8,13 +8,12 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models;
 
-use Modules\Lang\Database\Factories\TranslationFactory;
-use Modules\Xot\Contracts\ProfileContract;
-use DB;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Carbon;
+use Modules\Lang\Database\Factories\TranslationFactory;
+use Modules\Xot\Contracts\ProfileContract;
 
 /**
  * Modules\Lang\Models\Translation.
@@ -30,26 +29,29 @@ use Illuminate\Support\Carbon;
  * @property string      $namespace
  * @property string      $group
  * @property string|null $item
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   ofTranslatedGroup(string $group)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   orderByGroupKeys(bool $ordered)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   query()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   selectDistinctGroup()
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereGroup($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereItem($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereKey($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereLang($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereNamespace($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Translation   whereValue($value)
- * @method static TranslationFactory factory($count = null, $state = [])
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation ofTranslatedGroup(string $group)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation orderByGroupKeys(bool $ordered)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation selectDistinctGroup()
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereGroup($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereItem($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereLang($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereNamespace($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Translation whereValue($value)
+ * @method static TranslationFactory                                factory($count = null, $state = [])
+ *
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
+ *
  * @mixin IdeHelperTranslation
  * @mixin \Eloquent
  */
@@ -90,12 +92,12 @@ class Translation extends BaseModel
 
     public function scopeSelectDistinctGroup(EloquentBuilder $query): EloquentBuilder|QueryBuilder
     {
-        $select = match (DB::getDriverName()) {
+        $select = match (\DB::getDriverName()) {
             'mysql' => 'DISTINCT `group`',
             default => 'DISTINCT "group"',
         };
 
-        return $query->select(DB::raw($select));
+        return $query->select(\DB::raw($select));
     }
 
     /*

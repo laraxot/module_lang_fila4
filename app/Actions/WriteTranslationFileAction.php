@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Illuminate\Support\Facades\File;
-use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\exec;
 use function Safe\file_put_contents;
 use function Safe\tempnam;
 use function Safe\unlink;
+
+use Spatie\QueueableAction\QueueableAction;
 
 class WriteTranslationFileAction
 {
@@ -20,10 +20,12 @@ class WriteTranslationFileAction
     /**
      * Scrive il contenuto in un file di traduzione con backup automatico.
      *
-     * @param string $filePath Percorso del file di traduzione
+     * @param string               $filePath     Percorso del file di traduzione
      * @param array<string, mixed> $translations Traduzioni da scrivere
+     *
+     * @throws \Exception Se il file non può essere scritto
+     *
      * @return bool True se il file è stato scritto con successo
-     * @throws Exception Se il file non può essere scritto
      */
     public function execute(string $filePath, array $translations): bool
     {
@@ -40,8 +42,8 @@ class WriteTranslationFileAction
         // Scrivi il file
         $result = File::put($filePath, $phpContent);
 
-        if ($result === false) {
-            throw new Exception("Impossibile scrivere il file: {$filePath}");
+        if (false === $result) {
+            throw new \Exception("Impossibile scrivere il file: {$filePath}");
         }
 
         // Pulisci la cache delle traduzioni
@@ -54,19 +56,18 @@ class WriteTranslationFileAction
      * Crea un backup del file di traduzione.
      *
      * @param string $filePath Percorso del file
-     * @return void
      */
     private function createBackup(string $filePath): void
     {
-        if (!file_exists($filePath)) {
+        if (! file_exists($filePath)) {
             return;
         }
 
         $backupDir = storage_path('app/backups/translations');
-        $backupPath = $backupDir . '/' . date('Y-m-d_H-i-s') . '_' . basename($filePath);
+        $backupPath = $backupDir.'/'.date('Y-m-d_H-i-s').'_'.basename($filePath);
 
         // Crea la directory di backup se non esiste
-        if (!File::exists($backupDir)) {
+        if (! File::exists($backupDir)) {
             File::makeDirectory($backupDir, 0o755, true);
         }
 
@@ -78,8 +79,8 @@ class WriteTranslationFileAction
      * Valida la sintassi PHP del contenuto.
      *
      * @param string $phpContent Contenuto PHP da validare
-     * @return void
-     * @throws Exception Se la sintassi PHP non è valida
+     *
+     * @throws \Exception Se la sintassi PHP non è valida
      */
     private function validatePhpSyntax(string $phpContent): void
     {
@@ -95,16 +96,14 @@ class WriteTranslationFileAction
         // Rimuove il file temporaneo
         unlink($tempFile);
 
-        if ($returnCode !== 0) {
+        if (0 !== $returnCode) {
             $error = implode("\n", $output ?? []);
-            throw new Exception("Sintassi PHP non valida: {$error}");
+            throw new \Exception("Sintassi PHP non valida: {$error}");
         }
     }
 
     /**
      * Pulisce la cache delle traduzioni.
-     *
-     * @return void
      */
     private function clearTranslationCache(): void
     {
@@ -115,7 +114,7 @@ class WriteTranslationFileAction
 
         // Pulisce la cache delle traduzioni
         if (app()->bound('translation.loader')) {
-            /** @phpstan-ignore method.notFound */
+            /* @phpstan-ignore method.notFound */
             app('translation.loader')->flush();
         }
     }

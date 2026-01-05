@@ -5,14 +5,11 @@ declare(strict_types=1);
 namespace Modules\Lang\Actions;
 
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
-use Modules\Xot\Actions\Module\GetModulePathByGeneratorAction;
-use Spatie\QueueableAction\QueueableAction;
-use Webmozart\Assert\Assert;
 
 use function Safe\glob;
+
+use Spatie\QueueableAction\QueueableAction;
 
 class GetAllModuleTranslationAction
 {
@@ -29,18 +26,20 @@ class GetAllModuleTranslationAction
         }
 
         $lang = app()->getLocale();
-        $path = base_path('Modules/*/lang/' . $lang . '/*.php');
+        $path = base_path('Modules/*/lang/'.$lang.'/*.php');
         $files = glob($path);
         $files = Arr::map($files, function ($file) {
             $module_low = Str::of($file)
                 ->between('Modules/', '/lang/')
                 ->lower()
                 ->toString();
+
             return [
-                'key' => $module_low . '::' . basename($file, '.php'),
+                'key' => $module_low.'::'.basename($file, '.php'),
                 'path' => $file,
             ];
         });
+
         return $files;
     }
 }

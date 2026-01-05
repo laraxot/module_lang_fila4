@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-
 namespace Modules\Lang\Database\Factories;
 
-use Modules\Lang\Models\TranslationFile;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Lang\Models\TranslationFile;
 
 class TranslationFileFactory extends Factory
 {
