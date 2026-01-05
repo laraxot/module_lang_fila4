@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
-use Exception;
 use Spatie\QueueableAction\QueueableAction;
 
 class ReadTranslationFileAction
@@ -16,25 +15,25 @@ class ReadTranslationFileAction
      *
      * @param string $filePath Percorso del file di traduzione
      *
-     * @throws Exception Se il file non esiste o non è leggibile
+     * @throws \Exception Se il file non esiste o non è leggibile
      *
      * @return array<string, mixed> Contenuto del file di traduzione
      */
     public function execute(string $filePath): array
     {
         if (! file_exists($filePath)) {
-            throw new Exception("File di traduzione non trovato: {$filePath}");
+            throw new \Exception("File di traduzione non trovato: {$filePath}");
         }
 
         if (! is_readable($filePath)) {
-            throw new Exception("File di traduzione non leggibile: {$filePath}");
+            throw new \Exception("File di traduzione non leggibile: {$filePath}");
         }
 
         // Carica il file di traduzione
         $translations = require $filePath;
 
         if (! is_array($translations)) {
-            throw new Exception("File di traduzione non valido: {$filePath}");
+            throw new \Exception("File di traduzione non valido: {$filePath}");
         }
 
         /* @phpstan-ignore return.type */
