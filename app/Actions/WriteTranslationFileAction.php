@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Actions;
 
+use Exception;
 use Illuminate\Support\Facades\File;
 
 use function Safe\exec;
@@ -23,7 +24,7 @@ class WriteTranslationFileAction
      * @param string               $filePath     Percorso del file di traduzione
      * @param array<string, mixed> $translations Traduzioni da scrivere
      *
-     * @throws \Exception Se il file non può essere scritto
+     * @throws Exception Se il file non può essere scritto
      *
      * @return bool True se il file è stato scritto con successo
      */
@@ -43,7 +44,7 @@ class WriteTranslationFileAction
         $result = File::put($filePath, $phpContent);
 
         if (false === $result) {
-            throw new \Exception("Impossibile scrivere il file: {$filePath}");
+            throw new Exception("Impossibile scrivere il file: {$filePath}");
         }
 
         // Pulisci la cache delle traduzioni
@@ -80,7 +81,7 @@ class WriteTranslationFileAction
      *
      * @param string $phpContent Contenuto PHP da validare
      *
-     * @throws \Exception Se la sintassi PHP non è valida
+     * @throws Exception Se la sintassi PHP non è valida
      */
     private function validatePhpSyntax(string $phpContent): void
     {
@@ -98,7 +99,7 @@ class WriteTranslationFileAction
 
         if (0 !== $returnCode) {
             $error = implode("\n", $output ?? []);
-            throw new \Exception("Sintassi PHP non valida: {$error}");
+            throw new Exception("Sintassi PHP non valida: {$error}");
         }
     }
 
