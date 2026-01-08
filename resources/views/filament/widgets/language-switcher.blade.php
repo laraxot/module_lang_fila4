@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
 
 ?>
+=======
+>>>>>>> 8b0b6ac (.)
 {{--
 /**
  * Language Switcher Widget
@@ -220,4 +223,8 @@ if (!function_exists('getLanguageUrl')) {
     }
 }
 @endphp
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> 8b0b6ac (.)
