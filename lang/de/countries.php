@@ -49,9 +49,12 @@ return [
     'am' => 'Armenien',
     'az' => 'Aserbaidschan',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Amerika
     'us' => 'Vereinigte Staaten von Amerika',
     'ca' => 'Kanada',
@@ -96,9 +99,12 @@ return [
     'dm' => 'Dominica',
     'bs' => 'Bahamas',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Asien
     'cn' => 'China',
     'jp' => 'Japan',
@@ -145,9 +151,12 @@ return [
     'tj' => 'Tadschikistan',
     'tm' => 'Turkmenistan',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Afrika
     'eg' => 'Ägypten',
     'ly' => 'Libyen',
@@ -204,9 +213,12 @@ return [
     'aq' => 'Antarktis',
     'zr' => 'Zaire',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Ozeanien
     'au' => 'Australien',
     'ax' => 'Alandinseln',
@@ -226,9 +238,12 @@ return [
     'fm' => 'Mikronesien',
     'mh' => 'Marshallinseln',
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
     // Andere
     'xk' => 'Kosovo',
     'va' => 'Vatikanstadt',
@@ -283,7 +298,11 @@ return [
     'um' => 'Amerikanische Außengebiete',
     'eh' => 'Westsahara',
 <<<<<<< HEAD
+<<<<<<< HEAD
 ];
 =======
 ]; 
 >>>>>>> 8b0b6ac (.)
+=======
+];
+>>>>>>> 1c4a063 (.)
