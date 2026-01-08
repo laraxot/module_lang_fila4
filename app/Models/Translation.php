@@ -104,6 +104,9 @@ class Translation extends BaseModel
      *
      * @return string|null
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1c4a063 (.)
      *
      * public function getConnectionName()
      * {
@@ -114,6 +117,7 @@ class Translation extends BaseModel
      * return parent::getConnectionName();
      * }
      */
+<<<<<<< HEAD
 =======
 
     public function getConnectionName()
@@ -126,4 +130,6 @@ class Translation extends BaseModel
     }
     */
 >>>>>>> 8b0b6ac (.)
+=======
+>>>>>>> 1c4a063 (.)
 }
