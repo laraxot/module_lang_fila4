@@ -22,7 +22,11 @@ Le cartelle `docs` contenevano file e sottocartelle con caratteri maiuscoli, vio
 - ✅ `filament/infinite-loop-getStepByName-fix.md` → `filament/infinite-loop-getstepbyname-fix.md`
 
 ### Modulo Geo
+<<<<<<< HEAD
 - ✅ `MCP_SERVER_RECOMMENDED.md` → `mcp-server-recommended-uppercase.md`
+=======
+- ✅ `MCP_SERVER_RECOMMENDED.md` → `mcp_server_recommended.md`
+>>>>>>> aadb96b (.)
 - ✅ `phpstan_fixes.md` → `phpstan-fixes-uppercase.md`
 
 ### Modulo UI
@@ -31,6 +35,7 @@ Le cartelle `docs` contenevano file e sottocartelle con caratteri maiuscoli, vio
 ### Modulo User
 - ✅ `phpstan/analisi_phpstan.md` → `phpstan/analisi-phpstan.md`
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 ### Modulo {nome-progetto}
@@ -43,6 +48,9 @@ Le cartelle `docs` contenevano file e sottocartelle con caratteri maiuscoli, vio
 ### Modulo SaluteOra
 >>>>>>> 8b0b6ac (.)
 >>>>>>> 59790ed (.)
+=======
+### Modulo SaluteOra
+>>>>>>> aadb96b (.)
 - ✅ `factories/Factory-Ecosystem-Implementation.md` → `factories/factory-ecosystem-implementation.md`
 - ✅ `factories/UserFactory-improvements-analysis.md` → `factories/userfactory-improvements-analysis.md`
 - ✅ `factories/UserFactory-advanced-improvements-analysis.md` → `factories/userfactory-advanced-improvements-analysis.md`
@@ -89,6 +97,10 @@ Tutti i file e le sottocartelle nelle cartelle `docs` ora rispettano la convenzi
 ✅ **COMPLETATO** - Tutte le cartelle docs ora rispettano la convenzione di naming
 ✅ **VERIFICATO** - Nessuna violazione trovata in nessun modulo
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ✅ **DOCUMENTATO** - Tutte le modifiche sono state documentate 
 >>>>>>> cf609214 (.)
+=======
+✅ **DOCUMENTATO** - Tutte le modifiche sono state documentate 
+>>>>>>> aadb96b (.)

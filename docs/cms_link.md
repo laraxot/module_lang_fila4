@@ -9,10 +9,14 @@ Il modulo Lang fornisce il sistema di traduzione utilizzato dal modulo Cms nei s
 ## Convenzioni di Namespace e Struttura
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 =======
 Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
 >>>>>>> cf609214 (.)
+=======
+Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md) che si integrano con il sistema di traduzioni di questo modulo.
+>>>>>>> aadb96b (.)
 
 ## Punti di Integrazione
 
@@ -23,12 +27,17 @@ Il modulo Cms segue specifiche convenzioni di namespace documentate in [Convenzi
 ## Collegamenti Bidirezionali
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
 =======
 - [Convenzioni Namespace Filament](../../Cms/project_docs/convenzioni-namespace-filament.md)
 - [Lang Link nel modulo Cms](../../Cms/project_docs/lang-link.md)
 >>>>>>> cf609214 (.)
+=======
+- [Convenzioni Namespace Filament](../../Cms/docs/convenzioni-namespace-filament.md)
+- [Lang Link nel modulo Cms](../../Cms/docs/lang-link.md)
+>>>>>>> aadb96b (.)
 
 ---
 
@@ -40,14 +49,20 @@ Quando aggiungi nuovi componenti Filament nel modulo Cms, ricorda di:
 
 ## Collegamenti tra versioni di cms-link.md
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aadb96b (.)
 * [cms-link.md](../../../Xot/docs/cms-link.md)
 * [cms-link.md](../../../User/docs/cms-link.md)
 * [cms-link.md](../../../UI/docs/cms-link.md)
 * [cms-link.md](../../../Lang/docs/cms-link.md)
+<<<<<<< HEAD
 =======
 * [cms-link.md](../../../Xot/project_docs/cms-link.md)
 * [cms-link.md](../../../User/project_docs/cms-link.md)
 * [cms-link.md](../../../UI/project_docs/cms-link.md)
 * [cms-link.md](../../../Lang/project_docs/cms-link.md)
 >>>>>>> cf609214 (.)
+=======
+>>>>>>> aadb96b (.)
 

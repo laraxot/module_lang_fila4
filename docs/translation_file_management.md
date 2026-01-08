@@ -243,10 +243,14 @@ php artisan lang:export
 - [Translation System](./translation-system.md)
 - [Best Practices](./translation-keys-best-practices.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/docs/localization)
 =======
 - [Laravel Localization](https://laravel.com/project_docs/localization)
 >>>>>>> cf609214 (.)
+=======
+- [Laravel Localization](https://laravel.com/docs/localization)
+>>>>>>> aadb96b (.)
 
 ## Note per lo Sviluppo
 
@@ -254,6 +258,10 @@ php artisan lang:export
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 4. **Usabilità**: Interfaccia intuitiva per i traduttori 
 >>>>>>> cf609214 (.)
+=======
+4. **Usabilità**: Interfaccia intuitiva per i traduttori 
+>>>>>>> aadb96b (.)

@@ -369,7 +369,11 @@ Seguire queste best practices per le migrazioni del modulo Lang garantisce:
 - ✅ **Scalabilità** per supportare multiple lingue
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Consultare sempre la documentazione generale delle migrazioni in `Modules/Xot/docs/migration_standards.md` per ulteriori dettagli. 
 =======
 Consultare sempre la documentazione generale delle migrazioni in `Modules/Xot/project_docs/migration_standards.md` per ulteriori dettagli. 
 >>>>>>> cf609214 (.)
+=======
+Consultare sempre la documentazione generale delle migrazioni in `Modules/Xot/docs/migration_standards.md` per ulteriori dettagli. 
+>>>>>>> aadb96b (.)

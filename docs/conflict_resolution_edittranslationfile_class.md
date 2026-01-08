@@ -88,9 +88,13 @@ Il file `Modules/Lang/app/Filament/Resources/TranslationFileResource/Pages/EditT
 - [conflict-resolution-autolabelaction.md](conflict-resolution-autolabelaction.md)
 - [conflict-resolution-edit-translation-file.md](conflict-resolution-edit-translation-file.md)
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Modules/Lang/docs/](../docs/)
 =======
 - [Modules/Lang/project_docs/](../project_docs/)
 >>>>>>> cf609214 (.)
+=======
+- [Modules/Lang/docs/](../docs/)
+>>>>>>> aadb96b (.)
 
 *Ultimo aggiornamento: 29 luglio 2025*

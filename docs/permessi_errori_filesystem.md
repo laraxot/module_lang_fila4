@@ -1,10 +1,14 @@
 # Gestione Permessi e Errori Filesystem su File di Lingua (Lang)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 > **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
 =======
 > **Backlink:** [Indice e collegamenti root](../../../project_docs/links.md)
 >>>>>>> cf609214 (.)
+=======
+> **Backlink:** [Indice e collegamenti root](../../../docs/links.md)
+>>>>>>> aadb96b (.)
 
 ## Problema
 
@@ -57,17 +61,26 @@ sudo chmod 664 /var/www/html/ptvx/laravel/Modules/Lang/lang/it/lang_service.php
 
 ## Collegamenti
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Indice e collegamenti root](../../../docs/links.md)
 - [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
 =======
 - [Indice e collegamenti root](../../../project_docs/links.md)
 - [Documentazione MCP e gestione errori](../../../project_docs/mcp_errors_and_lessons.md)
 >>>>>>> cf609214 (.)
+=======
+- [Indice e collegamenti root](../../../docs/links.md)
+- [Documentazione MCP e gestione errori](../../../docs/mcp_errors_and_lessons.md)
+>>>>>>> aadb96b (.)
 
 ---
 
 **Nota:**
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
 >>>>>>> cf609214 (.)
+=======
+La root `docs/` deve contenere solo il link a questo file, non la guida completa. 
+>>>>>>> aadb96b (.)

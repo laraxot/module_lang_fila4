@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Lang Module - Complete Roadmap
 
 ## Module Overview
@@ -199,6 +200,8 @@ Lang/
 **Maintainer**: Team Laraxot  
 **Status**: Active Development
 =======
+=======
+>>>>>>> aadb96b (.)
 # Roadmap Modulo Lang
 
 ## 📊 Progress Overview
@@ -375,7 +378,11 @@ Secondo le "Regole Windsurf per base_predict_fila3_mono", gli obiettivi per l'an
 
 ## Collegamenti
 
+<<<<<<< HEAD
 [⬅️ Torna alla Roadmap Principale](/project_docs/roadmap.md)
+=======
+[⬅️ Torna alla Roadmap Principale](/docs/roadmap.md)
+>>>>>>> aadb96b (.)
 
 ## Funzionalità Future
 
@@ -523,7 +530,11 @@ Secondo le "Regole Windsurf per base_predict_fila3_mono", gli obiettivi per l'an
 ## Riferimenti
 
 ### Documentazione
+<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/project_docs/12.x/localization)
+=======
+- [Laravel Localization](https://laravel.com/docs/12.x/localization)
+>>>>>>> aadb96b (.)
 - [Filament Documentation](https://filamentphp.com/docs)
 - [Livewire Documentation](https://livewire.laravel.com/docs)
 
@@ -538,6 +549,7 @@ Secondo le "Regole Windsurf per base_predict_fila3_mono", gli obiettivi per l'an
 ### Versione Incoming
 
 ## Collegamenti tra versioni di roadmap.md
+<<<<<<< HEAD
 * [roadmap.md](bashscripts/project_docs/roadmap.md)
 * [roadmap.md](docs/roadmap.md)
 * [roadmap.md](../../../Gdpr/project_docs/roadmap.md)
@@ -554,8 +566,29 @@ Secondo le "Regole Windsurf per base_predict_fila3_mono", gli obiettivi per l'an
 * [roadmap.md](../../../Patient/project_docs/roadmap.md)
 * [roadmap.md](../../../Cms/project_docs/roadmap.md)
 * [roadmap.md](../../../../Themes/One/project_docs/roadmap.md)
+=======
+* [roadmap.md](bashscripts/docs/roadmap.md)
+* [roadmap.md](docs/roadmap.md)
+* [roadmap.md](../../../Gdpr/docs/roadmap.md)
+* [roadmap.md](../../../Notify/docs/roadmap.md)
+* [roadmap.md](../../../Xot/docs/roadmap.md)
+* [roadmap.md](../../../Dental/docs/roadmap.md)
+* [roadmap.md](../../../User/docs/roadmap.md)
+* [roadmap.md](../../../UI/docs/roadmap.md)
+* [roadmap.md](../../../Lang/docs/roadmap.md)
+* [roadmap.md](../../../Job/docs/roadmap.md)
+* [roadmap.md](../../../Media/docs/roadmap.md)
+* [roadmap.md](../../../Tenant/docs/roadmap.md)
+* [roadmap.md](../../../Activity/docs/roadmap.md)
+* [roadmap.md](../../../Patient/docs/roadmap.md)
+* [roadmap.md](../../../Cms/docs/roadmap.md)
+* [roadmap.md](../../../../Themes/One/docs/roadmap.md)
+>>>>>>> aadb96b (.)
 
 
 ---
 
+<<<<<<< HEAD
 >>>>>>> cf609214 (.)
+=======
+>>>>>>> aadb96b (.)

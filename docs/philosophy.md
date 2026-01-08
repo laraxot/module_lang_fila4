@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Lang Module: Philosophy, Purpose, and Design Principles
 
 **Date:** December 23, 2025
@@ -57,6 +58,8 @@ The `Lang` module, as the facilitator of multilingualism, can significantly bene
 
 By leveraging these MCPs, the `Lang` module can ensure its critical role in enabling global reach and enhancing usability is more efficient, verifiable, and transparent, ultimately contributing to a truly multilingual and inclusive application.
 =======
+=======
+>>>>>>> aadb96b (.)
 # Filosofia del Modulo Lang
 
 ## Politica
@@ -206,4 +209,7 @@ $this->commands([
 ```
 
 > Ogni deviazione da questa regola è considerata un errore concettuale e tecnico.
+<<<<<<< HEAD
 >>>>>>> cf609214 (.)
+=======
+>>>>>>> aadb96b (.)

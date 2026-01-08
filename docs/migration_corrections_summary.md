@@ -143,6 +143,7 @@ La migrazione ora segue completamente gli standard del progetto:
 ## Riferimenti
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Standard Migrazioni](../../Xot/docs/migration_standards.md)
 - [Best Practices Migrazioni Lang](migration_best_practices.md)
 - [Documentazione Generale](../../Xot/docs/migration_guidelines.md)
@@ -151,6 +152,11 @@ La migrazione ora segue completamente gli standard del progetto:
 - [Best Practices Migrazioni Lang](migration_best_practices.md)
 - [Documentazione Generale](../../Xot/project_docs/migration_guidelines.md)
 >>>>>>> cf609214 (.)
+=======
+- [Standard Migrazioni](../../Xot/docs/migration_standards.md)
+- [Best Practices Migrazioni Lang](migration_best_practices.md)
+- [Documentazione Generale](../../Xot/docs/migration_guidelines.md)
+>>>>>>> aadb96b (.)
 
 ## Lezioni Apprese
 
@@ -161,6 +167,10 @@ La migrazione ora segue completamente gli standard del progetto:
 5. **Seguire gli standard del progetto** per coerenza
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 La migrazione è ora corretta e pronta per l'uso! 🚀 
 >>>>>>> cf609214 (.)
+=======
+La migrazione è ora corretta e pronta per l'uso! 🚀 
+>>>>>>> aadb96b (.)

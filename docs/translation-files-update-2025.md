@@ -120,6 +120,7 @@ return [
 ## Collegamenti
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [Translation Rules](../Xot/docs/translation_rules.md)
 - [Translation Standards](./translation-standards.md)
 - [Best Practices](../Xot/docs/translations-best-practices.md)
@@ -128,6 +129,11 @@ return [
 - [Translation Standards](./translation-standards.md)
 - [Best Practices](../Xot/project_docs/translations-best-practices.md)
 >>>>>>> cf609214 (.)
+=======
+- [Translation Rules](../Xot/docs/translation_rules.md)
+- [Translation Standards](./translation-standards.md)
+- [Best Practices](../Xot/docs/translations-best-practices.md)
+>>>>>>> aadb96b (.)
 
 ## Prossimi Passi
 
@@ -135,6 +141,10 @@ return [
 2. **Documentazione**: Aggiornare la documentazione dei moduli Notify e Lang
 3. **Review**: Code review per confermare le modifiche
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 4. **Deploy**: Deploy in ambiente di staging per test completi 
 >>>>>>> cf609214 (.)
+=======
+4. **Deploy**: Deploy in ambiente di staging per test completi 
+>>>>>>> aadb96b (.)

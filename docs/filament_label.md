@@ -20,6 +20,7 @@
 
 ## Collegamenti
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [docs root](../../../../docs/actions.md)
 - [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
 
@@ -29,3 +30,9 @@
 
 Ultimo aggiornamento: maggio 2025.
 >>>>>>> cf609214 (.)
+=======
+- [docs root](../../../../docs/actions.md)
+- [docs Xot](../../../Xot/docs/MODULE_NAMESPACE_RULES.md)
+
+Ultimo aggiornamento: maggio 2025.
+>>>>>>> aadb96b (.)

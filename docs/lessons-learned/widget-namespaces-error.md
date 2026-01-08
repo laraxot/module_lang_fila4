@@ -42,12 +42,17 @@ Tutti i widget che gestiscono **autenticazione/UI tema**:
 ### Widget Funzionali → Namespace Modulo
 Tutti i widget con **logica di business specifica**:
 <<<<<<< HEAD
+<<<<<<< HEAD
 - `DoctorAppointmentsWidget` → `saluteora::`
 - `PatientStatsWidget` → `saluteora::`
 =======
 - `DoctorAppointmentsWidget` → `<nome progetto>::`
 - `PatientStatsWidget` → `<nome progetto>::`
 >>>>>>> cf609214 (.)
+=======
+- `DoctorAppointmentsWidget` → `saluteora::`
+- `PatientStatsWidget` → `saluteora::`
+>>>>>>> aadb96b (.)
 - `RecentLoginsWidget` → `user::`
 
 **Motivo**: Logica specifica del modulo.

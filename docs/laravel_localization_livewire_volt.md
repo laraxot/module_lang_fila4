@@ -104,10 +104,14 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - [ ] Tutti i link e redirect usano nomi di rotte localizzate.
 - [ ] Se necessario, i path delle rotte Volt sono tradotti tramite mapping.
 <<<<<<< HEAD
+<<<<<<< HEAD
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/docs/laravel-localization-livewire-volt.md`.
 =======
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md`.
 >>>>>>> cf609214 (.)
+=======
+- [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/docs/laravel-localization-livewire-volt.md`.
+>>>>>>> aadb96b (.)
 
 ---
 
@@ -130,10 +134,14 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
   Verifica che tutti i testi siano tradotti e che i redirect usino le rotte localizzate.
 - **Documentazione**:  
 <<<<<<< HEAD
+<<<<<<< HEAD
   Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
 =======
   Aggiorna sempre `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
 >>>>>>> cf609214 (.)
+=======
+  Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
+>>>>>>> aadb96b (.)
 
 ---
 

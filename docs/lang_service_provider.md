@@ -3,10 +3,14 @@
 ## Analisi dell'Implementazione Attuale
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 Il `LangServiceProvider` è un componente fondamentale di SaluteOra che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
 =======
 Il `LangServiceProvider` è un componente fondamentale di <nome progetto> che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
 >>>>>>> cf609214 (.)
+=======
+Il `LangServiceProvider` è un componente fondamentale di SaluteOra che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
+>>>>>>> aadb96b (.)
 
 1. **Coerenza**: Tutte le etichette seguono lo stesso pattern di traduzione
 2. **Manutenibilità**: Le traduzioni sono centralizzate nei file di lingua
@@ -55,16 +59,22 @@ graph TD
 
 Il file principale del provider si trova in:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> aadb96b (.)
 `/var/www/html/saluteora/laravel/Modules/Lang/app/Providers/LangServiceProvider.php`
 
 L'azione principale che gestisce l'etichettatura automatica è:
 `/var/www/html/saluteora/laravel/Modules/Lang/app/Actions/Filament/AutoLabelAction.php`
+<<<<<<< HEAD
 =======
 `/var/www/html/<nome progetto>/laravel/Modules/Lang/app/Providers/LangServiceProvider.php`
 
 L'azione principale che gestisce l'etichettatura automatica è:
 `/var/www/html/<nome progetto>/laravel/Modules/Lang/app/Actions/Filament/AutoLabelAction.php`
 >>>>>>> cf609214 (.)
+=======
+>>>>>>> aadb96b (.)
 
 ### Esempio di Utilizzo Corretto
 
