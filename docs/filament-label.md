@@ -22,3 +22,7 @@
 - [docs root](../../../../project_docs/actions.md)
 - [docs Xot](../../../Xot/project_docs/MODULE_NAMESPACE_RULES.md)
 
+<<<<<<< HEAD
+=======
+Ultimo aggiornamento: maggio 2025.
+>>>>>>> cf609214 (.)

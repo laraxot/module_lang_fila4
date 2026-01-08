@@ -71,4 +71,8 @@ return [
 
 ## Vedi Anche
 - [Laravel Translations](https://laravel.com/project_docs/localization)
+<<<<<<< HEAD
 - [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
+=======
+- [Filament i18n](https://filamentphp.com/project_docs/internationalization) 
+>>>>>>> cf609214 (.)

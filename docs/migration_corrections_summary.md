@@ -142,9 +142,15 @@ La migrazione ora segue completamente gli standard del progetto:
 
 ## Riferimenti
 
+<<<<<<< HEAD
 - [Standard Migrazioni](../../Xot/docs/migration_standards.md)
 - [Best Practices Migrazioni Lang](migration_best_practices.md)
 - [Documentazione Generale](../../Xot/docs/migration_guidelines.md)
+=======
+- [Standard Migrazioni](../../Xot/project_docs/migration_standards.md)
+- [Best Practices Migrazioni Lang](migration_best_practices.md)
+- [Documentazione Generale](../../Xot/project_docs/migration_guidelines.md)
+>>>>>>> cf609214 (.)
 
 ## Lezioni Apprese
 
@@ -154,3 +160,7 @@ La migrazione ora segue completamente gli standard del progetto:
 4. **Documentare completamente** lo scopo e la struttura
 5. **Seguire gli standard del progetto** per coerenza
 
+<<<<<<< HEAD
+=======
+La migrazione è ora corretta e pronta per l'uso! 🚀 
+>>>>>>> cf609214 (.)
