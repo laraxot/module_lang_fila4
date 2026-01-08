@@ -9,15 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\Translation;
 
 /**
-<<<<<<< HEAD
  * @extends Factory<Translation>
-=======
-<<<<<<< HEAD
- * @extends Factory<Translation>
-=======
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\Modules\Lang\Models\Translation>
->>>>>>> origin/develop
->>>>>>> a7ee0d6 (.)
  */
 class TranslationFactory extends Factory
 {
