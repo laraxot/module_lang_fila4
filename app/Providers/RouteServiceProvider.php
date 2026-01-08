@@ -17,11 +17,6 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
     public string $name = 'Lang';
 
     /**
-     * The name of the module.
-     */
-    public string $name = 'Lang';
-
-    /**
      * The module namespace to assume when generating URLs to actions.
      */
     protected string $moduleNamespace = 'Modules\Lang\Http\Controllers';
