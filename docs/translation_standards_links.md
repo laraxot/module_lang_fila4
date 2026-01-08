@@ -2,6 +2,7 @@
 
 ## Problemi Identificati e Correzioni in Corso
 
+<<<<<<< HEAD
 Stiamo standardizzando i file di traduzione nel modulo Notify che presentano problemi di conformità con le convenzioni di <nome progetto>. Questo documento fornisce collegamenti rapidi a tutta la documentazione pertinente.
 
 ## Documentazione nel Modulo Notify
@@ -11,6 +12,17 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 - [Guida alla Struttura dei File di Traduzione](../../Notify/docs/TRANSLATION_FILE_STRUCTURE_GUIDE.md)
 - [Convenzioni di Traduzione nel Modulo Notify](../../Notify/docs/TRANSLATION_CONVENTIONS.md)
 - [Guida alla Correzione dei File di Traduzione](../../Notify/docs/TRANSLATION_FILE_CORRECTION_GUIDE.md)
+=======
+Stiamo standardizzando i file di traduzione nel modulo Notify che presentano problemi di conformità con le convenzioni di SaluteOra. Questo documento fornisce collegamenti rapidi a tutta la documentazione pertinente.
+
+## Documentazione nel Modulo Notify
+
+- [Progresso della Standardizzazione](../../Notify/project_docs/TRANSLATION_STANDARDS_PROGRESS.md)
+- [Regole di Naming per i File di Traduzione](../../Notify/project_docs/TRANSLATION_FILE_NAMING_RULES.md)
+- [Guida alla Struttura dei File di Traduzione](../../Notify/project_docs/TRANSLATION_FILE_STRUCTURE_GUIDE.md)
+- [Convenzioni di Traduzione nel Modulo Notify](../../Notify/project_docs/TRANSLATION_CONVENTIONS.md)
+- [Guida alla Correzione dei File di Traduzione](../../Notify/project_docs/TRANSLATION_FILE_CORRECTION_GUIDE.md)
+>>>>>>> 8b0b6ac (.)
 
 ## Documentazione nel Modulo Lang
 
@@ -45,5 +57,10 @@ Stiamo standardizzando i file di traduzione nel modulo Notify che presentano pro
 <<<<<<< HEAD
 **Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di <nome progetto>. 
 =======
+<<<<<<< HEAD
 **Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di <nome progetto>. 
 >>>>>>> cf609214 (.)
+=======
+**Nota**: Questo lavoro è in corso e verrà continuato nei prossimi giorni per garantire la conformità di tutti i file di traduzione agli standard di SaluteOra. 
+>>>>>>> 8b0b6ac (.)
+>>>>>>> 59790ed (.)
