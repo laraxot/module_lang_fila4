@@ -24,7 +24,11 @@ Questo documento riepiloga tutti i conflitti Git risolti e le regole implementat
 - **Soluzione**: Rimossi i marker mantenendo i comandi corretti
 - **Risultato**: File funzionale per la guida rapida
 
+<<<<<<< HEAD
 #### `laravel/Modules/Lang/docs/translation_strategies.md`
+=======
+#### `laravel/Modules/Lang/docs/TRANSLATION_STRATEGIES.md`
+>>>>>>> a7ee0d6 (.)
 - **Problema**: Marker di conflitto nei comandi bash
 - **Soluzione**: Rimossi i marker mantenendo la documentazione
 - **Risultato**: File pulito per le strategie di traduzione
@@ -87,6 +91,7 @@ Questo documento riepiloga tutti i conflitti Git risolti e le regole implementat
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 0f52eb1 (.)
 - **MAI** lasciare marker git  nei file
@@ -103,6 +108,9 @@ Questo documento riepiloga tutti i conflitti Git risolti e le regole implementat
 =======
 - **MAI** lasciare marker `<<< HEAD` nei file
 >>>>>>> e9433fe (.)
+=======
+- **MAI** lasciare marker `<<< HEAD` nei file
+>>>>>>> a7ee0d6 (.)
 - **OBBLIGATORIO** risolvere immediatamente tutti i conflitti
 - **OBBLIGATORIO** eliminare file binari con conflitti
 
@@ -161,4 +169,8 @@ Questo documento riepiloga tutti i conflitti Git risolti e le regole implementat
 ---
 
 *Ultimo aggiornamento: 2025-01-27*
+<<<<<<< HEAD
 *Stato: COMPLETATO* 
+=======
+*Stato: COMPLETATO* 
+>>>>>>> a7ee0d6 (.)
