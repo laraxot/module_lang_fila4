@@ -2,15 +2,7 @@
 
 ## Analisi dell'Implementazione Attuale
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Il `LangServiceProvider` è un componente fondamentale di SaluteOra che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
-=======
-Il `LangServiceProvider` è un componente fondamentale di <nome progetto> che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
->>>>>>> cf609214 (.)
-=======
-Il `LangServiceProvider` è un componente fondamentale di SaluteOra che gestisce automaticamente le traduzioni per i componenti Filament senza richiedere l'uso esplicito del metodo `->label()`. Questo approccio garantisce:
->>>>>>> aadb96b (.)
 
 1. **Coerenza**: Tutte le etichette seguono lo stesso pattern di traduzione
 2. **Manutenibilità**: Le traduzioni sono centralizzate nei file di lingua
@@ -58,23 +50,10 @@ graph TD
 ## Implementazione Attuale
 
 Il file principale del provider si trova in:
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> aadb96b (.)
 `/var/www/html/saluteora/laravel/Modules/Lang/app/Providers/LangServiceProvider.php`
 
 L'azione principale che gestisce l'etichettatura automatica è:
 `/var/www/html/saluteora/laravel/Modules/Lang/app/Actions/Filament/AutoLabelAction.php`
-<<<<<<< HEAD
-=======
-`/var/www/html/<nome progetto>/laravel/Modules/Lang/app/Providers/LangServiceProvider.php`
-
-L'azione principale che gestisce l'etichettatura automatica è:
-`/var/www/html/<nome progetto>/laravel/Modules/Lang/app/Actions/Filament/AutoLabelAction.php`
->>>>>>> cf609214 (.)
-=======
->>>>>>> aadb96b (.)
 
 ### Esempio di Utilizzo Corretto
 
@@ -103,10 +82,10 @@ Attualmente il sistema supporta `Field`, `BaseFilter`, `Column`, `Step`, `Action
 protected function translatableComponents(): void
 {
     $components = [
-        Field::class, 
-        BaseFilter::class, 
-        Placeholder::class, 
-        Column::class, 
+        Field::class,
+        BaseFilter::class,
+        Placeholder::class,
+        Column::class,
         Entry::class,
         // Nuovi componenti da supportare
         Section::class,                // Sezioni form
@@ -132,22 +111,22 @@ use Illuminate\Support\Facades\Cache;
 class AutoLabelAction
 {
     // Resto del codice invariato
-    
+
     protected function getTranslation(string $key, string $default): string
     {
         // Chiave cache con namespacing appropriato
         $cacheKey = 'lang_service_provider:' . $key;
-        
+
         // Cache per 24 ore, oppure fino al prossimo deploy
         return Cache::remember($cacheKey, now()->addHours(24), function () use ($key, $default) {
             $translation = trans($key);
-            
+
             // Se la traduzione non esiste, la salviamo e restituiamo il default
             if ($translation === $key) {
                 app(SaveTransAction::class)->execute($key, $default);
                 return $default;
             }
-            
+
             return $translation;
         });
     }
@@ -167,20 +146,20 @@ protected function translateEnumOptions(Forms\Components\Select $component, stri
     $backtrace = debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 10);
     $modClass = $this->findModuleClass($backtrace);
     $baseKey = app(GetTransKeyAction::class)->execute($modClass);
-    
+
     // Se è un enum PHP 8.1+
     if (enum_exists($enumClass)) {
         $options = [];
         foreach ($enumClass::cases() as $case) {
             $transKey = "{$baseKey}.enums." . class_basename($enumClass) . "." . $case->name;
             $options[$case->value] = trans($transKey, [], $case->name);
-            
+
             // Salva la traduzione se non esiste
             if (trans($transKey) === $transKey) {
                 app(SaveTransAction::class)->execute($transKey, $case->name);
             }
         }
-        
+
         $component->options($options);
     }
 }
@@ -196,22 +175,22 @@ Sviluppare un pannello di amministrazione per gestire le traduzioni mancanti o e
 class TranslationResource extends XotBaseResource
 {
     protected static ?string $model = Translation::class;
-    
+
     protected static ?string $navigationIcon = 'heroicon-o-language';
-    
+
     public static function getFormSchema(): array
     {
         return [
             'key' => TextInput::make('key')
                 ->disabled()
                 ->columnSpan(2),
-                
+
             'it' => TextInput::make('it')
                 ->label('Italiano'),
-                
+
             'en' => TextInput::make('en')
                 ->label('English'),
-                
+
             'status' => Select::make('status')
                 ->options([
                     'auto' => 'Generata automaticamente',

@@ -66,7 +66,7 @@ lang/
 - `__()`: Helper per stringhe di traduzione
   - Restituisce `null` se chiamato senza parametri
   - Sintassi: `__('chiave.traduzione')`
-  
+
 - `trans()`: Versione più flessibile
   - Restituisce l'istanza del Translator se chiamato senza parametri
   - Utile per metodi concatenati: `trans()->getLocale()`
@@ -81,7 +81,6 @@ trans('messages.welcome', ['name' => $user->name]);
 
 // Con namespace
 __('auth::validation.required')
-
 
 // Nei file blade
 {{ __('Benvenuto') }}
@@ -114,22 +113,6 @@ __('auth::validation.required')
 ### 1. Creazione Struttura Base
 
 ```bash
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> ed13d19 (.)
-=======
->>>>>>> 30a6e9b (.)
-=======
->>>>>>> 538e939 (.)
->>>>>>> 7911631 (.)
->>>>>>> aadb96b (.)
 # Pubblicare i file di lingua Laravel
 php artisan lang:publish
 
@@ -173,7 +156,7 @@ public function handle($request, Closure $next)
     if (session()->has('locale')) {
         app()->setLocale(session('locale'));
     }
-    
+
     return $next($request);
 }
 ```
@@ -197,22 +180,6 @@ public function handle($request, Closure $next)
 
 ### Comandi Artisan
 ```bash
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> ed13d19 (.)
-=======
->>>>>>> 30a6e9b (.)
-=======
->>>>>>> 538e939 (.)
->>>>>>> 7911631 (.)
->>>>>>> aadb96b (.)
 # Pubblicare file di lingua
 php artisan lang:publish
 

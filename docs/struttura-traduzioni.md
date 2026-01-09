@@ -31,7 +31,7 @@ I file di traduzione nel modulo Lang devono seguire una struttura precisa dei pe
    return [
        'key' => 'value',
    ];
-   
+
    // File 2: Sintassi vecchia
    return array(
        'key' => 'value',
@@ -78,22 +78,6 @@ I file di traduzione nel modulo Lang devono seguire una struttura precisa dei pe
 
 ## Collegamenti alla documentazione correlata
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> aadb96b (.)
 - [Regole generali per i file di traduzione](/laravel/Modules/Xot/docs/translation_rules.md)
 - [Errori comuni nei file di traduzione](/laravel/Modules/Lang/docs/errori_comuni_traduzione.md)
 - [Documentazione principale sulle traduzioni](/docs/translation_rules.md)
-
-<<<<<<< HEAD
-=======
-- [Regole generali per i file di traduzione](/laravel/Modules/Xot/project_docs/translation_rules.md)
-- [Errori comuni nei file di traduzione](/laravel/Modules/Lang/project_docs/errori_comuni_traduzione.md)
-- [Documentazione principale sulle traduzioni](/project_docs/translation_rules.md)
-
-*Ultimo aggiornamento: 3 Giugno 2025*
->>>>>>> cf609214 (.)
-=======
-*Ultimo aggiornamento: 3 Giugno 2025*
->>>>>>> aadb96b (.)

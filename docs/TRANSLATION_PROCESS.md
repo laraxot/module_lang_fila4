@@ -11,7 +11,7 @@
 
 ## Introduzione
 
-Questo documento descrive il processo di gestione delle traduzioni nel progetto <nome progetto>, con particolare attenzione alla collaborazione tra sviluppatori e traduttori.
+Questo documento descrive il processo di gestione delle traduzioni nel progetto SaluteOra, con particolare attenzione alla collaborazione tra sviluppatori e traduttori.
 
 ## Struttura dei File di Traduzione
 
@@ -76,6 +76,7 @@ lang/
 Per le traduzioni di base di Laravel:
 
 ```bash
+
 # Installazione
 composer require laravel-lang/common --dev
 
@@ -108,6 +109,7 @@ Traduci in italiano mantenendo la struttura JSON:
 ### 1. Branch di Traduzione
 
 ```bash
+
 # Creare un branch dedicato
 git checkout -b feature/italian-translations
 
@@ -160,7 +162,7 @@ __('messages.welcome', ['name' => 'Mario']);
 class ExtractTranslations extends Command
 {
     protected $signature = 'translations:extract {locale} {--output=} {--source=resources/views}';
-    
+
     public function handle()
     {
         // Estrai le stringhe dai file di vista
@@ -180,22 +182,22 @@ on: [push, pull_request]
 jobs:
   check-translations:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          
+
       - name: Install Dependencies
         run: |
           composer install -n --prefer-dist
-          
+
       - name: Check Missing Translations
         run: php artisan translations:missing it --json > missing.json
-        
+
       - name: Fail if Missing Translations
         if: ${{ !contains('0', '0') }}
         run: |
@@ -230,4 +232,4 @@ find lang -type f -name "*.php" -o -name "*.json" | xargs dos2unix
 
 ## Conclusione
 
-Questo documento fornisce una guida completa per la gestione delle traduzioni nel progetto <nome progetto>. Seguendo queste linee guida, è possibile garantire un processo di traduzione fluido e coerente in tutto il team di sviluppo.
+Questo documento fornisce una guida completa per la gestione delle traduzioni nel progetto SaluteOra. Seguendo queste linee guida, è possibile garantire un processo di traduzione fluido e coerente in tutto il team di sviluppo.

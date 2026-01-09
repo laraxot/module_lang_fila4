@@ -103,48 +103,32 @@ Se usi Folio, assicurati che anche le pagine Volt siano registrate nel gruppo lo
 - [ ] Tutti i testi nei componenti Volt sono tradotti con `__()` o `@lang`.
 - [ ] Tutti i link e redirect usano nomi di rotte localizzate.
 - [ ] Se necessario, i path delle rotte Volt sono tradotti tramite mapping.
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/docs/laravel-localization-livewire-volt.md`.
-=======
-- [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md`.
->>>>>>> cf609214 (.)
-=======
-- [ ] Documenta ogni eccezione o workaround in `/Modules/Lang/docs/laravel-localization-livewire-volt.md`.
->>>>>>> aadb96b (.)
 
 ---
 
 ## 5. FAQ e problemi comuni
-- **Perché il componente Volt non si localizza?**  
+- **Perché il componente Volt non si localizza?**
   Verifica che la rotta sia dentro il gruppo localizzato e che il middleware sia applicato.
-- **Come traduco i path delle rotte Volt?**  
+- **Come traduco i path delle rotte Volt?**
   Usa il mapping delle rotte in `lang/{locale}/routes.php` e registra le rotte Volt con le chiavi tradotte.
-- **Come gestisco la lingua nei redirect?**  
+- **Come gestisco la lingua nei redirect?**
   Usa sempre `LaravelLocalization::getCurrentLocale()` nei redirect e nei link.
 
 ---
 
 ## 6. Modifiche consigliate ai file del progetto
-- **web.php**:  
+- **web.php**:
   Sposta tutte le rotte Volt dentro il gruppo localizzato.
-- **lang/{locale}/routes.php**:  
+- **lang/{locale}/routes.php**:
   Aggiungi mapping per i path delle rotte Volt se vuoi path tradotti.
-- **Componenti Volt**:  
+- **Componenti Volt**:
   Verifica che tutti i testi siano tradotti e che i redirect usino le rotte localizzate.
-- **Documentazione**:  
-<<<<<<< HEAD
-<<<<<<< HEAD
+- **Documentazione**:
   Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
-=======
-  Aggiorna sempre `/Modules/Lang/project_docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
->>>>>>> cf609214 (.)
-=======
-  Aggiorna sempre `/Modules/Lang/docs/laravel-localization-livewire-volt.md` ogni volta che cambi la struttura delle rotte o dei componenti Volt.
->>>>>>> aadb96b (.)
 
 ---
 
 ## 7. Best Practices operative (.mdc)
 
-Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative. 
+Vedi file `.cursor/rules/laravel-localization-livewire-volt.mdc` e `.windsurf/rules/laravel-localization-livewire-volt.mdc` per checklist e regole operative.

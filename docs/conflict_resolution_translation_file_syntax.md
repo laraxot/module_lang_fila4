@@ -2,15 +2,7 @@
 
 ## Problema Identificato
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Il file `Modules/Lang/docs/translation-file-syntax.md` presenta un conflitto Git nella sezione finale:
-=======
-Il file `Modules/Lang/project_docs/translation-file-syntax.md` presenta un conflitto Git nella sezione finale:
->>>>>>> cf609214 (.)
-=======
-Il file `Modules/Lang/docs/translation-file-syntax.md` presenta un conflitto Git nella sezione finale:
->>>>>>> aadb96b (.)
 
 **Linea 49**: Sezione "Novità 2025: Best practice obbligatorie" vs rimozione completa
 
@@ -204,15 +196,7 @@ Quando si lavora sui file di traduzione, non è mai consentito rimuovere chiavi 
 - [Translation Standards](../translation-standards.md)
 - [Translation File Management](../translation-file-management.md)
 - [Best Practices](../translation-keys-best-practices.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [PHP Array Configuration Best Practices](../../Xot/docs/php_array_configuration_best_practices.md)
-=======
-- [PHP Array Configuration Best Practices](../../Xot/project_docs/php_array_configuration_best_practices.md)
->>>>>>> cf609214 (.)
-=======
-- [PHP Array Configuration Best Practices](../../Xot/docs/php_array_configuration_best_practices.md)
->>>>>>> aadb96b (.)
 
 ## Note per Sviluppatori Futuri
 
@@ -227,11 +211,3 @@ Quando si lavora sui file di traduzione, non è mai consentito rimuovere chiavi 
 - **Modulo**: Lang
 - **File**: `docs/translation-file-syntax.md`
 - **Tipo Conflitto**: Documentazione best practice
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-- **Scelta**: Versione HEAD (mantenere best practice 2025) 
->>>>>>> cf609214 (.)
-=======
-- **Scelta**: Versione HEAD (mantenere best practice 2025) 
->>>>>>> aadb96b (.)

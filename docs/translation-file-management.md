@@ -17,7 +17,7 @@ class TranslationFile extends BaseModel
 
     protected $fillable = [
         'id',
-        'name', 
+        'name',
         'path',
     ];
 
@@ -46,7 +46,7 @@ public function execute(): array
     $lang = app()->getLocale();
     $path = base_path('Modules/*/lang/'.$lang.'/*.php');
     $files = glob($path);
-    
+
     $files = Arr::map($files, function($file) {
         $module_low = Str::of($file)->between('Modules/','/lang/')->lower()->toString();
         return [
@@ -54,7 +54,7 @@ public function execute(): array
             'path' => $file,
         ];
     });
-    
+
     return $files;
 }
 ```
@@ -242,26 +242,10 @@ php artisan lang:export
 - [Translation Standards](./translation-standards.md)
 - [Translation System](./translation-system.md)
 - [Best Practices](./translation-keys-best-practices.md)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Laravel Localization](https://laravel.com/project_docs/localization)
-=======
-- [Laravel Localization](https://laravel.com/docs/localization)
->>>>>>> 8b0b6ac (.)
-=======
-- [Laravel Localization](https://laravel.com/docs/localization)
->>>>>>> aadb96b (.)
 
 ## Note per lo Sviluppo
 
 1. **Performance**: Utilizzare cache per i file di traduzione
 2. **Scalabilità**: Gestire grandi volumi di traduzioni
 3. **Manutenibilità**: Struttura modulare e estendibile
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-4. **Usabilità**: Interfaccia intuitiva per i traduttori 
->>>>>>> cf609214 (.)
-=======
-4. **Usabilità**: Interfaccia intuitiva per i traduttori 
->>>>>>> aadb96b (.)
