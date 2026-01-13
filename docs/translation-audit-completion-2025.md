@@ -46,7 +46,7 @@ Durante l'audit delle traduzioni del progetto <nome progetto>, sono state identi
 - **File inglesi**: 4 file corretti
 - **Pattern**: `'required' => 'Pflichtfeld'` (DE) / `'required' => 'This field is required'` (EN)
 
-#### ✅ Modulo SaluteMo
+#### ✅ Modulo <nome progetto>
 - **File tedeschi**: 4 file corretti
 - **File inglesi**: 4 file corretti
 - **Pattern**: `'required' => 'Das Feld :attribute ist erforderlich'` (DE) / `'required' => 'The :attribute field is required'` (EN)
