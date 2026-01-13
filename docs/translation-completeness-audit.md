@@ -7,7 +7,7 @@ This document tracks the completeness and quality of translation files across th
 
 ### 2025-01-06: Complete PDF Template Internationalization
 
-**Issue**: PDF template `/var/www/html/_bases/base_<nome progetto>/laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
+**Issue**: PDF template `Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
 
 **Files Updated**:
 - `laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` (completely internationalized)
@@ -298,7 +298,7 @@ This document tracks the completeness and quality of translation files across th
 
 ### 2025-01-06: Complete PDF Template Internationalization
 
-**Issue**: PDF template `/var/www/html/_bases/base_<nome progetto>/laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
+**Issue**: PDF template `Themes/One/resources/views/appointment/report_pdf.blade.php` contained hardcoded Italian text, making it non-multilingual.
 
 **Files Updated**:
 - `laravel/Themes/One/resources/views/appointment/report_pdf.blade.php` (completely internationalized)

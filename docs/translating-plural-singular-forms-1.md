@@ -25,7 +25,7 @@ In un'applicazione multilingue, è comune dover gestire traduzioni che cambiano 
 
 I file PHP offrono un modo più pulito per gestire la pluralizzazione, utilizzando chiavi specifiche.
 
-**Esempio** in `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`:
+**Esempio** in `lang/en/messages.php`:
    - Modifica: Creare o aggiornare il file con traduzioni plurali:
      ```php
      return [
@@ -34,7 +34,7 @@ I file PHP offrono un modo più pulito per gestire la pluralizzazione, utilizzan
          'newPatientIndicator' => '{0} Non hai nuovi pazienti|{1} Hai 1 nuovo paziente|[2,*] Hai :count nuovi pazienti',
      ];
      ```
-- File: `/var/www/html/<nome progetto>/laravel/lang/en/messages.php`
+- File: `lang/en/messages.php`
    - Modifica: Aggiungere o aggiornare l'uso della direttiva `@choice` per mostrare notifiche:
      ```blade
      <div class="notification-bar">

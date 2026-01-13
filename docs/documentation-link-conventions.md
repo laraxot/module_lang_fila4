@@ -14,8 +14,8 @@ I collegamenti nei file di documentazione devono **sempre** utilizzare percorsi 
 
 ❌ **ERRATO**:
 ```markdown
-[Regole Generali](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Xot/project_docs/translations.md)
-[Best Practices](/var/www/html/_bases/base_techplanner_fila3_mono/laravel/Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
+[Regole Generali](Modules/Xot/project_docs/translations.md)
+[Best Practices](Modules/Lang/project_docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
 
 ### 2. Navigazione Tra Cartelle
@@ -104,8 +104,8 @@ I collegamenti nei file di documentazione devono **sempre** utilizzare percorsi 
 
 ❌ **ERRATO**:
 ```markdown
-[Regole Generali](/var/www/html/<nome progetto>/laravel/Modules/Xot/docs/translations.md)
-[Best Practices](/var/www/html/<nome progetto>/laravel/Modules/Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
+[Regole Generali](Modules/Xot/docs/translations.md)
+[Best Practices](Modules/Lang/docs/TRANSLATION_KEYS_BEST_PRACTICES.md)
 ```
 
 ### 2. Navigazione Tra Cartelle

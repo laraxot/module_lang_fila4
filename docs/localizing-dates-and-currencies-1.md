@@ -14,7 +14,7 @@ Questo approccio si integra con il sistema di localizzazione esistente (`mcamara
 Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la localizzazione di date e valute nel progetto `<nome progetto>`:
 
 1. **Configurazione di Carbon per la Localizzazione delle Date**:
-   - File: `/var/www/html/<nome progetto>/laravel/app/Providers/AppServiceProvider.php`
+   - File: `app/Providers/AppServiceProvider.php`
    - Modifica: Creare o aggiornare il file per aggiungere la funzione `formatCurrency()`:
      ```php
      if (!function_exists('formatCurrency')) {
@@ -29,7 +29,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 - **Ragionamento**: Un helper per formattare le valute centralizza la logica di localizzazione, rendendola accessibile in tutte le viste e i controller. Impostare il locale di default con `app()->getLocale()` (es. 'it_IT') garantisce coerenza con la lingua corrente dell'utente, mentre permettere di specificare un locale o una valuta diversi offre flessibilità (es. per mostrare costi in USD). Questo è utile per `<nome progetto>` in scenari di fatturazione o pagamenti internazionali.
 
 3. **Uso di Carbon e dell'Helper nelle Viste per Appuntamenti o Pagamenti**:
-   - File: `/var/www/html/<nome progetto>/laravel/Modules/Dental/Resources/views/appointments/index.blade.php`
+   - File: `Modules/Dental/Resources/views/appointments/index.blade.php`
 
 4. **Verifica dell'Estensione `intl` per `NumberFormatter`**:
    - Nota: Assicurarsi che l'estensione `intl` sia abilitata nel file `php.ini` del server. Se non è abilitata, aggiungere o decommentare la linea:

@@ -129,7 +129,7 @@ Ogni campo di traduzione DEVE includere:
 
 ### 1. Helper Text Audit
 ```bash
-cd /var/www/html/_bases/base_<nome progetto>/laravel
+cd laravel
 php docs/helper-text-audit-script.php
 ```
 

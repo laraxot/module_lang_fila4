@@ -14,7 +14,7 @@ Questo approccio è coerente con le regole del progetto, come l'uso del prefisso
 Di seguito elenco i file che modificherei e le modifiche specifiche che apporterei per implementare la personalizzazione dei messaggi di validazione nel progetto `<nome progetto>`:
 
 1. **Personalizzazione dei Nomi dei Campi con `attributes()` in una Classe di Richiesta**:
-   - File: `/var/www/html/<nome progetto>/laravel/Modules/Patient/Http/Requests/StorePatientRequest.php`
+   - File: `Modules/Patient/Http/Requests/StorePatientRequest.php`
    - Modifica: Aggiungere o aggiornare il metodo `messages()` per messaggi personalizzati:
      ```php
      public function messages()
@@ -31,7 +31,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 - **Ragionamento**: Definire messaggi di validazione personalizzati con `messages()` permette di controllare esattamente il testo mostrato agli utenti, rendendolo più specifico e utile rispetto ai messaggi predefiniti di Laravel. Questo è particolarmente importante per un'applicazione sanitaria come `<nome progetto>`, dove la chiarezza può ridurre errori da parte degli utenti. Usare `:position` per gli appuntamenti in array aiuta a identificare quale elemento ha un problema. L'uso di `__()` garantisce che i messaggi siano tradotti in base alla lingua corrente, rispettando le regole di localizzazione del progetto.
 
 3. **Traduzione dei Nomi dei Campi e dei Messaggi di Validazione nei File di Lingua**:
-   - File: `/var/www/html/<nome progetto>/laravel/lang/it/general.php`
+   - File: `lang/it/general.php`
    - Modifica: Aggiungere o aggiornare traduzioni equivalenti in inglese:
      ```php
      return [
@@ -60,7 +60,7 @@ Di seguito elenco i file che modificherei e le modifiche specifiche che apporter
 - **Ragionamento**: Aggiungere traduzioni per i nomi dei campi e i messaggi di validazione nei file di lingua garantisce che i messaggi personalizzati nelle classi di richiesta siano correttamente localizzati in tutte le lingue supportate da `<nome progetto>` (es. 'it' e 'en'). Questo approccio è coerente con le regole di traduzione del progetto, che enfatizzano l'uso di `__()` per la localizzazione e la necessità di mantenere traduzioni strutturate. Organizzare le traduzioni in file PHP per categoria (es. `general.php`) riflette la struttura modulare del progetto.
 
 4. **Creazione di un File di Documentazione per Cursor e Windsurf**:
-   - File: `/var/www/html/<nome progetto>/.cursor/rules/translating-validation-messages.mdc`
+   - File: `.cursor/rules/translating-validation-messages.mdc`
      - Usare `attributes()` nelle classi di richiesta per personalizzare i nomi dei campi, traducendoli con `__()`.
      - Usare `messages()` per definire messaggi di validazione personalizzati, con placeholder come `:position` per array.
      - Aggiungere traduzioni per nomi dei campi e messaggi nei file di lingua (es. `lang/it/general.php`).
