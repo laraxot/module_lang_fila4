@@ -493,6 +493,7 @@ return [
             'icon' => 'table_layout_toggle',
             'tooltip' => 'table_layout_toggle',
         ],
+<<<<<<< Updated upstream
         'update_coordinates' => [
             'label' => 'update_coordinates',
             'icon' => 'update_coordinates',
@@ -504,5 +505,7 @@ return [
             'label' => 'address',
             'heading' => 'address',
         ],
+=======
+>>>>>>> Stashed changes
     ],
 ];
